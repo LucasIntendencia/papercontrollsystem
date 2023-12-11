@@ -1,0 +1,40 @@
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page - PaperControlSystem</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/loginrec.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+
+<form method="post" action="{{ url_for('loginrec') }}">
+
+    <body>
+        <div class="cabecalho">
+            <button class="PaperCS">Paper Control System</button>
+            <img src="../images/exitbutton.png" alt="Botão Pequeno" class="exitbutton">
+        </div>
+        <div class="content">
+            <div class="button-container">
+                <button class="Semanal">Abastecimento Semanal</button>
+                <button class="Pontual">Abastecimento Pontual</button>
+                <button class="Reabastecimento">Solicitar Reabastecimento</button>
+            </div>
+</form>
+<footer>
+    {% if quantidade_estoque is defined %}
+        <div class="estoque-info">
+            <p>Seu estoque atual:</p>
+            <p>{{ quantidade_estoque }}</p>
+            <p> resma(s)</p>
+        </div>
+    {% else %}
+        <p>{{ mensagem_erro }}</p>
+    {% endif %}
+</footer>
+<button class="zezinhobola"></button>
+</div>
+</body>
+
+</html>

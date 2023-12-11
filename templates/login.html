@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,31 +8,43 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/loading.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/login.css') }}">
 </head>
+
 <body>
-  <div id="background-image">
-    <img src="{{ url_for('static', filename='images/zezinho.png') }}" alt="Zezinho">
-  </div>
-  <div id="login-container" class="hidden">
-    <h1>Seja bem-vindo</h1>
-    <form action="/fazer_login" method="post">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="senha">Senha:</label>
-      <input type="password" id="senha" name="senha" required>
-
-      <button type="submit">Entrar</button>
+  <div id="background-image"></div>
+  <div class="login-form" id="login-container">
+    <form method="post" action="{{ url_for('fazer_login') }}">
+      <label for="email" class="label">Login</label>
+      <input type="email" id="email" name="email" placeholder="Digite seu email" class="email">
+      <label for="senha" class="label">Senha</label>
+      <input type="password" id="senha" name="senha" placeholder="Digite sua senha" class="senha">
+      <button type="submit" class="botao-entrar">Entrar</button>
     </form>
-    <div id="footer">
-      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
-      <!-- Conteúdo do rodapé, se necessário -->
+    <div id="mensagem-sucesso" class="mensagem-sucesso hidden">
+      Autenticação bem-sucedida! Você será redirecionado em breve.
+    </div>
+    <div id="mensagem-erro" class="mensagem-erro hidden">
+      Credenciais inválidas. Por favor, tente novamente.
     </div>
   </div>
+
   <script>
     window.addEventListener('load', function () {
       document.getElementById('background-image').style.display = 'none';
       document.getElementById('login-container').classList.remove('hidden');
+  
+      // Recupera parâmetros da URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const mensagemSucesso = urlParams.get('mensagem_sucesso');
+      const mensagemErro = urlParams.get('mensagem_erro');
+  
+      // Exibe ou oculta as mensagens com base nos parâmetros
+      if (mensagemSucesso) {
+        document.getElementById('mensagem-sucesso').classList.remove('hidden');
+      } else if (mensagemErro) {
+        document.getElementById('mensagem-erro').classList.remove('hidden');
+      }
     });
   </script>
 </body>
+
 </html>
