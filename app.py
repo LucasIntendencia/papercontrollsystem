@@ -41,14 +41,15 @@ def loginrec():
     usuario = Usuario.query.filter_by(email=email_exemplo, tipo_user="repositor").first()
 
     if usuario and usuario.repositor:
-        repositor = usuario.repositor
-        estoque_repositor = repositor.estoque
-        return render_template('loginrec.html', quantidade_estoque=estoque_repositor, mensagem_erro=None)
+        # Verifique se a lista de repositor não está vazia
+        if usuario.repositor:
+            # Acesse o primeiro objeto Repositor na lista
+            repositorio = usuario.repositor[0]
+            estoque_repositor = repositorio.estoque
+            return render_template('loginrec.html', quantidade_estoque=estoque_repositor, mensagem_erro=None)
     else:
         print("Acesso não autorizado.")
         return redirect(url_for('fazer_login'))
-
-
 
 @app.route('/verificar_conexao')
 def verificar_conexao():
@@ -61,9 +62,15 @@ def verificar_conexao():
             'senha': user.senha,
             'tipo_user': user.tipo_user
         }for user in users] 
-        # Retorna os dados como JSON
-        return jsonify(users_data)
 
+        repositors = Repositor.query.all()
+
+        repositors_data = [{
+            'id_repositor': repositor.id_repositor,
+            'usuario_id': repositor.usuario_id,
+            'estoque:': repositor.estoque
+        }for repositor in repositors]
+        return jsonify(users_data, repositors_data)
     except Exception as e:
         return f'Erro ao verificar a conexão: {str(e)}'
 
