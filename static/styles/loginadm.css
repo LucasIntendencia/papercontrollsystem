@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    background-image: url('../images/background-zezinho.png');
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+}
+ 
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1A5A6B;
+    margin-top: 15px;
+}
+ 
+.exitbutton {
+    width: 40px;
+}
+ 
+.recep-info {
+    background-color: black;
+    border-radius: 50%;
+    color: white;
+    padding: 30px;
+    width: 200px;
+    height: 200px;
+    margin: 60px auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    line-height: 1.6;
+}
+ 
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+ 
+.PaperCS {
+    margin: 10px;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    background-color: #23A0BA;
+    color: white;
+    outline: none;
+    text-decoration: none;
+}
+ 
+.Relatorio {
+    width: 300px;
+    font-size: 24px;
+    padding: 16px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    background-color: #23A0BA;
+    color: white;
+    outline: none;
+    display: block;
+    text-align: center;
+}
+ 
+.grafico-container {
+    margin-bottom: 280px;
+    text-align: center;
+    background-color: black;
+    width: 300px;
+    height: 150px;
+    border-radius: 15px;
+    display: block;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+}
+ 
+/* Estilos para dispositivos móveis */
+@media only screen and (max-width: 600px) {
+    .grafico-container {
+        width: 300px;
+        margin-bottom: 280px;
+        max-width: none;
+    }
+}
+ 
+/* Estilos para dispositivos maiores (desktop) */
+@media only screen and (min-width: 601px) {
+    .grafico-container {
+        margin-bottom: 280px;
+        width: 300px;
+        max-width: 600px;
+    }
+}

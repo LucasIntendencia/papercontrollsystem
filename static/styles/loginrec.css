@@ -47,7 +47,7 @@ body {
     /* Reduzi um pouco a largura para evitar problemas */
     max-width: 400px;
     /* Limitando a largura máxima */
-    margin-top: -50px;
+    margin-top: -60px;
 }
  
 /* Botões específicos */
@@ -83,11 +83,14 @@ body {
 }
  
 .exitbutton {
-    width: 18%;
+    width: 26%;
     text-decoration: none;
+    margin-right: -70px;
 }
  
-
+ 
+ 
+ 
 .zezinhobola {
     width: 100px;
     height: 100px;

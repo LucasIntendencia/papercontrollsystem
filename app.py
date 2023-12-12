@@ -24,16 +24,34 @@ def fazer_login():
 
         usuario = Usuario.query.filter_by(email=email, senha=senha).first()
 
+        # Debugging - imprima informações relevantes
+        print("Usuário (login):", usuario)
+
         if usuario:
             if usuario.tipo_user == "administrador":
-                return redirect(url_for('pagina_administrador'))
+                print("Redirecionando para /loginadm")
+                return redirect(url_for('loginadm', email=email))
             elif usuario.tipo_user == "repositor":
-                return redirect(url_for('loginrec', email=email))  # Passe o email como parâmetro para a rota
+                return redirect(url_for('loginrec', email=email))
             else:
                 return render_template('login.html', mensagem_falha=True)
 
     return render_template('login.html')
 
+
+@app.route('/loginadm', methods=['GET', 'POST'])
+def loginadm():
+    email_exemplo = request.args.get('email')
+    usuario = Usuario.query.filter_by(email=email_exemplo, tipo_user="administrador").first()
+
+    # Debugging - imprima informações relevantes
+    print("Usuário:", usuario)
+    
+    if usuario and usuario.tipo_user == "administrador":
+        return render_template('loginadm.html')
+    else:
+        print("Acesso não autorizado.")
+        return redirect(url_for('fazer_login'))
 
 @app.route('/loginrec', methods=['GET', 'POST'])
 def loginrec():
