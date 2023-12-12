@@ -9,28 +9,30 @@
 </head>
 
 <form method="post" action="{{ url_for('loginrec') }}">
-
     <body>
         <div class="cabecalho">
-            <button class="PaperCS">Paper Control System</button>
-            <img src="../static/images/exitbutton.png" alt="Botão Pequeno" class="exitbutton">
+            <a href="{{ url_for('loginrec') }}" class="PaperCS">Paper Controll System</a>
+            <a href="{{ url_for('loginrec') }}" class="exitbutton">
+                <img src="../static/images/exitbutton.png" alt="Botão Pequeno" class="exitbutton">
+            </a>
         </div>
         <div class="content">
             <div class="button-container">
-                <button class="Semanal">Abastecimento Semanal</button>
-                <button class="Pontual">Abastecimento Pontual</button>
+                <a href="{{ url_for('abastecimento') }}" class="Semanal">Abastecimento Semanal</a>
+                <a href="{{ url_for('abastecimento') }}" class="Pontual">Abastecimento Pontual</a>
                 <button class="Reabastecimento">Solicitar Reabastecimento</button>
             </div>
+    </body>
 </form>
 <footer>
     {% if quantidade_estoque is defined %}
-        <div class="estoque-info">
-            <p>Seu estoque atual:</p>
-            <p>{{ quantidade_estoque }}</p>
-            <p> resma(s)</p>
-        </div>
+    <div class="estoque-info">
+        <p>Seu estoque atual:</p>
+        <p>{{ quantidade_estoque }}</p>
+        <p> resma(s)</p>
+    </div>
     {% else %}
-        <p>{{ mensagem_erro }}</p>
+    <p>{{ mensagem_erro }}</p>
     {% endif %}
 </footer>
 <button class="zezinhobola"></button>

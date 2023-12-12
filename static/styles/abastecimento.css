@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    background-image: url('../images/background-zezinho.png');
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1A5A6B;
+    margin-top: 15px;
+}
+
+/* Estilos para o botão do Paper Control System */
+.PaperCS {
+    margin: 10px;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    background-color: #23A0BA;
+    color: white;
+    outline: none;
+    text-decoration: none;
+}
+
+.exitbutton {
+    width: 40px;
+    text-decoration: none;
+}
+
+/* Estilos para a imagem do botão de saída */
+.exitbutton {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    /* Centraliza todo o conteúdo do container */
+    margin-top: 150px;
+    /* Espaçamento superior para deslocar os botões para baixo */
+}
+
+/* Estilos para os dropdowns */
+.predios,
+.andar,
+.ilhas {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.predios select,
+.andar select,
+.ilhas select {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    outline: none;
+    text-align: center;
+}
+
+.quantity-input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    outline: none;
+    margin-top: 50px;
+    /* Ajuste a margem superior conforme necessário */
+    width: 93%;
+    text-align: center;
+    /* Centraliza o texto dentro do input */
+}
+
+/* Estilos para o botão de Reabastecer */
+.Enviar {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+    margin: 0 auto;
+    display: block;
+    max-width: 200px;
+    margin-top: 100px;
+    width: 80%;
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        /* Ajuste a largura para telas menores */
+        margin-top: 100px;
+        /* Espaçamento superior menor */
+    }
+
+    .Enviar {
+        margin-top: 30px;
+        /* Espaçamento superior menor */
+    }
+}

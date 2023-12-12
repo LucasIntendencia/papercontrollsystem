@@ -49,6 +49,10 @@ def loginrec():
         print("Acesso não autorizado.")
         return redirect(url_for('fazer_login'))
 
+@app.route('/abastecimento')
+def abastecimento():
+    # Adicione qualquer lógica necessária aqui
+    return render_template('abastecimento.html')
 
 @app.route('/verificar_conexao')
 def verificar_conexao():
