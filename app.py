@@ -41,15 +41,14 @@ def loginrec():
     usuario = Usuario.query.filter_by(email=email_exemplo, tipo_user="repositor").first()
 
     if usuario and usuario.repositor:
-        # Verifique se a lista de repositor não está vazia
-        if usuario.repositor:
-            # Acesse o primeiro objeto Repositor na lista
-            repositorio = usuario.repositor[0]
-            estoque_repositor = repositorio.estoque
-            return render_template('loginrec.html', quantidade_estoque=estoque_repositor, mensagem_erro=None)
+        # Acesse o objeto Repositor diretamente
+        repositorio = usuario.repositor
+        estoque_repositor = repositorio.estoque
+        return render_template('loginrec.html', quantidade_estoque=estoque_repositor, mensagem_erro=None)
     else:
         print("Acesso não autorizado.")
         return redirect(url_for('fazer_login'))
+
 
 @app.route('/verificar_conexao')
 def verificar_conexao():
