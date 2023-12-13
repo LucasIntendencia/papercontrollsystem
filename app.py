@@ -1,7 +1,10 @@
 from flask import Flask, render_template, request, jsonify, redirect, url_for
 from validation.validacoesLogin import verificar_credenciais
 from flask_sqlalchemy import SQLAlchemy
-from database import configure_database, db, Usuario, Repositor
+from database import configure_database, db, Usuario, Repositor, Reposicao
+from sqlalchemy import func
+import json
+from decimal import Decimal
 
 app = Flask(__name__)
 
@@ -10,10 +13,37 @@ database_uri = 'mysql+mysqlconnector://root:Celeste123@localhost/papercontrolsys
 configure_database(app, database_uri)
 db.init_app(app)
 
+# Função para tratar a serialização de objetos Decimal
+def decimal_default(obj):
+    if isinstance(obj, Decimal):
+        return str(obj)
+    raise TypeError(f"Object of type {type(obj)} is not JSON serializable")
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
+# Restante das rotas...
+
+@app.route('/loginadm', methods=['GET', 'POST'])
+def loginadm():
+    # Obter dados para o gráfico
+    dados_predios = db.session.query(
+        Reposicao.predio,
+        func.sum(Reposicao.quantidade_reposicao).label('total_reposicao')
+    ).group_by(Reposicao.predio).all()
+
+    # Obter dados para o formulário
+    dados_formulario = db.session.query(
+        Reposicao.predio,
+        func.count(Reposicao.id_reposicao).label('reposicoes_pendentes')
+    ).filter(Reposicao.status_reposicao == 'pendente').group_by(Reposicao.predio).all()
+
+    # Converter dados para JSON
+    dados_predios_json = json.dumps(
+        [{'predio': item.predio, 'total_reposicao': item.total_reposicao} for item in dados_predios], default=decimal_default)
+
+    return render_template('loginadm.html', dados_predios=dados_predios_json, dados_formulario=dados_formulario)
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -38,25 +68,12 @@ def fazer_login():
 
     return render_template('login.html')
 
-
-@app.route('/loginadm', methods=['GET', 'POST'])
-def loginadm():
-    email_exemplo = request.args.get('email')
-    usuario = Usuario.query.filter_by(email=email_exemplo, tipo_user="administrador").first()
-
-    # Debugging - imprima informações relevantes
-    print("Usuário:", usuario)
-    
-    if usuario and usuario.tipo_user == "administrador":
-        return render_template('loginadm.html')
-    else:
-        print("Acesso não autorizado.")
-        return redirect(url_for('fazer_login'))
-
 @app.route('/loginrec', methods=['GET', 'POST'])
 def loginrec():
-    email_exemplo = request.args.get('email')  # Obtenha o email da query string
-    usuario = Usuario.query.filter_by(email=email_exemplo, tipo_user="repositor").first()
+    # Obtenha o email da query string
+    email_exemplo = request.args.get('email')
+    usuario = Usuario.query.filter_by(
+        email=email_exemplo, tipo_user="repositor").first()
 
     if usuario and usuario.repositor:
         # Acesse o objeto Repositor diretamente
@@ -67,10 +84,12 @@ def loginrec():
         print("Acesso não autorizado.")
         return redirect(url_for('fazer_login'))
 
+
 @app.route('/abastecimento')
 def abastecimento():
     # Adicione qualquer lógica necessária aqui
     return render_template('abastecimento.html')
+
 
 @app.route('/verificar_conexao')
 def verificar_conexao():
@@ -82,7 +101,7 @@ def verificar_conexao():
             'email': user.email,
             'senha': user.senha,
             'tipo_user': user.tipo_user
-        }for user in users] 
+        }for user in users]
 
         repositors = Repositor.query.all()
 

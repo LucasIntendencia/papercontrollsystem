@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <title>Entrar - PaperControllSystem</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/loading.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/login.css') }}">
 </head>
@@ -14,9 +14,9 @@
   <div class="login-form" id="login-container">
     <form method="post" action="{{ url_for('fazer_login') }}">
       <label for="email" class="label">Login</label>
-      <input type="email" id="email" name="email" placeholder="Digite seu email" class="email">
+      <input type="email" id="email" name="email" placeholder="Digite seu email:" class="email">
       <label for="senha" class="label">Senha</label>
-      <input type="password" id="senha" name="senha" placeholder="Digite sua senha" class="senha">
+      <input type="password" id="senha" name="senha" placeholder="Digite sua senha:" class="senha">
       <button type="submit" class="botao-entrar">Entrar</button>
     </form>
     <div id="mensagem-sucesso" class="mensagem-sucesso hidden">

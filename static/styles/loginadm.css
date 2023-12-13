@@ -34,11 +34,21 @@ body {
     text-align: center;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center; /* Alterado para centralizar horizontal e verticalmente */
     flex-direction: column;
     line-height: 1.6;
 }
- 
+
+.recep-info p:first-child {
+    font-size: 90px; /* Tamanho de fonte grande para o primeiro parágrafo */
+    margin-bottom: 5px; /* Espaçamento inferior menor para o primeiro parágrafo */
+}
+
+.recep-info p {
+    font-size: 1em; /* Tamanho de fonte padrão para os outros parágrafos */
+    margin: 0; /* Redefinir as margens para evitar espaçamento indesejado */
+}
+
 .button-container {
     display: flex;
     flex-direction: column;

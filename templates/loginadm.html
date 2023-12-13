@@ -9,15 +9,16 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <form method="post" action="{{ url_for('loginadm')  }}">
+
     <body>
         <div class="cabecalho">
             <a href="{{ url_for('loginadm') }}" class="PaperCS">Paper Control System</a>
             <a href="{{ url_for('fazer_login') }}" class="exitbutton">
                 <img src="../static/images/exitbutton.png" alt="Botão Pequeno" class="exitbutton">
             </a>
-        </div>        
+        </div>
         <div class="recep-info">
-            <p>{{ quantidade_recep }}</p>
+            <p>30</p>
             <p> recep. abastecidas</p>
         </div>
         <div class="button-container">
@@ -27,34 +28,27 @@
             <canvas id="graficoColunas" class="grafico-colunas"></canvas>
         </div>
         <script>
-            // Código do gráfico usando Chart.js
             const ctx = document.getElementById('graficoColunas').getContext('2d');
-
-            // Dados do gráfico
+        
+            // Modificar para usar os dados do servidor
+            const predios = JSON.parse('{{ dados_predios | safe }}');
+        
+            // Calcular o total do estoque do prédio
+            const totalEstoquePredio = predios.reduce((total, item) => total + item.total_reposicao, 0);
+        
             const data = {
-                labels: ['MINAS', 'GERAIS', 'ALTEROSA', 'TIRADENTES'],
+                labels: predios.map(item => item.predio),
                 datasets: [{
-                    label: 'Dados de Exemplo',
-                    data: [90, 25, 50, 30],
-                    backgroundColor: [
-                        'rgba(255, 255, 255, 255)',
-                        'rgba(255, 255, 255, 255)',
-                        'rgba(255, 255, 255, 255)',
-                        'rgba(255, 255, 255, 255)',
-                    ],
-                    borderColor: [
-                        'rgba(255, 255, 255, 255)',
-                        'rgba(255, 255, 255, 255)',
-                        'rgba(255, 255, 255, 255)',
-                        'rgba(255, 255, 255, 255)',
-                    ],
+                    label: 'Porcentagem Concluída',
+                    data: predios.map(item => (item.total_reposicao / totalEstoquePredio) * 100),
+                    backgroundColor: 'rgba(255, 255, 255, 255)',
+                    borderColor: 'rgba(255, 255, 255, 255)',
                     borderWidth: 1,
                     barThickness: 10,
                     borderRadius: 5,
                 }]
             };
-
-            // Configuração do gráfico
+        
             const config = {
                 type: 'bar',
                 data: data,
@@ -77,19 +71,12 @@
                             }
                         }
                     },
-                    plugins: {
-                        legend: {
-                            display: false,
-                        }
-                    },
-                    maintainAspectRatio: false,
-                    responsive: true,
                 }
             };
-
-            // Criação do gráfico
+        
             const myChart = new Chart(ctx, config);
-        </script>
+        </script>        
+        
     </body>
 </form>
 

@@ -31,9 +31,8 @@ def configure_database(app, database_uri):
 
 class Reposicao(db.Model):
     __tablename__ = 'reposicao'
-    id_reposicao = db.Column(db.Integer, primary_key=True)
-    id_repositor = db.Column(db.Integer, db.ForeignKey(
-        'repositor.id_repositor'), nullable=False)
+    id_reposicao = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    id_repositor = db.Column(db.Integer, db.ForeignKey('repositor.id_repositor'), nullable=False)
     data_reposicao = db.Column(db.Date, nullable=False)
     tipo_reposicao = db.Column(db.String(50), nullable=False)
     quantidade_reposicao = db.Column(db.Integer, nullable=False)
@@ -41,7 +40,4 @@ class Reposicao(db.Model):
     ilha = db.Column(db.Integer, nullable=False)
     estoque_restante = db.Column(db.Integer, nullable=False)
     predio = db.Column(db.String(50), nullable=False)
-    status_reposicao = db.Column(
-        db.String(20), nullable=False, default='pendente')
-
-
+    status_reposicao = db.Column(db.String(20), nullable=False, default='pendente')
