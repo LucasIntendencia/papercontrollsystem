@@ -1,45 +1,41 @@
 from flask import Flask, render_template, request, jsonify, redirect, url_for
 from validation.validacoesLogin import verificar_credenciais
-from flask_sqlalchemy import SQLAlchemy
 from database import configure_database, db, Usuario, Repositor, Reposicao
 from sqlalchemy import func
 import json
 from decimal import Decimal
+from datetime import date 
 
 app = Flask(__name__)
 
-# Configure o banco de dados
 database_uri = 'mysql+mysqlconnector://root:Celeste123@localhost/papercontrolsystem'
 configure_database(app, database_uri)
 db.init_app(app)
 
-# Função para tratar a serialização de objetos Decimal
+
 def decimal_default(obj):
     if isinstance(obj, Decimal):
         return str(obj)
     raise TypeError(f"Object of type {type(obj)} is not JSON serializable")
 
+
 @app.route('/')
 def index():
     return render_template('index.html')
 
-# Restante das rotas...
 
 @app.route('/loginadm', methods=['GET', 'POST'])
 def loginadm():
-    # Obter dados para o gráfico
     dados_predios = db.session.query(
         Reposicao.predio,
         func.sum(Reposicao.quantidade_reposicao).label('total_reposicao')
     ).group_by(Reposicao.predio).all()
 
-    # Obter dados para o formulário
     dados_formulario = db.session.query(
         Reposicao.predio,
         func.count(Reposicao.id_reposicao).label('reposicoes_pendentes')
     ).filter(Reposicao.status_reposicao == 'pendente').group_by(Reposicao.predio).all()
 
-    # Converter dados para JSON
     dados_predios_json = json.dumps(
         [{'predio': item.predio, 'total_reposicao': item.total_reposicao} for item in dados_predios], default=decimal_default)
 
@@ -83,12 +79,55 @@ def loginrec():
     else:
         print("Acesso não autorizado.")
         return redirect(url_for('fazer_login'))
+    
 
-
-@app.route('/abastecimento')
+@app.route('/abastecimento', methods=['GET', 'POST'])
 def abastecimento():
-    # Adicione qualquer lógica necessária aqui
-    return render_template('abastecimento.html')
+    estoque_repositor = None
+    mensagem = None
+
+    if request.method == 'POST':
+        print("Formulário enviado!")
+
+        predio = request.form['predio']
+        andar = request.form['andar']
+        ilha = request.form['ilha']
+        quantidade_reposicao = int(request.form['quantidade_reposicao'])
+
+        print(f"Dados do formulário: Predio={predio}, Andar={andar}, Ilha={ilha}, Quantidade={quantidade_reposicao}")
+
+        try:
+            repositorio = Repositor.query.get(1)
+            if repositorio:
+                estoque_repositor = repositorio.estoque
+                print(f"Estoque do Repositório: {estoque_repositor}")
+
+            nova_reposicao = Reposicao(
+                id_repositor=1,
+                data_reposicao=date.today(),
+                tipo_reposicao='Reabastecimento',
+                quantidade_reposicao=quantidade_reposicao,
+                andar=andar,
+                ilha=ilha,
+                estoque_restante=0,
+                predio=predio,
+                status_reposicao='pendente'
+            )
+
+            db.session.add(nova_reposicao)
+            db.session.commit()
+
+            mensagem = "Reabastecimento registrado no banco de dados!"
+            print(mensagem)
+
+        except Exception as e:
+            mensagem = f"Erro ao registrar reabastecimento no banco de dados: {str(e)}"
+            print(mensagem)
+
+        # Redirecionamento para evitar reenvio do formulário ao atualizar a página
+        return redirect(url_for('index', mensagem=mensagem))
+
+    return render_template('abastecimento.html', quantidade_estoque=estoque_repositor, mensagem_erro=None, mensagem=mensagem)
 
 
 @app.route('/verificar_conexao')

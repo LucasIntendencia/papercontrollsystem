@@ -1,11 +1,15 @@
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from flask import Flask
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = '67wIsZSXBrqIKR9j7EMdJkMGTboOphNX'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:Celeste123@localhost/papercontrolsystem'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
+
 
 class Usuario(db.Model):
     __tablename__ = 'usuarios'
@@ -28,7 +32,6 @@ def configure_database(app, database_uri):
     app.config['SQLALCHEMY_DATABASE_URI'] = database_uri
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-
 class Reposicao(db.Model):
     __tablename__ = 'reposicao'
     id_reposicao = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -36,8 +39,7 @@ class Reposicao(db.Model):
     data_reposicao = db.Column(db.Date, nullable=False)
     tipo_reposicao = db.Column(db.String(50), nullable=False)
     quantidade_reposicao = db.Column(db.Integer, nullable=False)
-    andar = db.Column(db.Integer, nullable=False)
-    ilha = db.Column(db.Integer, nullable=False)
-    estoque_restante = db.Column(db.Integer, nullable=False)
+    andar = db.Column(db.String(50), nullable=False) 
+    ilha = db.Column(db.String(50), nullable=False)
     predio = db.Column(db.String(50), nullable=False)
     status_reposicao = db.Column(db.String(20), nullable=False, default='pendente')
