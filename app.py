@@ -1,17 +1,35 @@
-from flask import Flask, render_template, request, jsonify, redirect, url_for
-from validation.validacoesLogin import verificar_credenciais
+from flask import Flask, render_template, request, redirect, url_for, jsonify
+from flask_login import LoginManager, UserMixin, login_required, login_user, current_user
 from database import configure_database, db, Usuario, Repositor, Reposicao
 from sqlalchemy import func
 import json
 from decimal import Decimal
-from datetime import date 
+from datetime import datetime
+import secrets
 
 app = Flask(__name__)
-
+app.secret_key = secrets.token_hex(32)
+print(app.secret_key)
 database_uri = 'mysql+mysqlconnector://root:Celeste123@localhost/papercontrolsystem'
 configure_database(app, database_uri)
-db.init_app(app)
+login_manager = LoginManager(app)
+login_manager.login_view = 'fazer_login'
 
+class User(UserMixin):
+    def __init__(self, user_id, tipo_user=None):
+        self.id = user_id
+        self.tipo_user = tipo_user
+
+    @staticmethod
+    def load_user(user_id):
+        return Usuario.query.get(int(user_id))
+
+@login_manager.user_loader
+def load_user(user_id):
+    usuario = Usuario.query.get(int(user_id))
+    if usuario:
+        return User(usuario.id_user, usuario.tipo_user)
+    return None
 
 def decimal_default(obj):
     if isinstance(obj, Decimal):
@@ -20,11 +38,60 @@ def decimal_default(obj):
 
 
 @app.route('/')
+@login_required
 def index():
-    return render_template('index.html')
+    if current_user.tipo_user == 'repositor':
+        return redirect(url_for('loginrec'))
+    elif current_user.tipo_user == 'administrador':
+        return redirect(url_for('loginadm'))
+    else:
+        # Adicione um redirecionamento padrão ou renderize a página desejada.
+        return render_template('pagina_padrao.html')
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def fazer_login():
+    if request.method == 'POST':
+        email = request.form['email']
+        senha = request.form['senha']
+
+        usuario = Usuario.query.filter_by(email=email, senha=senha).first()
+
+        if usuario:
+            user = User(usuario.id_user, usuario.tipo_user)
+            login_user(user)
+
+            if usuario.tipo_user == 'repositor':
+                return redirect(url_for('loginrec'))
+            elif usuario.tipo_user == 'administrador':
+                return redirect(url_for('loginadm'))
+
+        else:
+            # Se as credenciais do usuário não forem válidas, você pode retornar uma mensagem de erro.
+            return render_template('login.html', mensagem_erro="Credenciais inválidas. Tente novamente.")
+
+    # Se o método não for POST, apenas renderize o template de login.
+    return render_template('login.html')
+
+
+@app.route('/loginrec', methods=['GET', 'POST'])
+@login_required
+def loginrec():
+    print("Rota loginrec acionada.")
+    usuario = Usuario.query.filter_by(id_user=current_user.id, tipo_user="repositor").first()
+
+    if usuario and usuario.repositor:
+        # Acesse o objeto Repositor diretamente
+        repositorio = usuario.repositor
+        estoque_repositor = repositorio.estoque
+        return render_template('loginrec.html', quantidade_estoque=estoque_repositor, mensagem_erro=None)
+    else:
+        print("Acesso não autorizado.")
+        return redirect(url_for('fazer_login'))
 
 
 @app.route('/loginadm', methods=['GET', 'POST'])
+@login_required
 def loginadm():
     dados_predios = db.session.query(
         Reposicao.predio,
@@ -42,46 +109,8 @@ def loginadm():
     return render_template('loginadm.html', dados_predios=dados_predios_json, dados_formulario=dados_formulario)
 
 
-@app.route('/login', methods=['GET', 'POST'])
-def fazer_login():
-    if request.method == 'POST':
-        email = request.form['email']
-        senha = request.form['senha']
-
-        usuario = Usuario.query.filter_by(email=email, senha=senha).first()
-
-        # Debugging - imprima informações relevantes
-        print("Usuário (login):", usuario)
-
-        if usuario:
-            if usuario.tipo_user == "administrador":
-                print("Redirecionando para /loginadm")
-                return redirect(url_for('loginadm', email=email))
-            elif usuario.tipo_user == "repositor":
-                return redirect(url_for('loginrec', email=email))
-            else:
-                return render_template('login.html', mensagem_falha=True)
-
-    return render_template('login.html')
-
-@app.route('/loginrec', methods=['GET', 'POST'])
-def loginrec():
-    # Obtenha o email da query string
-    email_exemplo = request.args.get('email')
-    usuario = Usuario.query.filter_by(
-        email=email_exemplo, tipo_user="repositor").first()
-
-    if usuario and usuario.repositor:
-        # Acesse o objeto Repositor diretamente
-        repositorio = usuario.repositor
-        estoque_repositor = repositorio.estoque
-        return render_template('loginrec.html', quantidade_estoque=estoque_repositor, mensagem_erro=None)
-    else:
-        print("Acesso não autorizado.")
-        return redirect(url_for('fazer_login'))
-    
-
 @app.route('/abastecimento', methods=['GET', 'POST'])
+@login_required
 def abastecimento():
     estoque_repositor = None
     mensagem = None
@@ -97,35 +126,47 @@ def abastecimento():
         print(f"Dados do formulário: Predio={predio}, Andar={andar}, Ilha={ilha}, Quantidade={quantidade_reposicao}")
 
         try:
-            repositorio = Repositor.query.get(1)
-            if repositorio:
-                estoque_repositor = repositorio.estoque
-                print(f"Estoque do Repositório: {estoque_repositor}")
+            # Verifica se o usuário está autenticado
+            if current_user.is_authenticated:
+                # Obtenha o Repositor associado ao usuário logado
+                repositorio = Repositor.query.filter_by(usuario_id=current_user.id).first()
 
-            nova_reposicao = Reposicao(
-                id_repositor=1,
-                data_reposicao=date.today(),
-                tipo_reposicao='Reabastecimento',
-                quantidade_reposicao=quantidade_reposicao,
-                andar=andar,
-                ilha=ilha,
-                estoque_restante=0,
-                predio=predio,
-                status_reposicao='pendente'
-            )
+                if isinstance(repositorio, Repositor):
+                    estoque_repositor = repositorio.estoque
+                    print(f"Estoque do Repositório: {estoque_repositor}")
 
-            db.session.add(nova_reposicao)
-            db.session.commit()
+                    # Determina o tipo de reposição com base no botão clicado
+                    tipo_reposicao = request.form['tipo_reposicao']
 
-            mensagem = "Reabastecimento registrado no banco de dados!"
-            print(mensagem)
+                    # Cria uma data de reposição usando a data atual
+                    data_reposicao = datetime.now().date()
+
+                    nova_reposicao = Reposicao(
+                        id_repositor=repositorio.id_repositor,
+                        data_reposicao=data_reposicao,
+                        tipo_reposicao=tipo_reposicao,
+                        quantidade_reposicao=quantidade_reposicao,
+                        andar=andar,
+                        ilha=ilha,
+                        predio=predio,
+                        status_reposicao='OK'  # Muda o status para "OK"
+                    )
+
+                    repositorio.estoque -= quantidade_reposicao
+
+                    db.session.add(nova_reposicao)
+                    db.session.commit()
+
+                    mensagem = "Reabastecimento registrado no banco de dados!"
+                    print(mensagem)
+
+                else:
+                    mensagem = "Erro ao obter o repositório associado ao usuário."
 
         except Exception as e:
+            db.session.rollback()
             mensagem = f"Erro ao registrar reabastecimento no banco de dados: {str(e)}"
             print(mensagem)
-
-        # Redirecionamento para evitar reenvio do formulário ao atualizar a página
-        return redirect(url_for('index', mensagem=mensagem))
 
     return render_template('abastecimento.html', quantidade_estoque=estoque_repositor, mensagem_erro=None, mensagem=mensagem)
 

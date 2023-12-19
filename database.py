@@ -1,14 +1,11 @@
-from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
 
-app = Flask(__name__)
-app.config['SECRET_KEY'] = '67wIsZSXBrqIKR9j7EMdJkMGTboOphNX'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:Celeste123@localhost/papercontrolsystem'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy()
 
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
+def configure_database(app, database_uri):
+    app.config['SQLALCHEMY_DATABASE_URI'] = database_uri
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    db.init_app(app)
 
 
 class Usuario(db.Model):
@@ -20,6 +17,18 @@ class Usuario(db.Model):
     senha = db.Column(db.String(255), nullable=False)
     tipo_user = db.Column(db.String(50), nullable=False)
 
+    def get_id(self):
+        return str(self.id_user)
+
+    def is_active(self):
+        return True
+
+    def is_authenticated(self):
+        return True if self else False
+
+    def is_anonymous(self):
+        return False
+
 class Repositor(db.Model):
     __tablename__ = 'repositor'
 
@@ -27,10 +36,6 @@ class Repositor(db.Model):
     usuario_id = db.Column(db.Integer, db.ForeignKey('usuario.id_user'))
     usuario = db.relationship('Usuario', back_populates='repositor')
     estoque = db.Column(db.Integer, nullable=False)
-    
-def configure_database(app, database_uri):
-    app.config['SQLALCHEMY_DATABASE_URI'] = database_uri
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 class Reposicao(db.Model):
     __tablename__ = 'reposicao'
@@ -43,3 +48,8 @@ class Reposicao(db.Model):
     ilha = db.Column(db.String(50), nullable=False)
     predio = db.Column(db.String(50), nullable=False)
     status_reposicao = db.Column(db.String(20), nullable=False, default='pendente')
+
+def configure_database(app, database_uri):
+    app.config['SQLALCHEMY_DATABASE_URI'] = database_uri
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    db.init_app(app)

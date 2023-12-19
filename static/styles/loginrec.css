@@ -2,16 +2,16 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', Arial, sans-serif;
-    background-image: url('../images/home.png');
+    background-image: url('../images/background-zezinho.png');
     background-size: cover;
     background-position: center;
     display: grid;
     grid-template-rows: auto 1fr;
     height: 100vh;
 }
- 
+
 /* Cabecalho e conteúdo */
- 
+
 .cabecalho {
     display: flex;
     justify-content: space-between;
@@ -20,7 +20,7 @@ body {
     background-color: #1A5A6B;
     margin-top: 15px;
 }
- 
+
 .content {
     display: flex;
     flex-direction: column;
@@ -28,9 +28,9 @@ body {
     align-items: center;
     padding: 20px;
 }
- 
+
 /* Botões e informações de estoque */
- 
+
 .button-container {
     display: flex;
     flex-direction: column;
@@ -38,20 +38,8 @@ body {
     align-items: center;
     margin-bottom: 100px;
 }
- 
-.estoque-info {
-    text-align: center;
-    background-color: black;
-    border-radius: 10px;
-    color: white;
-    /* Reduzi um pouco a largura para evitar problemas */
-    max-width: 400px;
-    /* Limitando a largura máxima */
-    margin-top: -60px;
-}
- 
-/* Botões específicos */
- 
+
+
 .PaperCS {
     margin: 10px;
     padding: 10px 15px;
@@ -65,7 +53,7 @@ body {
     outline: none;
     text-decoration: none;
 }
- 
+
 .Semanal,
 .Pontual,
 .Reabastecimento {
@@ -81,16 +69,13 @@ body {
     outline: none;
     text-decoration: none;
 }
- 
+
 .exitbutton {
     width: 26%;
     text-decoration: none;
     margin-right: -70px;
 }
- 
- 
- 
- 
+
 .zezinhobola {
     width: 100px;
     height: 100px;
@@ -101,23 +86,46 @@ body {
     background-color: transparent;
     margin-top: 20px;
 }
- 
+
+/* Botões e informações de estoque */
+
+.estoque-info {
+    text-align: center;
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+    max-width: 350px;
+    margin-top: -80px;
+    padding: 20px;
+    border-radius: 25px;
+}
+
+.estoque-info p:nth-child(2) {
+    font-size: 24px; 
+    margin: 10;
+}
+
 /* Media Query para dispositivos menores */
- 
+
 @media only screen and (max-width: 600px) {
     .button-container {
         margin-top: 40px;
-        /* Ajuste a margem superior para dispositivos menores */
     }
- 
+
     .estoque-info {
-        width: 100%;
-        margin-left: -30px;
-        padding: 30px;
+        width: 130%;
+        margin-left: -50px;
+        padding: 35px;
     }
- 
-    .zezinhobola {
-        width: 100px;
-        height: 100px;
-    }
+}
+
+
+.button-container {
+    margin-top: 40px;
+    /* Ajuste a margem superior para dispositivos menores */
+}
+
+.zezinhobola {
+    width: 100px;
+    height: 100px;
 }
