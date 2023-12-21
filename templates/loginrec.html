@@ -1,5 +1,5 @@
 <html lang="pt-BR">
-
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +7,21 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/loginrec.css') }}">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
-
+ 
 <form method="post" action="{{ url_for('loginrec') }}">
+ 
     <body>
         <div class="cabecalho">
             <a href="{{ url_for('loginrec') }}" class="PaperCS">Paper Controll System</a>
-            <a href="{{ url_for('loginrec') }}" class="exitbutton">
-                <img src="../static/images/exitbutton.png" alt="Botão Pequeno" class="exitbutton">
+            <a href="{{ url_for('fazer_login') }}" class="exitbutton">
+                <img src="../static/images/exitbutton.png" alt="Botão Pequeno">
             </a>
         </div>
         <div class="content">
             <div class="button-container">
                 <a href="{{ url_for('abastecimento') }}" class="Semanal">Abastecimento Semanal</a>
-                <a href="{{ url_for('abastecimento') }}" class="Pontual">Abastecimento Pontual</a>
-                <button class="Reabastecimento">Solicitar Reabastecimento</button>
+                <a href="{{ url_for('abastecimentoP') }}" class="Pontual">Abastecimento Pontual</a>
+                <a href="{{ url_for('reabastecimento') }}" class="Reabastecimento">Solicitar Reabastecimento</a>
             </div>
     </body>
 </form>
@@ -28,15 +29,19 @@
     {% if quantidade_estoque is defined %}
     <div class="estoque-info">
         <p>Seu estoque atual:</p>
-        <p>{{ quantidade_estoque }}</p>
+        <p>
+            <!-- Use uma span para envolver apenas o número -->
+            <span class="numero-estoque">{{ quantidade_estoque }}</span>
+        </p>
         <p> resma(s)</p>
     </div>
     {% else %}
     <p>{{ mensagem_erro }}</p>
     {% endif %}
+ 
 </footer>
 <button class="zezinhobola"></button>
 </div>
 </body>
-
+ 
 </html>

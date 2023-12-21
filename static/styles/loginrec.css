@@ -9,9 +9,9 @@ body {
     grid-template-rows: auto 1fr;
     height: 100vh;
 }
-
+ 
 /* Cabecalho e conteúdo */
-
+ 
 .cabecalho {
     display: flex;
     justify-content: space-between;
@@ -20,7 +20,7 @@ body {
     background-color: #1A5A6B;
     margin-top: 15px;
 }
-
+ 
 .content {
     display: flex;
     flex-direction: column;
@@ -28,9 +28,9 @@ body {
     align-items: center;
     padding: 20px;
 }
-
+ 
 /* Botões e informações de estoque */
-
+ 
 .button-container {
     display: flex;
     flex-direction: column;
@@ -38,8 +38,25 @@ body {
     align-items: center;
     margin-bottom: 100px;
 }
-
-
+ 
+.estoque-info {
+    text-align: center;
+    background-color: black;
+    border-radius: 15px;
+    color: white;
+    /* Reduzi um pouco a largura para evitar problemas */
+    max-width: 400px;
+    /* Limitando a largura máxima */
+    margin-top: -80px;
+}
+ 
+.numero-estoque {
+    font-size: 50px;
+    /* Ajuste o tamanho conforme necessário */
+}
+ 
+/* Botões específicos */
+ 
 .PaperCS {
     margin: 10px;
     padding: 10px 15px;
@@ -53,7 +70,7 @@ body {
     outline: none;
     text-decoration: none;
 }
-
+ 
 .Semanal,
 .Pontual,
 .Reabastecimento {
@@ -69,13 +86,16 @@ body {
     outline: none;
     text-decoration: none;
 }
-
+ 
 .exitbutton {
-    width: 26%;
+    width: 28%;
     text-decoration: none;
-    margin-right: -70px;
+    margin-right: -78px;
 }
-
+ 
+ 
+ 
+ 
 .zezinhobola {
     width: 100px;
     height: 100px;
@@ -86,46 +106,43 @@ body {
     background-color: transparent;
     margin-top: 20px;
 }
-
-/* Botões e informações de estoque */
-
-.estoque-info {
-    text-align: center;
-    background-color: black;
-    border-radius: 10px;
-    color: white;
-    max-width: 350px;
-    margin-top: -80px;
-    padding: 20px;
-    border-radius: 25px;
-}
-
-.estoque-info p:nth-child(2) {
-    font-size: 24px; 
-    margin: 10;
-}
-
+ 
 /* Media Query para dispositivos menores */
-
+ 
 @media only screen and (max-width: 600px) {
     .button-container {
         margin-top: 40px;
+        /* Ajuste a margem superior para dispositivos menores */
     }
-
+ 
+    .Semanal,
+    .Pontual,
+    .Reabastecimento {
+        width: 100%;
+        font-size: 24px;
+        padding: 16px;
+        margin: 12px auto;
+        border-radius: 15px;
+        border: none;
+        cursor: pointer;
+        background-color: #23A0BA;
+        color: white;
+        outline: none;
+        text-decoration: none;
+        text-align: center;
+        display: block;
+        margin-left: -22px;
+    }
+ 
     .estoque-info {
-        width: 130%;
-        margin-left: -50px;
-        padding: 35px;
+        width: 120%;
+        padding: 10px 40%;
+        margin-left: -54%;
     }
-}
-
-
-.button-container {
-    margin-top: 40px;
-    /* Ajuste a margem superior para dispositivos menores */
-}
-
-.zezinhobola {
-    width: 100px;
-    height: 100px;
+ 
+    .zezinhobola {
+        width: 100px;
+        height: 100px;
+        margin-left: -4%;
+    }
 }

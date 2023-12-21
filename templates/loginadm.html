@@ -25,8 +25,11 @@
             <button class="Relatorio">Gerar Relatorio</button>
         </div>
         <div class="grafico-container">
-            <canvas id="graficoColunas" class="grafico-colunas"></canvas>
+            <a href="{{ url_for('adminfo') }}" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <canvas id="graficoColunas" class="grafico-colunas"></canvas>
+            </a>
         </div>
+        
         <script>
             const ctx = document.getElementById('graficoColunas').getContext('2d');
         

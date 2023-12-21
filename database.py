@@ -1,12 +1,8 @@
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 db = SQLAlchemy()
-
-def configure_database(app, database_uri):
-    app.config['SQLALCHEMY_DATABASE_URI'] = database_uri
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    db.init_app(app)
-
+migrate = Migrate()
 
 class Usuario(db.Model):
     __tablename__ = 'usuarios'
@@ -48,8 +44,32 @@ class Reposicao(db.Model):
     ilha = db.Column(db.String(50), nullable=False)
     predio = db.Column(db.String(50), nullable=False)
     status_reposicao = db.Column(db.String(20), nullable=False, default='pendente')
+    
+class InfoAndar(db.Model):
+    __tablename__ = 'info_andar'
+
+    id_info_andar = db.Column(db.Integer, primary_key=True)
+    andar = db.Column(db.String(50), nullable=False)
+    num_ilhas = db.Column(db.Integer, nullable=False)
+    predio = db.Column(db.String(50), db.ForeignKey('reposicao.predio'), nullable=False)
+
+    # Relacionamento com a tabela Reposicao
+    reposicoes = db.relationship('Reposicao', backref='info_andar')
+
+class Reabastecimento(db.Model):
+    __tablename__ = 'reabastecimento'
+ 
+    id_reabastecimento = db.Column(db.Integer, primary_key=True)
+    quantidade_reabastecimento = db.Column(db.Integer)
+    id_repositor = db.Column(
+        db.Integer, db.ForeignKey('repositor.id_repositor'))
+    estoque_atualizado = db.Column(db.Integer)
+ 
+    def __repr__(self):
+        return f"<Reabastecimento {self.id_reabastecimento}>"
 
 def configure_database(app, database_uri):
     app.config['SQLALCHEMY_DATABASE_URI'] = database_uri
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.init_app(app)
+    migrate.init_app(app, db)

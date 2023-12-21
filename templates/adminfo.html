@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaperControllSystem ADM</title>
+    <link rel="stylesheet" href="../static/styles/adminfo.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="cabecalho">
+        <a href="{{ url_for('loginadm') }}" class="PaperCS">Paper Control System</a>
+        <a href="{{ url_for('fazer_login') }}" class="exitbutton">
+            <img src="../static/images/exitbutton.png" alt="Botão Pequeno" class="exitbutton">
+        </a>
+    </div>
+
+    <div class="container">
+        <div class="button-container">
+            <div class="predios">
+                <select id="predio" name="predio" onchange="carregarAndares()">
+                    <option value="" selected disabled hidden>Selecione o prédio</option>
+                    {% for predio in lista_predios %}
+                        <option value="{{ predio }}">{{ predio }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div id="infoAndares" style="color: white;">
+                {% if dados_andares %}
+                    <h3>Informações dos Andares:</h3>
+                    <ul>
+                        {% for andar in dados_andares %}
+                            <li>Andar {{ andar.andar }}: {{ andar.num_ilhas }} ilhas</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>Nenhuma informação disponível para o prédio selecionado.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function carregarAndares() {
+            const selectedBuilding = document.getElementById('predio').value;
+
+            if (selectedBuilding) {
+                axios.get(`/obter-status-andares?predio=${selectedBuilding}`)
+                    .then(response => {
+                        // Processar os dados e exibir na div "infoAndares"
+                        const data = response.data;
+                        let infoHTML = '<h3>Informações dos Andares:</h3><ul>';
+                        for (const item of data) {
+                            infoHTML += `<li>Andar ${item.andar}: ${item.status === 'OK' ? '<span style="color:green;">OK</span>' : '<span style="color:yellow;">PENDENTE</span>'}</li>`;
+                        }
+                        infoHTML += '</ul>';
+                        document.getElementById('infoAndares').innerHTML = infoHTML;
+                    })
+                    .catch(error => {
+                        console.error('Erro ao buscar dados:', error);
+                        document.getElementById('infoAndares').innerHTML = '<p>Ocorreu um erro ao obter informações dos andares.</p>';
+                    });
+            } else {
+                document.getElementById('infoAndares').innerHTML = '';
+            }
+        }
+    </script>
+</body>
+
+</html>

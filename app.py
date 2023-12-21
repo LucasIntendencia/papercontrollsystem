@@ -1,17 +1,17 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 from flask_login import LoginManager, UserMixin, login_required, login_user, current_user
-from database import configure_database, db, Usuario, Repositor, Reposicao
+from database import configure_database, db, Usuario, Repositor, Reposicao, InfoAndar
 from sqlalchemy import func
 import json
 from decimal import Decimal
-from datetime import datetime
+from datetime import datetime, date
 import secrets
 
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(32)
 print(app.secret_key)
 database_uri = 'mysql+mysqlconnector://root:Celeste123@localhost/papercontrolsystem'
-configure_database(app, database_uri)
+configure_database(app, 'mysql+mysqlconnector://root:Celeste123@localhost/papercontrolsystem')
 login_manager = LoginManager(app)
 login_manager.login_view = 'fazer_login'
 
@@ -45,8 +45,7 @@ def index():
     elif current_user.tipo_user == 'administrador':
         return redirect(url_for('loginadm'))
     else:
-        # Adicione um redirecionamento padrão ou renderize a página desejada.
-        return render_template('pagina_padrao.html')
+        return render_template('login.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -169,6 +168,174 @@ def abastecimento():
             print(mensagem)
 
     return render_template('abastecimento.html', quantidade_estoque=estoque_repositor, mensagem_erro=None, mensagem=mensagem)
+
+@app.route('/abastecimentoP', methods=['GET', 'POST'])
+@login_required
+def abastecimentoP():
+    estoque_repositor = None
+    mensagem = None
+
+    if request.method == 'POST':
+        print("Formulário enviado!")
+
+        predio = request.form['predio']
+        andar = request.form['andar']
+        ilha = request.form['ilha']
+        quantidade_reposicao = int(request.form['quantidade_reposicao'])
+
+        print(f"Dados do formulário: Predio={predio}, Andar={andar}, Ilha={ilha}, Quantidade={quantidade_reposicao}")
+
+        try:
+            if current_user.is_authenticated:
+                # Obtenha o Repositor associado ao usuário logado
+                repositorio = Repositor.query.filter_by(usuario_id=current_user.id).first()
+
+                if isinstance(repositorio, Repositor):
+                    estoque_repositor = repositorio.estoque
+                    print(f"Estoque do Repositório: {estoque_repositor}")
+
+                    tipo_reposicao = request.form['tipo_reposicao']
+
+                    data_reposicao = datetime.now().date()
+
+                    nova_reposicao = Reposicao(
+                        id_repositor=repositorio.id_repositor,
+                        data_reposicao=data_reposicao,
+                        tipo_reposicao=tipo_reposicao,
+                        quantidade_reposicao=quantidade_reposicao,
+                        andar=andar,
+                        ilha=ilha,
+                        predio=predio,
+                        status_reposicao='OK'  # Muda o status para "OK"
+                    )
+
+                    repositorio.estoque -= quantidade_reposicao
+
+                    db.session.add(nova_reposicao)
+                    db.session.commit()
+
+                    mensagem = "Reabastecimento registrado no banco de dados!"
+                    print(mensagem)
+
+                else:
+                    mensagem = "Erro ao obter o repositório associado ao usuário."
+
+        except Exception as e:
+            db.session.rollback()
+            mensagem = f"Erro ao registrar reabastecimento no banco de dados: {str(e)}"
+            print(mensagem)
+
+    return render_template('abastecimento.html', quantidade_estoque=estoque_repositor, mensagem_erro=None, mensagem=mensagem)
+
+@app.route('/reabastecimento', methods=['GET', 'POST'])
+@login_required
+def reabastecimento():
+    if request.method == 'POST':
+        try:
+            predio = request.form['predio']
+            andar = request.form['andar']
+            quantidade_reposicao = int(request.form['quantidade_reposicao'])
+ 
+            # Consulta o Repositor existente
+            repositorio = db.session.query(Repositor).get(1)
+
+            if not repositorio:
+                # Se o Repositor não existir, você deve criar um
+                return redirect(url_for('reabastecimento'))
+
+            nova_reposicao = Reposicao(
+                id_repositor=repositorio.id_repositor, 
+                data_reposicao=date.today(),
+                tipo_reposicao='Reabastecimento',
+                quantidade_reposicao=quantidade_reposicao,
+                andar=andar,
+                predio=predio,
+                status_reposicao='pendente',
+            )
+ 
+            # Adicionar ao banco de dados e realizar o commit
+            db.session.add(nova_reposicao)
+            db.session.commit()
+ 
+            # Atualizar o estoque do Repositor correspondente
+            repositorio.estoque -= quantidade_reposicao
+            db.session.commit()
+ 
+            return redirect(url_for('reabastecimento'))
+ 
+        except Exception as e:
+            print(f"Erro ao processar formulário: {str(e)}")
+            return redirect(url_for('reabastecimento'))
+
+    # Se o método for GET, continua com o restante da função
+    try:
+        # Buscar a quantidade de estoque do repositório
+        repositorio = Repositor.query.get(1)
+        quantidade_estoque = repositorio.estoque if repositorio else 0
+ 
+        # Buscar todos os registros de reabastecimento
+        dados_reabastecimento = Reposicao.query.all()
+ 
+        return render_template('reabastecimento.html', dados_reabastecimento=dados_reabastecimento, quantidade_estoque=quantidade_estoque)
+ 
+    except Exception as e:
+        print(f"Erro ao buscar dados de reabastecimento: {str(e)}")
+        # Se ocorrer um erro, ainda renderiza a página
+        return render_template('reabastecimento.html', dados_reabastecimento=[], error_message="Erro ao buscar dados de reabastecimento")
+
+        
+
+@app.route('/adminfo')
+@login_required
+def adminfo():
+    try:
+        lista_predios = db.session.query(InfoAndar.predio).distinct().all()
+        predio_selecionado = request.args.get('predio')
+
+        dados_andares = None
+        if predio_selecionado:
+            dados_andares = db.session.query(
+                InfoAndar.andar,
+                InfoAndar.num_ilhas
+            ).filter_by(predio=predio_selecionado).all()
+
+        dados_template = {
+            'lista_predios': [predio[0] for predio in lista_predios],
+            'dados_andares': dados_andares
+        }
+
+        return render_template('adminfo.html', **dados_template)
+
+    except Exception as e:
+        print(f'Erro: {str(e)}')
+        return render_template('adminfo.html', lista_predios=[], dados_andares=None)
+
+@app.route('/obter-status-andares', methods=['GET'])
+@login_required
+def obter_status_andares():
+    try:
+        predio_selecionado = request.args.get('predio')
+        andares_info = db.session.query(
+            InfoAndar.andar,
+            func.coalesce(Reposicao.status_reposicao, 'OK').label('status_reposicao')
+        ).outerjoin(
+            Reposicao,
+            (InfoAndar.andar == Reposicao.andar) & (InfoAndar.predio == Reposicao.predio)
+        ).filter(InfoAndar.predio == predio_selecionado).all()
+
+        # Remover duplicatas de andares
+        andares_unicos = set()
+        andares_filtrados = []
+        for andar, status in andares_info:
+            if andar not in andares_unicos:
+                andares_filtrados.append({'andar': andar, 'status': status})
+                andares_unicos.add(andar)
+
+        return jsonify(andares_filtrados)
+
+    except Exception as e:
+        return jsonify({'erro': f'Erro ao obter dados dos andares: {str(e)}'}), 500
+
 
 
 @app.route('/verificar_conexao')
