@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 from flask_login import LoginManager, UserMixin, login_required, login_user, current_user
-from database import configure_database, db, Usuario, Repositor, Reposicao, InfoAndar
+from database import configure_database, db, Usuario, Reposicao, InfoAndar
 from sqlalchemy import func
 import json
 from decimal import Decimal
@@ -79,14 +79,14 @@ def loginrec():
     print("Rota loginrec acionada.")
     usuario = Usuario.query.filter_by(id_user=current_user.id, tipo_user="repositor").first()
 
-    if usuario and usuario.repositor:
-        # Acesse o objeto Repositor diretamente
-        repositorio = usuario.repositor
-        estoque_repositor = repositorio.estoque
+    if usuario:
+        # Acesse o estoque diretamente da tabela de usuários
+        estoque_repositor = usuario.estoque
         return render_template('loginrec.html', quantidade_estoque=estoque_repositor, mensagem_erro=None)
     else:
         print("Acesso não autorizado.")
         return redirect(url_for('fazer_login'))
+
 
 
 @app.route('/loginadm', methods=['GET', 'POST'])
@@ -128,9 +128,9 @@ def abastecimento():
             # Verifica se o usuário está autenticado
             if current_user.is_authenticated:
                 # Obtenha o Repositor associado ao usuário logado
-                repositorio = Repositor.query.filter_by(usuario_id=current_user.id).first()
+                repositorio = Usuario.query.filter_by(id_user=current_user.id).first()
 
-                if isinstance(repositorio, Repositor):
+                if isinstance(repositorio, Usuario):
                     estoque_repositor = repositorio.estoque
                     print(f"Estoque do Repositório: {estoque_repositor}")
 
@@ -141,7 +141,7 @@ def abastecimento():
                     data_reposicao = datetime.now().date()
 
                     nova_reposicao = Reposicao(
-                        id_repositor=repositorio.id_repositor,
+                        id_user=current_user.id,
                         data_reposicao=data_reposicao,
                         tipo_reposicao=tipo_reposicao,
                         quantidade_reposicao=quantidade_reposicao,
@@ -187,10 +187,9 @@ def abastecimentoP():
 
         try:
             if current_user.is_authenticated:
-                # Obtenha o Repositor associado ao usuário logado
-                repositorio = Repositor.query.filter_by(usuario_id=current_user.id).first()
+                repositorio = Usuario.query.filter_by(id_user=current_user.id).first()
 
-                if isinstance(repositorio, Repositor):
+                if isinstance(repositorio, Usuario):
                     estoque_repositor = repositorio.estoque
                     print(f"Estoque do Repositório: {estoque_repositor}")
 
@@ -199,7 +198,7 @@ def abastecimentoP():
                     data_reposicao = datetime.now().date()
 
                     nova_reposicao = Reposicao(
-                        id_repositor=repositorio.id_repositor,
+                        id_user=current_user.id,
                         data_reposicao=data_reposicao,
                         tipo_reposicao=tipo_reposicao,
                         quantidade_reposicao=quantidade_reposicao,
@@ -232,58 +231,30 @@ def abastecimentoP():
 def reabastecimento():
     if request.method == 'POST':
         try:
-            predio = request.form['predio']
-            andar = request.form['andar']
-            quantidade_reposicao = int(request.form['quantidade_reposicao'])
- 
-            # Consulta o Repositor existente
-            repositorio = db.session.query(Repositor).get(1)
+            # ... (código existente)
 
-            if not repositorio:
-                # Se o Repositor não existir, você deve criar um
-                return redirect(url_for('reabastecimento'))
-
-            nova_reposicao = Reposicao(
-                id_repositor=repositorio.id_repositor, 
-                data_reposicao=date.today(),
-                tipo_reposicao='Reabastecimento',
-                quantidade_reposicao=quantidade_reposicao,
-                andar=andar,
-                predio=predio,
-                status_reposicao='pendente',
-            )
- 
-            # Adicionar ao banco de dados e realizar o commit
-            db.session.add(nova_reposicao)
-            db.session.commit()
- 
-            # Atualizar o estoque do Repositor correspondente
-            repositorio.estoque -= quantidade_reposicao
-            db.session.commit()
- 
             return redirect(url_for('reabastecimento'))
- 
+
         except Exception as e:
             print(f"Erro ao processar formulário: {str(e)}")
             return redirect(url_for('reabastecimento'))
 
     # Se o método for GET, continua com o restante da função
     try:
-        # Buscar a quantidade de estoque do repositório
-        repositorio = Repositor.query.get(1)
-        quantidade_estoque = repositorio.estoque if repositorio else 0
- 
+        # Buscar a quantidade de estoque do usuário logado
+        usuario = Usuario.query.filter_by(id_user=current_user.id).first()
+        quantidade_estoque = usuario.estoque if usuario else 0
+
         # Buscar todos os registros de reabastecimento
         dados_reabastecimento = Reposicao.query.all()
- 
+
         return render_template('reabastecimento.html', dados_reabastecimento=dados_reabastecimento, quantidade_estoque=quantidade_estoque)
- 
+
     except Exception as e:
         print(f"Erro ao buscar dados de reabastecimento: {str(e)}")
         # Se ocorrer um erro, ainda renderiza a página
-        return render_template('reabastecimento.html', dados_reabastecimento=[], error_message="Erro ao buscar dados de reabastecimento")
+        return render_template('reabastecimento.html', dados_reabastecimento=[], quantidade_estoque=0, error_message="Erro ao buscar dados de reabastecimento")
 
-        
 
 @app.route('/adminfo')
 @login_required
@@ -337,7 +308,6 @@ def obter_status_andares():
         return jsonify({'erro': f'Erro ao obter dados dos andares: {str(e)}'}), 500
 
 
-
 @app.route('/verificar_conexao')
 def verificar_conexao():
     try:
@@ -347,17 +317,11 @@ def verificar_conexao():
             'id_user': user.id_user,
             'email': user.email,
             'senha': user.senha,
-            'tipo_user': user.tipo_user
+            'tipo_user': user.tipo_user,
+            'estoque': user.estoque
         }for user in users]
 
-        repositors = Repositor.query.all()
-
-        repositors_data = [{
-            'id_repositor': repositor.id_repositor,
-            'usuario_id': repositor.usuario_id,
-            'estoque:': repositor.estoque
-        }for repositor in repositors]
-        return jsonify(users_data, repositors_data)
+        return jsonify(users_data)
     except Exception as e:
         return f'Erro ao verificar a conexão: {str(e)}'
 

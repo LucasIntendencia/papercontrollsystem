@@ -6,12 +6,15 @@ migrate = Migrate()
 
 class Usuario(db.Model):
     __tablename__ = 'usuarios'
+
     id_user = db.Column(db.Integer, primary_key=True)
-    id_repositor = db.Column(db.Integer, db.ForeignKey('repositor.id_repositor'), unique=True, nullable=True)
-    repositor = db.relationship('Repositor', back_populates='usuario', uselist=False)
-    email = db.Column(db.String(255), nullable=False, unique=True)
+    nome = db.Column(db.String(255), nullable=False)
+    email = db.Column(db.String(255), unique=True, nullable=False)
+    cpf = db.Column(db.String(11), nullable=False)
     senha = db.Column(db.String(255), nullable=False)
     tipo_user = db.Column(db.String(50), nullable=False)
+    estoque = db.Column(db.Integer, nullable=False, default=0)
+
 
     def get_id(self):
         return str(self.id_user)
@@ -25,18 +28,10 @@ class Usuario(db.Model):
     def is_anonymous(self):
         return False
 
-class Repositor(db.Model):
-    __tablename__ = 'repositor'
-
-    id_repositor = db.Column(db.Integer, primary_key=True)
-    usuario_id = db.Column(db.Integer, db.ForeignKey('usuario.id_user'))
-    usuario = db.relationship('Usuario', back_populates='repositor')
-    estoque = db.Column(db.Integer, nullable=False)
-
 class Reposicao(db.Model):
     __tablename__ = 'reposicao'
     id_reposicao = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    id_repositor = db.Column(db.Integer, db.ForeignKey('repositor.id_repositor'), nullable=False)
+    id_repositor = db.Column(db.Integer, db.ForeignKey('usuario.id_user'), nullable=False)  # Alteração aqui
     data_reposicao = db.Column(db.Date, nullable=False)
     tipo_reposicao = db.Column(db.String(50), nullable=False)
     quantidade_reposicao = db.Column(db.Integer, nullable=False)
@@ -44,6 +39,7 @@ class Reposicao(db.Model):
     ilha = db.Column(db.String(50), nullable=False)
     predio = db.Column(db.String(50), nullable=False)
     status_reposicao = db.Column(db.String(20), nullable=False, default='pendente')
+
     
 class InfoAndar(db.Model):
     __tablename__ = 'info_andar'
@@ -58,15 +54,15 @@ class InfoAndar(db.Model):
 
 class Reabastecimento(db.Model):
     __tablename__ = 'reabastecimento'
- 
+
     id_reabastecimento = db.Column(db.Integer, primary_key=True)
     quantidade_reabastecimento = db.Column(db.Integer)
-    id_repositor = db.Column(
-        db.Integer, db.ForeignKey('repositor.id_repositor'))
+    id_user = db.Column(db.Integer, db.ForeignKey('usuarios.id_user'))  # Adicionada a chave estrangeira para a tabela usuarios
     estoque_atualizado = db.Column(db.Integer)
- 
+
     def __repr__(self):
         return f"<Reabastecimento {self.id_reabastecimento}>"
+
 
 def configure_database(app, database_uri):
     app.config['SQLALCHEMY_DATABASE_URI'] = database_uri
