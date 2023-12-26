@@ -579,3 +579,129 @@ ERROR:root:Erro ao processar requisição: (mysql.connector.errors.ProgrammingErro
 INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:18:58] "POST /reabastecimento HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:18:58] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:18:58] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro ao processar requisição: (mysql.connector.errors.ProgrammingError) 1146 (42S02): Table 'papercontrolsystem.repositor' doesn't exist
+[SQL: INSERT INTO reabastecimento (quantidade_reabastecimento, id_user, andar, predio) VALUES (%(quantidade_reabastecimento)s, %(id_user)s, %(andar)s, %(predio)s)]
+[parameters: {'quantidade_reabastecimento': '2', 'id_user': 10, 'andar': 'Andar 3', 'predio': 'gerais'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:47] "POST /reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:47] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:47] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:47] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro ao processar requisição: (mysql.connector.errors.ProgrammingError) 1146 (42S02): Table 'papercontrolsystem.repositor' doesn't exist
+[SQL: INSERT INTO reabastecimento (quantidade_reabastecimento, id_user, andar, predio) VALUES (%(quantidade_reabastecimento)s, %(id_user)s, %(andar)s, %(predio)s)]
+[parameters: {'quantidade_reabastecimento': '2', 'id_user': 10, 'andar': 'Andar 3', 'predio': 'gerais'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:47] "POST /reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:47] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:47] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:48] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:48] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:48] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:48] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:48] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:49] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:49] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:49] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:50] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:50] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:50] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:50] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:51] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:51] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:51] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:51] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:51] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:51] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:root:Página de reabastecimento carregada com sucesso.
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:52] "GET /reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:52] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:52] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:52] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro ao processar requisição: (mysql.connector.errors.ProgrammingError) 1146 (42S02): Table 'papercontrolsystem.repositor' doesn't exist
+[SQL: INSERT INTO reabastecimento (quantidade_reabastecimento, id_user, andar, predio) VALUES (%(quantidade_reabastecimento)s, %(id_user)s, %(andar)s, %(predio)s)]
+[parameters: {'quantidade_reabastecimento': '3', 'id_user': 10, 'andar': 'Andar 3', 'predio': 'gerais'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:56] "POST /reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:57] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 13:52:57] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:02:36] "[32mGET /loginrec HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:02:36] "GET /login?next=/loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:02:36] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:02:36] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:02:36] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:02:37] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:02:37] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:02:37] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:02:37] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:02:37] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:02:37] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:root:Página de reabastecimento carregada com sucesso.
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:02:38] "GET /reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:02:38] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:02:38] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:02:38] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro ao processar requisição: (mysql.connector.errors.ProgrammingError) 1146 (42S02): Table 'papercontrolsystem.repositor' doesn't exist
+[SQL: INSERT INTO reabastecimento (quantidade_reabastecimento, id_user, andar, predio) VALUES (%(quantidade_reabastecimento)s, %(id_user)s, %(andar)s, %(predio)s)]
+[parameters: {'quantidade_reabastecimento': '5', 'id_user': 10, 'andar': 'Andar 3', 'predio': 'gerais'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:02:42] "POST /reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:02:42] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:02:42] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:07:04] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:07:04] "GET /login?next=/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:07:04] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:07:04] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:07:04] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:07:06] "GET /verificar_conexao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:10:01] "GET /verificar_conexao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:01] "[32mPOST /reabastecimento HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:01] "GET /login?next=/reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:01] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:01] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:01] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:03] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:03] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:03] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:03] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:03] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:03] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:root:Página de reabastecimento carregada com sucesso.
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:05] "GET /reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:05] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:05] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:05] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:root:Reabastecimento solicitado com sucesso.
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:11] "[32mPOST /reabastecimento HTTP/1.1[0m" 302 -
+INFO:root:Página de reabastecimento carregada com sucesso.
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:11] "GET /reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:11] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:11] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:36] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:36] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:36] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:36] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:36] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:43] "GET /abastecimentoP HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:43] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:43] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:43] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:51] "POST /abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:51] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:51] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:51] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -

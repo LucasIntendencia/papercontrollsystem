@@ -11,9 +11,9 @@ import logging
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(32)
 print(app.secret_key)
-database_uri = 'mysql+mysqlconnector://estagiario:Celeste123@10.180.134.88:3306/papercontrolsystem'
+database_uri = 'mysql+mysqlconnector://root:Celeste123@localhost/papercontrol'
 configure_database(
-    app, 'mysql+mysqlconnector://estagiario:Celeste123@10.180.134.88:3306/papercontrolsystem')
+    app, 'mysql+mysqlconnector://root:Celeste123@localhost/papercontrol')
 login_manager = LoginManager(app)
 login_manager.login_view = 'fazer_login'
 logging.basicConfig(filename='erro.log', level=logging.INFO)
