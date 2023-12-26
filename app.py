@@ -226,17 +226,16 @@ def abastecimentoP():
  
                     db.session.add(nova_reposicao)
                     db.session.commit()
- 
-                    mensagem = "Reabastecimento registrado no banco de dados!"
-                    print(mensagem)
+                    
+                    logging.info('Reabastecimento registrado no banco de dados!')
  
                 else:
                     mensagem = "Erro ao obter o repositório associado ao usuário."
  
         except Exception as e:
             db.session.rollback()
-            mensagem = f"Erro ao registrar reabastecimento no banco de dados: {str(e)}"
-            print(mensagem)
+            logging.info('Erro ao registrar reabastecimento no banco de dados: {str(e)}')
+
  
     return render_template('abastecimento.html', quantidade_estoque=estoque, mensagem_erro=None, mensagem=mensagem)
   
@@ -249,42 +248,47 @@ def reabastecimento():
             # Capturar os dados do formulário
             andar = request.form.get('andar')
             predio = request.form.get('predio')
-            quantidade_reabastecimento = request.form.get('quantidade_reposicao')
-
+            quantidade_reabastecimento = int(request.form.get(
+                'quantidade_reposicao', 0))  # Converte para inteiro
+ 
             # Obter o usuário logado usando a variável current_user do Flask-Login
             usuario = Usuario.query.filter_by(id_user=current_user.id).first()
-
-            nova_reposicao = Reabastecimento(
-                id_user=usuario.id_user,
-                quantidade_reabastecimento=quantidade_reabastecimento,
-                andar=andar,
-                predio=predio
-            )
-
-            db.session.add(nova_reposicao)
-            db.session.commit()
-
-            logging.info('Reabastecimento solicitado com sucesso.')
-
+ 
+            # Incrementar o estoque do usuário com base na quantidade fornecida
+            if usuario and quantidade_reabastecimento > 0:
+                # Aumenta o estoque com a quantidade fornecida
+                usuario.estoque += quantidade_reabastecimento
+                db.session.commit()  # Salva a atualização do estoque
+ 
+                nova_reposicao = Reabastecimento(
+                    id_user=usuario.id_user,
+                    quantidade_reabastecimento=quantidade_reabastecimento,
+                    andar=andar,
+                    predio=predio
+                )
+ 
+                db.session.add(nova_reposicao)
+                db.session.commit()
+ 
+                logging.info('Reabastecimento solicitado com sucesso.')
+ 
             return redirect(url_for('reabastecimento'))
-
-        # Se o método for GET, continua com o restante da função
+ 
+        # Restante da função (GET request)
         if current_user.is_authenticated:
             usuario = Usuario.query.filter_by(id_user=current_user.id).first()
             quantidade_estoque = usuario.estoque if usuario else 0
-
-            # Buscar todos os registros de reabastecimento
+ 
             dados_reabastecimento = Reabastecimento.query.all()
-
+ 
             logging.info('Página de reabastecimento carregada com sucesso.')
-
+ 
             return render_template('reabastecimento.html', dados_reabastecimento=dados_reabastecimento, quantidade_estoque=quantidade_estoque)
-
+ 
     except Exception as e:
         logging.error(f"Erro ao processar requisição: {str(e)}")
-
+ 
     return render_template('reabastecimento.html', dados_reabastecimento=[], quantidade_estoque=0, error_message="Erro ao buscar dados de reabastecimento")
-
 
 @app.route('/adminfo')
 @login_required

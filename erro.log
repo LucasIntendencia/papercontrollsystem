@@ -705,3 +705,95 @@ INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:51] "POST /abastecimento HTTP/1.1
 INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:51] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:51] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:11:51] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:47:51] "[32mGET /loginrec HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:47:51] "GET /login?next=/loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:47:51] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:47:51] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:47:51] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:48:11] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:48:11] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:48:11] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:48:11] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:48:11] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:48:11] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:root:Página de reabastecimento carregada com sucesso.
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:48:15] "GET /reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:48:15] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:48:15] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:48:15] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:root:Reabastecimento solicitado com sucesso.
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:48:21] "[32mPOST /reabastecimento HTTP/1.1[0m" 302 -
+INFO:root:Página de reabastecimento carregada com sucesso.
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:48:21] "GET /reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:48:21] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:48:21] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:48:21] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:48:24] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:48:24] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:48:24] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:48:24] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:48:24] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:57:48] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:57:49] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:57:49] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:57:49] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:57:52] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:57:52] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:57:52] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:57:52] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:57:52] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:57:55] "POST /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:57:55] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:57:55] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:57:55] "POST /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:57:56] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:57:56] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:57:59] "GET /adminfo HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:57:59] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:57:59] "[36mGET /static/styles/adminfo.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:57:59] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:58:23] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:58:23] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:58:23] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:58:23] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:58:27] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:58:27] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:58:27] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:58:27] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:58:27] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:58:27] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:58:31] "GET /abastecimentoP HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:58:31] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:58:31] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:58:31] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:58:43] "POST /abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:58:43] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:58:43] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 14:58:43] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 15:02:52] "[32mGET /loginrec HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 15:02:52] "GET /login?next=/loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 15:02:52] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 15:02:52] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 15:02:52] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 15:02:54] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 15:02:54] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 15:02:54] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 15:02:54] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 15:02:54] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 15:02:54] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 15:02:55] "GET /abastecimentoP HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 15:02:55] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 15:02:55] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 15:02:55] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 15:03:01] "POST /abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 15:03:01] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 15:03:01] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Dec/2023 15:03:01] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
