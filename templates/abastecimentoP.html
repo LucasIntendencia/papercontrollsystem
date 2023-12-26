@@ -107,21 +107,70 @@
                     alert("Por favor, preencha todos os campos destacados em vermelho.");
                 }
             });
-    
             buildingDropdown.addEventListener('change', function () {
                 enableQuantityInput();
                 floorDropdown.selectedIndex = 0;
                 ilhaDropdown.selectedIndex = 0;
                 quantityInput.value = '';
                 quantityInput.disabled = true;
-    
-                // Restante do seu código...
+
+                const building = buildingDropdown.value;
+                floorDropdown.innerHTML = '<option value="" selected disabled hidden>Selecione o andar</option>';
+
+                if (building !== "") {
+                    const floorsData = {
+                        minas: ['Andar 1', 'Andar 2', 'Andar 3', 'Andar 4', 'Andar 5', 'Andar 6', 'Andar 7', 'Andar 8', 'Andar 9', 'Andar 10', 'Andar 11', 'Andar 12', 'Andar 13', 'Andar 14'],
+                        gerais: ['Andar 1', 'Andar 2', 'Andar 3', 'Andar 4', 'Andar 5', 'Andar 6', 'Andar 7', 'Andar 8', 'Andar 9', 'Andar 10', 'Andar 11', 'Andar 12', 'Andar 13', 'Andar 14'],
+                        alterosa: ['Andar 1'],
+                        tiradentes: ['Andar 1']
+                    };
+
+                    floorsData[building].forEach(floor => {
+                        const option = document.createElement('option');
+                        option.value = floor;
+                        option.textContent = floor;
+                        floorDropdown.appendChild(option);
+                    });
+                }
             });
-    
-            // Restante do seu código...
+
+            floorDropdown.addEventListener('change', function () {
+                enableQuantityInput();
+                ilhaDropdown.selectedIndex = 0;
+                quantityInput.value = '';
+                quantityInput.disabled = true;
+
+                const building = buildingDropdown.value;
+                const floor = floorDropdown.value;
+                ilhaDropdown.innerHTML = '<option value="" selected disabled hidden>Selecione a ilha</option>';
+
+                if (building !== "" && floor !== "") {
+                    const ilhasData = {
+                        minas: 8,
+                        gerais: 8,
+                        alterosa: 1,
+                        tiradentes: 1
+                    };
+
+                    for (let i = 1; i <= ilhasData[building]; i++) {
+                        const option = document.createElement('option');
+                        option.value = `Ilha ${i}`;
+                        option.textContent = `Ilha ${i}`;
+                        ilhaDropdown.appendChild(option);
+                    }
+                }
+            });
+
+            ilhaDropdown.addEventListener('change', function () {
+                enableQuantityInput();
+            });
+
+            quantityInput.addEventListener('input', function () {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+
         });
     </script>
-    
     <button class="Enviar" type="submit">Reabastecer</button>
 </form>
 

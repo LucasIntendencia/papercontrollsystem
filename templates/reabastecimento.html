@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
- 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,22 +8,22 @@
     <link rel="stylesheet" href="../static/styles/reabastecimento.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
- 
-<form method="post" action="{{ url_for('reabastecimento') }}">
-    <input type="hidden" name="repositor_id" value="{{ quantidade_estoque.id_repositor }}">
- 
-    <body>
+
+<body>
+    <form method="post" action="{{ url_for('reabastecimento') }}">
+        <input type="hidden" name="id_user" value="{{ quantidade_estoque.id_user }}">
+
         <div class="cabecalho">
             <a href="{{ url_for('loginrec') }}" class="PaperCS">Paper Controll System</a>
             <a href="{{ url_for('fazer_login') }}" class="exitbutton">
                 <img src="../static/images/exitbutton.png" alt="Botão Pequeno" class="exitbutton">
             </a>
         </div>
- 
+
         <div class="container">
             <div class="button-container">
                 <div class="predios">
-                    <select id="predio" , name="predio">
+                    <select id="predio" name="predio">
                         <option value="" selected disabled hidden>Selecione o prédio</option>
                         <option value="minas">Minas</option>
                         <option value="gerais">Gerais</option>
@@ -31,75 +31,86 @@
                         <option value="tiradentes">TiraDentes</option>
                     </select>
                 </div>
- 
+
                 <div class="andar">
                     <select id="andar" name="andar">
                         <option value="" selected disabled hidden>Selecione o andar</option>
                     </select>
                 </div>
- 
+
                 <input id="quantidade_reposicao" type="number" class="quantity-input" name="quantidade_reposicao"
                     placeholder="Quantidade">
             </div>
         </div>
-    </body>
- 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const buildingDropdown = document.getElementById('predio');
-            const floorDropdown = document.getElementById('andar');
-            const quantityInput = document.querySelector('.quantity-input');
-            const reabastecerBtn = document.querySelector('.Enviar');
-            quantityInput.disabled = true;
- 
-            function enableQuantityInput() {
-                const buildingSelected = buildingDropdown.value !== "";
-                const floorSelected = floorDropdown.value !== "";
- 
-                if (buildingSelected && floorSelected) {
-                    quantityInput.disabled = false;
-                } else {
-                    quantityInput.disabled = true;
-                }
-            }
- 
-            buildingDropdown.addEventListener('change', function () {
-                enableQuantityInput();
-                floorDropdown.selectedIndex = 0;
-                quantityInput.value = '';
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const buildingDropdown = document.getElementById('predio');
+                const floorDropdown = document.getElementById('andar');
+                const quantityInput = document.querySelector('.quantity-input');
+                const reabastecerBtn = document.querySelector('.Enviar');
                 quantityInput.disabled = true;
- 
-                const building = buildingDropdown.value;
-                floorDropdown.innerHTML = '<option value="" selected disabled hidden>Selecione o andar</option>';
- 
-                if (building !== "") {
-                    const floorsData = {
-                        minas: ['Andar 1', 'Andar 2', 'Andar 3', 'Andar 4', 'Andar 5', 'Andar 6', 'Andar 7', 'Andar 8', 'Andar 9', 'Andar 10', 'Andar 11', 'Andar 12', 'Andar 13', 'Andar 14'],
-                        gerais: ['Andar 1', 'Andar 2', 'Andar 3', 'Andar 4', 'Andar 5', 'Andar 6', 'Andar 7', 'Andar 8', 'Andar 9', 'Andar 10', 'Andar 11', 'Andar 12', 'Andar 13', 'Andar 14'],
-                        alterosa: ['Andar 1'],
-                        tiradentes: ['Andar 1']
-                    };
- 
-                    floorsData[building].forEach(floor => {
-                        const option = document.createElement('option');
-                        option.value = floor;
-                        option.textContent = floor;
-                        floorDropdown.appendChild(option);
-                    });
+
+                function enableQuantityInput() {
+                    const buildingSelected = buildingDropdown.value !== "";
+                    const floorSelected = floorDropdown.value !== "";
+
+                    if (buildingSelected && floorSelected) {
+                        quantityInput.disabled = false;
+                    } else {
+                        quantityInput.disabled = true;
+                    }
                 }
+
+                buildingDropdown.addEventListener('change', function () {
+                    enableQuantityInput();
+                    floorDropdown.selectedIndex = 0;
+                    quantityInput.value = '';
+                    quantityInput.disabled = true;
+
+                    const building = buildingDropdown.value;
+                    floorDropdown.innerHTML = '<option value="" selected disabled hidden>Selecione o andar</option>';
+
+                    if (building !== "") {
+                        const floorsData = {
+                            minas: ['Andar 1', 'Andar 2', 'Andar 3', 'Andar 4', 'Andar 5', 'Andar 6', 'Andar 7', 'Andar 8', 'Andar 9', 'Andar 10', 'Andar 11', 'Andar 12', 'Andar 13', 'Andar 14'],
+                            gerais: ['Andar 1', 'Andar 2', 'Andar 3', 'Andar 4', 'Andar 5', 'Andar 6', 'Andar 7', 'Andar 8', 'Andar 9', 'Andar 10', 'Andar 11', 'Andar 12', 'Andar 13', 'Andar 14'],
+                            alterosa: ['Andar 1'],
+                            tiradentes: ['Andar 1']
+                        };
+
+                        floorsData[building].forEach(floor => {
+                            const option = document.createElement('option');
+                            option.value = floor;
+                            option.textContent = floor;
+                            floorDropdown.appendChild(option);
+                        });
+                    }
+                });
+
+                floorDropdown.addEventListener('change', function () {
+                    enableQuantityInput();
+                });
+
+                quantityInput.addEventListener('input', function () {
+                    this.value = this.value.replace(/[^0-9]/g, '');
+                });
             });
- 
-            floorDropdown.addEventListener('change', function () {
-                enableQuantityInput();
-            });
- 
-            quantityInput.addEventListener('input', function () {
-                this.value = this.value.replace(/[^0-9]/g, '');
-            });
-        });
-    </script>
- 
-    <button class="Enviar" type="submit">Reabastecer</button>
-</form>
- 
+        </script>
+
+        <!-- Adicione o botão de envio aqui -->
+        <button class="Enviar" type="submit">Reabastecer</button>
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="flashes">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</body>
+
 </html>
