@@ -7,26 +7,29 @@
     <title>Página de Abastecimento</title>
     <link rel="stylesheet" href="../static/styles/abastecimento.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <style>
-        /* Estilos adicionais podem ser colocados aqui */
-    </style>
 </head>
  
 <body>
-    <div class="cabecalho">
-        <a href="{{ url_for('loginrec') }}" class="PaperCS">Paper Controll System</a>
-        <a href="{{ url_for('fazer_login') }}" class="exitbutton">
-            <img src="../static/images/exitbutton.png" alt="Botão Pequeno" class="exitbutton">
-        </a>
+    <div class="popup" id="successPopup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p>Reabastecimento solicitado com sucesso!</p>
+            <button onclick="returnToLogin()">OK</button>
+        </div>
     </div>
- 
     <form method="post" action="{{ url_for('abastecimento') }}">
         <input type="hidden" name="repositor_id" value="{{ quantidade_estoque.id_repositor }}">
+        <div class="cabecalho">
+            <a href="{{ url_for('loginrec') }}" class="PaperCS">Paper Controll System</a>
+            <a href="{{ url_for('fazer_login') }}" class="exitbutton">
+                <img src="../static/images/exitbutton.png" alt="Botão Pequeno" class="exitbutton">
+            </a>
+        </div>
  
         <div class="container">
             <div class="button-container">
                 <div class="select-container">
-                    <label for="tipo_reposicao">Tipo de Reposição:</label>
+                    <label for="tipo_reposicao"></label>
                     <select id="tipo_reposicao" name="tipo_reposicao">
                         <option value="" selected disabled hidden>Selecione a reposição</option>
                         <option value="Semanal">Semanal</option>
@@ -34,7 +37,7 @@
                     </select>
                 </div>
                 <div class="select-container">
-                    <label for="predio">Prédio:</label>
+                    <label for="predio"></label>
                     <select id="predio" name="predio">
                         <option value="" selected disabled hidden>Selecione o prédio</option>
                         <option value="minas">Minas</option>
@@ -45,14 +48,14 @@
                 </div>
  
                 <div class="select-container">
-                    <label for="andar">Andar:</label>
+                    <label for="andar"></label>
                     <select id="andar" name="andar">
                         <option value="" selected disabled hidden>Selecione o andar</option>
                     </select>
                 </div>
  
                 <div class="select-container">
-                    <label for="ilha">Ilha:</label>
+                    <label for="ilha"></label>
                     <select id="ilha" name="ilha">
                         <option value="" selected disabled hidden>Selecione a ilha</option>
                     </select>
@@ -93,8 +96,9 @@
                 const floorSelected = floorDropdown.value !== "";
                 const ilhaSelected = ilhaDropdown.value !== "";
                 const quantityFilled = quantityInput.value.trim() !== "";
+                const typeRepositor = tipoReposicaoDropdown.value !== "";
  
-                const dropdowns = [buildingDropdown, floorDropdown, ilhaDropdown];
+                const dropdowns = [buildingDropdown, floorDropdown, ilhaDropdown, tipoReposicaoDropdown];
  
                 dropdowns.forEach(dropdown => {
                     if (dropdown.value === "") {
@@ -110,7 +114,7 @@
                     quantityInput.classList.remove('campo-faltando');
                 }
  
-                if (!buildingSelected || !floorSelected || !ilhaSelected || !quantityFilled) {
+                if (!buildingSelected || !floorSelected || !ilhaSelected || !quantityFilled || !tipoReposicaoDropdown) {
                     event.preventDefault();
                     alert("Por favor, preencha todos os campos destacados em vermelho.");
                 }
@@ -187,8 +191,56 @@
             quantityInput.addEventListener('input', function () {
                 this.value = this.value.replace(/[^0-9]/g, '');
             });
+        });
  
+        function closePopup() {
+            document.getElementById('successPopup').style.display = 'none';
+        }
  
+        function returnToLogin() {
+            window.location.href = "{{ url_for('loginrec') }}";
+        }
+ 
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form');
+            const successPopup = document.getElementById('successPopup');
+ 
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+ 
+                const buildingDropdown = document.getElementById('predio');
+                const floorDropdown = document.getElementById('andar');
+                const ilhaDropdown = document.getElementById('ilha');
+                const quantityInput = document.getElementById('quantidade_reposicao');
+ 
+                const buildingSelected = buildingDropdown.value !== "";
+                const floorSelected = floorDropdown.value !== "";
+                const ilhaSelected = ilhaDropdown.value !== "";
+                const quantityFilled = quantityInput.value.trim() !== "";
+ 
+                if (buildingSelected && floorSelected && ilhaSelected && quantityFilled) {
+                    fetch("{{ url_for('abastecimento') }}", {
+                        method: 'POST',
+                        body: new FormData(form)
+                    })
+                        .then(response => {
+                            if (response.ok) {
+                                successPopup.style.display = 'block';
+                                setTimeout(function () {
+                                    successPopup.style.display = 'none';
+                                    window.location.href = "{{ url_for('loginrec') }}";
+                                }, 3000);
+                            } else {
+                                throw new Error('Erro ao salvar o formulário.');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Erro:', error);
+                            alert('Ocorreu um erro ao salvar o formulário.');
+                        });
+                }
+ 
+            });
         });
     </script>
 </body>

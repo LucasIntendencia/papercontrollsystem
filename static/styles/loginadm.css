@@ -71,7 +71,7 @@ body {
     text-decoration: none;
 }
  
-.Relatorio {
+.Relatorios {
     width: 300px;
     font-size: 24px;
     padding: 16px;
@@ -84,6 +84,7 @@ body {
     outline: none;
     display: block;
     text-align: center;
+    text-decoration: none;
 }
  
 .grafico-container {

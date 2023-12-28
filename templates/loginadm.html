@@ -22,10 +22,9 @@
             <p> recep. abastecidas</p>
         </div>
         <div class="button-container">
-            <button class="Relatorio">Gerar Relatorio</button>
+            <a href="{{ url_for('relatoriosadm') }}" class="Relatorios">Gerar Relatorios</a>
         </div>
         <div class="grafico-container">
-            <a href="{{ url_for('adminfo') }}" style="text-decoration: none; color: inherit; cursor: pointer;">
                 <canvas id="graficoColunas" class="grafico-colunas"></canvas>
             </a>
         </div>

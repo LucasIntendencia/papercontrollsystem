@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaperControllSystem ADM</title>
+    <link rel="stylesheet" href="../static/styles/relatoriosadm.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="cabecalho">
+        <a href="{{ url_for('loginadm') }}" class="PaperCS">Paper Control System</a>
+        <a href="{{ url_for('fazer_login') }}" class="exitbutton">
+            <img src="../static/images/exitbutton.png" alt="Botão Pequeno" class="exitbutton">
+        </a>
+    </div>
+
+    <div class="container">
+        <div class="button-container">
+            <div class="predios">
+                <select id="predio" name="predio" onchange="carregarAndares()">
+                    <option value="" selected disabled hidden>Selecione o tipo de relatorio</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

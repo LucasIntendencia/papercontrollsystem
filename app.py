@@ -232,6 +232,13 @@ def reabastecimento():
  
     return render_template('reabastecimento.html', dados_reabastecimento=[], quantidade_estoque=0, error_message="Erro ao buscar dados de reabastecimento")
 
+
+@app.route('/relatoriosadm', methods=['GET', 'POST'])
+@login_required
+def relatoriosadm():
+    return render_template('relatoriosadm.html')
+ 
+
  
 @app.route('/verificar_conexao')
 def verificar_conexao():
