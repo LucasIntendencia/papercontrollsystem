@@ -1,12 +1,13 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify, current_app
 from flask_login import LoginManager, UserMixin, login_required, login_user, current_user
-from database import configure_database, db, Usuario, Reposicao, InfoAndar, Reabastecimento
+from database import configure_database, db, Usuario, Reposicao, Reabastecimento
 from sqlalchemy import func
 import json
 from decimal import Decimal
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 import secrets
 import logging
+
  
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(32)
@@ -119,36 +120,38 @@ def loginadm():
 @app.route('/abastecimento', methods=['GET', 'POST'])
 @login_required
 def abastecimento():
+    print("Rota abs acionada.")
     estoque = None
     mensagem = None
- 
+
     if request.method == 'POST':
         print("Formulário enviado!")
- 
+
         predio = request.form['predio']
         andar = request.form['andar']
         ilha = request.form['ilha']
         quantidade_reposicao = int(request.form['quantidade_reposicao'])
- 
-        print(
-            f"Dados do formulário: Predio={predio}, Andar={andar}, Ilha={ilha}, Quantidade={quantidade_reposicao}")
- 
+        tipo_reposicao = request.form['tipo_reposicao']
+
+        print(f"Dados do formulário: Predio={predio}, Andar={andar}, Ilha={ilha}, Quantidade={quantidade_reposicao}")
+
         try:
-            # Verifica se o usuário está autenticado
             if current_user.is_authenticated:
-                repositorio = Usuario.query.filter_by(
-                    id_user=current_user.id).first()
- 
+                repositorio = Usuario.query.filter_by(id_user=current_user.id).first()
+
                 if isinstance(repositorio, Usuario):
                     estoque = repositorio.estoque
                     print(f"Estoque do Repositório: {estoque}")
- 
-                    # Determina o tipo de reposição com base no botão clicado
-                    tipo_reposicao = request.form['tipo_reposicao']
- 
-                    # Cria uma data de reposição usando a data atual
+
                     data_reposicao = datetime.now().date()
- 
+
+                    # Verifique o tipo de reposição
+                    if tipo_reposicao == 'semanal':
+                        # Define o status como "OK" para reposição semanal
+                        status_reposicao = 'OK'
+                    else:
+                        status_reposicao = 'pendente'
+
                     nova_reposicao = Reposicao(
                         id_user=current_user.id,
                         data_reposicao=data_reposicao,
@@ -157,89 +160,28 @@ def abastecimento():
                         andar=andar,
                         ilha=ilha,
                         predio=predio,
-                        status_reposicao='OK'  # Muda o status para "OK"
+                        status_reposicao=status_reposicao
                     )
- 
+
                     repositorio.estoque -= quantidade_reposicao
- 
+
                     db.session.add(nova_reposicao)
                     db.session.commit()
- 
+
                     mensagem = "Reabastecimento registrado no banco de dados!"
                     print(mensagem)
- 
+
                 else:
                     mensagem = "Erro ao obter o repositório associado ao usuário."
- 
+
         except Exception as e:
             db.session.rollback()
             mensagem = f"Erro ao registrar reabastecimento no banco de dados: {str(e)}"
             print(mensagem)
- 
+
     return render_template('abastecimento.html', quantidade_estoque=estoque, mensagem_erro=None, mensagem=mensagem)
 
-@app.route('/abastecimentoP', methods=['GET', 'POST'])
-@login_required
-def abastecimentoP():
-    estoque = None
-    mensagem = None
- 
-    if request.method == 'POST':
-        print("Formulário enviado!")
- 
-        predio = request.form['predio']
-        andar = request.form['andar']
-        ilha = request.form['ilha']
-        quantidade_reposicao = int(request.form['quantidade_reposicao'])
- 
-        print(
-            f"Dados do formulário: Predio={predio}, Andar={andar}, Ilha={ilha}, Quantidade={quantidade_reposicao}")
- 
-        try:
-            # Verifica se o usuário está autenticado
-            if current_user.is_authenticated:
-                repositorio = Usuario.query.filter_by(
-                    id_user=current_user.id).first()
- 
-                if isinstance(repositorio, Usuario):
-                    estoque = repositorio.estoque
-                    print(f"Estoque do Repositório: {estoque}")
- 
-                    # Determina o tipo de reposição com base no botão clicado
-                    tipo_reposicao = request.form['tipo_reposicao']
- 
-                    # Cria uma data de reposição usando a data atual
-                    data_reposicao = datetime.now().date()
- 
-                    nova_reposicao = Reposicao(
-                        id_user=current_user.id,
-                        data_reposicao=data_reposicao,
-                        tipo_reposicao=tipo_reposicao,
-                        quantidade_reposicao=quantidade_reposicao,
-                        andar=andar,
-                        ilha=ilha,
-                        predio=predio,
-                        status_reposicao='OK'  # Muda o status para "OK"
-                    )
- 
-                    repositorio.estoque -= quantidade_reposicao
- 
-                    db.session.add(nova_reposicao)
-                    db.session.commit()
-                    
-                    logging.info('Reabastecimento registrado no banco de dados!')
- 
-                else:
-                    mensagem = "Erro ao obter o repositório associado ao usuário."
- 
-        except Exception as e:
-            db.session.rollback()
-            logging.info('Erro ao registrar reabastecimento no banco de dados: {str(e)}')
 
- 
-    return render_template('abastecimento.html', quantidade_estoque=estoque, mensagem_erro=None, mensagem=mensagem)
-  
- 
 @app.route('/reabastecimento', methods=['GET', 'POST'])
 @login_required
 def reabastecimento():
@@ -290,60 +232,6 @@ def reabastecimento():
  
     return render_template('reabastecimento.html', dados_reabastecimento=[], quantidade_estoque=0, error_message="Erro ao buscar dados de reabastecimento")
 
-@app.route('/adminfo')
-@login_required
-def adminfo():
-    try:
-        lista_predios = db.session.query(InfoAndar.predio).distinct().all()
-        predio_selecionado = request.args.get('predio')
- 
-        dados_andares = None
-        if predio_selecionado:
-            dados_andares = db.session.query(
-                InfoAndar.andar,
-                InfoAndar.num_ilhas
-            ).filter_by(predio=predio_selecionado).all()
- 
-        dados_template = {
-            'lista_predios': [predio[0] for predio in lista_predios],
-            'dados_andares': dados_andares
-        }
- 
-        return render_template('adminfo.html', **dados_template)
- 
-    except Exception as e:
-        print(f'Erro: {str(e)}')
-        return render_template('adminfo.html', lista_predios=[], dados_andares=None)
- 
- 
-@app.route('/obter-status-andares', methods=['GET'])
-@login_required
-def obter_status_andares():
-    try:
-        predio_selecionado = request.args.get('predio')
-        andares_info = db.session.query(
-            InfoAndar.andar,
-            func.coalesce(Reposicao.status_reposicao,
-                          'OK').label('status_reposicao')
-        ).outerjoin(
-            Reposicao,
-            (InfoAndar.andar == Reposicao.andar) & (
-                InfoAndar.predio == Reposicao.predio)
-        ).filter(InfoAndar.predio == predio_selecionado).all()
- 
-        # Remover duplicatas de andares
-        andares_unicos = set()
-        andares_filtrados = []
-        for andar, status in andares_info:
-            if andar not in andares_unicos:
-                andares_filtrados.append({'andar': andar, 'status': status})
-                andares_unicos.add(andar)
- 
-        return jsonify(andares_filtrados)
- 
-    except Exception as e:
-        return jsonify({'erro': f'Erro ao obter dados dos andares: {str(e)}'}), 500
- 
  
 @app.route('/verificar_conexao')
 def verificar_conexao():

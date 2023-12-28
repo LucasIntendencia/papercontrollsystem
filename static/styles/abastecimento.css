@@ -9,7 +9,7 @@ body {
     grid-template-rows: auto 1fr;
     height: 100vh;
 }
-
+ 
 .cabecalho {
     display: flex;
     justify-content: space-between;
@@ -18,7 +18,7 @@ body {
     background-color: #1A5A6B;
     margin-top: 15px;
 }
-
+ 
 /* Estilos para o botão do Paper Control System */
 .PaperCS {
     margin: 10px;
@@ -32,19 +32,19 @@ body {
     outline: none;
     text-decoration: none;
 }
-
+ 
 .exitbutton {
     width: 40px;
     text-decoration: none;
 }
-
+ 
 /* Estilos para a imagem do botão de saída */
 .exitbutton {
     width: 30px;
     height: 30px;
     cursor: pointer;
 }
-
+ 
 .container {
     width: 80%;
     margin: 20px auto;
@@ -53,19 +53,21 @@ body {
     margin-top: 150px;
     /* Espaçamento superior para deslocar os botões para baixo */
 }
-
+ 
 /* Estilos para os dropdowns */
 .predios,
 .andar,
-.ilhas {
+.ilhas,
+.tipo_resposicao {
     margin-top: 30px;
     display: flex;
     align-items: center;
 }
-
+ 
 .predios select,
 .andar select,
-.ilhas select {
+.ilhas select,
+.tipo_resposicao select {
     flex: 1;
     padding: 10px;
     font-size: 16px;
@@ -74,7 +76,7 @@ body {
     outline: none;
     text-align: center;
 }
-
+ 
 .quantity-input {
     flex: 1;
     padding: 10px;
@@ -88,7 +90,7 @@ body {
     text-align: center;
     /* Centraliza o texto dentro do input */
 }
-
+ 
 /* Estilos para o botão de Reabastecer */
 .Enviar {
     padding: 10px 20px;
@@ -105,12 +107,12 @@ body {
     margin-top: 100px;
     width: 80%;
 }
-
+ 
 .campo-faltando {
-    border-color: #ff0000 !important; 
+    border-color: #ff0000 !important;
     border-width: 3px;
 }
-
+ 
 @media only screen and (max-width: 768px) {
     .container {
         width: 90%;
@@ -118,7 +120,7 @@ body {
         margin-top: 100px;
         /* Espaçamento superior menor */
     }
-
+ 
     .Enviar {
         margin-top: 30px;
         /* Espaçamento superior menor */

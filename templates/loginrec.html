@@ -1,5 +1,5 @@
 <html lang="pt-BR">
- 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/loginrec.css') }}">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
- 
+
 <form method="post" action="{{ url_for('loginrec') }}">
- 
+
     <body>
         <div class="cabecalho">
             <a href="{{ url_for('loginrec') }}" class="PaperCS">Paper Controll System</a>
@@ -19,8 +19,7 @@
         </div>
         <div class="content">
             <div class="button-container">
-                <a href="{{ url_for('abastecimento') }}" class="Semanal">Abastecimento Semanal</a>
-                <a href="{{ url_for('abastecimentoP') }}" class="Pontual">Abastecimento Pontual</a>
+                <a href="{{ url_for('abastecimento') }}" class="Semanal">Abastecimento</a>
                 <a href="{{ url_for('reabastecimento') }}" class="Reabastecimento">Solicitar Reabastecimento</a>
             </div>
     </body>
@@ -38,10 +37,21 @@
     {% else %}
     <p>{{ mensagem_erro }}</p>
     {% endif %}
- 
+
 </footer>
 <button class="zezinhobola"></button>
-</div>
 </body>
- 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const botoesAbastecimento = document.querySelectorAll('.abastecimento-btn');
+
+        botoesAbastecimento.forEach(function (botao) {
+            botao.addEventListener('click', function () {
+                const tipoReposicao = this.getAttribute('data-tipo');
+                document.getElementById('tipo_reposicao').value = tipoReposicao;
+            });
+        });
+    });
+</script>
+
 </html>

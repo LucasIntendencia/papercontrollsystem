@@ -55,19 +55,6 @@ class Reposicao(db.Model):
         db.String(20), nullable=False, default='pendente')
  
  
-class InfoAndar(db.Model):
-    __tablename__ = 'info_andar'
- 
-    id_info_andar = db.Column(db.Integer, primary_key=True)
-    andar = db.Column(db.String(50), nullable=False)
-    num_ilhas = db.Column(db.Integer, nullable=False)
-    predio = db.Column(db.String(50), db.ForeignKey(
-        'reposicao.predio'), nullable=False)
- 
-    # Relacionamento com a tabela Reposicao
-    reposicoes = db.relationship('Reposicao', backref='info_andar')
- 
- 
 class Reabastecimento(db.Model):
     __tablename__ = 'reabastecimento'
 
