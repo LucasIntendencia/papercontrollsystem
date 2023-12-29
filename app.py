@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, jsonify, current_app
+from flask import Flask, render_template, request, redirect, url_for, jsonify, send_file
 from flask_login import LoginManager, UserMixin, login_required, login_user, current_user
 from database import configure_database, db, Usuario, Reposicao, Reabastecimento
 from sqlalchemy import func
@@ -7,6 +7,7 @@ from decimal import Decimal
 from datetime import datetime, date, timedelta
 import secrets
 import logging
+import pandas as pd
 
  
 app = Flask(__name__)
@@ -52,8 +53,7 @@ def index():
     elif current_user.tipo_user == 'administrador':
         return redirect(url_for('loginadm'))
     else:
-        return render_template('login.html')
- 
+        return render_template('login.html') 
  
 @app.route('/login', methods=['GET', 'POST'])
 def fazer_login():
@@ -236,33 +236,44 @@ def reabastecimento():
 @app.route('/relatoriosadm', methods=['GET', 'POST'])
 @login_required
 def relatoriosadm():
-    if request.method == 'POST':
-        relatorio_type = request.form.get('relatorio')
+     if request.method == 'POST':
+         relatorio_type = request.form.get('relatorio')
 
-        if relatorio_type == 'Completo':
-            data = {'usuarios': Usuario.query.all(), 'repositorios': Reposicao.query.all()}
+         if relatorio_type == 'Completo':
+             usuarios_data = [{'id_user': user.id_user, 'email': user.email, 'tipo_user': user.tipo_user, 'estoque': user.estoque} for user in Usuario.query.all()]
+             reposicoes_data = [{'id_reposicao': repo.id_reposicao, 'data_reposicao': repo.data_reposicao, 'tipo_reposicao': repo.tipo_reposicao, 'quantidade_reposicao': repo.quantidade_reposicao, 'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio, 'status_reposicao': repo.status_reposicao} for repo in Reposicao.query.all()]
 
-        elif relatorio_type == 'Reposições':
-            tipo_reposicoes = request.form.get('tipoReposicoes')
+             usuarios_df = pd.DataFrame(usuarios_data)
+             reposicoes_df = pd.DataFrame(reposicoes_data)
 
-            if tipo_reposicoes == 'Completo':
-                data = Reposicao.query.all()
+             with pd.ExcelWriter('relatorio_completo.xlsx', engine='xlsxwriter') as writer:
+                 usuarios_df.to_excel(writer, sheet_name='Usuarios', index=False)
+                 reposicoes_df.to_excel(writer, sheet_name='Reposicoes', index=False)
 
-            elif tipo_reposicoes == 'Por Prédio':
-                predio = request.form.get('predio')
-                data = Reposicao.query.filter_by(predio=predio).all()
+             return send_file('relatorio_completo.xlsx', as_attachment=True)
 
-        elif relatorio_type == 'Usuários':
-            data = Usuario.query.all()
+         elif relatorio_type == 'Reposições':
+             tipo_reposicoes = request.form.get('tipoReposicoes')
 
-        else:
-            data = None
+             if tipo_reposicoes == 'Completo':
+                 data = Reposicao.query.all()
 
-        return render_template('relatoriosadm.html', relatorio_type=relatorio_type, data=data)
+             elif tipo_reposicoes == 'Por Prédio':
+                 predio = request.form.get('predio')
+                 data = Reposicao.query.filter_by(predio=predio).all()
 
-    return render_template('relatoriosadm.html')
+         elif relatorio_type == 'Usuários':
+             data = Usuario.query.all()
 
- 
+         else:
+             data = None
+
+     return render_template('relatoriosadm.html')
+
+@app.route('/ajudaOZe')
+@login_required
+def ajudaOZe():
+    render_template('ajudaOZe.html')
 
 @app.route('/verificar_conexao')
 def verificar_conexao():

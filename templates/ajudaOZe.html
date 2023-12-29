@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Ajuda</title>
+    <link rel="stylesheet" href="../static/styles/ajudaOZe.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+ 
+<form method="post" action="{{ url_for('ajudaOZe') }}">
+ 
+    <body>
+        <div class="cabecalho">
+            <a href="{{ url_for('loginrec') }}" class="PaperCS">Paper Controll System</a>
+            <a href="{{ url_for('fazer_login') }}" class="exitbutton">
+                <img src="../static/images/exitbutton.png" alt="Botão Pequeno">
+            </a>
+        </div>
+        <div class="formulario">
+            <h1>Formulário de Ajuda</h1>
+            <form method="post" action="{{ url_for('ajudaOZe') }}">
+                <label for="assunto">Selecione o Assunto:</label>
+                <select id="assunto" name="assunto">
+                    <option value="" selected disabled hidden>Selecione o Tópico</option>
+                    <option value="sugestao">Sugestão</option>
+                    <option value="ajuda">Ajuda</option>
+                </select>
+ 
+                <label for="problema">Descreva o Problema ou Sugestão:</label>
+                <textarea id="problema" name="problema"
+                    placeholder="Descreva detalhadamente o seu problema ou sugestão"></textarea>
+ 
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </body>
+</form>

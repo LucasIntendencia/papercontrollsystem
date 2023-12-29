@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
-
+ 
 <body>
     <div class="cabecalho">
         <a href="{{ url_for('loginadm') }}" class="PaperCS">Paper Control System</a>
@@ -20,7 +20,7 @@
             <img src="../static/images/exitbutton.png" alt="Botão Pequeno" class="exitbutton">
         </a>
     </div>
-
+ 
     <form method="post" action="{{ url_for('relatoriosadm') }}">
         <div class="container">
             <div class="select_container">
@@ -47,14 +47,22 @@
                     <option value="Por Usuário">Por Usuário</option>
                 </select>
             </div>
+            <div class="predio" style="display: none;">
+                <select id="selectPredio" name="selectPredio">
+                    <option value="" selected disabled hidden>Selecione o prédio</option>
+                    <option value="Minas">Minas</option>
+                    <option value="Gerais">Gerais</option>
+                </select>
+            </div>
             <div class="data_reposicao" style="display: none;">
-                <input type="text" id="data_reposicao" name="data_reposicao" data-input placeholder="Selecione o Período:">
+                <input type="text" id="data_reposicao" name="data_reposicao" data-input
+                    placeholder="Selecione o Período:">
             </div>
         </div>
-
+ 
         <button class="Enviar" type="submit" style="display: none;">Gerar relatorio</button>
     </form>
-
+ 
     <script>
         const relatorioDropdown = document.getElementById('relatorio');
         const tipoRelatorioDropdown = document.getElementById('tipoRelatorioDropdown');
@@ -63,21 +71,33 @@
         const tipoReposicoesSelect = document.getElementById('tipoReposicoes');
         const botaoGerarRelatorio = document.querySelector('.Enviar');
         const flatpickrContainer = document.querySelector('.data_reposicao');
-
+        const selectPredio = document.querySelector('.predio');
+ 
         // Inicialize o seletor de data para um intervalo
-        flatpickr("#data_reposicao", {
+        const flatpickrInstance = flatpickr("#data_reposicao", {
             mode: "range", // Permite seleção de intervalo de datas
             enableTime: false,
         });
-
+ 
+        function verificarVisibilidadePredio() {
+            selectPredio.style.display = tipoReposicoesSelect.value === 'Por Prédio' ? 'block' : 'none';
+        }
+ 
+        tipoReposicoesSelect.addEventListener('change', verificarVisibilidadePredio);
+        verificarVisibilidadePredio();
+        function verificarVisibilidadeData() {
+            const mostrarData = tipoRelatorioSelect.value === 'Por Data' || tipoReposicoesSelect.value === 'Por Data';
+            flatpickrContainer.style.display = mostrarData ? 'block' : 'none';
+        }
+ 
+ 
         // Função para atualizar a visibilidade do botão e do campo de data
         function atualizarVisibilidadeBotao() {
             const filtroPorData = tipoRelatorioSelect.value === 'Por Data' || tipoReposicoesSelect.value === 'Por Data';
             const filtroPorUsuario = relatorioDropdown.value === 'Usuários';
-
             const tipoRelatorioSelecionado = tipoRelatorioSelect.value !== "";
             const tipoReposicoesSelecionado = tipoReposicoesSelect.value !== "";
-
+ 
             if (filtroPorData || filtroPorUsuario || tipoRelatorioSelecionado || tipoReposicoesSelecionado) {
                 botaoGerarRelatorio.style.display = 'block';
                 flatpickrContainer.style.display = 'block';
@@ -85,24 +105,24 @@
                 botaoGerarRelatorio.style.display = 'none';
                 flatpickrContainer.style.display = 'none';
             }
+            verificarVisibilidadeData();
+ 
         }
-
+ 
         relatorioDropdown.addEventListener('change', function () {
             tipoRelatorioDropdown.style.display = 'none';
             tipoRelatorioSelect.selectedIndex = 0;
             tipoReposicoesDropdown.style.display = 'none';
             tipoReposicoesSelect.selectedIndex = 0;
-
+ 
             if (relatorioDropdown.value === 'Completo') {
                 tipoRelatorioDropdown.style.display = 'block';
             } else if (relatorioDropdown.value === 'Reposições') {
                 tipoReposicoesDropdown.style.display = 'block';
             }
-
-            // Chama a função para atualizar a visibilidade do botão e do campo de data
-            atualizarVisibilidadeBotao();
+            verificarVisibilidadeData();
         });
-
+ 
         tipoRelatorioSelect.addEventListener('change', function () {
             atualizarVisibilidadeBotao();
             if (tipoRelatorioSelect.value === 'Por Data') {
@@ -110,14 +130,15 @@
             } else {
                 flatpickrContainer.style.display = 'none';
             }
+            verificarVisibilidadeData();
         });
-
+ 
         // Event listeners adicionais para dropdowns de detalhes de relatórios
         tipoRelatorioSelect.addEventListener('change', atualizarVisibilidadeBotao);
         tipoReposicoesSelect.addEventListener('change', atualizarVisibilidadeBotao);
         relatorioDropdown.addEventListener('change', atualizarVisibilidadeBotao);
     </script>
-
+ 
 </body>
-
+ 
 </html>

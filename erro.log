@@ -2582,3 +2582,102 @@ INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 10:39:09] "[36mGET /static/images/exit
 INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 10:39:09] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
 INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
 INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 10:57:15] "[32mGET /loginadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 10:57:15] "GET /login?next=/loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 10:57:15] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 10:57:15] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 10:57:15] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 10:57:17] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 10:57:17] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 10:57:17] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 10:57:17] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 10:57:17] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 10:57:18] "GET /relatoriosadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 10:57:18] "[36mGET /static/styles/relatoriosadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 10:57:18] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 10:57:18] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 10:57:23] "[35m[1mPOST /relatoriosadm HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 10:57:23] "GET /relatoriosadm?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 10:57:23] "GET /relatoriosadm?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 10:57:23] "GET /relatoriosadm?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 10:57:23] "[36mGET /relatoriosadm?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 12:57:19] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 12:57:19] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 12:57:19] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 12:57:19] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 12:57:20] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 12:57:20] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 12:57:20] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 12:57:20] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 12:57:20] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 12:57:21] "GET /relatoriosadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 12:57:21] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 12:57:21] "[36mGET /static/styles/relatoriosadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 12:57:21] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 13:05:08] "[35m[1mPOST /relatoriosadm HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 13:05:08] "GET /relatoriosadm?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 13:05:08] "GET /relatoriosadm?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 13:05:08] "[36mGET /relatoriosadm?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 13:05:08] "[36mGET /relatoriosadm?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 13:05:28] "POST /relatoriosadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 13:05:28] "[36mGET /static/styles/relatoriosadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 13:05:28] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 13:07:17] "POST /relatoriosadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 13:07:17] "[36mGET /static/styles/relatoriosadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 13:07:17] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 13:20:48] "POST /relatoriosadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 13:20:48] "[36mGET /static/styles/relatoriosadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 13:20:48] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 13:20:48] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 14:18:31] "[33mPOST /relatoriosadm HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 14:18:35] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 14:18:35] "GET /login?next=/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 14:18:35] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 14:18:35] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 14:18:35] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 14:18:38] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 14:18:38] "[35m[1mGET /loginrec HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 14:18:38] "GET /loginrec?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 14:18:38] "GET /loginrec?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 14:18:38] "GET /loginrec?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 14:18:39] "[36mGET /loginrec?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 15:08:05] "GET /login?next=/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 15:08:05] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 15:08:05] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 15:08:05] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 15:08:06] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 15:08:06] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 15:08:06] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 15:08:06] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 15:08:06] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 15:08:08] "GET /relatoriosadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 15:08:08] "GET /static/styles/relatoriosadm.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 15:08:08] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 15:08:08] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 15:08:11] "POST /relatoriosadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 15:08:11] "[36mGET /static/styles/relatoriosadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 15:08:11] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 15:09:04] "[35m[1mPOST /relatoriosadm HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 15:09:04] "[36mGET /relatoriosadm?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 15:09:04] "[36mGET /relatoriosadm?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 15:09:04] "[36mGET /relatoriosadm?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [29/Dec/2023 15:09:04] "[36mGET /relatoriosadm?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
