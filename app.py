@@ -236,10 +236,34 @@ def reabastecimento():
 @app.route('/relatoriosadm', methods=['GET', 'POST'])
 @login_required
 def relatoriosadm():
+    if request.method == 'POST':
+        relatorio_type = request.form.get('relatorio')
+
+        if relatorio_type == 'Completo':
+            data = {'usuarios': Usuario.query.all(), 'repositorios': Reposicao.query.all()}
+
+        elif relatorio_type == 'Reposições':
+            tipo_reposicoes = request.form.get('tipoReposicoes')
+
+            if tipo_reposicoes == 'Completo':
+                data = Reposicao.query.all()
+
+            elif tipo_reposicoes == 'Por Prédio':
+                predio = request.form.get('predio')
+                data = Reposicao.query.filter_by(predio=predio).all()
+
+        elif relatorio_type == 'Usuários':
+            data = Usuario.query.all()
+
+        else:
+            data = None
+
+        return render_template('relatoriosadm.html', relatorio_type=relatorio_type, data=data)
+
     return render_template('relatoriosadm.html')
- 
 
  
+
 @app.route('/verificar_conexao')
 def verificar_conexao():
     try:

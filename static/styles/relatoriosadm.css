@@ -33,7 +33,7 @@ body {
     text-decoration: none;
 }
  
-.exitbutton {
+button_container .exitbutton {
     width: 30px;
     text-decoration: none;
     height: 30px;
@@ -43,20 +43,50 @@ body {
 .container {
     width: 80%;
     margin: 20px auto;
-    text-align: center;
-    /* Centraliza todo o conteúdo do container */
     margin-top: 60px;
     /* Espaçamento superior para deslocar os botões para baixo */
 }
  
-/* Estilos para os dropdowns */
-.predios {
+.select_container,
+.opcoes {
     margin-top: 30px;
     display: flex;
     align-items: center;
+    width: 100%;
 }
- 
-.predios select {
+
+.data_reposicao input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    outline: none;
+    text-align: center;
+    width: calc(95%); /* Diminui 2px da largura original */
+    margin-top: 30px; /* Adiciona 10px de espaçamento superior */
+}
+
+/* Adicione esta regra para o label-floatig */
+.data_reposicao label {
+    position: absolute;
+    pointer-events: none;
+    padding: 10px;
+    font-size: 16px;
+    transition: 0.2s ease all;
+    width: 100%;
+    text-align: center;
+}
+
+/* Adicione esta regra para quando o input estiver focado ou tiver valor */
+.data_reposicao input:focus + label,
+.data_reposicao input:not(:placeholder-shown) + label {
+    font-size: 14px;
+    transform: translateY(-20px);
+}
+
+
+.select_container select,
+.opcoes select {
     flex: 1;
     padding: 10px;
     font-size: 16px;
@@ -64,4 +94,23 @@ body {
     border-radius: 15px;
     outline: none;
     text-align: center;
+    width: 100%;
+    /* Para cobrir a largura do container */
+}
+ 
+.Enviar {
+    position: fixed;
+    bottom: 220px; /* Ajuste conforme necessário para a posição vertical desejada */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+    width: 80%;
+    max-width: 200px;
 }

@@ -7,8 +7,10 @@
     <title>PaperControllSystem ADM</title>
     <link rel="stylesheet" href="../static/styles/relatoriosadm.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 
 <body>
@@ -19,15 +21,103 @@
         </a>
     </div>
 
-    <div class="container">
-        <div class="button-container">
-            <div class="predios">
-                <select id="predio" name="predio" onchange="carregarAndares()">
+    <form method="post" action="{{ url_for('relatoriosadm') }}">
+        <div class="container">
+            <div class="select_container">
+                <select id="relatorio" name="relatorio">
                     <option value="" selected disabled hidden>Selecione o tipo de relatorio</option>
+                    <option value="Completo">Completo</option>
+                    <option value="Reposições">Reposições</option>
+                    <option value="Usuários">Usuários</option>
                 </select>
             </div>
+            <div id="tipoRelatorioDropdown" class="opcoes" style="display: none;">
+                <select id="tipoRelatorio" name="tipoRelatorio">
+                    <option value="" selected disabled hidden>Selecione o tipo de relatorio</option>
+                    <option value="Completo">Completo</option>
+                    <option value="Por Data">Por Data</option>
+                </select>
+            </div>
+            <div id="tipoReposicoesDropdown" class="opcoes" style="display: none;">
+                <select id="tipoReposicoes" name="tipoReposicoes">
+                    <option value="" selected disabled hidden>Selecione o tipo de relatorio</option>
+                    <option value="Completo">Todas as Reposições</option>
+                    <option value="Por Prédio">Por Prédio</option>
+                    <option value="Por Data">Por Data</option>
+                    <option value="Por Usuário">Por Usuário</option>
+                </select>
+            </div>
+            <div class="data_reposicao" style="display: none;">
+                <input type="text" id="data_reposicao" name="data_reposicao" data-input placeholder="Selecione o Período:">
+            </div>
         </div>
-    </div>
+
+        <button class="Enviar" type="submit" style="display: none;">Gerar relatorio</button>
+    </form>
+
+    <script>
+        const relatorioDropdown = document.getElementById('relatorio');
+        const tipoRelatorioDropdown = document.getElementById('tipoRelatorioDropdown');
+        const tipoRelatorioSelect = document.getElementById('tipoRelatorio');
+        const tipoReposicoesDropdown = document.getElementById('tipoReposicoesDropdown');
+        const tipoReposicoesSelect = document.getElementById('tipoReposicoes');
+        const botaoGerarRelatorio = document.querySelector('.Enviar');
+        const flatpickrContainer = document.querySelector('.data_reposicao');
+
+        // Inicialize o seletor de data para um intervalo
+        flatpickr("#data_reposicao", {
+            mode: "range", // Permite seleção de intervalo de datas
+            enableTime: false,
+        });
+
+        // Função para atualizar a visibilidade do botão e do campo de data
+        function atualizarVisibilidadeBotao() {
+            const filtroPorData = tipoRelatorioSelect.value === 'Por Data' || tipoReposicoesSelect.value === 'Por Data';
+            const filtroPorUsuario = relatorioDropdown.value === 'Usuários';
+
+            const tipoRelatorioSelecionado = tipoRelatorioSelect.value !== "";
+            const tipoReposicoesSelecionado = tipoReposicoesSelect.value !== "";
+
+            if (filtroPorData || filtroPorUsuario || tipoRelatorioSelecionado || tipoReposicoesSelecionado) {
+                botaoGerarRelatorio.style.display = 'block';
+                flatpickrContainer.style.display = 'block';
+            } else {
+                botaoGerarRelatorio.style.display = 'none';
+                flatpickrContainer.style.display = 'none';
+            }
+        }
+
+        relatorioDropdown.addEventListener('change', function () {
+            tipoRelatorioDropdown.style.display = 'none';
+            tipoRelatorioSelect.selectedIndex = 0;
+            tipoReposicoesDropdown.style.display = 'none';
+            tipoReposicoesSelect.selectedIndex = 0;
+
+            if (relatorioDropdown.value === 'Completo') {
+                tipoRelatorioDropdown.style.display = 'block';
+            } else if (relatorioDropdown.value === 'Reposições') {
+                tipoReposicoesDropdown.style.display = 'block';
+            }
+
+            // Chama a função para atualizar a visibilidade do botão e do campo de data
+            atualizarVisibilidadeBotao();
+        });
+
+        tipoRelatorioSelect.addEventListener('change', function () {
+            atualizarVisibilidadeBotao();
+            if (tipoRelatorioSelect.value === 'Por Data') {
+                flatpickrContainer.style.display = 'block';
+            } else {
+                flatpickrContainer.style.display = 'none';
+            }
+        });
+
+        // Event listeners adicionais para dropdowns de detalhes de relatórios
+        tipoRelatorioSelect.addEventListener('change', atualizarVisibilidadeBotao);
+        tipoReposicoesSelect.addEventListener('change', atualizarVisibilidadeBotao);
+        relatorioDropdown.addEventListener('change', atualizarVisibilidadeBotao);
+    </script>
+
 </body>
 
 </html>
