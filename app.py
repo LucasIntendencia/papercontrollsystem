@@ -139,40 +139,47 @@ def abastecimento():
             if current_user.is_authenticated:
                 repositorio = Usuario.query.filter_by(id_user=current_user.id).first()
 
-                if isinstance(repositorio, Usuario):
-                    estoque = repositorio.estoque
-                    print(f"Estoque do Repositório: {estoque}")
+            if isinstance(repositorio, Usuario):
+                estoque = repositorio.estoque
+                print(f"Estoque do Repositório: {estoque}")
 
-                    data_reposicao = datetime.now().date()
+                data_reposicao = datetime.now().date()
 
-                    # Verifique o tipo de reposição
-                    if tipo_reposicao == 'semanal':
-                        # Define o status como "OK" para reposição semanal
-                        status_reposicao = 'OK'
-                    else:
-                        status_reposicao = 'pendente'
+            # Verifique o tipo de reposição
+                if tipo_reposicao == 'semanal':
+                    status_reposicao = 'OK'
+                else:
+                    # Verifica se o estoque é suficiente para a reposição
+                    if estoque < quantidade_reposicao + 1:
+                        mensagem = "Erro: Estoque insuficiente para fazer a reposição."
+                        print(mensagem)
+                        return render_template('abastecimento.html', quantidade_estoque=estoque, mensagem_erro=mensagem, mensagem=None)
 
-                    nova_reposicao = Reposicao(
-                        id_user=current_user.id,
-                        data_reposicao=data_reposicao,
-                        tipo_reposicao=tipo_reposicao,
-                        quantidade_reposicao=quantidade_reposicao,
-                        andar=andar,
-                        ilha=ilha,
-                        predio=predio,
-                        status_reposicao=status_reposicao
-                    )
+                    status_reposicao = 'pendente'
 
+                nova_reposicao = Reposicao(
+                    id_user=current_user.id,
+                    data_reposicao=data_reposicao,
+                    tipo_reposicao=tipo_reposicao,
+                    quantidade_reposicao=quantidade_reposicao,
+                    andar=andar,
+                    ilha=ilha,
+                    predio=predio,
+                    status_reposicao=status_reposicao
+                )
+
+            # Reduz o estoque apenas se a reposição for pendente
+                if status_reposicao == 'pendente':
                     repositorio.estoque -= quantidade_reposicao
 
-                    db.session.add(nova_reposicao)
-                    db.session.commit()
+                db.session.add(nova_reposicao)
+                db.session.commit()
 
-                    mensagem = "Reabastecimento registrado no banco de dados!"
-                    print(mensagem)
+                mensagem = "Reabastecimento registrado no banco de dados!"
+                print(mensagem)
 
-                else:
-                    mensagem = "Erro ao obter o repositório associado ao usuário."
+            else:
+                mensagem = "Erro ao obter o repositório associado ao usuário."
 
         except Exception as e:
             db.session.rollback()
@@ -273,7 +280,7 @@ def relatoriosadm():
 @app.route('/ajudaOZe')
 @login_required
 def ajudaOZe():
-    render_template('ajudaOZe.html')
+    return render_template('ajudaOZe.html')
 
 @app.route('/verificar_conexao')
 def verificar_conexao():

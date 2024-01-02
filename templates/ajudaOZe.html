@@ -9,8 +9,6 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
  
-<form method="post" action="{{ url_for('ajudaOZe') }}">
- 
     <body>
         <div class="cabecalho">
             <a href="{{ url_for('loginrec') }}" class="PaperCS">Paper Controll System</a>
@@ -21,8 +19,8 @@
         <div class="formulario">
             <h1>Formulário de Ajuda</h1>
             <form method="post" action="{{ url_for('ajudaOZe') }}">
-                <label for="assunto">Selecione o Assunto:</label>
-                <select id="assunto" name="assunto">
+                <label for="tipo">Selecione o Assunto:</label>
+                <select id="tipo" name="tipo">
                     <option value="" selected disabled hidden>Selecione o Tópico</option>
                     <option value="sugestao">Sugestão</option>
                     <option value="ajuda">Ajuda</option>
@@ -36,4 +34,3 @@
             </form>
         </div>
     </body>
-</form>

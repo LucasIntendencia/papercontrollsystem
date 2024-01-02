@@ -67,6 +67,15 @@ class Reabastecimento(db.Model):
 
     def __repr__(self):
         return f"<Reabastecimento {self.id_reabastecimento}>"
+    
+class Ajuda(db.Model):
+    __tablename__ = 'ajuda'
+    
+    id_ajuda =  db.Column(db.Integer, primary_key=True)
+    tipo = db.Column(db.String(25), nullable=False)
+    descricao = db.Column(db.String(950), nullable=False)
+    id_user = db.Column(db.Integer, db.ForeignKey('usuarios.id_user'), nullable=False)
+    email = db.Column(db.String(255), db.ForeignKey('usuarios.email'), nullable=False)
  
  
 def configure_database(app, database_uri):
