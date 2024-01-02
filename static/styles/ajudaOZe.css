@@ -42,11 +42,12 @@ body {
  
 .formulario {
     background-color: #fff;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     margin: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 80px;
+    margin-bottom: 180px;
+    margin-top: 60px;
 }
  
 .formulario h1 {
@@ -94,4 +95,32 @@ button[type="submit"] {
  
 button[type="submit"]:hover {
     background-color: #1A5A6B;
+}
+ 
+@media (max-width: 768px) {
+    .formulario {
+        margin: 20px;
+        margin-bottom: 180px;
+        margin-top: 60px;
+    }
+ 
+    .formulario h1 {
+        margin-bottom: 15px;
+    }
+ 
+    #problema {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+ 
+    #tipo {
+        width: 96%;
+        margin-bottom: 15px;
+    }
+ 
+}
+ 
+button[type="submit"] {
+    width: 30%;
+    margin-left: 250px;
 }

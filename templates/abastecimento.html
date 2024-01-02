@@ -17,6 +17,13 @@
             <button onclick="returnToLogin()">OK</button>
         </div>
     </div>
+    <div class="popup" id="noStockPopup">
+        <div class="popup-content">
+            <span class="close" onclick="closeNoStockPopup()">&times;</span>
+            <p>Erro: Estoque insuficiente para fazer a reposição.</p>
+            <button onclick="closeNoStockPopup()">OK</button>
+        </div>
+    </div>
     <form method="post" action="{{ url_for('abastecimento') }}">
         <input type="hidden" name="repositor_id" value="{{ quantidade_estoque.id_repositor }}">
         <div class="cabecalho">
@@ -173,7 +180,6 @@
                     }
                 }
             });
- 
             ilhaDropdown.addEventListener('change', function () {
                 enableQuantityInput();
             });
@@ -197,6 +203,10 @@
             document.getElementById('successPopup').style.display = 'none';
         }
  
+        function closeNoStockPopup() {
+            document.getElementById('noStockPopup').style.display = 'none';
+        }
+ 
         function returnToLogin() {
             window.location.href = "{{ url_for('loginrec') }}";
         }
@@ -204,6 +214,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             const form = document.querySelector('form');
             const successPopup = document.getElementById('successPopup');
+            const noStockPopup = document.getElementById('noStockPopup');
  
             form.addEventListener('submit', function (event) {
                 event.preventDefault();
@@ -219,27 +230,37 @@
                 const quantityFilled = quantityInput.value.trim() !== "";
  
                 if (buildingSelected && floorSelected && ilhaSelected && quantityFilled) {
-                    fetch("{{ url_for('abastecimento') }}", {
-                        method: 'POST',
-                        body: new FormData(form)
-                    })
-                        .then(response => {
-                            if (response.ok) {
-                                successPopup.style.display = 'block';
-                                setTimeout(function () {
-                                    successPopup.style.display = 'none';
-                                    window.location.href = "{{ url_for('loginrec') }}";
-                                }, 3000);
-                            } else {
-                                throw new Error('Erro ao salvar o formulário.');
-                            }
-                        })
-                        .catch(error => {
-                            console.error('Erro:', error);
-                            alert('Ocorreu um erro ao salvar o formulário.');
-                        });
-                }
+                    // Obter a quantidade disponível no estoque (substitua 0 pelo valor real)
+                    const estoqueDisponivel = 0;
  
+                    if (parseInt(quantityInput.value) > estoqueDisponivel) {
+                        noStockPopup.style.display = 'block';
+                        setTimeout(function () {
+                            noStockPopup.style.display = 'none';
+                            window.history.back(); // Redirecionar para a página anterior
+                        }, 3000); // Tempo de exibição do popup em milissegundos (aqui definido como 3 segundos)
+                    } else {
+                        fetch("{{ url_for('abastecimento') }}", {
+                            method: 'POST',
+                            body: new FormData(form)
+                        })
+                            .then(response => {
+                                if (response.ok) {
+                                    successPopup.style.display = 'block';
+                                    setTimeout(function () {
+                                        successPopup.style.display = 'none';
+                                        window.location.href = "{{ url_for('loginrec') }}";
+                                    }, 3000);
+                                } else {
+                                    throw new Error('Erro ao salvar o formulário.');
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Erro:', error);
+                                alert('Ocorreu um erro ao salvar o formulário.');
+                            });
+                    }
+                }
             });
         });
     </script>

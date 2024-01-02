@@ -1,15 +1,17 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify, send_file
 from flask_login import LoginManager, UserMixin, login_required, login_user, current_user
-from database import configure_database, db, Usuario, Reposicao, Reabastecimento
+from database import configure_database, db, Usuario, Reposicao, Reabastecimento, Ajuda, id_ajuda
 from sqlalchemy import func
-import json
 from decimal import Decimal
 from datetime import datetime, date, timedelta
 import secrets
 import logging
 import pandas as pd
+import json
+import smtplib
+from email.message import EmailMessage
 
- 
+
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(32)
 print(app.secret_key)
@@ -19,8 +21,13 @@ configure_database(
 login_manager = LoginManager(app)
 login_manager.login_view = 'fazer_login'
 logging.basicConfig(filename='erro.log', level=logging.INFO)
- 
- 
+
+app.config['MAIL_SERVER'] = 'smtp.example.com'
+app.config['MAIL_PORT'] = 587 
+app.config['MAIL_USE_TLS'] = True 
+app.config['MAIL_USERNAME'] = 'seu_email@example.com' 
+app.config['MAIL_PASSWORD'] = 'sua_senha'
+app.config['MAIL_DEFAULT_SENDER'] = 'papercontrol@planejamento.mg.gov.br'  
 class User(UserMixin):
     def __init__(self, user_id, tipo_user=None):
         self.id = user_id
@@ -29,7 +36,6 @@ class User(UserMixin):
     @staticmethod
     def load_user(user_id):
         return Usuario.query.get(int(user_id))
- 
  
 @login_manager.user_loader
 def load_user(user_id):
@@ -123,71 +129,78 @@ def abastecimento():
     print("Rota abs acionada.")
     estoque = None
     mensagem = None
-
+ 
     if request.method == 'POST':
         print("Formulário enviado!")
-
+ 
         predio = request.form['predio']
         andar = request.form['andar']
         ilha = request.form['ilha']
         quantidade_reposicao = int(request.form['quantidade_reposicao'])
         tipo_reposicao = request.form['tipo_reposicao']
-
-        print(f"Dados do formulário: Predio={predio}, Andar={andar}, Ilha={ilha}, Quantidade={quantidade_reposicao}")
-
+ 
+        print(
+            f"Dados do formulário: Predio={predio}, Andar={andar}, Ilha={ilha}, Quantidade={quantidade_reposicao}")
+ 
         try:
             if current_user.is_authenticated:
-                repositorio = Usuario.query.filter_by(id_user=current_user.id).first()
-
-            if isinstance(repositorio, Usuario):
-                estoque = repositorio.estoque
-                print(f"Estoque do Repositório: {estoque}")
-
-                data_reposicao = datetime.now().date()
-
-            # Verifique o tipo de reposição
-                if tipo_reposicao == 'semanal':
-                    status_reposicao = 'OK'
+                repositorio = Usuario.query.filter_by(
+                    id_user=current_user.id).first()
+ 
+                if isinstance(repositorio, Usuario):
+                    estoque = repositorio.estoque
+                    print(f"Estoque do Repositório: {estoque}")
+ 
+                    data_reposicao = datetime.now().date()
+ 
+                    # Verifique o tipo de reposição
+                    if tipo_reposicao == 'semanal':
+                        status_reposicao = 'OK'
+                    else:
+                        # Verifica se o estoque é suficiente para a reposição
+                        if estoque < quantidade_reposicao:
+                            mensagem = "Erro: Estoque insuficiente para fazer a reposição."
+                            print(mensagem)
+                            return render_template('abastecimento.html', quantidade_estoque=estoque, mensagem_erro=mensagem, mensagem=None)
+ 
+                        status_reposicao = 'pendente'
+ 
+                    nova_reposicao = Reposicao(
+                        id_user=current_user.id,
+                        data_reposicao=data_reposicao,
+                        tipo_reposicao=tipo_reposicao,
+                        quantidade_reposicao=quantidade_reposicao,
+                        andar=andar,
+                        ilha=ilha,
+                        predio=predio,
+                        status_reposicao=status_reposicao
+                    )
+ 
+                    # Reduz o estoque apenas se a reposição for pendente
+                    if status_reposicao == 'pendente':
+                        novo_estoque = estoque - quantidade_reposicao
+                        if novo_estoque >= 0:  # Verifica se o estoque não ficará negativo
+                            repositorio.estoque = novo_estoque
+                        else:
+                            mensagem = "Erro: Não é possível realizar a reposição, estoque insuficiente."
+                            print(mensagem)
+                            return render_template('abastecimento.html', quantidade_estoque=estoque, mensagem_erro=mensagem, mensagem=None)
+ 
+                    db.session.add(nova_reposicao)
+                    db.session.commit()
+ 
+                    mensagem = "Reabastecimento registrado no banco de dados!"
+                    print(mensagem)
+ 
                 else:
-                    # Verifica se o estoque é suficiente para a reposição
-                    if estoque < quantidade_reposicao + 1:
-                        mensagem = "Erro: Estoque insuficiente para fazer a reposição."
-                        print(mensagem)
-                        return render_template('abastecimento.html', quantidade_estoque=estoque, mensagem_erro=mensagem, mensagem=None)
-
-                    status_reposicao = 'pendente'
-
-                nova_reposicao = Reposicao(
-                    id_user=current_user.id,
-                    data_reposicao=data_reposicao,
-                    tipo_reposicao=tipo_reposicao,
-                    quantidade_reposicao=quantidade_reposicao,
-                    andar=andar,
-                    ilha=ilha,
-                    predio=predio,
-                    status_reposicao=status_reposicao
-                )
-
-            # Reduz o estoque apenas se a reposição for pendente
-                if status_reposicao == 'pendente':
-                    repositorio.estoque -= quantidade_reposicao
-
-                db.session.add(nova_reposicao)
-                db.session.commit()
-
-                mensagem = "Reabastecimento registrado no banco de dados!"
-                print(mensagem)
-
-            else:
-                mensagem = "Erro ao obter o repositório associado ao usuário."
-
+                    mensagem = "Erro ao obter o repositório associado ao usuário."
+ 
         except Exception as e:
             db.session.rollback()
             mensagem = f"Erro ao registrar reabastecimento no banco de dados: {str(e)}"
             print(mensagem)
-
+ 
     return render_template('abastecimento.html', quantidade_estoque=estoque, mensagem_erro=None, mensagem=mensagem)
-
 
 @app.route('/reabastecimento', methods=['GET', 'POST'])
 @login_required
@@ -277,10 +290,74 @@ def relatoriosadm():
 
      return render_template('relatoriosadm.html')
 
-@app.route('/ajudaOZe')
+@app.route('/ajudaOZe', methods=['GET', 'POST'])
 @login_required
 def ajudaOZe():
+    if request.method == 'POST':
+        tipo = request.form['tipo']
+        descricao = request.form['problema']
+        id_user = current_user.id_user  # Certifique-se de que você tenha acesso ao objeto current_user
+
+        # Salva os dados no banco de dados
+        nova_ajuda = Ajuda(tipo=tipo, descricao=descricao, id_user=id_user, email=current_user.email)
+        db.session.add(nova_ajuda)
+        db.session.commit()
+
+        # Envia e-mail
+        enviar_email(current_user.email, tipo, descricao)
+
     return render_template('ajudaOZe.html')
+
+    msg = Message(assunto, sender='papercontrol@planejamento.mg.gov.br', recipients=[destinatario])
+    msg.body = corpo
+    mail.send(msg)
+
+def enviar_email():
+    try:
+            # Aqui, você obteria as informações da Ajuda do banco de dados
+            # Substitua isso com a lógica de como você obtém os dados da Ajuda específica
+            ajuda = ajuda.query.get(id_ajuda)  # Supondo que você tenha o ID da ajuda
+ 
+            # Configuração do e-mail
+            msg = EmailMessage()
+            msg['From'] = 'papercontrol@planejamento.mg.gov.br'
+            msg['To'] = 'lucas.nascimento@planejamento.mg.gov.br'
+ 
+            # Assunto do e-mail com base no tipo (ajuda ou sugestão)
+            msg['Subject'] = f'{ajuda.tipo.capitalize()} - ID da Ajuda: {ajuda.id_ajuda}'
+ 
+            # Construção do conteúdo do e-mail com informações da Ajuda
+            content = f"""
+            Olá, {ajuda.id_user}
+       
+            Aqui estão algumas informações da Ajuda:
+            - ID da Ajuda: {ajuda.id_ajuda}
+            - ID do Usuário: {ajuda.id_user}
+            - Descrição: {ajuda.descricao}
+            - E-mail do Usuário: {ajuda.email}
+       
+            Atenciosamente,
+            Equipe Paper Control
+            """
+ 
+            msg.set_content(content)
+ 
+            # Configuração do servidor SMTP
+            smtp_server = 'seu_servidor_smtp'
+            smtp_port = 587  # Porta do servidor SMTP
+            smtp_user = 'seu_email'
+            smtp_password = 'sua_senha'
+ 
+            with smtplib.SMTP(smtp_server, smtp_port) as smtp:
+                smtp.starttls()
+                smtp.login(smtp_user, smtp_password)
+ 
+                # Envia o e-mail
+                smtp.send_message(msg)
+ 
+            return 'E-mail enviado com sucesso!'
+    except Exception as e:
+            return f'Erro ao enviar e-mail: {str(e)}'
 
 @app.route('/verificar_conexao')
 def verificar_conexao():
@@ -302,4 +379,3 @@ def verificar_conexao():
  
 if __name__ == '__main__':
     app.run(debug=True)
- 
