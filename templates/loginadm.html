@@ -32,17 +32,13 @@
         <script>
             const ctx = document.getElementById('graficoColunas').getContext('2d');
         
-            // Modificar para usar os dados do servidor
             const predios = JSON.parse('{{ dados_predios | safe }}');
-        
-            // Calcular o total do estoque do prédio
-            const totalEstoquePredio = predios.reduce((total, item) => total + item.total_reposicao, 0);
         
             const data = {
                 labels: predios.map(item => item.predio),
                 datasets: [{
                     label: 'Porcentagem Concluída',
-                    data: predios.map(item => (item.total_reposicao / totalEstoquePredio) * 100),
+                    data: predios.map(item => (item.total_reposicao / 100)),
                     backgroundColor: 'rgba(255, 255, 255, 255)',
                     borderColor: 'rgba(255, 255, 255, 255)',
                     borderWidth: 1,
@@ -78,6 +74,7 @@
         
             const myChart = new Chart(ctx, config);
         </script>
+        
     </body>
 </form>
 

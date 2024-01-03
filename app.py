@@ -254,7 +254,6 @@ def reabastecimento():
  
     return render_template('reabastecimento.html', dados_reabastecimento=[], quantidade_estoque=0, error_message="Erro ao buscar dados de reabastecimento")
 
-
 @app.route('/relatoriosadm', methods=['GET', 'POST'])
 @login_required
 def relatoriosadm():
@@ -274,11 +273,12 @@ def relatoriosadm():
                 usuarios_df = pd.DataFrame(usuarios_data)
                 reposicoes_df = pd.DataFrame(reposicoes_data)
 
-                with pd.ExcelWriter('relatorio_completo.xlsx', engine='xlsxwriter') as writer:
+                filename = 'relatorio_completo.xlsx'
+                with pd.ExcelWriter(filename, engine='xlsxwriter') as writer:
                     usuarios_df.to_excel(writer, sheet_name='Usuarios', index=False)
                     reposicoes_df.to_excel(writer, sheet_name='Reposicoes', index=False)
 
-                return send_file('relatorio_completo.xlsx', as_attachment=True)
+                return send_file(filename, as_attachment=True)
 
             elif tipo_relatorio == 'Por Data':
                 data_param = request.form.get('data_reposicao')
@@ -298,7 +298,6 @@ def relatoriosadm():
         
                     with pd.ExcelWriter(filename, engine='xlsxwriter') as writer:
                         reposicoes_df.to_excel(writer, sheet_name='Reposicoes', index=False)
-            
                         usuarios_df.to_excel(writer, sheet_name='Usuarios', index=False)
 
                 else:
@@ -314,7 +313,6 @@ def relatoriosadm():
         
                     with pd.ExcelWriter(filename, engine='xlsxwriter') as writer:
                         reposicoes_df.to_excel(writer, sheet_name='Reposicoes', index=False)
-            
                         usuarios_df.to_excel(writer, sheet_name='Usuarios', index=False)
 
                 return send_file(filename, as_attachment=True)
@@ -343,7 +341,7 @@ def relatoriosadm():
 
                 return send_file(filename, as_attachment=True)
 
-            elif tipo_relatorio == 'Por Data':
+            elif tipo_reposicoes == 'Por Data':
                 data_param = request.form.get('data_reposicao')
 
                 if ' to ' in data_param:
@@ -352,19 +350,16 @@ def relatoriosadm():
                     df = pd.DataFrame([{'id_reposicao': repo.id_reposicao, 'data_reposicao': repo.data_reposicao,
                             'tipo_reposicao': repo.tipo_reposicao, 'quantidade_reposicao': repo.quantidade_reposicao,
                             'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio, 'status_reposicao': repo.status_reposicao} for repo in data])
-                    filename = f'relatorio_completo_por_data_{data_inicio}_{data_fim}.xlsx'
+                    filename = f'relatorio_reposicoes_por_data_{data_inicio}_{data_fim}.xlsx'
                 else:
                     data = Reposicao.query.filter_by(data_reposicao=data_param).all()
                     df = pd.DataFrame([{'id_reposicao': repo.id_reposicao, 'data_reposicao': repo.data_reposicao,
                             'tipo_reposicao': repo.tipo_reposicao, 'quantidade_reposicao': repo.quantidade_reposicao,
                             'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio, 'status_reposicao': repo.status_reposicao} for repo in data])
-                    filename = f'relatorio_completo_por_data_{data_param}.xlsx'
+                    filename = f'relatorio_reposicoes_por_data_{data_param}.xlsx'
 
                 df.to_excel(filename, index=False)
                 return send_file(filename, as_attachment=True)
-
-            else:
-                data = None
 
         elif relatorio_type == 'Usuários':
             data = Usuario.query.all()
@@ -374,10 +369,8 @@ def relatoriosadm():
 
             return send_file(filename, as_attachment=True)
 
-        else:
-            data = None
-
     return render_template('relatoriosadm.html')
+
 
 @app.route('/ajudaOZe', methods=['GET', 'POST'])
 @login_required
