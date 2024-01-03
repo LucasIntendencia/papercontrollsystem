@@ -1,51 +1,53 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify, send_file
 from flask_login import LoginManager, UserMixin, login_required, login_user, current_user
-from database import configure_database, db, Usuario, Reposicao, Reabastecimento, Ajuda, id_ajuda
+from database import configure_database, db, Usuario, Reposicao, Reabastecimento, Ajuda
 from sqlalchemy import func
 from decimal import Decimal
-from datetime import datetime, date, timedelta
+from datetime import datetime
 import secrets
 import logging
 import pandas as pd
-import json
 import smtplib
+import json
 from email.message import EmailMessage
-
 
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(32)
-print(app.secret_key)
 database_uri = 'mysql+mysqlconnector://root:Celeste123@localhost/papercontrol'
-configure_database(
-    app, 'mysql+mysqlconnector://root:Celeste123@localhost/papercontrol')
+configure_database(app, database_uri)
 login_manager = LoginManager(app)
 login_manager.login_view = 'fazer_login'
 logging.basicConfig(filename='erro.log', level=logging.INFO)
 
+# Configuração do Flask-Mail
 app.config['MAIL_SERVER'] = 'smtp.example.com'
-app.config['MAIL_PORT'] = 587 
-app.config['MAIL_USE_TLS'] = True 
-app.config['MAIL_USERNAME'] = 'seu_email@example.com' 
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = 'seu_email@example.com'
 app.config['MAIL_PASSWORD'] = 'sua_senha'
-app.config['MAIL_DEFAULT_SENDER'] = 'papercontrol@planejamento.mg.gov.br'  
+app.config['MAIL_DEFAULT_SENDER'] = 'papercontrol@planejamento.mg.gov.br'
+
 class User(UserMixin):
     def __init__(self, user_id, tipo_user=None):
         self.id = user_id
         self.tipo_user = tipo_user
- 
+
     @staticmethod
     def load_user(user_id):
         return Usuario.query.get(int(user_id))
- 
+
 @login_manager.user_loader
 def load_user(user_id):
     usuario = Usuario.query.get(int(user_id))
     if usuario:
         return User(usuario.id_user, usuario.tipo_user)
     return None
- 
- 
+
 def decimal_default(obj):
+    if isinstance(obj, Decimal):
+        return str(obj)
+    raise TypeError(f"Object of type {type(obj)} is not JSON serializable")
+
     if isinstance(obj, Decimal):
         return str(obj)
     raise TypeError(f"Object of type {type(obj)} is not JSON serializable")
@@ -256,39 +258,126 @@ def reabastecimento():
 @app.route('/relatoriosadm', methods=['GET', 'POST'])
 @login_required
 def relatoriosadm():
-     if request.method == 'POST':
-         relatorio_type = request.form.get('relatorio')
+    if request.method == 'POST':
+        relatorio_type = request.form.get('relatorio')
 
-         if relatorio_type == 'Completo':
-             usuarios_data = [{'id_user': user.id_user, 'email': user.email, 'tipo_user': user.tipo_user, 'estoque': user.estoque} for user in Usuario.query.all()]
-             reposicoes_data = [{'id_reposicao': repo.id_reposicao, 'data_reposicao': repo.data_reposicao, 'tipo_reposicao': repo.tipo_reposicao, 'quantidade_reposicao': repo.quantidade_reposicao, 'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio, 'status_reposicao': repo.status_reposicao} for repo in Reposicao.query.all()]
+        if relatorio_type == 'Completo':
+            tipo_relatorio = request.form.get('tipoRelatorio')
 
-             usuarios_df = pd.DataFrame(usuarios_data)
-             reposicoes_df = pd.DataFrame(reposicoes_data)
+            if tipo_relatorio == 'Completo':
+                # Lógica para relatório completo (usuários e reposições)
+                usuarios_data = [{'id_user': user.id_user, 'email': user.email, 'tipo_user': user.tipo_user, 'estoque': user.estoque} for user in Usuario.query.all()]
+                reposicoes_data = [{'id_reposicao': repo.id_reposicao, 'data_reposicao': repo.data_reposicao,
+                                    'tipo_reposicao': repo.tipo_reposicao, 'quantidade_reposicao': repo.quantidade_reposicao,
+                                    'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio, 'status_reposicao': repo.status_reposicao} for repo in Reposicao.query.all()]
 
-             with pd.ExcelWriter('relatorio_completo.xlsx', engine='xlsxwriter') as writer:
-                 usuarios_df.to_excel(writer, sheet_name='Usuarios', index=False)
-                 reposicoes_df.to_excel(writer, sheet_name='Reposicoes', index=False)
+                usuarios_df = pd.DataFrame(usuarios_data)
+                reposicoes_df = pd.DataFrame(reposicoes_data)
 
-             return send_file('relatorio_completo.xlsx', as_attachment=True)
+                with pd.ExcelWriter('relatorio_completo.xlsx', engine='xlsxwriter') as writer:
+                    usuarios_df.to_excel(writer, sheet_name='Usuarios', index=False)
+                    reposicoes_df.to_excel(writer, sheet_name='Reposicoes', index=False)
 
-         elif relatorio_type == 'Reposições':
-             tipo_reposicoes = request.form.get('tipoReposicoes')
+                return send_file('relatorio_completo.xlsx', as_attachment=True)
 
-             if tipo_reposicoes == 'Completo':
-                 data = Reposicao.query.all()
+            elif tipo_relatorio == 'Por Data':
+                data_param = request.form.get('data_reposicao')
 
-             elif tipo_reposicoes == 'Por Prédio':
-                 predio = request.form.get('predio')
-                 data = Reposicao.query.filter_by(predio=predio).all()
+                if ' to ' in data_param:
+                    data_inicio, data_fim = data_param.split(' to ')
 
-         elif relatorio_type == 'Usuários':
-             data = Usuario.query.all()
+                    reposicoes_data = Reposicao.query.filter(Reposicao.data_reposicao.between(data_inicio, data_fim)).all()
+                    reposicoes_df = pd.DataFrame([{'id_reposicao': repo.id_reposicao, 'data_reposicao': repo.data_reposicao,
+                                        'tipo_reposicao': repo.tipo_reposicao, 'quantidade_reposicao': repo.quantidade_reposicao,
+                                        'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio, 'status_reposicao': repo.status_reposicao} for repo in reposicoes_data])
 
-         else:
-             data = None
+                    usuarios_data = Usuario.query.all()
+                    usuarios_df = pd.DataFrame([{'id_user': user.id_user, 'email': user.email, 'tipo_user': user.tipo_user, 'estoque': user.estoque} for user in usuarios_data])
 
-     return render_template('relatoriosadm.html')
+                    filename = f'relatorio_completo_por_data_{data_inicio}_{data_fim}.xlsx'
+        
+                    with pd.ExcelWriter(filename, engine='xlsxwriter') as writer:
+                        reposicoes_df.to_excel(writer, sheet_name='Reposicoes', index=False)
+            
+                        usuarios_df.to_excel(writer, sheet_name='Usuarios', index=False)
+
+                else:
+                    data_reposicoes = Reposicao.query.filter_by(data_reposicao=data_param).all()
+                    reposicoes_df = pd.DataFrame([{'id_reposicao': repo.id_reposicao, 'data_reposicao': repo.data_reposicao,
+                                        'tipo_reposicao': repo.tipo_reposicao, 'quantidade_reposicao': repo.quantidade_reposicao,
+                                        'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio, 'status_reposicao': repo.status_reposicao} for repo in data_reposicoes])
+
+                    usuarios_data = Usuario.query.all()
+                    usuarios_df = pd.DataFrame([{'id_user': user.id_user, 'email': user.email, 'tipo_user': user.tipo_user, 'estoque': user.estoque} for user in usuarios_data])
+
+                    filename = f'relatorio_completo_por_data_{data_param}.xlsx'
+        
+                    with pd.ExcelWriter(filename, engine='xlsxwriter') as writer:
+                        reposicoes_df.to_excel(writer, sheet_name='Reposicoes', index=False)
+            
+                        usuarios_df.to_excel(writer, sheet_name='Usuarios', index=False)
+
+                return send_file(filename, as_attachment=True)
+
+        elif relatorio_type == 'Reposições':
+            tipo_reposicoes = request.form.get('tipoReposicoes')
+
+            if tipo_reposicoes == 'Completo':
+                data = Reposicao.query.all()
+                df = pd.DataFrame([{'id_reposicao': repo.id_reposicao, 'data_reposicao': repo.data_reposicao,
+                                    'tipo_reposicao': repo.tipo_reposicao, 'quantidade_reposicao': repo.quantidade_reposicao,
+                                    'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio, 'status_reposicao': repo.status_reposicao} for repo in data])
+                filename = 'relatorio_reposicoes_completo.xlsx'
+                df.to_excel(filename, index=False)
+
+                return send_file(filename, as_attachment=True)
+
+            elif tipo_reposicoes == 'Por Prédio':
+                predio = request.form.get('selectPredio')
+                data = Reposicao.query.filter_by(predio=predio).all()
+                df = pd.DataFrame([{'id_reposicao': repo.id_reposicao, 'data_reposicao': repo.data_reposicao,
+                                    'tipo_reposicao': repo.tipo_reposicao, 'quantidade_reposicao': repo.quantidade_reposicao,
+                                    'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio, 'status_reposicao': repo.status_reposicao} for repo in data])
+                filename = f'relatorio_por_predio_{predio.lower()}.xlsx'
+                df.to_excel(filename, index=False)
+
+                return send_file(filename, as_attachment=True)
+
+            elif tipo_relatorio == 'Por Data':
+                data_param = request.form.get('data_reposicao')
+
+                if ' to ' in data_param:
+                    data_inicio, data_fim = data_param.split(' to ')
+                    data = Reposicao.query.filter(Reposicao.data_reposicao.between(data_inicio, data_fim)).all()
+                    df = pd.DataFrame([{'id_reposicao': repo.id_reposicao, 'data_reposicao': repo.data_reposicao,
+                            'tipo_reposicao': repo.tipo_reposicao, 'quantidade_reposicao': repo.quantidade_reposicao,
+                            'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio, 'status_reposicao': repo.status_reposicao} for repo in data])
+                    filename = f'relatorio_completo_por_data_{data_inicio}_{data_fim}.xlsx'
+                else:
+                    data = Reposicao.query.filter_by(data_reposicao=data_param).all()
+                    df = pd.DataFrame([{'id_reposicao': repo.id_reposicao, 'data_reposicao': repo.data_reposicao,
+                            'tipo_reposicao': repo.tipo_reposicao, 'quantidade_reposicao': repo.quantidade_reposicao,
+                            'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio, 'status_reposicao': repo.status_reposicao} for repo in data])
+                    filename = f'relatorio_completo_por_data_{data_param}.xlsx'
+
+                df.to_excel(filename, index=False)
+                return send_file(filename, as_attachment=True)
+
+            else:
+                data = None
+
+        elif relatorio_type == 'Usuários':
+            data = Usuario.query.all()
+            df = pd.DataFrame([{'id_user': user.id_user, 'email': user.email, 'tipo_user': user.tipo_user, 'estoque': user.estoque} for user in data])
+            filename = 'relatorio_usuarios_completo.xlsx'
+            df.to_excel(filename, index=False)
+
+            return send_file(filename, as_attachment=True)
+
+        else:
+            data = None
+
+    return render_template('relatoriosadm.html')
 
 @app.route('/ajudaOZe', methods=['GET', 'POST'])
 @login_required
@@ -308,56 +397,51 @@ def ajudaOZe():
 
     return render_template('ajudaOZe.html')
 
-    msg = Message(assunto, sender='papercontrol@planejamento.mg.gov.br', recipients=[destinatario])
-    msg.body = corpo
-    mail.send(msg)
-
-def enviar_email():
+def enviar_email(email, tipo, descricao):
     try:
-            # Aqui, você obteria as informações da Ajuda do banco de dados
-            # Substitua isso com a lógica de como você obtém os dados da Ajuda específica
-            ajuda = ajuda.query.get(id_ajuda)  # Supondo que você tenha o ID da ajuda
- 
+        # Obter a última ajuda inserida no banco de dados
+        ajuda = Ajuda.query.order_by(Ajuda.id_ajuda.desc()).first()
+
+        # Verificar se existe uma ajuda
+        if ajuda:
             # Configuração do e-mail
             msg = EmailMessage()
             msg['From'] = 'papercontrol@planejamento.mg.gov.br'
             msg['To'] = 'lucas.nascimento@planejamento.mg.gov.br'
- 
-            # Assunto do e-mail com base no tipo (ajuda ou sugestão)
-            msg['Subject'] = f'{ajuda.tipo.capitalize()} - ID da Ajuda: {ajuda.id_ajuda}'
- 
-            # Construção do conteúdo do e-mail com informações da Ajuda
+            msg['Subject'] = f'{tipo.capitalize()} - ID da Ajuda: {ajuda.id_ajuda}'
+
             content = f"""
             Olá, {ajuda.id_user}
-       
+
             Aqui estão algumas informações da Ajuda:
             - ID da Ajuda: {ajuda.id_ajuda}
             - ID do Usuário: {ajuda.id_user}
             - Descrição: {ajuda.descricao}
             - E-mail do Usuário: {ajuda.email}
-       
+
             Atenciosamente,
             Equipe Paper Control
             """
- 
+
             msg.set_content(content)
- 
-            # Configuração do servidor SMTP
+
             smtp_server = 'seu_servidor_smtp'
             smtp_port = 587  # Porta do servidor SMTP
             smtp_user = 'seu_email'
             smtp_password = 'sua_senha'
- 
+
             with smtplib.SMTP(smtp_server, smtp_port) as smtp:
                 smtp.starttls()
                 smtp.login(smtp_user, smtp_password)
- 
+
                 # Envia o e-mail
                 smtp.send_message(msg)
- 
+
             return 'E-mail enviado com sucesso!'
+        else:
+            return 'Nenhuma ajuda encontrada para enviar e-mail.'
     except Exception as e:
-            return f'Erro ao enviar e-mail: {str(e)}'
+        return f'Erro ao enviar e-mail: {str(e)}'
 
 @app.route('/verificar_conexao')
 def verificar_conexao():
