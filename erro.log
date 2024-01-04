@@ -395,3 +395,236 @@ Traceback (most recent call last):
     raise KeyError(key) from err
 KeyError: 'ilha'
 INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:33:22] "[35m[1mPOST /quantidadeadm HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:45:32] "[32mPOST /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:45:32] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:45:32] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:45:32] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:45:32] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:45:33] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:45:33] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:45:33] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:45:33] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:45:33] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:45:33] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:45:33] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:45:33] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:45:34] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: 'QTD. PAPEL IMPRESSA NA SEMANA'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3790, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'QTD. PAPEL IMPRESSA NA SEMANA'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\app.py", line 465, in quantidadeadm
+    quantidade_impressa = row['QTD. PAPEL IMPRESSA NA SEMANA']
+                          ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\series.py", line 1040, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\series.py", line 1156, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3797, in get_loc
+    raise KeyError(key) from err
+KeyError: 'QTD. PAPEL IMPRESSA NA SEMANA'
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:45:37] "[35m[1mPOST /quantidadeadm HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:49:39] "[32mPOST /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:49:39] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:49:40] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:49:40] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:49:40] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:49:41] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:49:41] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:49:41] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:49:41] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:49:41] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:49:42] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:49:42] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:49:42] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:49:42] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: 'QUANTIDADE PAPEL IMPRESSA NA SEMANA'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3790, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'QUANTIDADE PAPEL IMPRESSA NA SEMANA'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\app.py", line 465, in quantidadeadm
+    quantidade_impressa = row['QUANTIDADE PAPEL IMPRESSA NA SEMANA']
+                          ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\series.py", line 1040, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\series.py", line 1156, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3797, in get_loc
+    raise KeyError(key) from err
+KeyError: 'QUANTIDADE PAPEL IMPRESSA NA SEMANA'
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:49:55] "[35m[1mPOST /quantidadeadm HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:50:44] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:50:44] "GET /login?next=/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:50:44] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:50:44] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:50:44] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:50:45] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:50:45] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:50:46] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:50:46] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:50:46] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:50:46] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:50:47] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:50:47] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:50:47] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: 'QUANTIDADE'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3790, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'QUANTIDADE'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\app.py", line 465, in quantidadeadm
+    quantidade_impressa = row['QUANTIDADE']
+                          ~~~^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\series.py", line 1040, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\series.py", line 1156, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3797, in get_loc
+    raise KeyError(key) from err
+KeyError: 'QUANTIDADE'
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:50:50] "[35m[1mPOST /quantidadeadm HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:53:01] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:53:01] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:53:01] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:53:03] "GET /login?next=/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:53:03] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:53:03] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:53:03] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:53:04] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:53:04] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:53:04] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:53:04] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:53:04] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:53:06] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:53:06] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:53:06] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:53:06] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: 'quantidade'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3790, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'quantidade'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\app.py", line 465, in quantidadeadm
+    quantidade_impressa = row['quantidade']
+                          ~~~^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\series.py", line 1040, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\series.py", line 1156, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3797, in get_loc
+    raise KeyError(key) from err
+KeyError: 'quantidade'
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:53:09] "[35m[1mPOST /quantidadeadm HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:55:51] "[32mPOST /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:55:51] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:55:51] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:55:51] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:55:51] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:55:52] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:55:52] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:55:52] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:55:52] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:55:52] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:55:53] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:55:53] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:55:53] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:55:53] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: 'localização'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3790, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'localização'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\app.py", line 462, in quantidadeadm
+    ilha = row['localização']  # Nome da coluna para ilha
+           ~~~^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\series.py", line 1040, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\series.py", line 1156, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3797, in get_loc
+    raise KeyError(key) from err
+KeyError: 'localização'
+INFO:werkzeug:127.0.0.1 - - [04/Jan/2024 10:55:57] "[35m[1mPOST /quantidadeadm HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat

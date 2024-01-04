@@ -446,33 +446,41 @@ def enviar_email(email, tipo, descricao):
 def quantidadeadm():
     try:
         logging.debug("Iniciando processamento...")
+
         if request.method == 'POST':
             logging.debug("Recebendo requisição POST...")
+
             file = request.files.get('excelFile')
             logging.debug(f"Arquivo recebido: {file}")
+
             if file and file.filename.endswith(('.xlsx', '.xls')):
                 # Ler o arquivo Excel
                 df = pd.read_excel(file)
 
                 # Inicializar um DataFrame vazio para armazenar os resultados
-                resultado_df = pd.DataFrame(columns=['ilha', 'andar', 'predio', 'quantidade_reposicao'])
+                resultado_df = pd.DataFrame(columns=['prédio', 'andar', 'ilha', 'quantidade_impressa', 'quantidade_reabastecida'])
 
                 # Iterar sobre cada linha do DataFrame do Excel
-                for index, row in df.iterrows():
-                    ilha = row['ilha']
-                    andar = row['andar']
-                    predio = row['predio']
-                    quantidade_impressa = row['quantidade de papel impressa na semana']
-
+                for _, row in df.iterrows():
+                    predio = row['PRÉDIO']
+                    andar = row['ANDAR']
+                    ilha = row['LOCALIZAÇÃO']
+                    quantidade_impressa = row['QUANTIDADE']
+                    
                     # Consultar o banco de dados para obter as reposições correspondentes
-                    reposicoes = Reposicao.query.filter_by(ilha=ilha, andar=andar, predio=predio).all()
+                    reposicoes = Reposicao.query.filter_by(predio=predio, andar=andar, ilha=ilha).all()
 
                     # Calcular a quantidade total reabastecida
                     quantidade_reabastecida = sum([r.quantidade_reposicao for r in reposicoes])
 
-                    # Calcular a quantidade restante e adicioná-la ao DataFrame resultado
-                    quantidade_restante = quantidade_impressa - quantidade_reabastecida
-                    resultado_df = resultado_df.append({'ilha': ilha, 'andar': andar, 'predio': predio, 'quantidade_reposicao': quantidade_restante}, ignore_index=True)
+                    # Adicionar os resultados ao DataFrame
+                    resultado_df = resultado_df.append({
+                        'prédio': predio,
+                        'andar': andar,
+                        'ilha': ilha,
+                        'quantidade_impressa': quantidade_impressa,
+                        'quantidade_reabastecida': quantidade_reabastecida
+                    }, ignore_index=True)
 
                 # Aqui você pode fazer o que quiser com o DataFrame resultado, por exemplo, retorná-lo como JSON
                 resultado_json = resultado_df.to_json(orient='records')
@@ -485,6 +493,7 @@ def quantidadeadm():
         return jsonify({"error": "Erro interno no servidor"}), 500
 
     return render_template('quantidadeadm.html')
+
 
 @app.route('/verificar_conexao')
 def verificar_conexao():
