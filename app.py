@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, jsonify, send_file
+from flask import Flask, render_template, request, redirect, url_for, jsonify, send_file,flash
 from flask_login import LoginManager, UserMixin, login_required, login_user, current_user
 from database import configure_database, db, Usuario, Reposicao, Reabastecimento, Ajuda
 from sqlalchemy import func
@@ -10,6 +10,7 @@ import pandas as pd
 import smtplib
 import json
 from email.message import EmailMessage
+from werkzeug.exceptions import BadRequestKeyError
 
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(32)
@@ -44,10 +45,6 @@ def load_user(user_id):
     return None
 
 def decimal_default(obj):
-    if isinstance(obj, Decimal):
-        return str(obj)
-    raise TypeError(f"Object of type {type(obj)} is not JSON serializable")
-
     if isinstance(obj, Decimal):
         return str(obj)
     raise TypeError(f"Object of type {type(obj)} is not JSON serializable")
@@ -159,7 +156,6 @@ def abastecimento():
                     if tipo_reposicao == 'semanal':
                         status_reposicao = 'OK'
                     else:
-                        # Verifica se o estoque é suficiente para a reposição
                         if estoque < quantidade_reposicao:
                             mensagem = "Erro: Estoque insuficiente para fazer a reposição."
                             print(mensagem)
@@ -376,20 +372,29 @@ def relatoriosadm():
 @login_required
 def ajudaOZe():
     if request.method == 'POST':
-        tipo = request.form['tipo']
-        descricao = request.form['problema']
-        id_user = current_user.id_user  # Certifique-se de que você tenha acesso ao objeto current_user
+        try:
+            tipo = request.form['tipo']
+            descricao = request.form['problema']
 
-        # Salva os dados no banco de dados
-        nova_ajuda = Ajuda(tipo=tipo, descricao=descricao, id_user=id_user, email=current_user.email)
-        db.session.add(nova_ajuda)
-        db.session.commit()
+            if not tipo or not descricao:
+                flash('Por favor, preencha todos os campos.', 'error')
+                return render_template('ajudaOZe.html')
 
-        # Envia e-mail
-        enviar_email(current_user.email, tipo, descricao)
+            id_user = current_user.id_user
+
+            nova_ajuda = Ajuda(tipo=tipo, descricao=descricao, id_user=id_user, email=current_user.email)
+            db.session.add(nova_ajuda)
+            db.session.commit()
+
+            # Envia e-mail
+            enviar_email(current_user.email, tipo, descricao)
+
+            flash('Sua ajuda foi enviada com sucesso!', 'success')
+
+        except BadRequestKeyError as e:
+            flash('Erro na solicitação: {}'.format(str(e)), 'error')
 
     return render_template('ajudaOZe.html')
-
 def enviar_email(email, tipo, descricao):
     try:
         # Obter a última ajuda inserida no banco de dados
@@ -435,6 +440,51 @@ def enviar_email(email, tipo, descricao):
             return 'Nenhuma ajuda encontrada para enviar e-mail.'
     except Exception as e:
         return f'Erro ao enviar e-mail: {str(e)}'
+
+@app.route('/quantidadeadm', methods=['GET', 'POST'])
+@login_required
+def quantidadeadm():
+    try:
+        logging.debug("Iniciando processamento...")
+        if request.method == 'POST':
+            logging.debug("Recebendo requisição POST...")
+            file = request.files.get('excelFile')
+            logging.debug(f"Arquivo recebido: {file}")
+            if file and file.filename.endswith(('.xlsx', '.xls')):
+                # Ler o arquivo Excel
+                df = pd.read_excel(file)
+
+                # Inicializar um DataFrame vazio para armazenar os resultados
+                resultado_df = pd.DataFrame(columns=['ilha', 'andar', 'predio', 'quantidade_reposicao'])
+
+                # Iterar sobre cada linha do DataFrame do Excel
+                for index, row in df.iterrows():
+                    ilha = row['ilha']
+                    andar = row['andar']
+                    predio = row['predio']
+                    quantidade_impressa = row['quantidade de papel impressa na semana']
+
+                    # Consultar o banco de dados para obter as reposições correspondentes
+                    reposicoes = Reposicao.query.filter_by(ilha=ilha, andar=andar, predio=predio).all()
+
+                    # Calcular a quantidade total reabastecida
+                    quantidade_reabastecida = sum([r.quantidade_reposicao for r in reposicoes])
+
+                    # Calcular a quantidade restante e adicioná-la ao DataFrame resultado
+                    quantidade_restante = quantidade_impressa - quantidade_reabastecida
+                    resultado_df = resultado_df.append({'ilha': ilha, 'andar': andar, 'predio': predio, 'quantidade_reposicao': quantidade_restante}, ignore_index=True)
+
+                # Aqui você pode fazer o que quiser com o DataFrame resultado, por exemplo, retorná-lo como JSON
+                resultado_json = resultado_df.to_json(orient='records')
+                return jsonify(resultado_json)
+
+        logging.debug("Processamento concluído com sucesso.")
+    except Exception as e:
+        # Adicione mensagens de log
+        logging.error(f"Erro no servidor: {e}", exc_info=True)
+        return jsonify({"error": "Erro interno no servidor"}), 500
+
+    return render_template('quantidadeadm.html')
 
 @app.route('/verificar_conexao')
 def verificar_conexao():

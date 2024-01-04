@@ -101,19 +101,9 @@ body {
     padding: 5px;
 }
  
-/* Estilos para dispositivos móveis */
-@media only screen and (max-width: 600px) {
-    .grafico-container {
-        width: 300px;
-        margin-bottom: 280px;
-        max-width: none;
-    }
-}
- 
 /* Estilos para dispositivos maiores (desktop) */
 @media only screen and (min-width: 601px) {
     .grafico-container {
-        margin-bottom: 280px;
         width: 300px;
         max-width: 600px;
     }

@@ -23,58 +23,9 @@
         </div>
         <div class="button-container">
             <a href="{{ url_for('relatoriosadm') }}" class="Relatorios">Gerar Relatorios</a>
+            <a href="{{ url_for('quantidadeadm') }}" class="Relatorios">Quantidade por Andar</a>
         </div>
-        <div class="grafico-container">
-                <canvas id="graficoColunas" class="grafico-colunas"></canvas>
-            </a>
-        </div>
-        
-        <script>
-            const ctx = document.getElementById('graficoColunas').getContext('2d');
-        
-            const predios = JSON.parse('{{ dados_predios | safe }}');
-        
-            const data = {
-                labels: predios.map(item => item.predio),
-                datasets: [{
-                    label: 'Porcentagem Concluída',
-                    data: predios.map(item => (item.total_reposicao / 100)),
-                    backgroundColor: 'rgba(255, 255, 255, 255)',
-                    borderColor: 'rgba(255, 255, 255, 255)',
-                    borderWidth: 1,
-                    barThickness: 10,
-                    borderRadius: 5,
-                }]
-            };
-        
-            const config = {
-                type: 'bar',
-                data: data,
-                options: {
-                    scales: {
-                        y: {
-                            ticks: {
-                                stepSize: 25,
-                                callback: function (value) {
-                                    return value + '%';
-                                },
-                                min: 0,
-                                max: 100,
-                                color: 'white'
-                            }
-                        },
-                        x: {
-                            ticks: {
-                                color: 'white'
-                            }
-                        }
-                    },
-                }
-            };
-        
-            const myChart = new Chart(ctx, config);
-        </script>
-        
+
     </body>
 </form>
 

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaperControllSystem ADM</title>
+    <link rel="stylesheet" href="../static/styles/quantidadeadm.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+</head>
+
+<body>
+    <div class="cabecalho">
+        <a href="{{ url_for('loginadm') }}" class="PaperCS">Paper Control System</a>
+        <a href="{{ url_for('fazer_login') }}" class="exitbutton">
+            <img src="../static/images/exitbutton.png" alt="Botão Pequeno" class="exitbutton">
+        </a>
+    </div>
+
+    <form method="post" action="{{ url_for('quantidadeadm') }}" enctype="multipart/form-data">
+        <input type="file" name="excelFile" id="excelFile" accept=".xlsx, .xls" />
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        function processFile() {
+            const fileInput = document.getElementById('excelFile');
+            const file = fileInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    const data = new Uint8Array(e.target.result);
+                    const workbook = XLSX.read(data, { type: 'array' });
+
+                    // Aqui você pode fazer algo com o objeto workbook antes de enviar para o servidor
+
+                    // Convertendo para JSON
+                    const jsonData = XLSX.utils.sheet_to_json(workbook.Sheets[workbook.SheetNames[0]]);
+
+                    // Enviar os dados para o servidor via requisição AJAX
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('POST', '/quantidadeadm', true);
+                    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+                    xhr.onload = function () {
+                        if (xhr.status === 200) {
+                            console.log(xhr.responseText);
+                        } else {
+                            console.error('Erro ao enviar dados para o servidor.');
+                        }
+                    };
+                    xhr.send(JSON.stringify(jsonData));
+                };
+
+                reader.readAsArrayBuffer(file);
+            } else {
+                alert("Por favor, escolha um arquivo Excel antes de enviar.");
+            }
+        }
+    </script>
+</body>
+
+</html>
