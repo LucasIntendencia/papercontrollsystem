@@ -7,34 +7,31 @@
     <title>Página de Ajuda</title>
     <link rel="stylesheet" href="../static/styles/ajudaOZe.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <script>
-        function validarFormulario() {
-            var tipo = document.getElementById('tipo').value;
-            var problema = document.getElementById('problema').value;
-
-            if (tipo === '' || problema === '') {
-                alert('Por favor, preencha todos os campos.');
-                return false; 
-            }
-
-            return true;
-        }
-    </script>
 </head>
 
 <body>
-    <div class="cabecalho">
-        <a href="{{ url_for('loginrec') }}" class="PaperCS">Paper Controll System</a>
-        <a href="{{ url_for('fazer_login') }}" class="exitbutton">
-            <img src="../static/images/exitbutton.png" alt="Botão Pequeno">
-        </a>
+    <div id="exitPopup" class="exit-popup">
+        <div class="popup-content">
+            <p>Deseja mesmo sair?</p>
+            <div class="button-container">
+                <button id="simButton">Sim</button>
+                <button id="naoButton">Não</button>
+            </div>
+        </div>
     </div>
-    <div class="formulario">
-        <h1>Formulário de Ajuda</h1>
-        <form method="post" action="{{ url_for('ajudaOZe') }}" onsubmit="return validarFormulario()">
-            <label for="tipo">Selecione o Assunto:</label>
+
+    <form id="myForm" method="post" action="{{ url_for('ajudaOZe') }}" onsubmit="return validarFormulario()">
+        <div class="cabecalho">
+            <a href="{{ url_for('loginrec') }}" class="PaperCS">Paper Controll System</a>
+            <a href="{{ url_for('fazer_login') }}" class="exitbutton">
+                <img src="../static/images/exitbutton.png" alt="Botão Pequeno">
+            </a>
+        </div>
+
+        <div class="formulario">
+            <h1>Formulário de Ajuda</h1>
             <select id="tipo" name="tipo">
-                <option value="" selected disabled hidden>Selecione o Tópico</option>
+                <option value="" selected disabled hidden>Selecione o Assunto</option>
                 <option value="sugestao">Sugestão</option>
                 <option value="ajuda">Ajuda</option>
             </select>
@@ -44,8 +41,43 @@
                 placeholder="Descreva detalhadamente o seu problema ou sugestão"></textarea>
 
             <button type="submit">Enviar</button>
-        </form>
-    </div>
+        </div>
+    </form>
+
+    <script>
+        function validarFormulario() {
+            var tipo = document.getElementById('tipo').value;
+            var problema = document.getElementById('problema').value;
+
+            if (tipo === '' || problema === '') {
+                alert('Por favor, preencha todos os campos.');
+                return false;
+            } else {
+                document.getElementById('myForm').submit();
+                return true;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const exitButton = document.querySelector('.exitbutton');
+            const exitPopup = document.getElementById('exitPopup');
+            const simButton = document.getElementById('simButton');
+            const naoButton = document.getElementById('naoButton');
+
+            exitButton.addEventListener('click', function (event) {
+                event.preventDefault();
+                exitPopup.style.display = 'flex';
+            });
+
+            simButton.addEventListener('click', function () {
+                window.location.href = "{{ url_for('fazer_login') }}";
+            });
+
+            naoButton.addEventListener('click', function () {
+                exitPopup.style.display = 'none';
+            });
+        });
+    </script>
 </body>
 
 </html>

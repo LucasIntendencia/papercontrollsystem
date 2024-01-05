@@ -8,11 +8,21 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<form method="post" action="{{ url_for('loginadm')  }}">
 
-    <body>
+<body>
+    <div id="exitPopup" class="exit-popup">
+        <div class="popup-content">
+            <p>Deseja mesmo sair?</p>
+            <div class="button-container">
+                <button id="simButton">Sim</button>
+                <button id="naoButton">Não</button>
+            </div>
+        </div>
+    </div>
+    <form method="post" action="{{ url_for('loginadm')  }}">
+
         <div class="cabecalho">
-            <a href="{{ url_for('loginadm') }}" class="PaperCS">Paper Control System</a>
+            <a href="{{ url_for('loginadm') }}" class="PaperCS">Paper Controll System</a>
             <a href="{{ url_for('fazer_login') }}" class="exitbutton">
                 <img src="../static/images/exitbutton.png" alt="Botão Pequeno" class="exitbutton">
             </a>
@@ -25,8 +35,30 @@
             <a href="{{ url_for('relatoriosadm') }}" class="Relatorios">Gerar Relatorios</a>
             <a href="{{ url_for('quantidadeadm') }}" class="Relatorios">Quantidade por Andar</a>
         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const exitButton = document.querySelector('.exitbutton');
+                const exitPopup = document.getElementById('exitPopup');
+                const simButton = document.getElementById('simButton');
+                const naoButton = document.getElementById('naoButton');
 
-    </body>
+                exitButton.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    exitPopup.style.display = 'flex';
+                });
+
+                simButton.addEventListener('click', function () {
+                    window.location.href = "{{ url_for('fazer_login') }}";
+                });
+
+                naoButton.addEventListener('click', function () {
+                    exitPopup.style.display = 'none';
+                });
+            });
+
+        </script>
+
+</body>
 </form>
 
 </html>

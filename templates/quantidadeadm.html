@@ -7,6 +7,9 @@
     <title>PaperControllSystem ADM</title>
     <link rel="stylesheet" href="../static/styles/quantidadeadm.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
 </head>
 
@@ -17,11 +20,26 @@
             <img src="../static/images/exitbutton.png" alt="Botão Pequeno" class="exitbutton">
         </a>
     </div>
+    <div id="exitPopup" class="exit-popup">
+        <div class="popup-content">
+            <p>Deseja mesmo sair?</p>
+            <div class="button-container">
+                <button id="simButton">Sim</button>
+                <button id="naoButton">Não</button>
+            </div>
+        </div>
+    </div>
 
-    <form method="post" action="{{ url_for('quantidadeadm') }}" enctype="multipart/form-data">
-        <input type="file" name="excelFile" id="excelFile" accept=".xlsx, .xls" />
-        <button type="submit">Enviar</button>
-    </form>
+    <div class="upload-container">
+        <form method="post" action="{{ url_for('quantidadeadm') }}" enctype="multipart/form-data">
+            <label for="excelFile" class="upload-label">
+                <span>Arraste o arquivo aqui ou</span>
+                <span>clique para selecionar</span>
+            </label>
+            <input type="file" name="excelFile" id="excelFile" accept=".xlsx, .xls" />
+            <button type="submit" class="enviar-button">Enviar</button>
+        </form>
+    </div>
 
     <script>
         function processFile() {
@@ -58,6 +76,25 @@
                 alert("Por favor, escolha um arquivo Excel antes de enviar.");
             }
         }
+        document.addEventListener('DOMContentLoaded', function () {
+            const exitButton = document.querySelector('.exitbutton');
+            const exitPopup = document.getElementById('exitPopup');
+            const simButton = document.getElementById('simButton');
+            const naoButton = document.getElementById('naoButton');
+
+            exitButton.addEventListener('click', function (event) {
+                event.preventDefault();
+                exitPopup.style.display = 'flex';
+            });
+
+            simButton.addEventListener('click', function () {
+                window.location.href = "{{ url_for('fazer_login') }}";
+            });
+
+            naoButton.addEventListener('click', function () {
+                exitPopup.style.display = 'none';
+            });
+        });
     </script>
 </body>
 

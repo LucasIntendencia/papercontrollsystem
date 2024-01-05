@@ -9,7 +9,7 @@ body {
     grid-template-rows: auto 1fr;
     height: 100vh;
 }
- 
+
 .cabecalho {
     display: flex;
     justify-content: space-between;
@@ -18,11 +18,11 @@ body {
     background-color: #1A5A6B;
     margin-top: 15px;
 }
- 
+
 .exitbutton {
-    width: 35px;
+    width: 28px;
 }
- 
+
 .recep-info {
     background-color: black;
     border-radius: 50%;
@@ -34,19 +34,24 @@ body {
     text-align: center;
     display: flex;
     align-items: center;
-    justify-content: center; /* Alterado para centralizar horizontal e verticalmente */
+    justify-content: center;
+    /* Alterado para centralizar horizontal e verticalmente */
     flex-direction: column;
     line-height: 1.6;
 }
 
 .recep-info p:first-child {
-    font-size: 90px; /* Tamanho de fonte grande para o primeiro parágrafo */
-    margin-bottom: 5px; /* Espaçamento inferior menor para o primeiro parágrafo */
+    font-size: 90px;
+    /* Tamanho de fonte grande para o primeiro parágrafo */
+    margin-bottom: 5px;
+    /* Espaçamento inferior menor para o primeiro parágrafo */
 }
 
 .recep-info p {
-    font-size: 1em; /* Tamanho de fonte padrão para os outros parágrafos */
-    margin: 0; /* Redefinir as margens para evitar espaçamento indesejado */
+    font-size: 1em;
+    /* Tamanho de fonte padrão para os outros parágrafos */
+    margin: 0;
+    /* Redefinir as margens para evitar espaçamento indesejado */
 }
 
 .button-container {
@@ -54,10 +59,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
-    margin-top: 20px;
+
+
 }
- 
+
 .PaperCS {
     margin: 10px;
     padding: 10px 15px;
@@ -70,7 +75,7 @@ body {
     outline: none;
     text-decoration: none;
 }
- 
+
 .Relatorios {
     width: 300px;
     font-size: 24px;
@@ -86,25 +91,65 @@ body {
     text-align: center;
     text-decoration: none;
 }
- 
-.grafico-container {
-    margin-bottom: -1000px;
-    text-align: center;
-    background-color: black;
-    width: 300px;
-    height: 150px;
-    border-radius: 15px;
-    display: block;
-    box-sizing: border-box;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 5px;
+
+.exit-popup {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
 }
- 
+
+.exit-popup .popup-content {
+    background-color: white;
+    /* Background branco */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+}
+
+.exit-popup .popup-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.exit-popup .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.exit-popup .button-container button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.exit-popup .button-container button#simButton {
+    background-color: #3498db;
+    /* Botões azuis */
+    color: white;
+}
+
+.exit-popup .button-container button#naoButton {
+    background-color: #e74c3c;
+    color: white;
+}
+
 /* Estilos para dispositivos maiores (desktop) */
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 768px) {
     .grafico-container {
         width: 300px;
         max-width: 600px;
     }
+
 }

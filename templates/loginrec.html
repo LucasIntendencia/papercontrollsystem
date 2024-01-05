@@ -1,16 +1,25 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
- 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page - PaperControlSystem</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/loginrec.css') }}">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/loginrec.css') }}">
 </head>
- 
-<form method="post" action="{{ url_for('loginrec') }}">
- 
-    <body>
+
+<body>
+    <div id="exitPopup" class="exit-popup">
+        <div class="popup-content">
+            <p>Deseja mesmo sair?</p>
+            <div class="button-container">
+                <button id="simButton">Sim</button>
+                <button id="naoButton">Não</button>
+            </div>
+        </div>
+    </div>
+    <form method="post" action="{{ url_for('loginrec') }}">
         <div class="cabecalho">
             <a href="{{ url_for('loginrec') }}" class="PaperCS">Paper Controll System</a>
             <a href="{{ url_for('fazer_login') }}" class="exitbutton">
@@ -23,38 +32,47 @@
                 <a href="{{ url_for('reabastecimento') }}" class="Reabastecimento">Solicitar Reabastecimento</a>
             </div>
         </div>
-    </body>
-</form>
- 
-<footer>
-    {% if quantidade_estoque is defined %}
-    <div class="estoque-info">
-        <p>Seu estoque atual:</p>
-        <p>
-            <span class="numero-estoque">{{ quantidade_estoque }}</span>
-        </p>
-        <p> resma(s)</p>
-    </div>
-    {% else %}
-    <p>{{ mensagem_erro }}</p>
-    {% endif %}
- 
-    <button class="zezinhobola" onclick=window.location.href="{{ url_for('ajudaOZe') }}"></button>
-</footer>
- 
-</body>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const botoesAbastecimento = document.querySelectorAll('.abastecimento-btn');
- 
-        botoesAbastecimento.forEach(function (botao) {
-            botao.addEventListener('click', function () {
-                const tipoReposicao = this.getAttribute('data-tipo');
-                document.getElementById('tipo_reposicao').value = tipoReposicao;
- 
+
+        <footer>
+            {% if quantidade_estoque is defined %}
+            <div class="estoque-info">
+                <p>Seu estoque atual:</p>
+                <p>
+                    <span class="numero-estoque">{{ quantidade_estoque }}</span>
+                </p>
+                <p> resma(s)</p>
+            </div>
+            {% else %}
+            <p>{{ mensagem_erro }}</p>
+            {% endif %}
+        </footer>
+
+        <a href="{{ url_for('ajudaOZe') }}" class="zezinhobola">
+            <img src="../static/images/zezinhobola.png" alt="Zezinho">
+        </a>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const exitButton = document.querySelector('.exitbutton');
+                const exitPopup = document.getElementById('exitPopup');
+                const simButton = document.getElementById('simButton');
+                const naoButton = document.getElementById('naoButton');
+
+                exitButton.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    exitPopup.style.display = 'flex';
+                });
+
+                simButton.addEventListener('click', function () {
+                    window.location.href = "{{ url_for('fazer_login') }}";
+                });
+
+                naoButton.addEventListener('click', function () {
+                    exitPopup.style.display = 'none';
+                });
             });
-        });
-    });
-</script>
- 
+        </script>
+    </form>
+</body>
+
 </html>

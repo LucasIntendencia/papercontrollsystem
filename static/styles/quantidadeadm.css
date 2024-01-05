@@ -18,9 +18,9 @@ body {
     background-color: #1A5A6B;
     margin-top: 15px;
 }
- 
+
 .exitbutton {
-    width: 35px;
+    width: 30px;
 }
 
 .PaperCS {
@@ -34,4 +34,109 @@ body {
     color: white;
     outline: none;
     text-decoration: none;
+}
+
+.upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 400px;
+}
+
+.upload-label {
+    width: 300px;
+    height: 200px;
+    border: 2px dashed #ffffff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 25px;
+    color: #ffffff;
+    transition: border-color 0.3s ease;
+    font-family: 'Lilita One', sans-serif;
+}
+
+.upload-label:hover {
+    border-color: #ffffff;
+}
+
+.upload-label span {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+#excelFile {
+    display: none;
+}
+
+.enviar-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #23A0BA;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 100px;
+}
+
+.enviar-button:hover {
+    background-color: #166f83;
+}
+
+.exit-popup {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.exit-popup .popup-content {
+    background-color: white;
+    /* Background branco */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+}
+
+.exit-popup .popup-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.exit-popup .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.exit-popup .button-container button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.exit-popup .button-container button#simButton {
+    background-color: #3498db;
+    /* Botões azuis */
+    color: white;
+}
+
+.exit-popup .button-container button#naoButton {
+    background-color: #e74c3c;
+    color: white;
 }
