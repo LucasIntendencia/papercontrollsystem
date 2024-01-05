@@ -9,7 +9,7 @@ body {
     grid-template-rows: auto 1fr;
     height: 100vh;
 }
- 
+
 .cabecalho {
     display: flex;
     justify-content: space-between;
@@ -18,7 +18,7 @@ body {
     background-color: #1A5A6B;
     margin-top: 15px;
 }
- 
+
 /* Estilos para o botão do Paper Control System */
 .PaperCS {
     margin: 10px;
@@ -32,14 +32,14 @@ body {
     outline: none;
     text-decoration: none;
 }
- 
+
 .exitbutton {
     width: 30px;
     text-decoration: none;
     height: 30px;
     cursor: pointer;
 }
- 
+
 .container {
     width: 80%;
     margin: 20px auto;
@@ -48,7 +48,7 @@ body {
     margin-top: 150px;
     /* Espaçamento superior para deslocar os botões para baixo */
 }
- 
+
 /* Estilos para os dropdowns */
 .predios,
 .andar {
@@ -56,7 +56,7 @@ body {
     display: flex;
     align-items: center;
 }
- 
+
 .predios select,
 .andar select {
     flex: 1;
@@ -67,7 +67,7 @@ body {
     outline: none;
     text-align: center;
 }
- 
+
 .quantity-input {
     flex: 1;
     padding: 10px;
@@ -81,7 +81,7 @@ body {
     text-align: center;
     /* Centraliza o texto dentro do input */
 }
- 
+
 /* Estilos para o botão de Reabastecer */
 .Enviar {
     padding: 10px 20px;
@@ -98,7 +98,7 @@ body {
     margin-top: 100px;
     width: 80%;
 }
- 
+
 .popup {
     display: none;
     position: fixed;
@@ -110,7 +110,7 @@ body {
     /* Fundo escuro com transparência */
     z-index: 1000;
 }
- 
+
 .popup-content {
     text-align: center;
     position: absolute;
@@ -123,7 +123,7 @@ body {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
- 
+
 .popup-content button {
     padding: 10px 15px;
     font-size: 16px;
@@ -135,22 +135,73 @@ body {
     outline: none;
     margin-top: 20px;
 }
- 
+
 .popup-content button:hover {
     background-color: #1A7687;
 }
- 
+
 /* Remova o estilo do botão para fechar */
 .popup-content span.close {
     display: none;
 }
- 
+
 .campo-faltando {
     border-color: #ff0000 !important;
     border-width: 3px;
 }
- 
- 
+
+.exit-popup {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.exit-popup .popup-content {
+    background-color: white;
+    /* Background branco */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+}
+
+.exit-popup .popup-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.exit-popup .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.exit-popup .button-container button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.exit-popup .button-container button#simButton {
+    background-color: #3498db;
+    /* Botões azuis */
+    color: white;
+}
+
+.exit-popup .button-container button#naoButton {
+    background-color: #e74c3c;
+    color: white;
+}
+
+
 @media only screen and (max-width: 768px) {
     .container {
         width: 90%;
@@ -158,11 +209,11 @@ body {
         margin-top: 100px;
         /* Espaçamento superior menor */
     }
- 
+
     .Enviar {
         margin-top: 30px;
         /* Espaçamento superior menor */
     }
- 
- 
+
+
 }

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
- 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../static/styles/abastecimento.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
- 
+
 <body>
     <div class="popup" id="successPopup">
         <div class="popup-content">
@@ -17,11 +17,13 @@
             <button onclick="returnToLogin()">OK</button>
         </div>
     </div>
-    <div class="popup" id="noStockPopup">
+    <div id="exitPopup" class="exit-popup">
         <div class="popup-content">
-            <span class="close" onclick="closeNoStockPopup()">&times;</span>
-            <p>Erro: Estoque insuficiente para fazer a reposição.</p>
-            <button onclick="closeNoStockPopup()">OK</button>
+            <p>Deseja mesmo sair?</p>
+            <div class="button-container">
+                <button id="simButton">Sim</button>
+                <button id="naoButton">Não</button>
+            </div>
         </div>
     </div>
     <form method="post" action="{{ url_for('abastecimento') }}">
@@ -32,7 +34,7 @@
                 <img src="../static/images/exitbutton.png" alt="Botão Pequeno" class="exitbutton">
             </a>
         </div>
- 
+
         <div class="container">
             <div class="button-container">
                 <div class="select-container">
@@ -53,14 +55,14 @@
                         <option value="tiradentes">Tiradentes</option>
                     </select>
                 </div>
- 
+
                 <div class="select-container">
                     <label for="andar"></label>
                     <select id="andar" name="andar">
                         <option value="" selected disabled hidden>Selecione o andar</option>
                     </select>
                 </div>
- 
+
                 <div class="select-container">
                     <label for="ilha"></label>
                     <select id="ilha" name="ilha">
@@ -68,14 +70,11 @@
                     </select>
                 </div>
             </div>
- 
             <input id="quantidade_reposicao" type="number" class="quantity-input" name="quantidade_reposicao"
                 placeholder="Quantidade">
         </div>
- 
         <button class="Enviar" type="submit">Reabastecer</button>
     </form>
- 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const buildingDropdown = document.getElementById('predio');
@@ -83,30 +82,26 @@
             const ilhaDropdown = document.getElementById('ilha');
             const quantityInput = document.getElementById('quantidade_reposicao');
             const tipoReposicaoDropdown = document.getElementById('tipo_reposicao');
- 
             quantityInput.disabled = true;
- 
             function enableQuantityInput() {
                 const buildingSelected = buildingDropdown.value !== "";
                 const floorSelected = floorDropdown.value !== "";
                 const ilhaSelected = ilhaDropdown.value !== "";
- 
                 if (buildingSelected && floorSelected && ilhaSelected) {
                     quantityInput.disabled = false;
                 } else {
                     quantityInput.disabled = true;
                 }
             }
- 
             document.querySelector('form').addEventListener('submit', function (event) {
                 const buildingSelected = buildingDropdown.value !== "";
                 const floorSelected = floorDropdown.value !== "";
                 const ilhaSelected = ilhaDropdown.value !== "";
                 const quantityFilled = quantityInput.value.trim() !== "";
                 const typeRepositor = tipoReposicaoDropdown.value !== "";
- 
+
                 const dropdowns = [buildingDropdown, floorDropdown, ilhaDropdown, tipoReposicaoDropdown];
- 
+
                 dropdowns.forEach(dropdown => {
                     if (dropdown.value === "") {
                         dropdown.classList.add('campo-faltando');
@@ -114,29 +109,25 @@
                         dropdown.classList.remove('campo-faltando');
                     }
                 });
- 
                 if (!quantityFilled) {
                     quantityInput.classList.add('campo-faltando');
                 } else {
                     quantityInput.classList.remove('campo-faltando');
                 }
- 
+
                 if (!buildingSelected || !floorSelected || !ilhaSelected || !quantityFilled || !tipoReposicaoDropdown) {
                     event.preventDefault();
                     alert("Por favor, preencha todos os campos destacados em vermelho.");
                 }
             });
- 
             buildingDropdown.addEventListener('change', function () {
                 enableQuantityInput();
                 floorDropdown.selectedIndex = 0;
                 ilhaDropdown.selectedIndex = 0;
                 quantityInput.value = '';
                 quantityInput.disabled = true;
- 
                 const building = buildingDropdown.value;
                 floorDropdown.innerHTML = '<option value="" selected disabled hidden>Selecione o andar</option>';
- 
                 if (building !== "") {
                     const floorsData = {
                         minas: ['Andar 1', 'Andar 2', 'Andar 3', 'Andar 4', 'Andar 5', 'Andar 6', 'Andar 7', 'Andar 8', 'Andar 9', 'Andar 10', 'Andar 11', 'Andar 12', 'Andar 13', 'Andar 14'],
@@ -144,7 +135,6 @@
                         alterosa: ['Andar 1'],
                         tiradentes: ['Andar 1']
                     };
- 
                     floorsData[building].forEach(floor => {
                         const option = document.createElement('option');
                         option.value = floor;
@@ -153,17 +143,14 @@
                     });
                 }
             });
- 
             floorDropdown.addEventListener('change', function () {
                 enableQuantityInput();
                 ilhaDropdown.selectedIndex = 0;
                 quantityInput.value = '';
                 quantityInput.disabled = true;
- 
                 const building = buildingDropdown.value;
                 const floor = floorDropdown.value;
                 ilhaDropdown.innerHTML = '<option value="" selected disabled hidden>Selecione a ilha</option>';
- 
                 if (building !== "" && floor !== "") {
                     const ilhasData = {
                         minas: 8,
@@ -171,7 +158,6 @@
                         alterosa: 1,
                         tiradentes: 1
                     };
- 
                     for (let i = 1; i <= ilhasData[building]; i++) {
                         const option = document.createElement('option');
                         option.value = `Ilha ${i}`;
@@ -183,87 +169,89 @@
             ilhaDropdown.addEventListener('change', function () {
                 enableQuantityInput();
             });
- 
             tipoReposicaoDropdown.addEventListener('change', function () {
                 const tipoSelecionado = tipoReposicaoDropdown.value;
- 
                 if (tipoSelecionado === 'Semanal') {
                     console.log('Selecionou Semanal');
                 } else if (tipoSelecionado === 'Pontual') {
                     console.log('Selecionou Pontual');
                 }
             });
- 
             quantityInput.addEventListener('input', function () {
                 this.value = this.value.replace(/[^0-9]/g, '');
             });
         });
- 
+
         function closePopup() {
             document.getElementById('successPopup').style.display = 'none';
         }
- 
-        function closeNoStockPopup() {
-            document.getElementById('noStockPopup').style.display = 'none';
-        }
- 
+
         function returnToLogin() {
             window.location.href = "{{ url_for('loginrec') }}";
         }
- 
+
         document.addEventListener('DOMContentLoaded', function () {
             const form = document.querySelector('form');
             const successPopup = document.getElementById('successPopup');
-            const noStockPopup = document.getElementById('noStockPopup');
- 
+
             form.addEventListener('submit', function (event) {
                 event.preventDefault();
- 
+
                 const buildingDropdown = document.getElementById('predio');
                 const floorDropdown = document.getElementById('andar');
                 const ilhaDropdown = document.getElementById('ilha');
                 const quantityInput = document.getElementById('quantidade_reposicao');
- 
+
                 const buildingSelected = buildingDropdown.value !== "";
                 const floorSelected = floorDropdown.value !== "";
                 const ilhaSelected = ilhaDropdown.value !== "";
                 const quantityFilled = quantityInput.value.trim() !== "";
- 
+
                 if (buildingSelected && floorSelected && ilhaSelected && quantityFilled) {
-                    // Obter a quantidade disponível no estoque (substitua 0 pelo valor real)
-                    const estoqueDisponivel = 0;
- 
-                    if (parseInt(quantityInput.value) > estoqueDisponivel) {
-                        noStockPopup.style.display = 'block';
-                        setTimeout(function () {
-                            noStockPopup.style.display = 'none';
-                            window.history.back(); // Redirecionar para a página anterior
-                        }, 3000); // Tempo de exibição do popup em milissegundos (aqui definido como 3 segundos)
-                    } else {
-                        fetch("{{ url_for('abastecimento') }}", {
-                            method: 'POST',
-                            body: new FormData(form)
+                    fetch("{{ url_for('abastecimento') }}", {
+                        method: 'POST',
+                        body: new FormData(form)
+                    })
+                        .then(response => {
+                            if (response.ok) {
+                                successPopup.style.display = 'block';
+                                setTimeout(function () {
+                                    successPopup.style.display = 'none';
+                                    window.location.href = "{{ url_for('loginrec') }}";
+                                }, 3000);
+                            } else {
+                                throw new Error('Erro ao salvar o formulário.');
+                            }
                         })
-                            .then(response => {
-                                if (response.ok) {
-                                    successPopup.style.display = 'block';
-                                    setTimeout(function () {
-                                        successPopup.style.display = 'none';
-                                        window.location.href = "{{ url_for('loginrec') }}";
-                                    }, 3000);
-                                } else {
-                                    throw new Error('Erro ao salvar o formulário.');
-                                }
-                            })
-                            .catch(error => {
-                                console.error('Erro:', error);
-                                alert('Ocorreu um erro ao salvar o formulário.');
-                            });
-                    }
+                        .catch(error => {
+                            console.error('Erro:', error);
+                            alert('Ocorreu um erro ao salvar o formulário.');
+                        });
                 }
+
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const exitButton = document.querySelector('.exitbutton');
+            const exitPopup = document.getElementById('exitPopup');
+            const simButton = document.getElementById('simButton');
+            const naoButton = document.getElementById('naoButton');
+
+            exitButton.addEventListener('click', function (event) {
+                event.preventDefault();
+                exitPopup.style.display = 'flex';
+            });
+
+            simButton.addEventListener('click', function () {
+                window.location.href = "{{ url_for('fazer_login') }}";
+            });
+
+            naoButton.addEventListener('click', function () {
+                exitPopup.style.display = 'none';
             });
         });
     </script>
 </body>
- 
+
 </html>
