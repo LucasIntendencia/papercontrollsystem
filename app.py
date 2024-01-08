@@ -13,6 +13,7 @@ from email.message import EmailMessage
 from werkzeug.exceptions import BadRequestKeyError
 
 
+
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(32)
 database_uri = 'mysql+mysqlconnector://root:Celeste123@localhost/papercontrol'
@@ -29,6 +30,7 @@ app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USERNAME'] = 'lucas.nascimento@planejamento.mg.gov.br'
 app.config['MAIL_PASSWORD'] = 'Celeste123'
 app.config['MAIL_DEFAULT_SENDER'] = 'lucas.nascimento@planejamento.mg.gov.br'
+
 
 class User(UserMixin):
     def __init__(self, user_id, tipo_user=None, nome=None, email=None):
@@ -240,96 +242,102 @@ def reabastecimento():
  
     return render_template('reabastecimento.html', dados_reabastecimento=[], quantidade_estoque=0, error_message="Erro ao buscar dados de reabastecimento")
 
-@app.route('/relatoriosadm', methods=['GET', 'POST'])
-@login_required
 def relatoriosadm():
     if request.method == 'POST':
         relatorio_type = request.form.get('relatorio')
+ 
         if relatorio_type == 'Completo':
             tipo_relatorio = request.form.get('tipoRelatorio')
             if tipo_relatorio == 'Completo':
-                # Lógica para relatório completo (usuários e reposições)
-                usuarios_data = [{'id_user': user.id_user, 'email': user.email, 'tipo_user': user.tipo_user, 'estoque': user.estoque} for user in Usuario.query.all()]
-                reposicoes_data = [{'id_reposicao': repo.id_reposicao, 'data_reposicao': repo.data_reposicao,
-                                    'tipo_reposicao': repo.tipo_reposicao, 'quantidade_reposicao': repo.quantidade_reposicao,
-                                    'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio} for repo in Reposicao.query.all()]
+                usuarios_data = [{'ID do usuário': user.id_user, 'Nome': user.nome, 'CPF': user.cpf, 'Email': user.email,
+                                  'Tipo de usuário': user.tipo_user, 'Estoque': user.estoque} for user in Usuario.query.all()]
+                reposicoes_data = [{'ID da reposição': repo.id_reposicao, 'Data da reposição': repo.data_reposicao,
+                                    'Tipo de reposição': repo.tipo_reposicao, 'Quantidade de reposição': repo.quantidade_reposicao,
+                                    'Andar': repo.andar, 'Ilha': repo.ilha, 'Prédio': repo.predio} for repo in Reposicao.query.all()]
                 usuarios_df = pd.DataFrame(usuarios_data)
                 reposicoes_df = pd.DataFrame(reposicoes_data)
                 filename = 'relatorio_completo.xlsx'
                 with pd.ExcelWriter(filename, engine='xlsxwriter') as writer:
-                    usuarios_df.to_excel(writer, sheet_name='Usuarios', index=False)
-                    reposicoes_df.to_excel(writer, sheet_name='Reposicoes', index=False)
+                    usuarios_df.to_excel(
+                        writer, sheet_name='Usuarios', index=False)
+                    reposicoes_df.to_excel(
+                        writer, sheet_name='Reposicoes', index=False)
                 return send_file(filename, as_attachment=True)
+ 
             elif tipo_relatorio == 'Por Data':
                 data_param = request.form.get('data_reposicao')
                 if ' to ' in data_param:
                     data_inicio, data_fim = data_param.split(' to ')
-                    reposicoes_data = Reposicao.query.filter(Reposicao.data_reposicao.between(data_inicio, data_fim)).all()
-                    reposicoes_df = pd.DataFrame([{'id_reposicao': repo.id_reposicao, 'data_reposicao': repo.data_reposicao,
-                                        'tipo_reposicao': repo.tipo_reposicao, 'quantidade_reposicao': repo.quantidade_reposicao,
-                                        'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio} for repo in reposicoes_data])
-                    usuarios_data = Usuario.query.all()
-                    usuarios_df = pd.DataFrame([{'id_user': user.id_user, 'email': user.email, 'tipo_user': user.tipo_user, 'estoque': user.estoque} for user in usuarios_data])
-                    filename = f'relatorio_completo_por_data_{data_inicio}_{data_fim}.xlsx'
-        
-                    with pd.ExcelWriter(filename, engine='xlsxwriter') as writer:
-                        reposicoes_df.to_excel(writer, sheet_name='Reposicoes', index=False)
-                        usuarios_df.to_excel(writer, sheet_name='Usuarios', index=False)
+                    reposicoes_data = Reposicao.query.filter(
+                        Reposicao.data_reposicao.between(data_inicio, data_fim)).all()
                 else:
-                    data_reposicoes = Reposicao.query.filter_by(data_reposicao=data_param).all()
-                    reposicoes_df = pd.DataFrame([{'id_reposicao': repo.id_reposicao, 'data_reposicao': repo.data_reposicao,
-                                        'tipo_reposicao': repo.tipo_reposicao, 'quantidade_reposicao': repo.quantidade_reposicao,
-                                        'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio} for repo in data_reposicoes])
-                    usuarios_data = Usuario.query.all()
-                    usuarios_df = pd.DataFrame([{'id_user': user.id_user, 'email': user.email, 'tipo_user': user.tipo_user, 'estoque': user.estoque} for user in usuarios_data])
-                    filename = f'relatorio_completo_por_data_{data_param}.xlsx'
-        
-                    with pd.ExcelWriter(filename, engine='xlsxwriter') as writer:
-                        reposicoes_df.to_excel(writer, sheet_name='Reposicoes', index=False)
-                        usuarios_df.to_excel(writer, sheet_name='Usuarios', index=False)
+                    reposicoes_data = Reposicao.query.filter_by(
+                        data_reposicao=data_param).all()
+ 
+                reposicoes_df = pd.DataFrame([{'ID da reposição': repo.id_reposicao, 'Data da reposição': repo.data_reposicao,
+                                               'Tipo de reposição': repo.tipo_reposicao, 'Quantidade de reposição': repo.quantidade_reposicao,
+                                               'Andar': repo.andar, 'Ilha': repo.ilha, 'Prédio': repo.predio} for repo in reposicoes_data])
+                usuarios_data = Usuario.query.all()
+                usuarios_df = pd.DataFrame([{'ID do usuário': user.id_user, 'Nome': user.nome, 'CPF': user.cpf, 'Email': user.email,
+                                             'Tipo de usuário': user.tipo_user, 'Estoque': user.estoque} for user in usuarios_data])
+                filename = f'relatorio_completo_por_data_{data_param}.xlsx'
+ 
+                with pd.ExcelWriter(filename, engine='xlsxwriter') as writer:
+                    reposicoes_df.to_excel(
+                        writer, sheet_name='Reposicoes', index=False)
+                    usuarios_df.to_excel(
+                        writer, sheet_name='Usuarios', index=False)
                 return send_file(filename, as_attachment=True)
+ 
         elif relatorio_type == 'Reposições':
             tipo_reposicoes = request.form.get('tipoReposicoes')
             if tipo_reposicoes == 'Completo':
                 data = Reposicao.query.all()
-                df = pd.DataFrame([{'id_reposicao': repo.id_reposicao, 'data_reposicao': repo.data_reposicao,
-                                    'tipo_reposicao': repo.tipo_reposicao, 'quantidade_reposicao': repo.quantidade_reposicao,
-                                    'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio} for repo in data])
+                df = pd.DataFrame([{'ID da reposição': repo.id_reposicao, 'Data da reposição': repo.data_reposicao,
+                                    'Tipo de reposição': repo.tipo_reposicao, 'Quantidade de reposição': repo.quantidade_reposicao,
+                                    'Andar': repo.andar, 'Ilha': repo.ilha, 'Prédio': repo.predio} for repo in data])
                 filename = 'relatorio_reposicoes_completo.xlsx'
                 df.to_excel(filename, index=False)
                 return send_file(filename, as_attachment=True)
+ 
             elif tipo_reposicoes == 'Por Prédio':
                 predio = request.form.get('selectPredio')
                 data = Reposicao.query.filter_by(predio=predio).all()
-                df = pd.DataFrame([{'id_reposicao': repo.id_reposicao, 'data_reposicao': repo.data_reposicao,
-                                    'tipo_reposicao': repo.tipo_reposicao, 'quantidade_reposicao': repo.quantidade_reposicao,
-                                    'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio} for repo in data])
+                df = pd.DataFrame([{'ID da reposição': repo.id_reposicao, 'Data da reposição': repo.data_reposicao,
+                                    'Tipo de reposição': repo.tipo_reposicao, 'Quantidade de reposição': repo.quantidade_reposicao,
+                                    'Andar': repo.andar, 'Ilha': repo.ilha, 'Prédio': repo.predio} for repo in data])
                 filename = f'relatorio_por_predio_{predio.lower()}.xlsx'
                 df.to_excel(filename, index=False)
                 return send_file(filename, as_attachment=True)
+ 
             elif tipo_reposicoes == 'Por Data':
                 data_param = request.form.get('data_reposicao')
                 if ' to ' in data_param:
                     data_inicio, data_fim = data_param.split(' to ')
-                    data = Reposicao.query.filter(Reposicao.data_reposicao.between(data_inicio, data_fim)).all()
-                    df = pd.DataFrame([{'id_reposicao': repo.id_reposicao, 'data_reposicao': repo.data_reposicao,
-                            'tipo_reposicao': repo.tipo_reposicao, 'quantidade_reposicao': repo.quantidade_reposicao,
-                            'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio} for repo in data])
+                    data = Reposicao.query.filter(
+                        Reposicao.data_reposicao.between(data_inicio, data_fim)).all()
+                    df = pd.DataFrame([{'ID da reposição': repo.id_reposicao, 'Data da reposição': repo.data_reposicao,
+                                        'Tipo de reposição': repo.tipo_reposicao, 'Quantidade de reposição': repo.quantidade_reposicao,
+                                        'Andar': repo.andar, 'Ilha': repo.ilha, 'Prédio': repo.predio} for repo in data])
                     filename = f'relatorio_reposicoes_por_data_{data_inicio}_{data_fim}.xlsx'
                 else:
-                    data = Reposicao.query.filter_by(data_reposicao=data_param).all()
-                    df = pd.DataFrame([{'id_reposicao': repo.id_reposicao, 'data_reposicao': repo.data_reposicao,
-                            'tipo_reposicao': repo.tipo_reposicao, 'quantidade_reposicao': repo.quantidade_reposicao,
-                            'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio} for repo in data])
+                    data = Reposicao.query.filter_by(
+                        data_reposicao=data_param).all()
+                    df = pd.DataFrame([{'ID da reposição': repo.id_reposicao, 'Data da reposição': repo.data_reposicao,
+                                        'Tipo de reposição': repo.tipo_reposicao, 'Quantidade de reposição': repo.quantidade_reposicao,
+                                        'Andar': repo.andar, 'Ilha': repo.ilha, 'Prédio': repo.predio} for repo in data])
                     filename = f'relatorio_reposicoes_por_data_{data_param}.xlsx'
                 df.to_excel(filename, index=False)
                 return send_file(filename, as_attachment=True)
+ 
         elif relatorio_type == 'Usuários':
             data = Usuario.query.all()
-            df = pd.DataFrame([{'id_user': user.id_user, 'email': user.email, 'tipo_user': user.tipo_user, 'estoque': user.estoque} for user in data])
+            df = pd.DataFrame([{'ID do usuário': user.id_user, 'Nome': user.nome, 'Email': user.email,
+                              'Tipo de usuário': user.tipo_user, 'Estoque': user.estoque} for user in data])
             filename = 'relatorio_usuarios_completo.xlsx'
             df.to_excel(filename, index=False)
             return send_file(filename, as_attachment=True)
+ 
     return render_template('relatoriosadm.html')
 
 
@@ -409,7 +417,7 @@ def enviar_email(email, tipo, descricao):
         logger.error(f'Erro ao enviar e-mail: {str(e)}', exc_info=True)
         return f'Erro ao enviar e-mail: {str(e)}'
     
-    
+
 @app.route('/quantidadeadm', methods=['GET', 'POST'])
 @login_required
 def quantidadeadm():
