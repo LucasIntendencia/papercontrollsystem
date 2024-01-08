@@ -782,3 +782,694 @@ Traceback (most recent call last):
     raise KeyError(key) from err
 KeyError: 'Quantidade'
 INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 11:02:51] "[35m[1mPOST /quantidadeadm HTTP/1.1[0m" 500 -
+ERROR:root:Erro no servidor: 'Quantidade'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3790, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Quantidade'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\app.py", line 455, in quantidadeadm
+    quantidade_impressa = float(row['Quantidade'])
+                                ~~~^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\series.py", line 1040, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\series.py", line 1156, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3797, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Quantidade'
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:27:47] "[35m[1mPOST /quantidadeadm HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:27:52] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:27:52] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:27:52] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:27:52] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:37:03] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:37:03] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:37:03] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:37:03] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:37:03] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:37:05] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:37:05] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:37:05] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:37:05] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: 'Quantidade'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3790, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Quantidade'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\app.py", line 455, in quantidadeadm
+    quantidade_impressa = float(row['Quantidade'])
+                                ~~~^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\series.py", line 1040, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\series.py", line 1156, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3797, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Quantidade'
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:37:19] "[35m[1mPOST /quantidadeadm HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:43:51] "[32mPOST /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:43:51] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:43:51] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:43:51] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:43:51] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:44:17] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:44:17] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:44:17] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:44:17] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:44:17] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:44:19] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:44:19] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:44:19] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:44:19] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: 'Quantidade'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3790, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Quantidade'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\app.py", line 455, in quantidadeadm
+    quantidade_impressa = float(row['Quantidade'])
+                                ~~~^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\series.py", line 1040, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\series.py", line 1156, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3797, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Quantidade'
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:44:25] "[35m[1mPOST /quantidadeadm HTTP/1.1[0m" 500 -
+ERROR:root:Erro no servidor: 'Quantidade'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3790, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Quantidade'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\app.py", line 455, in quantidadeadm
+    quantidade_impressa = float(row['Quantidade'])
+                                ~~~^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\series.py", line 1040, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\series.py", line 1156, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3797, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Quantidade'
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:59:38] "[35m[1mPOST /quantidadeadm HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:59:40] "GET /quantidadeadm HTTP/1.1" 200 -
+ERROR:root:Erro no servidor: 'Quantidade'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3790, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Quantidade'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\app.py", line 455, in quantidadeadm
+    quantidade_impressa = float(row['Quantidade'])
+                                ~~~^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\series.py", line 1040, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\series.py", line 1156, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3797, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Quantidade'
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 12:59:46] "[35m[1mPOST /quantidadeadm HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:00:28] "[32mPOST /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:00:28] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:00:28] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:00:28] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:00:28] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:00:29] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:00:29] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:00:29] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:00:29] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:00:29] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:00:30] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:00:30] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:00:30] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:00:30] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: 'quantidade'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3790, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'quantidade'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\app.py", line 455, in quantidadeadm
+    quantidade_impressa = float(row['quantidade'])
+                                ~~~^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\series.py", line 1040, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\series.py", line 1156, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3797, in get_loc
+    raise KeyError(key) from err
+KeyError: 'quantidade'
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:00:34] "[35m[1mPOST /quantidadeadm HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:05:19] "[32mPOST /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:05:19] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:05:19] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:05:19] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:05:19] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:05:22] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:05:22] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:05:22] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:05:22] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:05:22] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:05:24] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:05:24] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:05:24] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:05:24] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: 'DataFrame' object has no attribute 'append'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\app.py", line 483, in quantidadeadm
+    resultado_df = resultado_df.append({
+                   ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\generic.py", line 6204, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'append'
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:05:29] "[35m[1mPOST /quantidadeadm HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:27] "[32mPOST /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:27] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:27] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:27] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:27] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:28] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:28] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:28] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:28] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:28] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:29] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:29] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:29] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:29] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: 'DataFrame' object has no attribute 'append'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\app.py", line 483, in quantidadeadm
+    resultado_df = resultado_df.append({
+                   ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\generic.py", line 6204, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'append'
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:34] "[35m[1mPOST /quantidadeadm HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:39] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:39] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:39] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:39] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:42] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:42] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:42] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:48] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:48] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:48] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:48] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:49] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:49] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:49] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: 'DataFrame' object has no attribute 'append'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\app.py", line 483, in quantidadeadm
+    resultado_df = resultado_df.append({
+                   ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\generic.py", line 6204, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'append'
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:07:54] "[35m[1mPOST /quantidadeadm HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:21:22] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:21:22] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:21:22] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:21:22] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:21:35] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:21:35] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:21:35] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:21:35] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:21:35] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:21:40] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:21:40] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:21:40] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:21:40] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:26:44] "[32mGET /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:26:44] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:26:44] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:26:44] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:26:44] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:26:45] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:26:45] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:26:45] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:26:45] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:26:45] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:26:47] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:26:47] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:26:47] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:26:47] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor inválido em 'quantidade': TOTAL
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:26:56] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:29:26] "GET /quantidadeadm HTTP/1.1" 200 -
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor inválido em 'quantidade': TOTAL
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:29:47] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:32:48] "[32mPOST /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:32:48] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:32:49] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:32:49] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:32:49] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:32:51] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:32:51] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:32:51] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:32:51] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:32:51] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:32:52] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:32:52] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:32:52] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:32:52] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: Entity namespace for "reposicao" has no property "status"
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\sqlalchemy\sql\base.py", line 2192, in _entity_namespace_key
+    return getattr(ns, key)  # type: ignore
+           ^^^^^^^^^^^^^^^^
+AttributeError: type object 'Reposicao' has no attribute 'status'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\app.py", line 468, in quantidadeadm
+    reposicoes = Reposicao.query.filter_by(predio=predio, andar=andar, ilha=ilha, status='pendente').all()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2003, in filter_by
+    clauses = [
+              ^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2004, in <listcomp>
+    _entity_namespace_key(from_entity, key) == value
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\sqlalchemy\sql\base.py", line 2194, in _entity_namespace_key
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Entity namespace for "reposicao" has no property "status"
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:32:57] "[35m[1mPOST /quantidadeadm HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\database.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\database.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:37:11] "[32mPOST /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:37:11] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:37:11] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:37:11] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:37:11] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:37:12] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:37:12] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:37:12] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:37:12] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:37:12] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:37:13] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:37:13] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:37:13] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:37:13] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: Entity namespace for "reposicao" has no property "status"
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\sqlalchemy\sql\base.py", line 2192, in _entity_namespace_key
+    return getattr(ns, key)  # type: ignore
+           ^^^^^^^^^^^^^^^^
+AttributeError: type object 'Reposicao' has no attribute 'status'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\app.py", line 468, in quantidadeadm
+    reposicoes = Reposicao.query.filter_by(predio=predio, andar=andar, ilha=ilha, status='pendente').all()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2003, in filter_by
+    clauses = [
+              ^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2004, in <listcomp>
+    _entity_namespace_key(from_entity, key) == value
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\sqlalchemy\sql\base.py", line 2194, in _entity_namespace_key
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Entity namespace for "reposicao" has no property "status"
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:37:17] "[35m[1mPOST /quantidadeadm HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\database.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:39:56] "[32mPOST /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:39:56] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:39:57] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:39:57] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:39:57] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:39:58] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:39:58] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:39:58] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:39:58] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:39:58] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:39:59] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:39:59] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:39:59] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:39:59] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: Entity namespace for "reposicao" has no property "status"
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\sqlalchemy\sql\base.py", line 2192, in _entity_namespace_key
+    return getattr(ns, key)  # type: ignore
+           ^^^^^^^^^^^^^^^^
+AttributeError: type object 'Reposicao' has no attribute 'status'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\app.py", line 468, in quantidadeadm
+    reposicoes = Reposicao.query.filter_by(predio=predio, andar=andar, ilha=ilha, status='pendente').all()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2003, in filter_by
+    clauses = [
+              ^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2004, in <listcomp>
+    _entity_namespace_key(from_entity, key) == value
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\sqlalchemy\sql\base.py", line 2194, in _entity_namespace_key
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Entity namespace for "reposicao" has no property "status"
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:40:03] "[35m[1mPOST /quantidadeadm HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:43:20] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:43:20] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:43:20] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:43:20] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:43:21] "GET /relatoriosadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:43:21] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:43:21] "GET /static/styles/relatoriosadm.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:43:21] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:43:25] "POST /relatoriosadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:43:43] "POST /relatoriosadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:43:57] "POST /relatoriosadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:44:22] "POST /relatoriosadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:44:34] "POST /relatoriosadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:44:44] "POST /relatoriosadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:44:52] "POST /relatoriosadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:45:04] "POST /relatoriosadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:45:22] "POST /relatoriosadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:46:37] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:46:37] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:46:37] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:46:37] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:49:50] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:49:50] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:49:50] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:49:50] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:51:31] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:51:31] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:51:31] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:51:31] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: Entity namespace for "reposicao" has no property "status"
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\sqlalchemy\sql\base.py", line 2192, in _entity_namespace_key
+    return getattr(ns, key)  # type: ignore
+           ^^^^^^^^^^^^^^^^
+AttributeError: type object 'Reposicao' has no attribute 'status'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\app.py", line 468, in quantidadeadm
+    reposicoes = Reposicao.query.filter_by(predio=predio, andar=andar, ilha=ilha, status='pendente').all()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2003, in filter_by
+    clauses = [
+              ^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2004, in <listcomp>
+    _entity_namespace_key(from_entity, key) == value
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\sqlalchemy\sql\base.py", line 2194, in _entity_namespace_key
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Entity namespace for "reposicao" has no property "status"
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 13:52:38] "[35m[1mPOST /quantidadeadm HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:11:54] "[32mPOST /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:11:54] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:11:54] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:11:54] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:11:54] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:11:57] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:11:57] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:11:57] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:11:57] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:11:57] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:11:57] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:11:59] "GET /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:11:59] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:11:59] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:11:59] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:__main__:Erro ao enviar e-mail: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\app.py", line 403, in enviar_email
+    with smtplib.SMTP(smtp_server, smtp_port) as smtp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 851, in create_connection
+    raise exceptions[0]
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 836, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:12:05] "POST /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:12:05] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:12:05] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:12:19] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:12:19] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:12:19] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:12:19] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:12:33] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:12:33] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:12:33] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:12:33] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:12:37] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:12:37] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:12:37] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:12:37] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:12:37] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:13:02] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:13:02] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:13:02] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:13:02] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: Entity namespace for "reposicao" has no property "status"
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\sqlalchemy\sql\base.py", line 2192, in _entity_namespace_key
+    return getattr(ns, key)  # type: ignore
+           ^^^^^^^^^^^^^^^^
+AttributeError: type object 'Reposicao' has no attribute 'status'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\app.py", line 468, in quantidadeadm
+    reposicoes = Reposicao.query.filter_by(predio=predio, andar=andar, ilha=ilha, status='pendente').all()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2003, in filter_by
+    clauses = [
+              ^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2004, in <listcomp>
+    _entity_namespace_key(from_entity, key) == value
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\sqlalchemy\sql\base.py", line 2194, in _entity_namespace_key
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Entity namespace for "reposicao" has no property "status"
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:13:06] "[35m[1mPOST /quantidadeadm HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:20:54] "[32mPOST /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:20:54] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:20:54] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:20:54] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:20:54] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:20:56] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:20:56] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:20:56] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:20:56] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:20:56] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:20:57] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:20:57] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:20:57] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:20:57] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor nulo em 'quantidade'
+WARNING:root:Valor inválido em 'quantidade': TOTAL
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:21:01] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:31:07] "[32mPOST /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:31:07] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:31:07] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:31:07] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:31:07] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:31:08] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:31:08] "[35m[1mGET /loginadm HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:31:08] "GET /loginadm?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:31:08] "GET /loginadm?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:31:08] "GET /loginadm?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:31:09] "[36mGET /loginadm?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:41:40] "[32mGET /loginadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:41:40] "GET /login?next=/loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:41:40] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:41:40] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:41:40] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:41:41] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:41:41] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:41:41] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:41:41] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:41:41] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:41:43] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:41:43] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:41:43] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [08/Jan/2024 14:41:43] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\PaperControlSystem\\database.py', reloading
+INFO:werkzeug: * Restarting with stat

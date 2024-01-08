@@ -26,9 +26,9 @@ logging.basicConfig(level=logging.DEBUG)
 app.config['MAIL_SERVER'] = 'smtp.example.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'seu_email@example.com'
-app.config['MAIL_PASSWORD'] = 'sua_senha'
-app.config['MAIL_DEFAULT_SENDER'] = 'papercontrol@planejamento.mg.gov.br'
+app.config['MAIL_USERNAME'] = 'lucas.nascimento@planejamento.mg.gov.br'
+app.config['MAIL_PASSWORD'] = 'Celeste123'
+app.config['MAIL_DEFAULT_SENDER'] = 'lucas.nascimento@planejamento.mg.gov.br'
 
 class User(UserMixin):
     def __init__(self, user_id, tipo_user=None, nome=None, email=None):
@@ -117,7 +117,7 @@ def loginadm():
     dados_formulario = db.session.query(
         Reposicao.predio,
         func.count(Reposicao.id_user).label('reposicoes_pendentes')
-    ).filter(Reposicao.status_reposicao == 'pendente').group_by(Reposicao.predio).all()
+    ).group_by(Reposicao.predio).all()
  
     dados_predios_json = json.dumps(
         [{'predio': item.predio, 'total_reposicao': item.total_reposicao} for item in dados_predios], default=decimal_default)
@@ -155,17 +155,6 @@ def abastecimento():
  
                     data_reposicao = datetime.now().date()
  
-                    # Verifique o tipo de reposição
-                    if tipo_reposicao == 'semanal':
-                        status_reposicao = 'OK'
-                    else:
-                        if estoque < quantidade_reposicao:
-                            mensagem = "Erro: Estoque insuficiente para fazer a reposição."
-                            print(mensagem)
-                            return render_template('abastecimento.html', quantidade_estoque=estoque, mensagem_erro=mensagem, mensagem=None)
- 
-                        status_reposicao = 'pendente'
- 
                     nova_reposicao = Reposicao(
                         id_user=current_user.id,
                         data_reposicao=data_reposicao,
@@ -174,18 +163,16 @@ def abastecimento():
                         andar=andar,
                         ilha=ilha,
                         predio=predio,
-                        status_reposicao=status_reposicao
                     )
  
                     # Reduz o estoque apenas se a reposição for pendente
-                    if status_reposicao == 'pendente':
-                        novo_estoque = estoque - quantidade_reposicao
-                        if novo_estoque >= 0:  # Verifica se o estoque não ficará negativo
-                            repositorio.estoque = novo_estoque
-                        else:
-                            mensagem = "Erro: Não é possível realizar a reposição, estoque insuficiente."
-                            print(mensagem)
-                            return render_template('abastecimento.html', quantidade_estoque=estoque, mensagem_erro=mensagem, mensagem=None)
+                    novo_estoque = estoque - quantidade_reposicao
+                    if novo_estoque >= 0:  # Verifica se o estoque não ficará negativo
+                        repositorio.estoque = novo_estoque
+                    else:
+                        mensagem = "Erro: Não é possível realizar a reposição, estoque insuficiente."
+                        print(mensagem)
+                        return render_template('abastecimento.html', quantidade_estoque=estoque, mensagem_erro=mensagem, mensagem=None)
  
                     db.session.add(nova_reposicao)
                     db.session.commit()
@@ -202,6 +189,7 @@ def abastecimento():
             print(mensagem)
  
     return render_template('abastecimento.html', quantidade_estoque=estoque, mensagem_erro=None, mensagem=mensagem)
+
 @app.route('/reabastecimento', methods=['GET', 'POST'])
 @login_required
 def reabastecimento():
@@ -264,7 +252,7 @@ def relatoriosadm():
                 usuarios_data = [{'id_user': user.id_user, 'email': user.email, 'tipo_user': user.tipo_user, 'estoque': user.estoque} for user in Usuario.query.all()]
                 reposicoes_data = [{'id_reposicao': repo.id_reposicao, 'data_reposicao': repo.data_reposicao,
                                     'tipo_reposicao': repo.tipo_reposicao, 'quantidade_reposicao': repo.quantidade_reposicao,
-                                    'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio, 'status_reposicao': repo.status_reposicao} for repo in Reposicao.query.all()]
+                                    'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio} for repo in Reposicao.query.all()]
                 usuarios_df = pd.DataFrame(usuarios_data)
                 reposicoes_df = pd.DataFrame(reposicoes_data)
                 filename = 'relatorio_completo.xlsx'
@@ -279,7 +267,7 @@ def relatoriosadm():
                     reposicoes_data = Reposicao.query.filter(Reposicao.data_reposicao.between(data_inicio, data_fim)).all()
                     reposicoes_df = pd.DataFrame([{'id_reposicao': repo.id_reposicao, 'data_reposicao': repo.data_reposicao,
                                         'tipo_reposicao': repo.tipo_reposicao, 'quantidade_reposicao': repo.quantidade_reposicao,
-                                        'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio, 'status_reposicao': repo.status_reposicao} for repo in reposicoes_data])
+                                        'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio} for repo in reposicoes_data])
                     usuarios_data = Usuario.query.all()
                     usuarios_df = pd.DataFrame([{'id_user': user.id_user, 'email': user.email, 'tipo_user': user.tipo_user, 'estoque': user.estoque} for user in usuarios_data])
                     filename = f'relatorio_completo_por_data_{data_inicio}_{data_fim}.xlsx'
@@ -291,7 +279,7 @@ def relatoriosadm():
                     data_reposicoes = Reposicao.query.filter_by(data_reposicao=data_param).all()
                     reposicoes_df = pd.DataFrame([{'id_reposicao': repo.id_reposicao, 'data_reposicao': repo.data_reposicao,
                                         'tipo_reposicao': repo.tipo_reposicao, 'quantidade_reposicao': repo.quantidade_reposicao,
-                                        'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio, 'status_reposicao': repo.status_reposicao} for repo in data_reposicoes])
+                                        'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio} for repo in data_reposicoes])
                     usuarios_data = Usuario.query.all()
                     usuarios_df = pd.DataFrame([{'id_user': user.id_user, 'email': user.email, 'tipo_user': user.tipo_user, 'estoque': user.estoque} for user in usuarios_data])
                     filename = f'relatorio_completo_por_data_{data_param}.xlsx'
@@ -306,7 +294,7 @@ def relatoriosadm():
                 data = Reposicao.query.all()
                 df = pd.DataFrame([{'id_reposicao': repo.id_reposicao, 'data_reposicao': repo.data_reposicao,
                                     'tipo_reposicao': repo.tipo_reposicao, 'quantidade_reposicao': repo.quantidade_reposicao,
-                                    'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio, 'status_reposicao': repo.status_reposicao} for repo in data])
+                                    'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio} for repo in data])
                 filename = 'relatorio_reposicoes_completo.xlsx'
                 df.to_excel(filename, index=False)
                 return send_file(filename, as_attachment=True)
@@ -315,7 +303,7 @@ def relatoriosadm():
                 data = Reposicao.query.filter_by(predio=predio).all()
                 df = pd.DataFrame([{'id_reposicao': repo.id_reposicao, 'data_reposicao': repo.data_reposicao,
                                     'tipo_reposicao': repo.tipo_reposicao, 'quantidade_reposicao': repo.quantidade_reposicao,
-                                    'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio, 'status_reposicao': repo.status_reposicao} for repo in data])
+                                    'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio} for repo in data])
                 filename = f'relatorio_por_predio_{predio.lower()}.xlsx'
                 df.to_excel(filename, index=False)
                 return send_file(filename, as_attachment=True)
@@ -326,13 +314,13 @@ def relatoriosadm():
                     data = Reposicao.query.filter(Reposicao.data_reposicao.between(data_inicio, data_fim)).all()
                     df = pd.DataFrame([{'id_reposicao': repo.id_reposicao, 'data_reposicao': repo.data_reposicao,
                             'tipo_reposicao': repo.tipo_reposicao, 'quantidade_reposicao': repo.quantidade_reposicao,
-                            'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio, 'status_reposicao': repo.status_reposicao} for repo in data])
+                            'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio} for repo in data])
                     filename = f'relatorio_reposicoes_por_data_{data_inicio}_{data_fim}.xlsx'
                 else:
                     data = Reposicao.query.filter_by(data_reposicao=data_param).all()
                     df = pd.DataFrame([{'id_reposicao': repo.id_reposicao, 'data_reposicao': repo.data_reposicao,
                             'tipo_reposicao': repo.tipo_reposicao, 'quantidade_reposicao': repo.quantidade_reposicao,
-                            'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio, 'status_reposicao': repo.status_reposicao} for repo in data])
+                            'andar': repo.andar, 'ilha': repo.ilha, 'predio': repo.predio} for repo in data])
                     filename = f'relatorio_reposicoes_por_data_{data_param}.xlsx'
                 df.to_excel(filename, index=False)
                 return send_file(filename, as_attachment=True)
@@ -437,12 +425,12 @@ def quantidadeadm():
             if file and file.filename.endswith(('.xlsx', '.xls')):
                 # Ler o arquivo Excel
                 df = pd.read_excel(file)
-
+                df.columns = df.columns.str.upper()
                 # Imprimir o cabeçalho real do DataFrame
                 logging.debug(f"Cabeçalho real do DataFrame: {df.columns}")
 
-                # Inicializar um DataFrame vazio para armazenar os resultados
-                resultado_df = pd.DataFrame(columns=['prédio', 'andar', 'ilha', 'quantidade_impressa', 'quantidade_reabastecida', 'quantidade_restante'])
+                # Inicializar uma lista para armazenar os resultados
+                resultado_lista = []
 
                 # Iterar sobre cada linha do DataFrame do Excel
                 for _, row in df.iterrows():
@@ -451,10 +439,15 @@ def quantidadeadm():
                     ilha = row['LOCALIZAÇÃO']
 
                     # Verificar e converter 'QUANTIDADE' para numérico
-                    try:
-                        quantidade_impressa = float(row['Quantidade'])
-                    except ValueError:
-                        logging.warning(f"Valor inválido em 'QUANTIDADE': {row['QUANTIDADE']}")
+                    quantidade_value = row['QUANTIDADE']
+                    if pd.notna(quantidade_value):
+                        try:
+                            quantidade_impressa = float(quantidade_value)
+                        except ValueError:
+                            logging.warning(f"Valor inválido em 'quantidade': {quantidade_value}")
+                            continue
+                    else:
+                        logging.warning(f"Valor nulo em 'quantidade'")
                         continue
 
                     logging.debug(f"Processando dados - Prédio: {predio}, Andar: {andar}, Ilha: {ilha}, Quantidade Impressa: {quantidade_impressa}")
@@ -465,7 +458,7 @@ def quantidadeadm():
                     logging.debug(f"Reposições encontradas: {reposicoes}")
 
                     # Calcular a quantidade total reabastecida
-                    quantidade_reabastecida = sum([r.quantidade_reposicao for r in reposicoes])
+                    quantidade_reabastecida = sum([r.quantidade for r in reposicoes])
 
                     logging.debug(f"Quantidade total reabastecida: {quantidade_reabastecida}")
 
@@ -474,15 +467,18 @@ def quantidadeadm():
 
                     logging.debug(f"Quantidade restante: {quantidade_restante}")
 
-                    # Adicionar os resultados ao DataFrame
-                    resultado_df = resultado_df.append({
+                    # Adicionar os resultados à lista
+                    resultado_lista.append({
                         'prédio': predio,
                         'andar': andar,
                         'ilha': ilha,
                         'quantidade_impressa': quantidade_impressa,
                         'quantidade_reabastecida': quantidade_reabastecida,
                         'quantidade_restante': quantidade_restante
-                    }, ignore_index=True)
+                    })
+
+                # Criar um DataFrame a partir da lista
+                resultado_df = pd.DataFrame(resultado_lista)
 
                 # Aqui você pode fazer o que quiser com o DataFrame resultado, por exemplo, retorná-lo como JSON
                 resultado_json = resultado_df.to_json(orient='records')
@@ -496,6 +492,7 @@ def quantidadeadm():
         return jsonify({"error": "Erro interno no servidor"}), 500
 
     return render_template('quantidadeadm.html')
+
 
 @app.route('/verificar_conexao')
 def verificar_conexao():

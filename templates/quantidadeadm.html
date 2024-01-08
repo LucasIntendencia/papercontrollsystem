@@ -33,8 +33,8 @@
     <div class="upload-container">
         <form method="post" action="{{ url_for('quantidadeadm') }}" enctype="multipart/form-data">
             <label for="excelFile" class="upload-label">
-                <span id="file-name-display">Arraste o arquivo aqui ou</span>
-                <span>clique para selecionar</span>
+                <span id="file-name-display">Escolha e selecione o</span>
+                <span>seu arquivo aqui</span>
             </label>
             <input type="file" name="excelFile" id="excelFile" accept=".xlsx, .xls" onchange="displayFileName()" />
             <button type="submit" class="enviar-button">Enviar</button>

@@ -52,8 +52,6 @@ class Reposicao(db.Model):
     andar = db.Column(db.String(50), nullable=False)
     ilha = db.Column(db.String(50), nullable=False)
     predio = db.Column(db.String(50), nullable=False)
-    status_reposicao = db.Column(
-        db.String(20), nullable=False, default='pendente')
 
 
 class Reabastecimento(db.Model):
@@ -88,7 +86,3 @@ def configure_database(app, database_uri):
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.init_app(app)
     migrate.init_app(app, db)
-
-    def __init__(self, usuario, quantidade_reabastecimento):
-        self.usuario = usuario
-        self.quantidade_reabastecimento = quantidade_reabastecimento
