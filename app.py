@@ -11,6 +11,8 @@ import smtplib
 import json
 from email.message import EmailMessage
 from werkzeug.exceptions import BadRequestKeyError
+
+
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(32)
 database_uri = 'mysql+mysqlconnector://root:Celeste123@localhost/papercontrol'
@@ -18,6 +20,8 @@ configure_database(app, database_uri)
 login_manager = LoginManager(app)
 login_manager.login_view = 'fazer_login'
 logging.basicConfig(filename='erro.log', level=logging.INFO)
+logging.basicConfig(level=logging.DEBUG)
+
 # Configuração do Flask-Mail
 app.config['MAIL_SERVER'] = 'smtp.example.com'
 app.config['MAIL_PORT'] = 587
@@ -434,21 +438,41 @@ def quantidadeadm():
                 # Ler o arquivo Excel
                 df = pd.read_excel(file)
 
+                # Imprimir o cabeçalho real do DataFrame
+                logging.debug(f"Cabeçalho real do DataFrame: {df.columns}")
+
                 # Inicializar um DataFrame vazio para armazenar os resultados
-                resultado_df = pd.DataFrame(columns=['prédio', 'andar', 'ilha', 'quantidade_impressa', 'quantidade_reabastecida'])
+                resultado_df = pd.DataFrame(columns=['prédio', 'andar', 'ilha', 'quantidade_impressa', 'quantidade_reabastecida', 'quantidade_restante'])
 
                 # Iterar sobre cada linha do DataFrame do Excel
                 for _, row in df.iterrows():
                     predio = row['PRÉDIO']
                     andar = row['ANDAR']
                     ilha = row['LOCALIZAÇÃO']
-                    quantidade_impressa = row['QUANTIDADE']
-                    
+
+                    # Verificar e converter 'QUANTIDADE' para numérico
+                    try:
+                        quantidade_impressa = float(row['Quantidade'])
+                    except ValueError:
+                        logging.warning(f"Valor inválido em 'QUANTIDADE': {row['QUANTIDADE']}")
+                        continue
+
+                    logging.debug(f"Processando dados - Prédio: {predio}, Andar: {andar}, Ilha: {ilha}, Quantidade Impressa: {quantidade_impressa}")
+
                     # Consultar o banco de dados para obter as reposições correspondentes
                     reposicoes = Reposicao.query.filter_by(predio=predio, andar=andar, ilha=ilha).all()
 
+                    logging.debug(f"Reposições encontradas: {reposicoes}")
+
                     # Calcular a quantidade total reabastecida
                     quantidade_reabastecida = sum([r.quantidade_reposicao for r in reposicoes])
+
+                    logging.debug(f"Quantidade total reabastecida: {quantidade_reabastecida}")
+
+                    # Calcular a quantidade restante
+                    quantidade_restante = quantidade_impressa - quantidade_reabastecida
+
+                    logging.debug(f"Quantidade restante: {quantidade_restante}")
 
                     # Adicionar os resultados ao DataFrame
                     resultado_df = resultado_df.append({
@@ -456,12 +480,15 @@ def quantidadeadm():
                         'andar': andar,
                         'ilha': ilha,
                         'quantidade_impressa': quantidade_impressa,
-                        'quantidade_reabastecida': quantidade_reabastecida
+                        'quantidade_reabastecida': quantidade_reabastecida,
+                        'quantidade_restante': quantidade_restante
                     }, ignore_index=True)
 
                 # Aqui você pode fazer o que quiser com o DataFrame resultado, por exemplo, retorná-lo como JSON
                 resultado_json = resultado_df.to_json(orient='records')
+                logging.debug("Processamento concluído com sucesso.")
                 return jsonify(resultado_json)
+
         logging.debug("Processamento concluído com sucesso.")
     except Exception as e:
         # Adicione mensagens de log
@@ -469,7 +496,6 @@ def quantidadeadm():
         return jsonify({"error": "Erro interno no servidor"}), 500
 
     return render_template('quantidadeadm.html')
-
 
 @app.route('/verificar_conexao')
 def verificar_conexao():
