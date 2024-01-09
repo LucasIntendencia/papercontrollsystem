@@ -2,14 +2,13 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', Arial, sans-serif;
-    background-image: url('../images/background-zezinho.png');
     background-size: cover;
     background-position: center;
+    background-image: url(../images/background-pc.png);
     display: grid;
     grid-template-rows: auto 1fr;
-    height: 100vh;
 }
-
+ 
 .cabecalho {
     display: flex;
     justify-content: space-between;
@@ -18,7 +17,7 @@ body {
     background-color: #1A5A6B;
     margin-top: 15px;
 }
-
+ 
 /* Estilos para o botão do Paper Control System */
 .PaperCS {
     margin: 10px;
@@ -32,21 +31,21 @@ body {
     outline: none;
     text-decoration: none;
 }
-
+ 
 button_container .exitbutton {
     width: 30px;
     text-decoration: none;
     height: 30px;
     cursor: pointer;
 }
-
+ 
 .container {
     width: 80%;
     margin: 20px auto;
     margin-top: 60px;
     /* Espaçamento superior para deslocar os botões para baixo */
 }
-
+ 
 .select_container,
 .opcoes {
     margin-top: 30px;
@@ -54,7 +53,7 @@ button_container .exitbutton {
     align-items: center;
     width: 100%;
 }
-
+ 
 .data_reposicao input {
     padding: 10px;
     font-size: 16px;
@@ -67,7 +66,7 @@ button_container .exitbutton {
     margin-top: 30px;
     /* Adiciona 10px de espaçamento superior */
 }
-
+ 
 /* Adicione esta regra para o label-floatig */
 .data_reposicao label {
     position: absolute;
@@ -78,15 +77,15 @@ button_container .exitbutton {
     width: 100%;
     text-align: center;
 }
-
+ 
 /* Adicione esta regra para quando o input estiver focado ou tiver valor */
 .data_reposicao input:focus+label,
 .data_reposicao input:not(:placeholder-shown)+label {
     font-size: 14px;
     transform: translateY(-20px);
 }
-
-
+ 
+ 
 .select_container select,
 .opcoes select {
     flex: 1;
@@ -99,14 +98,14 @@ button_container .exitbutton {
     width: 100%;
     /* Para cobrir a largura do container */
 }
-
+ 
 .predio {
     margin-top: 30px;
     display: flex;
     align-items: center;
     width: 100%;
 }
-
+ 
 .predio select {
     flex: 1;
     padding: 10px;
@@ -118,7 +117,7 @@ button_container .exitbutton {
     width: 100%;
     /* Para cobrir a largura do container */
 }
-
+ 
 .Enviar {
     position: fixed;
     bottom: 220px;
@@ -136,7 +135,7 @@ button_container .exitbutton {
     width: 80%;
     max-width: 200px;
 }
-
+ 
 .exit-popup {
     display: none;
     position: fixed;
@@ -147,7 +146,7 @@ button_container .exitbutton {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 9999;
 }
-
+ 
 .exit-popup .popup-content {
     background-color: white;
     /* Background branco */
@@ -156,18 +155,18 @@ button_container .exitbutton {
     text-align: center;
     width: 300px;
 }
-
+ 
 .exit-popup .popup-content p {
     font-size: 18px;
     margin-bottom: 20px;
 }
-
+ 
 .exit-popup .button-container {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
-
+ 
 .exit-popup .button-container button {
     padding: 10px 20px;
     margin: 0 10px;
@@ -176,14 +175,23 @@ button_container .exitbutton {
     cursor: pointer;
     font-size: 16px;
 }
-
+ 
 .exit-popup .button-container button#simButton {
     background-color: #3498db;
     /* Botões azuis */
     color: white;
 }
-
+ 
 .exit-popup .button-container button#naoButton {
     background-color: #e74c3c;
     color: white;
+}
+ 
+@media only screen and (min-width: 768px) {
+ 
+    body {
+        background-size: 100% 102%;
+        /* Exibe a imagem de fundo cobrindo todo o espaço */
+        background-attachment: fixed;
+    }
 }

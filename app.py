@@ -242,6 +242,8 @@ def reabastecimento():
  
     return render_template('reabastecimento.html', dados_reabastecimento=[], quantidade_estoque=0, error_message="Erro ao buscar dados de reabastecimento")
 
+@app.route('/relatoriosadm', methods=['GET', 'POST'])
+@login_required
 def relatoriosadm():
     if request.method == 'POST':
         relatorio_type = request.form.get('relatorio')
@@ -443,47 +445,74 @@ def quantidadeadm():
                 # Iterar sobre cada linha do DataFrame do Excel
                 for _, row in df.iterrows():
                     predio = row['PRÉDIO']
-                    andar = row['ANDAR']
                     ilha = row['LOCALIZAÇÃO']
+
+                    # Verificar e converter 'andar' para numérico
+                    andar_value = row['ANDAR']
+                    if pd.notna(andar_value):
+                        try:
+                            andar_int = int(andar_value)
+                        except ValueError:
+                            logging.warning(f"Valor inválido em 'andar': {andar_value}")
+                            continue
+                    else:
+                        # Definir um valor padrão quando 'andar' é nulo
+                        logging.warning(f"Valor nulo em 'andar', definindo como 0")
+                        andar_int = 0
 
                     # Verificar e converter 'QUANTIDADE' para numérico
                     quantidade_value = row['QUANTIDADE']
-                    if pd.notna(quantidade_value):
+                    if pd.notna(quantidade_value) and quantidade_value != 'TOTAL':
                         try:
                             quantidade_impressa = float(quantidade_value)
                         except ValueError:
                             logging.warning(f"Valor inválido em 'quantidade': {quantidade_value}")
                             continue
                     else:
-                        logging.warning(f"Valor nulo em 'quantidade'")
+                        logging.warning(f"Valor nulo ou inválido em 'quantidade'")
                         continue
 
-                    logging.debug(f"Processando dados - Prédio: {predio}, Andar: {andar}, Ilha: {ilha}, Quantidade Impressa: {quantidade_impressa}")
+                    # Imprimir para debug
+                    print(f"Procurando reposição para: Prédio={predio}, Andar={andar_int}, Ilha={ilha}")
 
-                    # Consultar o banco de dados para obter as reposições correspondentes
-                    reposicoes = Reposicao.query.filter_by(predio=predio, andar=andar, ilha=ilha).all()
+                    # Formatar 'andar' e 'ilha' para correspondência com o banco de dados
+                    andar_ilha_concatenado = f"Andar {andar_int} Ilha {ilha}"
 
-                    logging.debug(f"Reposições encontradas: {reposicoes}")
+                    # Buscar a reposição no banco de dados com base em predio, andar e ilha
+                    reposicao = Reposicao.query.filter(
+                        func.lower(Reposicao.predio) == func.lower(predio),
+                        func.lower(Reposicao.andar).like(f"Andar {andar_int}%"),
+                        func.lower(Reposicao.ilha) == func.lower(ilha)
+                    ).first()
 
-                    # Calcular a quantidade total reabastecida
-                    quantidade_reabastecida = sum([r.quantidade for r in reposicoes])
+                    # Imprimir para debug
+                    print(f"Reposição encontrada: {reposicao}")
 
-                    logging.debug(f"Quantidade total reabastecida: {quantidade_reabastecida}")
+                    # Verificar se há uma reposição e obter a quantidade de reposição
+                    if reposicao:
+                        quantidade_reabastecida = reposicao.quantidade_reposicao
+                        print(f'Reposição encontrada: {quantidade_reabastecida}')
+                    else:
+                        quantidade_reabastecida = 0
 
+                    print(f'Quantidade encontrada: {quantidade_value}')
+                    print(f'Reposição encontrada: {quantidade_reabastecida}')
                     # Calcular a quantidade restante
                     quantidade_restante = quantidade_impressa - quantidade_reabastecida
-
-                    logging.debug(f"Quantidade restante: {quantidade_restante}")
 
                     # Adicionar os resultados à lista
                     resultado_lista.append({
                         'prédio': predio,
-                        'andar': andar,
+                        'andar': andar_int,
                         'ilha': ilha,
                         'quantidade_impressa': quantidade_impressa,
                         'quantidade_reabastecida': quantidade_reabastecida,
                         'quantidade_restante': quantidade_restante
                     })
+
+                    # Imprimir para debug
+                    print(f"Resultado parcial: {resultado_lista[-1]}")
+
 
                 # Criar um DataFrame a partir da lista
                 resultado_df = pd.DataFrame(resultado_lista)

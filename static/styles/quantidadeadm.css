@@ -2,14 +2,13 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', Arial, sans-serif;
-    background-image: url('../images/background-zezinho.png');
     background-size: cover;
     background-position: center;
+    background-image: url(../images/background-pc.png);
     display: grid;
     grid-template-rows: auto 1fr;
-    height: 100vh;
 }
-
+ 
 .cabecalho {
     display: flex;
     justify-content: space-between;
@@ -18,11 +17,11 @@ body {
     background-color: #1A5A6B;
     margin-top: 15px;
 }
-
+ 
 .exitbutton {
     width: 30px;
 }
-
+ 
 .PaperCS {
     margin: 10px;
     padding: 10px 15px;
@@ -35,7 +34,7 @@ body {
     outline: none;
     text-decoration: none;
 }
-
+ 
 .upload-container {
     display: flex;
     flex-direction: column;
@@ -43,7 +42,7 @@ body {
     justify-content: center;
     margin-bottom: 400px;
 }
-
+ 
 .upload-label {
     width: 300px;
     height: 200px;
@@ -58,21 +57,22 @@ body {
     color: #ffffff;
     transition: border-color 0.3s ease;
     font-family: 'Lilita One', sans-serif;
+    margin-top: 50px;
 }
-
+ 
 .upload-label:hover {
     border-color: #ffffff;
 }
-
+ 
 .upload-label span {
     text-align: center;
     margin-bottom: 5px;
 }
-
+ 
 #excelFile {
     display: none;
 }
-
+ 
 .enviar-button {
     margin-top: 20px;
     padding: 10px 20px;
@@ -85,11 +85,11 @@ body {
     transition: background-color 0.3s ease;
     margin-left: 100px;
 }
-
+ 
 .enviar-button:hover {
     background-color: #166f83;
 }
-
+ 
 .exit-popup {
     display: none;
     position: fixed;
@@ -100,7 +100,7 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 9999;
 }
-
+ 
 .exit-popup .popup-content {
     background-color: white;
     /* Background branco */
@@ -109,18 +109,18 @@ body {
     text-align: center;
     width: 300px;
 }
-
+ 
 .exit-popup .popup-content p {
     font-size: 18px;
     margin-bottom: 20px;
 }
-
+ 
 .exit-popup .button-container {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
-
+ 
 .exit-popup .button-container button {
     padding: 10px 20px;
     margin: 0 10px;
@@ -129,14 +129,24 @@ body {
     cursor: pointer;
     font-size: 16px;
 }
-
+ 
 .exit-popup .button-container button#simButton {
     background-color: #3498db;
     /* Botões azuis */
     color: white;
 }
-
+ 
 .exit-popup .button-container button#naoButton {
     background-color: #e74c3c;
     color: white;
+}
+ 
+@media only screen and (min-width: 768px) {
+ 
+    body {
+        background-size: 100% 102%;
+        /* Exibe a imagem de fundo cobrindo todo o espaço */
+        background-attachment: fixed;
+        overflow: hidden;
+    }
 }

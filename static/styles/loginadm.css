@@ -2,14 +2,13 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', Arial, sans-serif;
-    background-image: url('../images/background-zezinho.png');
     background-size: cover;
     background-position: center;
+    background-image: url(../images/background-pc.png);
     display: grid;
     grid-template-rows: auto 1fr;
-    height: 100vh;
 }
-
+ 
 .cabecalho {
     display: flex;
     justify-content: space-between;
@@ -18,11 +17,11 @@ body {
     background-color: #1A5A6B;
     margin-top: 15px;
 }
-
+ 
 .exitbutton {
     width: 28px;
 }
-
+ 
 .recep-info {
     background-color: black;
     border-radius: 50%;
@@ -35,34 +34,31 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Alterado para centralizar horizontal e verticalmente */
     flex-direction: column;
     line-height: 1.6;
 }
-
+ 
 .recep-info p:first-child {
     font-size: 90px;
     /* Tamanho de fonte grande para o primeiro parágrafo */
     margin-bottom: 5px;
     /* Espaçamento inferior menor para o primeiro parágrafo */
 }
-
+ 
 .recep-info p {
     font-size: 1em;
     /* Tamanho de fonte padrão para os outros parágrafos */
     margin: 0;
     /* Redefinir as margens para evitar espaçamento indesejado */
 }
-
+ 
 .button-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-
 }
-
+ 
 .PaperCS {
     margin: 10px;
     padding: 10px 15px;
@@ -75,7 +71,7 @@ body {
     outline: none;
     text-decoration: none;
 }
-
+ 
 .Relatorios {
     width: 300px;
     font-size: 24px;
@@ -91,7 +87,7 @@ body {
     text-align: center;
     text-decoration: none;
 }
-
+ 
 .exit-popup {
     display: none;
     position: fixed;
@@ -102,7 +98,7 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 9999;
 }
-
+ 
 .exit-popup .popup-content {
     background-color: white;
     /* Background branco */
@@ -111,12 +107,12 @@ body {
     text-align: center;
     width: 300px;
 }
-
+ 
 .exit-popup .popup-content p {
     font-size: 18px;
     margin-bottom: 20px;
 }
-
+ 
 .exit-popup .button-container {
     display: flex;
     justify-content: center;
@@ -124,7 +120,7 @@ body {
     flex-direction: row;
     align-items: center;
 }
-
+ 
 .exit-popup .button-container button {
     padding: 10px 20px;
     margin: 0 10px;
@@ -133,23 +129,28 @@ body {
     cursor: pointer;
     font-size: 16px;
 }
-
+ 
 .exit-popup .button-container button#simButton {
     background-color: #3498db;
     /* Botões azuis */
     color: white;
 }
-
+ 
 .exit-popup .button-container button#naoButton {
     background-color: #e74c3c;
     color: white;
 }
-
+ 
 /* Estilos para dispositivos maiores (desktop) */
 @media only screen and (min-width: 768px) {
     .grafico-container {
         width: 300px;
         max-width: 600px;
     }
-
+ 
+    body {
+        background-size: 100% 102%;
+        /* Exibe a imagem de fundo cobrindo todo o espaço */
+        background-attachment: fixed;
+    }
 }
