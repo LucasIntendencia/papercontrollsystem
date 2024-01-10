@@ -294,20 +294,20 @@ def relatoriosadm():
         elif relatorio_type == 'Reposições':
             tipo_reposicoes = request.form.get('tipoReposicoes')
             if tipo_reposicoes == 'Completo':
-                data = Reposicao.query.all()
-                df = pd.DataFrame([{'ID da reposição': repo.id_reposicao, 'Data da reposição': repo.data_reposicao,
+                data = db.session.query(Reposicao, Usuario.id_user)
+                df = pd.DataFrame([{'ID da reposição': repo.id_reposicao, 'ID do usuário': user.id_user, 'Data da reposição': repo.data_reposicao,
                                     'Tipo de reposição': repo.tipo_reposicao, 'Quantidade de reposição': repo.quantidade_reposicao,
-                                    'Andar': repo.andar, 'Ilha': repo.ilha, 'Prédio': repo.predio} for repo in data])
+                                    'Andar': repo.andar, 'Ilha': repo.ilha, 'Prédio': repo.predio} for repo, user in data])
                 filename = 'relatorio_reposicoes_completo.xlsx'
                 df.to_excel(filename, index=False)
                 return send_file(filename, as_attachment=True)
  
             elif tipo_reposicoes == 'Por Prédio':
                 predio = request.form.get('selectPredio')
-                data = Reposicao.query.filter_by(predio=predio).all()
-                df = pd.DataFrame([{'ID da reposição': repo.id_reposicao, 'Data da reposição': repo.data_reposicao,
+                reposicoes_data = db.session.query(Reposicao, Usuario.id_user).join(Usuario).filter_by(predio=predio).all()
+                df = pd.DataFrame([{'ID da reposição': repo.id_reposicao, 'ID do usuário': user.id_user, 'Data da reposição': repo.data_reposicao,
                                     'Tipo de reposição': repo.tipo_reposicao, 'Quantidade de reposição': repo.quantidade_reposicao,
-                                    'Andar': repo.andar, 'Ilha': repo.ilha, 'Prédio': repo.predio} for repo in data])
+                                    'Andar': repo.andar, 'Ilha': repo.ilha, 'Prédio': repo.predio} for repo, user in reposicoes_data])
                 filename = f'relatorio_por_predio_{predio.lower()}.xlsx'
                 df.to_excel(filename, index=False)
                 return send_file(filename, as_attachment=True)
@@ -316,18 +316,18 @@ def relatoriosadm():
                 data_param = request.form.get('data_reposicao')
                 if ' to ' in data_param:
                     data_inicio, data_fim = data_param.split(' to ')
-                    data = Reposicao.query.filter(
+                    data = db.session.query(Reposicao, Usuario.id_user).join(Usuario).filter_by(
                         Reposicao.data_reposicao.between(data_inicio, data_fim)).all()
-                    df = pd.DataFrame([{'ID da reposição': repo.id_reposicao, 'Data da reposição': repo.data_reposicao,
+                    df = pd.DataFrame([{'ID da reposição': repo.id_reposicao, 'ID do usuário': user.id_user, 'Data da reposição': repo.data_reposicao,
                                         'Tipo de reposição': repo.tipo_reposicao, 'Quantidade de reposição': repo.quantidade_reposicao,
-                                        'Andar': repo.andar, 'Ilha': repo.ilha, 'Prédio': repo.predio} for repo in data])
+                                        'Andar': repo.andar, 'Ilha': repo.ilha, 'Prédio': repo.predio} for repo, user in data])
                     filename = f'relatorio_reposicoes_por_data_{data_inicio}_{data_fim}.xlsx'
                 else:
-                    data = Reposicao.query.filter_by(
+                    data = db.session.query(Reposicao, Usuario.id_user).join(Usuario).filter_by(
                         data_reposicao=data_param).all()
-                    df = pd.DataFrame([{'ID da reposição': repo.id_reposicao, 'Data da reposição': repo.data_reposicao,
+                    df = pd.DataFrame([{'ID da reposição': repo.id_reposicao, 'ID do usuário': user.id_user, 'Data da reposição': repo.data_reposicao,
                                         'Tipo de reposição': repo.tipo_reposicao, 'Quantidade de reposição': repo.quantidade_reposicao,
-                                        'Andar': repo.andar, 'Ilha': repo.ilha, 'Prédio': repo.predio} for repo in data])
+                                        'Andar': repo.andar, 'Ilha': repo.ilha, 'Prédio': repo.predio} for repo, user in data])
                     filename = f'relatorio_reposicoes_por_data_{data_param}.xlsx'
                 df.to_excel(filename, index=False)
                 return send_file(filename, as_attachment=True)
