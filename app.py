@@ -498,7 +498,7 @@ def quantidadeadm():
                     print(f'Quantidade encontrada: {quantidade_value}')
                     print(f'Reposição encontrada: {quantidade_reabastecida}')
                     # Calcular a quantidade restante
-                    quantidade_restante = quantidade_impressa - quantidade_reabastecida
+                    quantidade_restante = (quantidade_reabastecida * 500) - quantidade_impressa
 
                     # Adicionar os resultados à lista
                     resultado_lista.append({
@@ -512,7 +512,6 @@ def quantidadeadm():
 
                     # Imprimir para debug
                     print(f"Resultado parcial: {resultado_lista[-1]}")
-
 
                 # Criar um DataFrame a partir da lista
                 resultado_df = pd.DataFrame(resultado_lista)
