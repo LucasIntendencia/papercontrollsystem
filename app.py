@@ -181,7 +181,17 @@ def abastecimento():
  
                     mensagem = "Reabastecimento registrado no banco de dados!"
                     print(mensagem)
- 
+
+                    numero_ilhas_reabastecidas = db.session.query(
+                        func.count(Reabastecimento.ilha.distinct())
+                    ).filter_by(id_user=current_user.id).scalar()
+
+                    # Definir o limite desejado
+                    limite_ilhas_reabastecidas = 128
+
+                    if numero_ilhas_reabastecidas >= limite_ilhas_reabastecidas:
+                        enviar_email_ilhas_reabastecidas(current_user.email, numero_ilhas_reabastecidas)
+                    
                 else:
                     mensagem = "Erro ao obter o repositório associado ao usuário."
  
@@ -191,6 +201,39 @@ def abastecimento():
             print(mensagem)
  
     return render_template('abastecimento.html', quantidade_estoque=estoque, mensagem_erro=None, mensagem=mensagem)
+
+
+def enviar_email_ilhas_reabastecidas(email, numero_ilhas):
+    try:
+        # Configuração do e-mail
+        msg = EmailMessage()
+        msg['From'] = 'papercontrol@planejamento.mg.gov.br'
+        msg['To'] = email
+        msg['Subject'] = 'Limite de Ilhas Reabastecidas Atingido'
+        content = f"""
+        Olá,
+        Você atingiu o limite de {numero_ilhas} ilhas reabastecidas.
+        Todas as ilhas estao devidamente abastecidas!
+        Atenciosamente,
+        Equipe Paper Control
+        """
+        msg.set_content(content)
+
+        smtp_server = 'seu_servidor_smtp'
+        smtp_port = 587
+        smtp_user = 'seu_email'
+        smtp_password = 'sua_senha'
+
+        with smtplib.SMTP(smtp_server, smtp_port) as smtp:
+            smtp.starttls()
+            smtp.login(smtp_user, smtp_password)
+            smtp.send_message(msg)
+
+        logging.info(f'E-mail para {msg["To"]} enviado com sucesso!')
+        return 'E-mail enviado com sucesso!'
+    except Exception as e:
+        logging.error(f'Erro ao enviar e-mail: {str(e)}', exc_info=True)
+        return f'Erro ao enviar e-mail: {str(e)}'
 
 @app.route('/reabastecimento', methods=['GET', 'POST'])
 @login_required
