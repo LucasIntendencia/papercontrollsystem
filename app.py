@@ -187,7 +187,7 @@ def abastecimento():
                     print(mensagem)
 
                     numero_ilhas_reabastecidas = db.session.query(
-                        func.count(Reabastecimento.ilha.distinct())
+                        func.count(Reposicao.ilha.distinct())
                     ).filter_by(id_user=current_user.id).scalar()
 
                     # Definir o limite desejado
@@ -255,7 +255,6 @@ def reabastecimento():
             # Obter o usuário logado usando a variável current_user do Flask-Login
             usuario = Usuario.query.filter_by(id_user=current_user.id).first()
 
-            # Incrementar o estoque do usuário com base na quantidade fornecida
             if usuario and quantidade_reabastecimento > 0:
                 # Aumenta o estoque com a quantidade fornecida
                 usuario.estoque += quantidade_reabastecimento
@@ -271,7 +270,9 @@ def reabastecimento():
                 db.session.add(nova_reposicao)
                 db.session.commit()
 
-                logging.info('Reabastecimento solicitado com sucesso.')
+                if nova_reposicao.id is not None:  # Verifica se a adição ao banco de dados foi bem-sucedida
+                    enviar_email_ilhas_solicitante(current_user.email, andar, predio)
+                    logging.info('Reabastecimento solicitado com sucesso.')
 
             return redirect(url_for('reabastecimento'))
 
@@ -290,6 +291,38 @@ def reabastecimento():
         logging.error(f"Erro ao processar requisição: {str(e)}")
 
     return render_template('reabastecimento.html', dados_reabastecimento=[], quantidade_estoque=0, error_message="Erro ao buscar dados de reabastecimento")
+
+def enviar_email_ilhas_solicitante(email, andar, predio):
+    try:
+        # Configuração do e-mail
+        msg = EmailMessage()
+        msg['From'] = 'papercontrol@planejamento.mg.gov.br'
+        msg['To'] = email
+        msg['Subject'] = 'Limite de Ilhas Reabastecidas Atingido'
+        content = f"""
+        Olá,
+        Solicito reabastecimento no seguinte local:
+        {andar} e {predio}
+        Atenciosamente,
+        Equipe Paper Control
+        """
+        msg.set_content(content)
+
+        smtp_server = 'seu_servidor_smtp'
+        smtp_port = 587
+        smtp_user = 'seu_email'
+        smtp_password = 'sua_senha'
+
+        with smtplib.SMTP(smtp_server, smtp_port) as smtp:
+            smtp.starttls()
+            smtp.login(smtp_user, smtp_password)
+            smtp.send_message(msg)
+
+        logging.info(f'E-mail para {msg["To"]} enviado com sucesso!')
+        return 'E-mail enviado com sucesso!'
+    except Exception as e:
+        logging.error(f'Erro ao enviar e-mail: {str(e)}', exc_info=True)
+        return f'Erro ao enviar e-mail: {str(e)}'
 
 
 @app.route('/relatoriosadm', methods=['GET', 'POST'])
