@@ -117,7 +117,26 @@ button_container .exitbutton {
     width: 100%;
     /* Para cobrir a largura do container */
 }
- 
+
+.tipo {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.tipo select {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    outline: none;
+    text-align: center;
+    width: 100%;
+    /* Para cobrir a largura do container */
+}
+
 .Enviar {
     position: fixed;
     bottom: 220px;

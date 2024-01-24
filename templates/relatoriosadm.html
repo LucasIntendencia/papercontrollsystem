@@ -44,7 +44,6 @@
                 <select id="tipoRelatorio" name="tipoRelatorio">
                     <option value="" selected disabled hidden>Selecione o tipo de relatorio</option>
                     <option value="Completo">Completo</option>
-                    <option value="Por Data">Por Data</option>
                 </select>
             </div>
             <div id="tipoReposicoesDropdown" class="opcoes" style="display: none;">
@@ -53,6 +52,7 @@
                     <option value="Completo">Todas as Reposições</option>
                     <option value="Por Prédio">Por Prédio</option>
                     <option value="Por Data">Por Data</option>
+                    <option value="Por Tipo">Por Tipo</option>
                 </select>
             </div>
             <div class="predio" style="display: none;">
@@ -60,6 +60,13 @@
                     <option value="" selected disabled hidden>Selecione o prédio</option>
                     <option value="Minas">Minas</option>
                     <option value="Gerais">Gerais</option>
+                </select>
+            </div>
+            <div class="tipo" style="display: none;">
+                <select id="selectTipo" name="selectTipo">
+                    <option value="" selected disabled hidden>Selecione o tipo de reposição</option>
+                    <option value="Semanal">Semanal</option>
+                    <option value="Pontual">Pontual</option>
                 </select>
             </div>
             <div class="data_reposicao" style="display: none;">
@@ -80,6 +87,7 @@
         const botaoGerarRelatorio = document.querySelector('.Enviar');
         const flatpickrContainer = document.querySelector('.data_reposicao');
         const selectPredio = document.querySelector('.predio');
+        const selectTipo = document.querySelector('.tipo'); // Adição da linha para obter a referência
 
         // Inicialize o seletor de data para um intervalo
         const flatpickrInstance = flatpickr("#data_reposicao", {
@@ -91,15 +99,21 @@
             selectPredio.style.display = tipoReposicoesSelect.value === 'Por Prédio' ? 'block' : 'none';
         }
 
+        function verificarVisibilidadeTipo() {
+            const mostrarTipo = tipoReposicoesSelect.value === 'Por Tipo';
+            selectTipo.style.display = mostrarTipo ? 'block' : 'none';
+        }
+
         tipoReposicoesSelect.addEventListener('change', verificarVisibilidadePredio);
+        tipoReposicoesSelect.addEventListener('change', verificarVisibilidadeTipo); // Adição da linha
         verificarVisibilidadePredio();
+        verificarVisibilidadeTipo();
+
         function verificarVisibilidadeData() {
             const mostrarData = tipoRelatorioSelect.value === 'Por Data' || tipoReposicoesSelect.value === 'Por Data';
             flatpickrContainer.style.display = mostrarData ? 'block' : 'none';
         }
 
-
-        // Função para atualizar a visibilidade do botão e do campo de data
         function atualizarVisibilidadeBotao() {
             const filtroPorData = tipoRelatorioSelect.value === 'Por Data' || tipoReposicoesSelect.value === 'Por Data';
             const filtroPorUsuario = relatorioDropdown.value === 'Usuários';
@@ -114,7 +128,6 @@
                 flatpickrContainer.style.display = 'none';
             }
             verificarVisibilidadeData();
-
         }
 
         relatorioDropdown.addEventListener('change', function () {
@@ -141,7 +154,6 @@
             verificarVisibilidadeData();
         });
 
-        // Event listeners adicionais para dropdowns de detalhes de relatórios
         tipoRelatorioSelect.addEventListener('change', atualizarVisibilidadeBotao);
         tipoReposicoesSelect.addEventListener('change', atualizarVisibilidadeBotao);
         relatorioDropdown.addEventListener('change', atualizarVisibilidadeBotao);
