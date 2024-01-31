@@ -12,14 +12,21 @@ import json
 from email.message import EmailMessage
 from werkzeug.exceptions import BadRequestKeyError
 import os
+from dotenv import load_dotenv
 
-
+# Criar aplicação Flask
 app = Flask(__name__)
+
+# Cpmfigurar bando de dados com a URI e chave decreta para acesso
 app.secret_key = secrets.token_hex(32)
 database_uri = 'mysql+mysqlconnector://root:Celeste123@localhost/papercontrol'
 configure_database(app, database_uri)
+
+# Gerenciamento de Login
 login_manager = LoginManager(app)
 login_manager.login_view = 'fazer_login'
+
+# Registro de logs
 logging.basicConfig(filename='erro.log', level=logging.INFO)
 logging.basicConfig(level=logging.DEBUG)
 
@@ -349,26 +356,6 @@ def relatoriosadm():
                         writer, sheet_name='Reposicoes', index=False)
                 return send_file(filename, as_attachment=True)
 
-            elif tipo_reposicoes == 'Por Data':
-                data_param = request.form.get('data_reposicao')
-                if ' to ' in data_param:
-                    data_inicio, data_fim = data_param.split(' to ')
-                    data = db.session.query(Reposicao, Usuario).join(Usuario).filter(
-                        Reposicao.data_reposicao.between(data_inicio, data_fim)).all()
-                    df = pd.DataFrame([{'ID da reposição': repo.Reposicao.id_reposicao, 'ID do usuário': user.Usuario.id_user, 'Data da reposição': repo.Reposicao.data_reposicao,
-                            'Tipo de reposição': repo.Reposicao.tipo_reposicao, 'Quantidade de reposição': repo.Reposicao.quantidade_reposicao,
-                            'Andar': repo.Reposicao.andar, 'Ilha': repo.Reposicao.ilha, 'Prédio': repo.Reposicao.predio} for repo, user in data])
-                    filename = f'relatorio_reposicoes_por_data_{data_inicio}_{data_fim}.xlsx'
-                else:
-                    data = db.session.query(Reposicao, Usuario).join(Usuario).filter(
-                        Reposicao.data_reposicao == data_param).all()
-                    df = pd.DataFrame([{'ID da reposição': repo.Reposicao.id_reposicao, 'ID do usuário': user.Usuario.id_user, 'Data da reposição': repo.Reposicao.data_reposicao,
-                            'Tipo de reposição': repo.Reposicao.tipo_reposicao, 'Quantidade de reposição': repo.Reposicao.quantidade_reposicao,
-                            'Andar': repo.Reposicao.andar, 'Ilha': repo.Reposicao.ilha, 'Prédio': repo.Reposicao.predio} for repo, user in data])
-                    filename = f'relatorio_reposicoes_por_data_{data_param}.xlsx'
-                df.to_excel(filename, index=False)
-                return send_file(filename, as_attachment=True)
-
         elif relatorio_type == 'Reposições':
             tipo_reposicoes = request.form.get('tipoReposicoes')
             if tipo_reposicoes == 'Completo':
@@ -408,6 +395,17 @@ def relatoriosadm():
                             'Tipo de reposição': repo.Reposicao.tipo_reposicao, 'Quantidade de reposição': repo.Reposicao.quantidade_reposicao,
                             'Andar': repo.Reposicao.andar, 'Ilha': repo.Reposicao.ilha, 'Prédio': repo.Reposicao.predio} for repo, user in data])
                     filename = f'relatorio_reposicoes_por_data_{data_param}.xlsx'
+                df.to_excel(filename, index=False)
+                return send_file(filename, as_attachment=True)
+            
+            elif tipo_reposicoes == 'Por Tipo':
+                tipo = request.form.get('selectTipo')
+                reposicoes_data = db.session.query(Reposicao, Usuario).join(
+                    Usuario).filter(Reposicao.tipo_reposicao == tipo).all()
+                df = pd.DataFrame([{'ID da reposição': repo.Reposicao.id_reposicao, 'ID do usuário': user.Usuario.id_user, 'Data da reposição': repo.Reposicao.data_reposicao,
+                        'Tipo de reposição': repo.Reposicao.tipo_reposicao, 'Quantidade de reposição': repo.Reposicao.quantidade_reposicao,
+                        'Andar': repo.Reposicao.andar, 'Ilha': repo.Reposicao.ilha, 'Prédio': repo.Reposicao.predio} for repo, user in reposicoes_data])
+                filename = f'relatorio_reposicoes_por_tipo_{tipo.lower()}.xlsx'
                 df.to_excel(filename, index=False)
                 return send_file(filename, as_attachment=True)
 

@@ -2041,3 +2041,127 @@ INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 12:29:53] "[36mGET /static/images/exit
 INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 12:30:00] "POST /relatoriosadm HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 12:30:00] "[36mGET /static/styles/relatoriosadm.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 12:30:00] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 15:59:24] "[33mGET /FiscalizadorFisc HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 15:59:27] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 15:59:27] "GET /login?next=/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 15:59:27] "GET /static/styles/loading.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 15:59:27] "GET /static/styles/login.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 15:59:27] "GET /static/images/zezinho.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 15:59:34] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 15:59:34] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 15:59:42] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 15:59:42] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 15:59:42] "GET /static/images/exitbutton.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 15:59:42] "GET /static/styles/loginadm.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 15:59:42] "GET /static/images/background-pc.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 15:59:48] "GET /relatoriosadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 15:59:48] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 15:59:48] "GET /static/styles/relatoriosadm.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 15:59:48] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 15:59:52] "POST /relatoriosadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 15:59:55] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 15:59:55] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 15:59:55] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 15:59:56] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 15:59:56] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 15:59:56] "GET /static/styles/quantidadeadm.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 15:59:56] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor nulo em 'andar', definindo como 0
+WARNING:root:Valor nulo ou inválido em 'quantidade'
+WARNING:root:Valor nulo em 'andar', definindo como 0
+WARNING:root:Valor nulo ou inválido em 'quantidade'
+WARNING:root:Valor nulo em 'andar', definindo como 0
+WARNING:root:Valor nulo ou inválido em 'quantidade'
+WARNING:root:Valor nulo em 'andar', definindo como 0
+WARNING:root:Valor nulo ou inválido em 'quantidade'
+WARNING:root:Valor nulo em 'andar', definindo como 0
+WARNING:root:Valor nulo ou inválido em 'quantidade'
+WARNING:root:Valor nulo em 'andar', definindo como 0
+WARNING:root:Valor nulo ou inválido em 'quantidade'
+WARNING:root:Valor nulo em 'andar', definindo como 0
+WARNING:root:Valor nulo ou inválido em 'quantidade'
+WARNING:root:Valor nulo em 'andar', definindo como 0
+WARNING:root:Valor nulo ou inválido em 'quantidade'
+WARNING:root:Valor nulo em 'andar', definindo como 0
+WARNING:root:Valor nulo ou inválido em 'quantidade'
+WARNING:root:Valor nulo em 'andar', definindo como 0
+WARNING:root:Valor nulo ou inválido em 'quantidade'
+WARNING:root:Valor nulo em 'andar', definindo como 0
+WARNING:root:Valor nulo ou inválido em 'quantidade'
+WARNING:root:Valor nulo em 'andar', definindo como 0
+WARNING:root:Valor nulo ou inválido em 'quantidade'
+WARNING:root:Valor nulo em 'andar', definindo como 0
+WARNING:root:Valor nulo ou inválido em 'quantidade'
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:08] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:20] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:20] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:20] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:22] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:22] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:22] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:22] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:26] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:26] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:26] "GET /static/styles/loginrec.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:26] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:26] "GET /static/images/zezinhobola.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:26] "GET /static/images/background-zezinho.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:33] "GET /abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:33] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:33] "GET /static/styles/abastecimento.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:33] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:42] "POST /abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:43] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:43] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:43] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:43] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:43] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:root:Página de reabastecimento carregada com sucesso.
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:47] "GET /reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:47] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:47] "GET /static/styles/reabastecimento.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:47] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro ao processar requisição: 'Reabastecimento' object has no attribute 'id'
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:54] "POST /reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:54] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:54] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:54] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:54] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:00:54] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:01:02] "GET /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:01:02] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:01:02] "GET /static/styles/ajudaOZe.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:01:02] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:01:20] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:01:20] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:01:20] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:01:20] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:01:28] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:01:28] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:01:28] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 16:01:28] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2024 12:35:30] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2024 12:35:30] "GET /login?next=/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2024 12:35:30] "GET /static/styles/login.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2024 12:35:30] "GET /static/styles/loading.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2024 12:35:30] "GET /static/images/zezinho.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2024 12:35:43] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2024 12:35:43] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2024 12:35:43] "GET /static/images/exitbutton.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2024 12:35:43] "GET /static/styles/loginadm.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2024 12:35:43] "GET /static/images/background-pc.png HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
