@@ -520,58 +520,73 @@ def enviar_popup(email, mensagem):
 def quantidadeadm():
     try:
         if request.method == 'POST':
+            print(request.json)
             file = request.files.get('excelFile')
             if file and file.filename.endswith(('.xlsx', '.xls')):
                 df = pd.read_excel(file)
                 df.columns = df.columns.str.upper()
 
+                # Depois de ler o arquivo e antes de processá-lo
+                print("Arquivo recebido e lido com sucesso.")
+
                 for _, row in df.iterrows():
-                    predio = row['PRÉDIO']
-                    ilha = str(row['LOCALIZAÇÃO'])
+                    try:
+                        predio = row['PRÉDIO']
+                        ilha = str(row['LOCALIZAÇÃO'])
 
-                    andar_value = row['ANDAR']
-                    if pd.notna(andar_value):
-                        try:
-                            andar_int = int(andar_value)
-                        except ValueError:
-                            continue
-                    else:
-                        andar_int = 0
-
-                    quantidade_value = row['QUANTIDADE']
-                    if pd.notna(quantidade_value) and quantidade_value != 'TOTAL':
-                        try:
-                            quantidade_impressa = float(quantidade_value)
-                        except ValueError:
-                            continue
-                    else:
-                        continue
-
-                    andar_ilha_concatenado = f"Andar {andar_int} Ilha {ilha}"
-
-                    # Verificar se o predio e andar_int são válidos
-                    if predio != "" and andar_int != 0:
-                        reposicao = Reposicao.query.filter(
-                            func.lower(Reposicao.predio) == func.lower(predio),
-                            func.lower(Reposicao.andar).like(
-                                f"Andar {andar_int}%"),
-                            func.lower(Reposicao.ilha) == func.lower(ilha)
-                        ).first()
-
-                        if reposicao:
-                            quantidade_reabastecida = reposicao.quantidade_reposicao
+                        andar_value = row['ANDAR']
+                        if pd.notna(andar_value):
+                            try:
+                                andar_int = int(andar_value)
+                            except ValueError:
+                                print(f"Valor inválido encontrado para o andar: {andar_value}")
+                                continue
                         else:
-                            quantidade_reabastecida = 0
+                            print("Valor de andar ausente.")
+                            andar_int = 0
 
-                        quantidade_restante = (
-                            quantidade_reabastecida * 500) - quantidade_impressa
+                        quantidade_value = row['QUANTIDADE']
+                        if pd.notna(quantidade_value) and quantidade_value != 'TOTAL':
+                            try:
+                                quantidade_impressa = float(quantidade_value)
+                            except ValueError:
+                                print(f"Valor inválido encontrado para a quantidade: {quantidade_value}")
+                                continue
+                        else:
+                            print("Valor de quantidade ausente ou total.")
+                            continue
+                        
+                        andar_ilha_concatenado = f"Andar {andar_int} Ilha {ilha}"
 
-                        # Enviar popup personalizado
-                        if current_user.is_authenticated:
-                            enviar_popup(
-                                current_user.email,
-                                f"A ilha precisa de reposição. Reabasteça a ilha {ilha} no prédio {predio} no andar {andar_int} com a quantidade restante de {quantidade_restante}."
-                            )
+                        # Verificar se o predio e andar_int são válidos
+                        if predio != "" and andar_int != 0:
+                            print(f"Predio: {predio}, Andar: {andar_int}, Ilha: {ilha}")
+
+                            reposicao = Reposicao.query.filter(
+                                func.lower(Reposicao.predio) == func.lower(predio),
+                                func.lower(Reposicao.andar).like(f"Andar {andar_int}%"),
+                                func.lower(Reposicao.ilha) == func.lower(ilha)
+                            ).first()
+
+                            if reposicao:
+                                quantidade_reabastecida = reposicao.quantidade_reposicao
+                            else:
+                                quantidade_reabastecida = 0
+
+                            quantidade_restante = (quantidade_reabastecida * 500) - quantidade_impressa
+                            print(f"Quantidade impressa: {quantidade_impressa}, Quantidade reabastecida: {quantidade_reabastecida}, Quantidade restante: {quantidade_restante}")
+
+                            # Enviar popup personalizado
+                            if current_user.is_authenticated:
+                                print(f"Enviando popup para usuário autenticado: {current_user.email}")
+                                enviar_popup(
+                                        current_user.email,
+                                    f"A ilha precisa de reposição. Reabasteça a ilha {ilha} no prédio {predio} no andar {andar_int} com a quantidade restante de {quantidade_restante}."
+                                )
+                            else:
+                                print("Nenhum usuário autenticado encontrado.")
+                    except Exception as e:
+                        print(f"Erro durante o processamento do loop: {e}")
 
                 # Processamento do relatório
                 resultado_lista = []
@@ -593,7 +608,6 @@ def quantidadeadm():
         print(f"Erro no servidor: {e}")
 
     return render_template('quantidadeadm.html')
-
 
 
 @app.route('/verificar_conexao')

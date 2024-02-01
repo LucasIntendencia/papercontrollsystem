@@ -68,6 +68,8 @@
                     const data = new Uint8Array(e.target.result);
                     const workbook = XLSX.read(data, { type: 'array' });
 
+                    // Aqui você pode fazer algo com o objeto workbook antes de enviar para o servidor
+
                     // Convertendo para JSON
                     const jsonData = XLSX.utils.sheet_to_json(workbook.Sheets[workbook.SheetNames[0]]);
                     console.log("Dados do arquivo convertidos para JSON:", jsonData); // Verifique se os dados do arquivo estão corretos
