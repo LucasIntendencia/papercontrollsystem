@@ -499,127 +499,101 @@ def enviar_email(email, tipo, descricao):
         logger.error(f'Erro ao enviar e-mail: {str(e)}', exc_info=True)
         return f'Erro ao enviar e-mail: {str(e)}'
 
+def enviar_popup(email, mensagem):
+    try:
+        # Buscar o usuário pelo email
+        user = Usuario.query.filter_by(email=email).first()
+
+        # Verificar se o usuário existe
+        if user:
+            # Aqui você pode implementar a lógica para enviar o popup para o usuário
+            print(f"Enviando popup para {user.nome} ({user.email}): {mensagem}")
+        else:
+            print(f"Usuário com o email {email} não encontrado.")
+
+    except Exception as e:
+        # Registrar o erro
+        print(f"Erro ao enviar o popup para {email}: {e}")
 
 @app.route('/quantidadeadm', methods=['GET', 'POST'])
 @login_required
 def quantidadeadm():
     try:
-        logging.debug("Iniciando processamento...")
-
         if request.method == 'POST':
-            logging.debug("Recebendo requisição POST...")
-
             file = request.files.get('excelFile')
-            logging.debug(f"Arquivo recebido: {file}")
-
             if file and file.filename.endswith(('.xlsx', '.xls')):
-                # Ler o arquivo Excel
                 df = pd.read_excel(file)
                 df.columns = df.columns.str.upper()
 
-                # Inicializar uma lista para armazenar os resultados
-                resultado_lista = []
-
-                # Iterar sobre cada linha do DataFrame do Excel
                 for _, row in df.iterrows():
                     predio = row['PRÉDIO']
-                    ilha = str(row['LOCALIZAÇÃO'])  # Converta para string
+                    ilha = str(row['LOCALIZAÇÃO'])
 
-                    # Verificar e converter 'andar' para numérico
                     andar_value = row['ANDAR']
                     if pd.notna(andar_value):
                         try:
                             andar_int = int(andar_value)
                         except ValueError:
-                            logging.warning(
-                                f"Valor inválido em 'andar': {andar_value}")
                             continue
                     else:
-                        # Definir um valor padrão quando 'andar' é nulo
-                        logging.warning(
-                            f"Valor nulo em 'andar', definindo como 0")
                         andar_int = 0
 
-                    # Verificar e converter 'QUANTIDADE' para numérico
                     quantidade_value = row['QUANTIDADE']
                     if pd.notna(quantidade_value) and quantidade_value != 'TOTAL':
                         try:
                             quantidade_impressa = float(quantidade_value)
                         except ValueError:
-                            logging.warning(
-                                f"Valor inválido em 'quantidade': {quantidade_value}")
                             continue
                     else:
-                        logging.warning(
-                            f"Valor nulo ou inválido em 'quantidade'")
                         continue
 
-                    # Imprimir para debug
-                    print(
-                        f"Procurando reposição para: Prédio={predio}, Andar={andar_int}, Ilha={ilha}")
-
-                    # Formatar 'andar' e 'ilha' para correspondência com o banco de dados
                     andar_ilha_concatenado = f"Andar {andar_int} Ilha {ilha}"
 
-                    # Buscar a reposição no banco de dados com base em predio, andar e ilha
-                    reposicao = Reposicao.query.filter(
-                        func.lower(Reposicao.predio) == func.lower(predio),
-                        func.lower(Reposicao.andar).like(
-                            f"Andar {andar_int}%"),
-                        func.lower(Reposicao.ilha) == func.lower(ilha)
-                    ).first()
+                    # Verificar se o predio e andar_int são válidos
+                    if predio != "" and andar_int != 0:
+                        reposicao = Reposicao.query.filter(
+                            func.lower(Reposicao.predio) == func.lower(predio),
+                            func.lower(Reposicao.andar).like(
+                                f"Andar {andar_int}%"),
+                            func.lower(Reposicao.ilha) == func.lower(ilha)
+                        ).first()
 
-                    # Imprimir para debug
-                    print(f"Reposição encontrada: {reposicao}")
+                        if reposicao:
+                            quantidade_reabastecida = reposicao.quantidade_reposicao
+                        else:
+                            quantidade_reabastecida = 0
 
-                    # Verificar se há uma reposição e obter a quantidade de reposição
-                    if reposicao:
-                        quantidade_reabastecida = reposicao.quantidade_reposicao
-                        print(
-                            f'Reposição encontrada: {quantidade_reabastecida}')
-                    else:
-                        quantidade_reabastecida = 0
+                        quantidade_restante = (
+                            quantidade_reabastecida * 500) - quantidade_impressa
 
-                    print(f'Quantidade encontrada: {quantidade_value}')
-                    print(f'Reposição encontrada: {quantidade_reabastecida}')
-                    # Calcular a quantidade restante
-                    quantidade_restante = (
-                        quantidade_reabastecida * 500) - quantidade_impressa
+                        # Enviar popup personalizado
+                        if current_user.is_authenticated:
+                            enviar_popup(
+                                current_user.email,
+                                f"A ilha precisa de reposição. Reabasteça a ilha {ilha} no prédio {predio} no andar {andar_int} com a quantidade restante de {quantidade_restante}."
+                            )
 
-                    # Adicionar os resultados à lista
-                    resultado_lista.append({
-                        'PRÉDIO': predio,
-                        'ANDAR': andar_int,
-                        'ILHA': ilha,
-                        'IMPRESSA NA SEMANA': quantidade_impressa,
-                        'REABASTECIMENTO': quantidade_reabastecida,
-                        'RESTANTE': quantidade_restante
-                    })
+                # Processamento do relatório
+                resultado_lista = []
 
-                    # Imprimir para debug
-                    print(f"Resultado parcial: {resultado_lista[-1]}")
+                for _, row in df.iterrows():
+                    # Lógica para processar o relatório
+                    pass
 
-                # Criar um DataFrame a partir da lista
                 resultado_df = pd.DataFrame(resultado_lista)
 
-                # Criar um arquivo HTML temporário para armazenar o relatório
-                relatorio_xlsx = f'tmp_relatorio_{datetime.now().strftime("%Y%m%d%H%M%S")}.xlsx'
+                if not resultado_df.empty:
+                    relatorio_xlsx = f'tmp_relatorio_{datetime.now().strftime("%Y%m%d%H%M%S")}.xlsx'
+                    resultado_df.to_excel(
+                        relatorio_xlsx, index=False, sheet_name='Relatorio')
 
-                # Salvar o DataFrame como um arquivo Excel
-                resultado_df.to_excel(
-                    relatorio_xlsx, index=False, sheet_name='Relatorio')
+                    return send_file(relatorio_xlsx, download_name='relatorio.xlsx', as_attachment=True, mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
 
-                # Aqui você pode fazer o que quiser com o DataFrame resultado
-                logging.debug("Processamento concluído com sucesso.")
-
-                # Retornar o relatório Excel ao usuário para download
-                return send_file(relatorio_xlsx, download_name='relatorio.xlsx', as_attachment=True, mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-
-        logging.debug("Processamento concluído com sucesso.")
     except Exception as e:
-        logging.error(f"Erro no servidor: {e}", exc_info=True)
+        print(f"Erro no servidor: {e}")
 
     return render_template('quantidadeadm.html')
+
 
 
 @app.route('/verificar_conexao')

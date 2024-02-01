@@ -31,13 +31,13 @@
     </div>
 
     <div class="upload-container">
-        <form method="post" action="{{ url_for('quantidadeadm') }}" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data">
             <label for="excelFile" class="upload-label">
                 <span id="file-name-display">Escolha e selecione o</span>
                 <span>seu arquivo aqui</span>
             </label>
             <input type="file" name="excelFile" id="excelFile" accept=".xlsx, .xls" onchange="displayFileName()" />
-            <button type="submit" class="enviar-button">Enviar</button>
+            <button type="button" class="enviar-button" onclick="processFile()">Enviar</button>
         </form>
     </div>
 
@@ -55,19 +55,22 @@
         }
 
         function processFile() {
+            console.log("Função processFile() foi chamada."); // Verifique se a função está sendo chamada corretamente
+
             const fileInput = document.getElementById('excelFile');
             const file = fileInput.files[0];
             if (file) {
                 const reader = new FileReader();
 
                 reader.onload = function (e) {
+                    console.log("Arquivo lido com sucesso."); // Verifique se o arquivo está sendo lido corretamente
+
                     const data = new Uint8Array(e.target.result);
                     const workbook = XLSX.read(data, { type: 'array' });
 
-                    // Aqui você pode fazer algo com o objeto workbook antes de enviar para o servidor
-
                     // Convertendo para JSON
                     const jsonData = XLSX.utils.sheet_to_json(workbook.Sheets[workbook.SheetNames[0]]);
+                    console.log("Dados do arquivo convertidos para JSON:", jsonData); // Verifique se os dados do arquivo estão corretos
 
                     // Enviar os dados para o servidor via requisição AJAX
                     const xhr = new XMLHttpRequest();
@@ -81,6 +84,7 @@
                         }
                     };
                     xhr.send(JSON.stringify(jsonData));
+                    console.log("Requisição AJAX enviada."); // Verifique se a requisição AJAX está sendo enviada corretamente
                 };
 
                 reader.readAsArrayBuffer(file);
@@ -88,6 +92,7 @@
                 alert("Por favor, escolha um arquivo Excel antes de enviar.");
             }
         }
+
         document.addEventListener('DOMContentLoaded', function () {
             const exitButton = document.querySelector('.exitbutton');
             const exitPopup = document.getElementById('exitPopup');
