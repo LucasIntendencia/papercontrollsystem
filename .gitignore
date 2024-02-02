@@ -1,0 +1,12 @@
+# Arquivos e diretórios a serem ignorados pelo Git
+
+# Ignorar arquivos de byte compilado do Python
+__pycache__/
+*.pyc
+
+# Ignorar arquivos de configuração específicos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignorar o arquivo .env que contém variáveis de ambiente sensíveis
+.env

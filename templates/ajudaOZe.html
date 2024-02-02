@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../static/styles/ajudaOZe.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
-
+ 
 <body>
     <div id="exitPopup" class="exit-popup">
         <div class="popup-content">
@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-
+ 
     <form id="myForm" method="post" action="{{ url_for('ajudaOZe') }}" onsubmit="return validarFormulario()">
         <div class="cabecalho">
             <a href="{{ url_for('loginrec') }}" class="PaperCS">Paper Controll System</a>
@@ -27,7 +27,7 @@
                 <img src="../static/images/exitbutton.png" alt="Botão Pequeno">
             </a>
         </div>
-
+ 
         <div class="formulario">
             <h1>Formulário de Ajuda</h1>
             <select id="tipo" name="tipo">
@@ -35,20 +35,23 @@
                 <option value="sugestao">Sugestão</option>
                 <option value="ajuda">Ajuda</option>
             </select>
-
-            <label for="problema">Descreva o Problema ou Sugestão:</label>
-            <textarea id="problema" name="problema"
-                placeholder="Descreva detalhadamente o seu problema ou sugestão"></textarea>
-
+ 
+            <div class="campo-com-contador">
+                <label for="problema">Descreva o Problema ou Sugestão:</label>
+                <textarea id="problema" name="problema" placeholder="Descreva detalhadamente o seu problema ou sugestão"
+                    maxlength="950"></textarea>
+                <div class="contador-caracteres" id="contador-caracteres">0/950</div>
+            </div>
+ 
             <button type="submit">Enviar</button>
         </div>
     </form>
-
+ 
     <script>
         function validarFormulario() {
             var tipo = document.getElementById('tipo').value;
             var problema = document.getElementById('problema').value;
-
+ 
             if (tipo === '' || problema === '') {
                 alert('Por favor, preencha todos os campos.');
                 return false;
@@ -57,27 +60,33 @@
                 return true;
             }
         }
-
+ 
         document.addEventListener('DOMContentLoaded', function () {
             const exitButton = document.querySelector('.exitbutton');
             const exitPopup = document.getElementById('exitPopup');
             const simButton = document.getElementById('simButton');
             const naoButton = document.getElementById('naoButton');
-
+ 
             exitButton.addEventListener('click', function (event) {
                 event.preventDefault();
                 exitPopup.style.display = 'flex';
             });
-
+ 
             simButton.addEventListener('click', function () {
                 window.location.href = "{{ url_for('fazer_login') }}";
             });
-
+ 
             naoButton.addEventListener('click', function () {
                 exitPopup.style.display = 'none';
+            });
+ 
+            document.getElementById('problema').addEventListener('input', function () {
+                var caracteresDigitados = this.value.length;
+                var contador = document.getElementById('contador-caracteres');
+                contador.textContent = caracteresDigitados + "/950";
             });
         });
     </script>
 </body>
-
+ 
 </html>

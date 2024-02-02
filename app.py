@@ -18,9 +18,11 @@ from flask_socketio import SocketIO, send
 # Criar aplicação Flask
 app = Flask(__name__)
 
+load_dotenv()
+
 # Cpmfigurar bando de dados com a URI e chave decreta para acesso
 app.secret_key = secrets.token_hex(32)
-database_uri = 'mysql+mysqlconnector://root:Celeste123@localhost/papercontrol'
+database_uri = os.getenv('SQLALCHEMY_DATABASE_URI')
 configure_database(app, database_uri)
 
 # Gerenciamento de Login
@@ -32,12 +34,12 @@ logging.basicConfig(filename='erro.log', level=logging.INFO)
 logging.basicConfig(level=logging.DEBUG)
 
 # Configuração do Flask-Mail
-app.config['MAIL_SERVER'] = 'smtpdes.prodemge.gov.br'
-app.config['MAIL_PORT'] = 587
+app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER')
+app.config['MAIL_PORT'] = os.getenv('MAIL_PORT')
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'papercontroll@planejamento.mg.gov.br'
-app.config['MAIL_PASSWORD'] = 'AmR5cgE3X9XCeZ1M'
-app.config['MAIL_DEFAULT_SENDER'] = 'papercontroll@planejamento.mg.gov.br'
+app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
+app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
+app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_DEFAULT_SENDER')
 
 
 class User(UserMixin):
@@ -232,10 +234,10 @@ def enviar_email_ilhas_reabastecidas(numero_ilhas):
         """
         msg.set_content(content)
 
-        smtp_server = 'smtpdes.prodemge.gov.br'
-        smtp_port = 587  # Modo de segurança STARTTLS
-        smtp_user = 'seplag_papercontroll_homo'
-        smtp_password = 'AmR5cgE3X9XCeZ1M'
+        smtp_server = os.getenv('MAIL_SERVER')
+        smtp_port = os.getenv('MAIL_PORT')
+        smtp_user = os.getenv('MAIL_USERNAME')
+        smtp_password = os.getenv('MAIL_PASSWORD')
 
         with smtplib.SMTP(smtp_server, smtp_port) as smtp:
             smtp.starttls()
@@ -315,11 +317,10 @@ def enviar_email_ilhas_solicitante(andar, predio):
         Equipe Paper Control
         """
         msg.set_content(content)
-
-        smtp_server = 'smtpdes.prodemge.gov.br'
-        smtp_port = 587  # Modo de segurança STARTTLS
-        smtp_user = 'seplag_papercontroll_homo'
-        smtp_password = 'AmR5cgE3X9XCeZ1M'
+        smtp_server = os.getenv('MAIL_SERVER')
+        smtp_port = os.getenv('MAIL_PORT')
+        smtp_user = os.getenv('MAIL_USERNAME')
+        smtp_password = os.getenv('MAIL_PASSWORD')
 
         with smtplib.SMTP(smtp_server, smtp_port) as smtp:
             smtp.starttls()
@@ -440,7 +441,7 @@ def ajudaOZe():
             db.session.commit()
             print('preparando para envio do email')
             # Envia e-mail
-            enviar_email(current_user.email, tipo, descricao)
+            enviar_email(tipo, descricao)
             flash('Sua ajuda foi enviada com sucesso!', 'success')
         except BadRequestKeyError as e:
             flash('Erro na solicitação: {}'.format(str(e)), 'error')
@@ -448,7 +449,7 @@ def ajudaOZe():
     return render_template('ajudaOZe.html')
 
 
-def enviar_email(email, tipo, descricao):
+def enviar_email(tipo, descricao):
     try:
         # Obter a última ajuda inserida no banco de dados
         ajuda = Ajuda.query.order_by(Ajuda.id_ajuda.desc()).first()
@@ -461,7 +462,7 @@ def enviar_email(email, tipo, descricao):
             # Configuração do e-mail
             msg = EmailMessage()
             msg['From'] = 'papercontroll@planejamento.mg.gov.br'
-            msg['To'] = 'tic@ca.mg.gov.br'
+            msg['To'] = 'lucas.nascimento@planejamento.mg.gov.br'
             msg['Subject'] = f'{tipo.capitalize()} - ID da Solicitação: {ajuda.id_ajuda}'
             content = f"""
             Olá, sou o {Usuario.nome}
@@ -476,10 +477,10 @@ def enviar_email(email, tipo, descricao):
             msg.set_content(content)
 
             # Configuração do servidor SMTP
-            smtp_server = 'smtpdes.prodemge.gov.br'
-            smtp_port = 587  # Modo de segurança STARTTLS
-            smtp_user = 'seplag_papercontroll_homo'
-            smtp_password = 'AmR5cgE3X9XCeZ1M'
+            smtp_server = os.getenv('MAIL_SERVER')
+            smtp_port = os.getenv('MAIL_PORT')
+            smtp_user = os.getenv('MAIL_USERNAME')
+            smtp_password = os.getenv('MAIL_PASSWORD')
 
             with smtplib.SMTP(smtp_server, smtp_port) as smtp:
                 smtp.starttls()

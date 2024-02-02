@@ -9,7 +9,7 @@ body {
     grid-template-rows: auto 1fr;
     height: 100vh;
 }
-
+ 
 .cabecalho {
     display: flex;
     justify-content: space-between;
@@ -18,7 +18,7 @@ body {
     background-color: #1A5A6B;
     margin-top: 15px;
 }
-
+ 
 /* Estilos para o botão do Paper Control System */
 .PaperCS {
     margin: 10px;
@@ -32,11 +32,11 @@ body {
     outline: none;
     text-decoration: none;
 }
-
+ 
 .exitbutton {
     width: 28px;
 }
-
+ 
 .formulario {
     background-color: #fff;
     padding: 20px;
@@ -44,15 +44,15 @@ body {
     margin: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     height: 500px;
-
+    position: relative;
 }
-
+ 
 .formulario h1 {
     text-align: center;
     margin-bottom: 20px;
     color: #1A5A6B;
 }
-
+ 
 /* Estilizando o dropdown */
 #tipo {
     width: 100%;
@@ -63,7 +63,7 @@ body {
     font-size: 16px;
     background-color: #f9f9f9;
 }
-
+ 
 /* Estilizando o campo de descrição */
 #problema {
     width: 93%;
@@ -76,7 +76,7 @@ body {
     background-color: #f9f9f9;
     height: 200px;
 }
-
+ 
 /* Estilizando o botão de enviar */
 button[type="submit"] {
     padding: 12px 20px;
@@ -88,11 +88,28 @@ button[type="submit"] {
     font-size: 16px;
     transition: background-color 0.3s ease;
 }
-
+ 
 button[type="submit"]:hover {
     background-color: #1A5A6B;
 }
-
+ 
+.campo-com-contador {
+    position: relative;
+    margin-bottom: 20px;
+    /* Ajuste conforme necessário */
+}
+ 
+.contador-caracteres {
+    margin-top: 5px;
+    /* Ajuste conforme necessário */
+    font-size: 12px;
+    /* Ajuste conforme necessário */
+    color: #888;
+    /* Ajuste conforme necessário */
+    text-align: right;
+    /* Para alinhar à direita */
+}
+ 
 .exit-popup {
     display: none;
     position: fixed;
@@ -103,7 +120,7 @@ button[type="submit"]:hover {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 9999;
 }
-
+ 
 .exit-popup .popup-content {
     background-color: white;
     /* Background branco */
@@ -112,12 +129,12 @@ button[type="submit"]:hover {
     text-align: center;
     width: 300px;
 }
-
+ 
 .exit-popup .popup-content p {
     font-size: 18px;
     margin-bottom: 20px;
 }
-
+ 
 .exit-popup .button-container {
     display: flex;
     justify-content: center;
@@ -125,7 +142,7 @@ button[type="submit"]:hover {
     flex-direction: row;
     align-items: center;
 }
-
+ 
 .exit-popup .button-container button {
     padding: 10px 20px;
     margin: 0 10px;
@@ -134,41 +151,41 @@ button[type="submit"]:hover {
     cursor: pointer;
     font-size: 16px;
 }
-
+ 
 .exit-popup .button-container button#simButton {
     background-color: #3498db;
     /* Botões azuis */
     color: white;
 }
-
+ 
 .exit-popup .button-container button#naoButton {
     background-color: #e74c3c;
     color: white;
 }
-
+ 
 @media (max-width: 768px) {
     .formulario {
         margin: 20px;
         margin-bottom: 200px;
         margin-top: 90px;
     }
-
+ 
     .formulario h1 {
         margin-bottom: 15px;
     }
-
+ 
     #problema {
         width: 90%;
         margin-bottom: 15px;
     }
-
+ 
     #tipo {
         width: 96%;
         margin-bottom: 15px;
     }
-
+ 
 }
-
+ 
 button[type="submit"] {
     width: 30%;
     margin-left: 120px;
