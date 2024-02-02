@@ -81,6 +81,13 @@
                         }
                     };
                     xhr.send(JSON.stringify(jsonData));
+                    xhr.onload = function () {
+                        if (xhr.status === 200) {
+                            console.log(xhr.responseText);
+                        } else {
+                            console.error('Erro ao enviar dados para o servidor.');
+                        }
+                    };                    
                 };
 
                 reader.readAsArrayBuffer(file);

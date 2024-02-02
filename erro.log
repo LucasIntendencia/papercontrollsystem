@@ -624,3 +624,542 @@ WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 128-076-020
 INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
 INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug:127.0.0.1 - - [01/Feb/2024 15:11:27] "[32mGET /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [01/Feb/2024 15:11:27] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Feb/2024 15:11:27] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Feb/2024 15:11:27] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Feb/2024 15:11:27] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Feb/2024 15:11:28] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [01/Feb/2024 15:11:28] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Feb/2024 15:11:28] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Feb/2024 15:11:28] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Feb/2024 15:11:28] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Feb/2024 15:11:29] "GET /relatoriosadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Feb/2024 15:11:29] "[36mGET /static/styles/relatoriosadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Feb/2024 15:11:29] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Feb/2024 15:11:29] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Feb/2024 15:11:30] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Feb/2024 15:11:30] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Feb/2024 15:11:30] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Feb/2024 15:11:31] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Feb/2024 15:11:31] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Feb/2024 15:11:31] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Feb/2024 15:11:31] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor nulo em 'andar', definindo como 0
+WARNING:root:Valor nulo ou inválido em 'quantidade'
+WARNING:root:Valor nulo em 'andar', definindo como 0
+WARNING:root:Valor nulo ou inválido em 'quantidade'
+WARNING:root:Valor nulo em 'andar', definindo como 0
+WARNING:root:Valor nulo ou inválido em 'quantidade'
+WARNING:root:Valor nulo em 'andar', definindo como 0
+WARNING:root:Valor nulo ou inválido em 'quantidade'
+WARNING:root:Valor nulo em 'andar', definindo como 0
+WARNING:root:Valor nulo ou inválido em 'quantidade'
+WARNING:root:Valor nulo em 'andar', definindo como 0
+WARNING:root:Valor nulo ou inválido em 'quantidade'
+WARNING:root:Valor nulo em 'andar', definindo como 0
+WARNING:root:Valor nulo ou inválido em 'quantidade'
+WARNING:root:Valor nulo em 'andar', definindo como 0
+WARNING:root:Valor nulo ou inválido em 'quantidade'
+WARNING:root:Valor nulo em 'andar', definindo como 0
+WARNING:root:Valor nulo ou inválido em 'quantidade'
+WARNING:root:Valor nulo em 'andar', definindo como 0
+WARNING:root:Valor nulo ou inválido em 'quantidade'
+WARNING:root:Valor nulo em 'andar', definindo como 0
+WARNING:root:Valor nulo ou inválido em 'quantidade'
+WARNING:root:Valor nulo em 'andar', definindo como 0
+WARNING:root:Valor nulo ou inválido em 'quantidade'
+WARNING:root:Valor nulo em 'andar', definindo como 0
+WARNING:root:Valor nulo ou inválido em 'quantidade'
+INFO:werkzeug:127.0.0.1 - - [01/Feb/2024 15:11:36] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:31:54] "GET /verificar_conexao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:31:54] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:31:58] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:31:58] "GET /login?next=/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:31:58] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:31:58] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:31:58] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:32:02] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:32:02] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:32:02] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:32:02] "GET /static/styles/loginrec.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:32:02] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:32:02] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:32:06] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:49:31] "[32mGET /loginrec HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:49:31] "GET /login?next=/loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:49:31] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:49:31] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:49:31] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:49:36] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:49:36] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:49:36] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:49:36] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:49:36] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:49:38] "[31m[1mGET /quantidadeadm HTTP/1.1[0m" 405 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:51:21] "[32mGET /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:51:21] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:51:22] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:51:22] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:51:22] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:51:23] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:51:23] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:51:24] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:51:24] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:51:24] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:51:25] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:51:25] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:51:25] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:51:25] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 592, in quantidadeadm
+    relatorio_xlsx = processar_planilha(file)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:51:29] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:51:29] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:51:29] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:53:31] "GET /static/styles/loginrec.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:53:31] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:53:31] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:53:31] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:53:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:53:32] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:53:32] "GET /login?next=/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:53:32] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:53:32] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:53:32] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:53:34] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:53:34] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:53:34] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:53:34] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:53:34] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:53:34] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 592, in quantidadeadm
+    relatorio_xlsx = processar_planilha(file)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:57:49] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:57:49] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:57:49] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:57:50] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 592, in quantidadeadm
+    relatorio_xlsx = processar_planilha(file)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:57:54] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:57:54] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:57:54] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:58:00] "[32mPOST /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:58:00] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:58:00] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:58:00] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:58:00] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:58:01] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:58:01] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:58:01] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:58:01] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:58:01] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:58:02] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:58:02] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:58:02] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 592, in quantidadeadm
+    relatorio_xlsx = processar_planilha(file)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:58:05] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:58:05] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 08:58:05] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:02:53] "[32mPOST /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:02:53] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:02:53] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:02:53] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:02:53] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:02:56] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:02:56] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:02:56] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:02:56] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:02:56] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:03:00] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:03:01] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:03:01] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:03:06] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:10:29] "GET /verificar_conexao HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:36:46] "GET /verificar_conexao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:36:48] "GET /verificar_conexao HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:36:58] "GET /verificar_conexao HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:37:07] "GET /verificar_conexao HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:41:03] "[32mGET /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:41:03] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:41:03] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:41:03] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:41:03] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:41:05] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:41:05] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:41:05] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:41:05] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:41:05] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:41:06] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:41:06] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:41:06] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:41:06] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 596, in quantidadeadm
+    relatorio_xlsx = processar_planilha(file)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:41:13] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:41:13] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:41:13] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 596, in quantidadeadm
+    relatorio_xlsx = processar_planilha(file)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:41:32] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:41:32] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:41:32] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 596, in quantidadeadm
+    relatorio_xlsx = processar_planilha(file)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:47:10] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:47:10] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:47:10] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:47:10] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 596, in quantidadeadm
+    relatorio_xlsx = processar_planilha(file)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:54:20] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:54:20] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:54:20] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:54:20] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:55:21] "GET /verificar_conexao HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:56:29] "[32mPOST /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:56:29] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:56:30] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:56:30] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:56:30] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:56:31] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:56:31] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:56:31] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:56:31] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:56:31] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:56:32] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:56:32] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:56:32] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 598, in quantidadeadm
+    relatorio_xlsx = processar_planilha(file)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:56:36] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:56:36] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:56:36] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:57:23] "[32mPOST /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:57:23] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:57:23] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:57:23] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:57:23] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:57:24] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:57:24] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:57:24] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:57:24] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:57:24] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:57:25] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:57:25] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:57:25] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 599, in quantidadeadm
+    relatorio_xlsx = processar_planilha(file)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:57:28] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:57:28] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 09:57:28] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 599, in quantidadeadm
+    relatorio_xlsx = processar_planilha(file)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:11:38] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:11:38] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:11:38] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:11:38] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:17:10] "[32mPOST /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:17:10] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:17:11] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:17:11] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:17:11] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:17:12] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:17:12] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:17:12] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:17:12] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:17:12] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:17:13] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:17:13] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:17:13] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:17:13] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 607, in quantidadeadm
+    relatorio_xlsx = processar_planilha(file)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:17:15] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:17:15] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:17:15] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:18:40] "[32mPOST /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:18:40] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:18:40] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:18:40] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:18:40] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:18:41] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:18:41] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:18:41] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:18:41] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:18:41] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:18:46] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:18:46] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:18:46] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:18:48] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:18:48] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:18:48] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:18:48] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:18:49] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:18:49] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:18:49] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 608, in quantidadeadm
+    relatorio_xlsx = processar_planilha(file)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:18:52] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:18:52] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:18:52] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:19:58] "[32mPOST /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:19:58] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:19:58] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:19:58] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:19:58] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:19:59] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:19:59] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:19:59] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:19:59] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:19:59] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:20:00] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:20:00] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:20:00] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 609, in quantidadeadm
+    relatorio_xlsx = processar_planilha(file)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: processar_planilha() missing 1 required positional argument: 'quantidade_reabastecimento'
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:20:05] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:20:05] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:20:05] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:25:05] "[32mPOST /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:25:05] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:25:05] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:25:06] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:25:06] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:25:07] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:25:07] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:25:07] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:25:07] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:25:07] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:25:08] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:25:08] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:25:08] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:25:08] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: 'Usuario' object has no attribute 'prédio'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 617, in quantidadeadm
+    enviar_notificacao_repositor(predio=admin_user.prédio, andar=admin_user.andar, quantidade_reabastecimento=5)  # Exemplo de quantidade_reabastecimento
+                                        ^^^^^^^^^^^^^^^^^
+AttributeError: 'Usuario' object has no attribute 'prédio'
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:25:11] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:25:11] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:25:11] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:44:21] "[33mPOST /quantidadeadm HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:44:25] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:44:25] "GET /login?next=/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:44:26] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:44:26] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:44:26] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:44:47] "GET /login?next=/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:44:48] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:44:48] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:44:49] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:44:49] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:44:49] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:44:49] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:44:49] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:44:50] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:44:50] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:44:50] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:44:50] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: [Errno 22] Invalid argument: "Erro ao processar planilha: unsupported operand type(s) for -: 'int' and 'str'"
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 617, in quantidadeadm
+    resultado_df = pd.read_excel(relatorio_xlsx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\io\excel\_base.py", line 504, in read_excel
+    io = ExcelFile(
+         ^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\io\excel\_base.py", line 1563, in __init__
+    ext = inspect_excel_format(
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\io\excel\_base.py", line 1419, in inspect_excel_format
+    with get_handle(
+         ^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\io\common.py", line 872, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument: "Erro ao processar planilha: unsupported operand type(s) for -: 'int' and 'str'"
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:44:54] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:44:54] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:44:54] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:51:07] "[32mPOST /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:51:07] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:51:07] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:51:07] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:51:07] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:51:09] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:51:09] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:51:09] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:51:09] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:51:09] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:51:11] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:51:11] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:51:11] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:51:11] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:51:14] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:57:47] "[32mPOST /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:57:47] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:57:47] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:57:47] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:57:47] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:57:48] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:57:48] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:57:48] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:57:48] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:57:48] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:57:49] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:57:49] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:57:49] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:57:50] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:57:54] "POST /quantidadeadm HTTP/1.1" 200 -

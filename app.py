@@ -13,6 +13,7 @@ from email.message import EmailMessage
 from werkzeug.exceptions import BadRequestKeyError
 import os
 from dotenv import load_dotenv
+from flask_socketio import SocketIO, send
 
 # Criar aplicação Flask
 app = Flask(__name__)
@@ -500,126 +501,127 @@ def enviar_email(email, tipo, descricao):
         return f'Erro ao enviar e-mail: {str(e)}'
 
 
-@app.route('/quantidadeadm', methods=['GET', 'POST'])
-@login_required
-def quantidadeadm():
+def enviar_notificacao_repositor(predio, andar, quantidade_reabastecimento):
     try:
-        logging.debug("Iniciando processamento...")
+        # Encontrar todos os usuários do tipo 'repositor' no mesmo prédio e andar
+        repositor_query = Usuario.query.filter_by(tipo_user='repositor', prédio=predio, andar=andar).all()
 
-        if request.method == 'POST':
-            logging.debug("Recebendo requisição POST...")
+        if repositor_query:
+            for repositor in repositor_query:
+                # Enviar notificação para cada repositor encontrado
+                mensagem = f"Olá, {repositor.nome}. Você precisa reabastecer {quantidade_reabastecimento} resmas no andar {andar} do prédio {predio}."
+                # Aqui você pode implementar o envio de notificação, por exemplo, via e-mail
+                print(mensagem)  # apenas para exemplo
+            return 'Notificação enviada com sucesso!'
+        else:
+            return 'Nenhum repositor encontrado para enviar notificação.'
 
-            file = request.files.get('excelFile')
-            logging.debug(f"Arquivo recebido: {file}")
+    except Exception as e:
+        return f'Erro ao enviar notificação para o repositor: {str(e)}'
 
-            if file and file.filename.endswith(('.xlsx', '.xls')):
-                # Ler o arquivo Excel
-                df = pd.read_excel(file)
-                df.columns = df.columns.str.upper()
 
-                # Inicializar uma lista para armazenar os resultados
-                resultado_lista = []
+def processar_planilha(file, quantidade_reabastecimento):
+    print("Processando planilha...")
+    try:
+        if file and file.filename.endswith(('.xlsx', '.xls')):
+            print("Arquivo recebido com sucesso.")
 
-                # Iterar sobre cada linha do DataFrame do Excel
-                for _, row in df.iterrows():
-                    predio = row['PRÉDIO']
-                    ilha = str(row['LOCALIZAÇÃO'])  # Converta para string
+            # Ler o arquivo Excel
+            df = pd.read_excel(file)
+            print("DataFrame criado com sucesso.")
 
-                    # Verificar e converter 'andar' para numérico
-                    andar_value = row['ANDAR']
-                    if pd.notna(andar_value):
-                        try:
-                            andar_int = int(andar_value)
-                        except ValueError:
-                            logging.warning(
-                                f"Valor inválido em 'andar': {andar_value}")
-                            continue
-                    else:
-                        # Definir um valor padrão quando 'andar' é nulo
-                        logging.warning(
-                            f"Valor nulo em 'andar', definindo como 0")
-                        andar_int = 0
+            df.columns = df.columns.str.upper()
 
-                    # Verificar e converter 'QUANTIDADE' para numérico
-                    quantidade_value = row['QUANTIDADE']
-                    if pd.notna(quantidade_value) and quantidade_value != 'TOTAL':
-                        try:
-                            quantidade_impressa = float(quantidade_value)
-                        except ValueError:
-                            logging.warning(
-                                f"Valor inválido em 'quantidade': {quantidade_value}")
-                            continue
-                    else:
-                        logging.warning(
-                            f"Valor nulo ou inválido em 'quantidade'")
-                        continue
+            # Renomear a coluna para torná-la compatível com o código Python
+            df.rename(columns={'QTD. PAPEL IMPRESSA NA SEMANA': 'QUANTIDADE'}, inplace=True)
 
-                    # Imprimir para debug
-                    print(
-                        f"Procurando reposição para: Prédio={predio}, Andar={andar_int}, Ilha={ilha}")
+            # Inicializar uma lista para armazenar os resultados
+            resultado_lista = []
 
-                    # Formatar 'andar' e 'ilha' para correspondência com o banco de dados
-                    andar_ilha_concatenado = f"Andar {andar_int} Ilha {ilha}"
+            # Iterar sobre cada linha do DataFrame do Excel
+            for _, row in df.iterrows():
+                predio = row['PRÉDIO']
+                andar = row['ANDAR']
+                ilha = row['LOCALIZAÇÃO']
+                quantidade_impressa = int(row['QUANTIDADE'])
 
-                    # Buscar a reposição no banco de dados com base em predio, andar e ilha
-                    reposicao = Reposicao.query.filter(
-                        func.lower(Reposicao.predio) == func.lower(predio),
-                        func.lower(Reposicao.andar).like(
-                            f"Andar {andar_int}%"),
-                        func.lower(Reposicao.ilha) == func.lower(ilha)
-                    ).first()
+                print(f"Predio: {predio}, Andar: {andar}, Ilha: {ilha}, Quantidade Impressa: {quantidade_impressa}")
 
-                    # Imprimir para debug
-                    print(f"Reposição encontrada: {reposicao}")
+                # Calcular a quantidade reabastecida
+                quantidade_reabastecida = quantidade_reabastecimento
 
-                    # Verificar se há uma reposição e obter a quantidade de reposição
-                    if reposicao:
-                        quantidade_reabastecida = reposicao.quantidade_reposicao
-                        print(
-                            f'Reposição encontrada: {quantidade_reabastecida}')
-                    else:
-                        quantidade_reabastecida = 0
+                # Calcular a quantidade restante
+                quantidade_restante = (quantidade_reabastecida * 500) - quantidade_impressa
 
-                    print(f'Quantidade encontrada: {quantidade_value}')
-                    print(f'Reposição encontrada: {quantidade_reabastecida}')
-                    # Calcular a quantidade restante
-                    quantidade_restante = (
-                        quantidade_reabastecida * 500) - quantidade_impressa
-
+                # Verificar se a quantidade restante é positiva (ou seja, precisa de reposição)
+                if quantidade_restante <= 0:
                     # Adicionar os resultados à lista
                     resultado_lista.append({
                         'PRÉDIO': predio,
-                        'ANDAR': andar_int,
+                        'ANDAR': andar,
                         'ILHA': ilha,
-                        'IMPRESSA NA SEMANA': quantidade_impressa,
-                        'REABASTECIMENTO': quantidade_reabastecida,
-                        'RESTANTE': quantidade_restante
+                        'QUANTIDADE IMPRESSA': quantidade_impressa,
+                        'QUANTIDADE RESTANTE': quantidade_restante
                     })
 
-                    # Imprimir para debug
-                    print(f"Resultado parcial: {resultado_lista[-1]}")
-
+            if resultado_lista:
                 # Criar um DataFrame a partir da lista
                 resultado_df = pd.DataFrame(resultado_lista)
 
-                # Criar um arquivo HTML temporário para armazenar o relatório
+                # Criar um arquivo Excel temporário para armazenar o relatório
                 relatorio_xlsx = f'tmp_relatorio_{datetime.now().strftime("%Y%m%d%H%M%S")}.xlsx'
 
                 # Salvar o DataFrame como um arquivo Excel
-                resultado_df.to_excel(
-                    relatorio_xlsx, index=False, sheet_name='Relatorio')
+                resultado_df.to_excel(relatorio_xlsx, index=False, sheet_name='Relatorio')
 
-                # Aqui você pode fazer o que quiser com o DataFrame resultado
-                logging.debug("Processamento concluído com sucesso.")
+                print("Relatório criado com sucesso.")
 
-                # Retornar o relatório Excel ao usuário para download
-                return send_file(relatorio_xlsx, download_name='relatorio.xlsx', as_attachment=True, mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+                return relatorio_xlsx
+            else:
+                print("Nenhum ilha precisa de reposição.")
+                return None
+        else:
+            return 'Erro: Arquivo inválido.'
 
-        logging.debug("Processamento concluído com sucesso.")
     except Exception as e:
-        logging.error(f"Erro no servidor: {e}", exc_info=True)
+        return f'Erro ao processar planilha: {str(e)}'
+
+
+@app.route('/quantidadeadm', methods=['POST', 'GET'])
+@login_required
+def quantidadeadm():
+    print('Acessando rota quantidade adm')
+    try:
+        if request.method == 'POST':
+            file = request.files.get('excelFile')
+            print('Arquivo recebido!')
+            if file:
+                # Processar a planilha
+                relatorio_xlsx = processar_planilha(file, 5)  # Adicionando o valor de quantidade_reabastecimento
+
+                if relatorio_xlsx:
+                    # Retornar o relatório Excel ao usuário para download
+                    return send_file(relatorio_xlsx, download_name='relatorio_reposicao.xlsx', as_attachment=True, mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+                else:
+                    return 'Nenhum ilha precisa de reposição ou erro ao processar a planilha.'
+
+            else:
+                return 'Nenhum arquivo enviado.'
+
+    except Exception as e:
+        print(f"Erro no servidor: {e}")
+        return 'Erro no servidor.'
 
     return render_template('quantidadeadm.html')
+
+
+def connect():
+    try:
+        # Verificar a conexão com o banco de dados
+        db.session.query(Usuario).first()
+        return 'Conexão bem-sucedida.'
+    except Exception as e:
+        return f'Erro ao conectar ao banco de dados: {str(e)}'
 
 
 @app.route('/verificar_conexao')
@@ -630,9 +632,11 @@ def verificar_conexao():
         users_data = [{
             'id_user': user.id_user,
             'email': user.email,
-            'senha': user.senha,
             'tipo_user': user.tipo_user,
-            'estoque': user.estoque
+            'estoque': user.estoque,
+            'nome': user.nome,
+            'preio': user.predio_user,
+            'andar': user.andar_user
         }for user in users]
 
         return jsonify(users_data)

@@ -24,6 +24,8 @@ class Usuario(db.Model, UserMixin):
     senha = db.Column(db.String(255), nullable=False)
     tipo_user = db.Column(db.String(50), nullable=False)
     estoque = db.Column(db.Integer, nullable=False, default=0)
+    andar_user = db.Column(db.Integer)
+    predio_user = db.Column(db.String(50))
 
     def __repr__(self):
         return f"<User {self.id}: {self.nome} ({self.tipo_user})>"
