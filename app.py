@@ -203,7 +203,7 @@ def abastecimento():
 
                     if numero_ilhas_reabastecidas >= limite_ilhas_reabastecidas:
                         enviar_email_ilhas_reabastecidas(
-                            current_user.email, numero_ilhas_reabastecidas)
+                            numero_ilhas_reabastecidas)
 
                 else:
                     mensagem = "Erro ao obter o repositório associado ao usuário."
@@ -216,12 +216,12 @@ def abastecimento():
     return render_template('abastecimento.html', quantidade_estoque=estoque, mensagem_erro=None, mensagem=mensagem)
 
 
-def enviar_email_ilhas_reabastecidas(email, numero_ilhas):
+def enviar_email_ilhas_reabastecidas(numero_ilhas):
     try:
         # Configuração do e-mail
         msg = EmailMessage()
         msg['From'] = 'papercontrol@planejamento.mg.gov.br'
-        msg['To'] = email
+        msg['To'] = 'espaco@planejamento.mg.gov.br'
         msg['Subject'] = 'Limite de Ilhas Reabastecidas Atingido'
         content = f"""
         Olá,
@@ -279,7 +279,7 @@ def reabastecimento():
                 db.session.commit()
 
                 if nova_reposicao.id is not None:  # Verifica se a adição ao banco de dados foi bem-sucedida
-                    enviar_email_ilhas_solicitante(current_user.email, andar, predio)
+                    enviar_email_ilhas_solicitante(andar, predio)
                     logging.info('Reabastecimento solicitado com sucesso.')
 
             return redirect(url_for('reabastecimento'))
@@ -300,12 +300,12 @@ def reabastecimento():
 
     return render_template('reabastecimento.html', dados_reabastecimento=[], quantidade_estoque=0, error_message="Erro ao buscar dados de reabastecimento")
 
-def enviar_email_ilhas_solicitante(email, andar, predio):
+def enviar_email_ilhas_solicitante(andar, predio):
     try:
         # Configuração do e-mail
         msg = EmailMessage()
         msg['From'] = 'papercontrol@planejamento.mg.gov.br'
-        msg['To'] = email
+        msg['To'] = 'espaco@planejamento.mg.gov.br'
         msg['Subject'] = 'Limite de Ilhas Reabastecidas Atingido'
         content = f"""
         Olá,
