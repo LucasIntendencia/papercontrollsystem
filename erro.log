@@ -1163,3 +1163,509 @@ INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:57:49] "[36mGET /static/styles/quan
 INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:57:49] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:57:50] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 10:57:54] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:26:13] "[32mPOST /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:26:13] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:26:13] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:26:13] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:26:13] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:26:17] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:26:17] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:26:17] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:26:17] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:26:17] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:26:17] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:26:18] "GET /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:26:18] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:26:18] "GET /static/styles/ajudaOZe.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:26:18] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:__main__:Erro ao enviar e-mail: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 481, in enviar_email
+    with smtplib.SMTP(smtp_server, smtp_port) as smtp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 851, in create_connection
+    raise exceptions[0]
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 836, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:26:26] "POST /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:26:26] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:26:26] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:30:38] "[32mPOST /ajudaOZe HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:30:38] "GET /login?next=/ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:30:38] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:30:38] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:30:38] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:30:39] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:30:39] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:30:39] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:30:39] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:30:39] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:30:39] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:30:42] "GET /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:30:42] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:30:42] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+ERROR:__main__:Erro ao enviar e-mail: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 481, in enviar_email
+    with smtplib.SMTP(smtp_server, smtp_port) as smtp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 851, in create_connection
+    raise exceptions[0]
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 836, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:30:51] "POST /ajudaOZe HTTP/1.1" 200 -
+ERROR:__main__:Erro ao enviar e-mail: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 481, in enviar_email
+    with smtplib.SMTP(smtp_server, smtp_port) as smtp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 851, in create_connection
+    raise exceptions[0]
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 836, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:30:53] "POST /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:30:53] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:30:53] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:36:31] "[32mPOST /ajudaOZe HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:36:31] "GET /login?next=/ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:36:31] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:36:31] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:36:31] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:36:33] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:36:33] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:36:33] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:36:33] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:36:33] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:36:33] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:36:36] "GET /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:36:36] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:36:36] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+ERROR:__main__:Erro ao enviar e-mail: (535, b'5.7.8 Error: authentication failed: authentication failure')
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 486, in enviar_email
+    smtp.login(smtp_user, smtp_password)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Error: authentication failed: authentication failure')
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:36:49] "POST /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:36:49] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:36:49] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:38:46] "[32mPOST /ajudaOZe HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:38:46] "GET /login?next=/ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:38:46] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:38:46] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:38:46] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:38:48] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:38:48] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:38:48] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:38:48] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:38:48] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:38:48] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:38:49] "GET /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:38:49] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:38:49] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:38:49] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:__main__:Erro ao enviar e-mail: (535, b'5.7.8 Error: authentication failed: authentication failure')
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 493, in enviar_email
+    smtp.login(smtp_user, smtp_password)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Error: authentication failed: authentication failure')
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:38:57] "POST /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:38:57] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:38:57] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:08] "[32mPOST /ajudaOZe HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:08] "GET /login?next=/ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:08] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:08] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:08] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:09] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:09] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:09] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:09] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:09] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:09] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:10] "GET /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:10] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:10] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:__main__:Enviando e-mail para lucas.nascimento@planejamento.mg.gov.br sobre a Ajuda de ID 17
+ERROR:__main__:Erro ao enviar e-mail: {'lucas.nascimento@planejamento.mg.gov.br': (553, b'5.7.1 <papercontrol@planejamento.mg.gov.br>: Sender address rejected: not owned by user seplag_papercontroll_homo')}
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 500, in enviar_email
+    smtp.send_message(msg)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 986, in send_message
+    return self.sendmail(from_addr, to_addrs, flatmsg, mail_options,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2032.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 901, in sendmail
+    raise SMTPRecipientsRefused(senderrs)
+smtplib.SMTPRecipientsRefused: {'lucas.nascimento@planejamento.mg.gov.br': (553, b'5.7.1 <papercontrol@planejamento.mg.gov.br>: Sender address rejected: not owned by user seplag_papercontroll_homo')}
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:16] "POST /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:16] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:16] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:53] "[32mPOST /ajudaOZe HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:53] "GET /login?next=/ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:53] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:53] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:53] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:54] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:54] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:54] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:54] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:54] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:54] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:54] "GET /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:54] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:43:54] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:__main__:Enviando e-mail para lucas.nascimento@planejamento.mg.gov.br sobre a Ajuda de ID 18
+INFO:__main__:E-mail para lucas.nascimento@planejamento.mg.gov.br enviado com sucesso!
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:44:01] "POST /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:44:01] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:44:01] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:50:33] "[32mPOST /ajudaOZe HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:50:33] "GET /login?next=/ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:50:34] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:50:34] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:50:34] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:52:46] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:52:46] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:52:46] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:52:46] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:52:46] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:52:46] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:52:49] "GET /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:52:49] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:52:49] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:52:49] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:__main__:Erro ao enviar e-mail: 'Ajuda' object has no attribute 'nome'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 467, in enviar_email
+    Olá, sou o {ajuda.nome}
+                ^^^^^^^^^^
+AttributeError: 'Ajuda' object has no attribute 'nome'
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:53:34] "POST /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:53:34] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:53:34] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:53:34] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:__main__:Erro ao enviar e-mail: 'Ajuda' object has no attribute 'nome'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 467, in enviar_email
+    Olá, sou o {ajuda.nome}
+                ^^^^^^^^^^
+AttributeError: 'Ajuda' object has no attribute 'nome'
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:54:53] "POST /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:54:53] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:54:53] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 12:54:53] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:__main__:Erro ao enviar e-mail: 'Ajuda' object has no attribute 'nome'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 467, in enviar_email
+    Olá, sou o {ajuda.nome}
+                ^^^^^^^^^^
+AttributeError: 'Ajuda' object has no attribute 'nome'
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 13:01:16] "POST /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 13:01:16] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 13:01:16] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 13:01:16] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 13:04:54] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 13:04:54] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 13:04:54] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 13:04:54] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 13:04:54] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 13:04:55] "GET /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 13:04:55] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 13:04:55] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 13:04:55] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:__main__:Erro ao enviar e-mail: 'Ajuda' object has no attribute 'nome'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 467, in enviar_email
+    Olá, sou o {ajuda.nome}
+                ^^^^^^^^^^
+AttributeError: 'Ajuda' object has no attribute 'nome'
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 13:05:03] "POST /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 13:05:03] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 13:05:03] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:01:05] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:01:05] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:01:05] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:01:05] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:01:05] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:01:08] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:01:08] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:01:08] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:01:08] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:01:28] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:01:28] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:01:28] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:01:28] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:01:28] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:01:32] "GET /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:01:32] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:01:32] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:01:32] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:__main__:Erro ao enviar e-mail: 'Ajuda' object has no attribute 'nome'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 467, in enviar_email
+    Olá, sou o {ajuda.nome}
+                ^^^^^^^^^^
+AttributeError: 'Ajuda' object has no attribute 'nome'
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:01:38] "POST /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:01:38] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:01:38] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:01:38] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:11:46] "[32mPOST /ajudaOZe HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:11:46] "GET /login?next=/ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:11:46] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:11:46] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:11:46] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:12:00] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:12:00] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:12:00] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:12:00] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:12:00] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:12:00] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:12:02] "GET /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:12:02] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:12:02] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:12:02] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:23:39] "[32mGET /ajudaOZe HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:23:39] "GET /login?next=/ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:23:39] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:23:39] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:23:39] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:23:42] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:23:42] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:23:42] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:23:42] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:23:42] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:23:42] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:23:42] "GET /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:23:43] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:23:43] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:23:43] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:__main__:Erro ao enviar e-mail: 'Ajuda' object has no attribute 'nome'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 467, in enviar_email
+    Olá, sou o {ajuda.nome}
+                ^^^^^^^^^^
+AttributeError: 'Ajuda' object has no attribute 'nome'
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:24:20] "POST /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:24:20] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:24:20] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:24:20] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:28:31] "[32mPOST /ajudaOZe HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:28:31] "GET /login?next=/ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:28:31] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:28:31] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:28:31] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:28:32] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:28:32] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:28:32] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:28:32] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:28:32] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:28:32] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:28:33] "GET /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:28:33] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:28:33] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:28:33] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro ao enviar e-mail: cannot access local variable 'msg' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 461, in enviar_email
+    logging.info(f'Enviando e-mail para {msg["To"]} sobre a Ajuda de ID {ajuda.id_ajuda}')
+                                         ^^^
+UnboundLocalError: cannot access local variable 'msg' where it is not associated with a value
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:28:49] "POST /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:28:49] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:28:49] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:31:38] "[32mPOST /ajudaOZe HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:31:38] "GET /login?next=/ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:31:38] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:31:38] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:31:38] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:31:39] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:31:39] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:31:39] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:31:39] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:31:39] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:31:39] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:31:40] "GET /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:31:40] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:31:40] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:31:40] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:__main__:Erro ao enviar e-mail: 'Ajuda' object has no attribute 'nome'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 467, in enviar_email
+    Olá, sou o {ajuda.nome}
+                ^^^^^^^^^^
+AttributeError: 'Ajuda' object has no attribute 'nome'
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:31:51] "POST /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:31:51] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:31:51] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:36:49] "[32mPOST /ajudaOZe HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:36:49] "GET /login?next=/ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:36:49] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:36:49] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:36:49] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:36:50] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:36:50] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:36:50] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:36:50] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:36:50] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:36:50] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:36:51] "GET /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:36:51] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:36:51] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:36:51] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:__main__:Enviando e-mail para lucas.nascimento@planejamento.mg.gov.br sobre a Ajuda de ID 27
+INFO:__main__:E-mail para lucas.nascimento@planejamento.mg.gov.br enviado com sucesso!
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:37:06] "POST /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:37:06] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:37:06] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:__main__:Enviando e-mail para lucas.nascimento@planejamento.mg.gov.br sobre a Ajuda de ID 28
+INFO:__main__:E-mail para lucas.nascimento@planejamento.mg.gov.br enviado com sucesso!
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:37:33] "POST /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:37:33] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:37:33] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:__main__:Enviando e-mail para lucas.nascimento@planejamento.mg.gov.br sobre a Ajuda de ID 29
+INFO:__main__:E-mail para lucas.nascimento@planejamento.mg.gov.br enviado com sucesso!
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:38:10] "POST /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:38:10] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:38:10] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:__main__:Enviando e-mail para lucas.nascimento@planejamento.mg.gov.br sobre a Ajuda de ID 30
+INFO:__main__:E-mail para lucas.nascimento@planejamento.mg.gov.br enviado com sucesso!
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:38:36] "POST /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:38:36] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:38:36] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:38:48] "[35m[1mPOST /ajudaOZe HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:38:48] "GET /ajudaOZe?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:38:48] "GET /ajudaOZe?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:38:48] "GET /ajudaOZe?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:38:48] "[36mGET /ajudaOZe?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:40:47] "[32mPOST /ajudaOZe HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:40:47] "GET /login?next=/ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:40:47] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:40:47] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:40:47] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:40:49] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:40:49] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:40:49] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:40:49] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:40:49] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:40:49] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:40:50] "GET /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:40:50] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:40:50] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:40:50] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:__main__:Enviando e-mail para tic@ca.mg.gov.br sobre a Ajuda de ID 31
+INFO:__main__:E-mail para tic@ca.mg.gov.br enviado com sucesso!
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:41:13] "POST /ajudaOZe HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:41:13] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Feb/2024 14:41:13] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -

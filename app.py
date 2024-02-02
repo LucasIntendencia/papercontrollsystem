@@ -32,12 +32,12 @@ logging.basicConfig(filename='erro.log', level=logging.INFO)
 logging.basicConfig(level=logging.DEBUG)
 
 # Configuração do Flask-Mail
-app.config['MAIL_SERVER'] = 'smtp.example.com'
+app.config['MAIL_SERVER'] = 'smtpdes.prodemge.gov.br'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'lucas.nascimento@planejamento.mg.gov.br'
-app.config['MAIL_PASSWORD'] = 'Celeste123'
-app.config['MAIL_DEFAULT_SENDER'] = 'lucas.nascimento@planejamento.mg.gov.br'
+app.config['MAIL_USERNAME'] = 'papercontroll@planejamento.mg.gov.br'
+app.config['MAIL_PASSWORD'] = 'AmR5cgE3X9XCeZ1M'
+app.config['MAIL_DEFAULT_SENDER'] = 'papercontroll@planejamento.mg.gov.br'
 
 
 class User(UserMixin):
@@ -232,10 +232,10 @@ def enviar_email_ilhas_reabastecidas(email, numero_ilhas):
         """
         msg.set_content(content)
 
-        smtp_server = 'seu_servidor_smtp'
-        smtp_port = 587
-        smtp_user = 'seu_email'
-        smtp_password = 'sua_senha'
+        smtp_server = 'smtpdes.prodemge.gov.br'
+        smtp_port = 587  # Modo de segurança STARTTLS
+        smtp_user = 'seplag_papercontroll_homo'
+        smtp_password = 'AmR5cgE3X9XCeZ1M'
 
         with smtplib.SMTP(smtp_server, smtp_port) as smtp:
             smtp.starttls()
@@ -316,10 +316,10 @@ def enviar_email_ilhas_solicitante(email, andar, predio):
         """
         msg.set_content(content)
 
-        smtp_server = 'seu_servidor_smtp'
-        smtp_port = 587
-        smtp_user = 'seu_email'
-        smtp_password = 'sua_senha'
+        smtp_server = 'smtpdes.prodemge.gov.br'
+        smtp_port = 587  # Modo de segurança STARTTLS
+        smtp_user = 'seplag_papercontroll_homo'
+        smtp_password = 'AmR5cgE3X9XCeZ1M'
 
         with smtplib.SMTP(smtp_server, smtp_port) as smtp:
             smtp.starttls()
@@ -438,7 +438,7 @@ def ajudaOZe():
                                id_user=id_user, email=current_user.email)
             db.session.add(nova_ajuda)
             db.session.commit()
-
+            print('preparando para envio do email')
             # Envia e-mail
             enviar_email(current_user.email, tipo, descricao)
             flash('Sua ajuda foi enviada com sucesso!', 'success')
@@ -460,24 +460,27 @@ def enviar_email(email, tipo, descricao):
         if ajuda:
             # Configuração do e-mail
             msg = EmailMessage()
-            msg['From'] = 'papercontrol@planejamento.mg.gov.br'
-            msg['To'] = 'lucas.nascimento@planejamento.mg.gov.br'
-            msg['Subject'] = f'{tipo.capitalize()} - ID da Ajuda: {ajuda.id_ajuda}'
+            msg['From'] = 'papercontroll@planejamento.mg.gov.br'
+            msg['To'] = 'tic@ca.mg.gov.br'
+            msg['Subject'] = f'{tipo.capitalize()} - ID da Solicitação: {ajuda.id_ajuda}'
             content = f"""
-            Olá, {ajuda.id_user}
+            Olá, sou o {Usuario.nome}
             Aqui estão algumas informações da Ajuda:
             - ID da Ajuda: {ajuda.id_ajuda}
-            - ID do Usuário: {ajuda.id_user}
+            - ID do Usuário: {Usuario.id_user}
             - Descrição: {ajuda.descricao}
-            - E-mail do Usuário: {ajuda.email}
+            - E-mail do Usuário: {Usuario.email}
             Atenciosamente,
             Equipe Paper Control
             """
             msg.set_content(content)
-            smtp_server = 'seu_servidor_smtp'
-            smtp_port = 587  # Porta do servidor SMTP
-            smtp_user = 'seu_email'
-            smtp_password = 'sua_senha'
+
+            # Configuração do servidor SMTP
+            smtp_server = 'smtpdes.prodemge.gov.br'
+            smtp_port = 587  # Modo de segurança STARTTLS
+            smtp_user = 'seplag_papercontroll_homo'
+            smtp_password = 'AmR5cgE3X9XCeZ1M'
+
             with smtplib.SMTP(smtp_server, smtp_port) as smtp:
                 smtp.starttls()
                 smtp.login(smtp_user, smtp_password)
