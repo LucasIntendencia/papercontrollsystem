@@ -1,3 +1,5 @@
+from dotenv import load_dotenv,dotenv_values
+load_dotenv()
 from flask import Flask, render_template, request, redirect, url_for, jsonify, send_file, flash
 from flask_login import LoginManager, UserMixin, login_required, login_user, current_user
 from database import configure_database, db, Usuario, Reposicao, Reabastecimento, Ajuda
@@ -12,13 +14,15 @@ import json
 from email.message import EmailMessage
 from werkzeug.exceptions import BadRequestKeyError
 import os
-from dotenv import load_dotenv
 from flask_socketio import SocketIO, send
 
 # Criar aplicação Flask
 app = Flask(__name__)
 
-load_dotenv()
+env_variables = dotenv_values('credencial.env')
+print(env_variables)
+app.config.update(env_variables)
+
 
 # Cpmfigurar bando de dados com a URI e chave decreta para acesso
 app.secret_key = secrets.token_hex(32)
