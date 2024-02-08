@@ -1,5 +1,4 @@
 from dotenv import load_dotenv,dotenv_values
-load_dotenv()
 from flask import Flask, render_template, request, redirect, url_for, jsonify, send_file, flash
 from flask_login import LoginManager, UserMixin, login_required, login_user, current_user
 from database import configure_database, db, Usuario, Reposicao, Reabastecimento, Ajuda
@@ -19,6 +18,7 @@ from flask_socketio import SocketIO, send
 # Criar aplicação Flask
 app = Flask(__name__)
 
+load_dotenv()
 env_variables = dotenv_values('credencial.env')
 print(env_variables)
 app.config.update(env_variables)
@@ -27,7 +27,7 @@ app.config.update(env_variables)
 # Cpmfigurar bando de dados com a URI e chave decreta para acesso
 app.secret_key = secrets.token_hex(32)
 database_uri = os.getenv('SQLALCHEMY_DATABASE_URI')
-configure_database(app, database_uri)
+configure_database(app)
 
 # Gerenciamento de Login
 login_manager = LoginManager(app)
@@ -508,62 +508,27 @@ def enviar_email(tipo, descricao):
         logger.error(f'Erro ao enviar e-mail: {str(e)}', exc_info=True)
         return f'Erro ao enviar e-mail: {str(e)}'
 
-
-def enviar_notificacao_repositor(predio, andar, quantidade_reabastecimento):
-    try:
-        # Encontrar todos os usuários do tipo 'repositor' no mesmo prédio e andar
-        repositor_query = Usuario.query.filter_by(tipo_user='repositor', prédio=predio, andar=andar).all()
-
-        if repositor_query:
-            for repositor in repositor_query:
-                # Enviar notificação para cada repositor encontrado
-                mensagem = f"Olá, {repositor.nome}. Você precisa reabastecer {quantidade_reabastecimento} resmas no andar {andar} do prédio {predio}."
-                # Aqui você pode implementar o envio de notificação, por exemplo, via e-mail
-                print(mensagem)  # apenas para exemplo
-            return 'Notificação enviada com sucesso!'
-        else:
-            return 'Nenhum repositor encontrado para enviar notificação.'
-
-    except Exception as e:
-        return f'Erro ao enviar notificação para o repositor: {str(e)}'
-
-
 def processar_planilha(file, quantidade_reabastecimento):
-    print("Processando planilha...")
     try:
         if file and file.filename.endswith(('.xlsx', '.xls')):
-            print("Arquivo recebido com sucesso.")
-
-            # Ler o arquivo Excel
             df = pd.read_excel(file)
-            print("DataFrame criado com sucesso.")
-
             df.columns = df.columns.str.upper()
 
-            # Renomear a coluna para torná-la compatível com o código Python
-            df.rename(columns={'QTD. PAPEL IMPRESSA NA SEMANA': 'QUANTIDADE'}, inplace=True)
-
-            # Inicializar uma lista para armazenar os resultados
             resultado_lista = []
 
-            # Iterar sobre cada linha do DataFrame do Excel
             for _, row in df.iterrows():
                 predio = row['PRÉDIO']
                 andar = row['ANDAR']
                 ilha = row['LOCALIZAÇÃO']
                 quantidade_impressa = int(row['QUANTIDADE'])
 
-                print(f"Predio: {predio}, Andar: {andar}, Ilha: {ilha}, Quantidade Impressa: {quantidade_impressa}")
-
                 # Calcular a quantidade reabastecida
-                quantidade_reabastecida = quantidade_reabastecimento
+                quantidade_reabastecida = quantidade_reabastecimento * int(row['REPOSIÇÃO'])
 
                 # Calcular a quantidade restante
                 quantidade_restante = (quantidade_reabastecida * 500) - quantidade_impressa
 
-                # Verificar se a quantidade restante é positiva (ou seja, precisa de reposição)
                 if quantidade_restante <= 0:
-                    # Adicionar os resultados à lista
                     resultado_lista.append({
                         'PRÉDIO': predio,
                         'ANDAR': andar,
@@ -572,21 +537,15 @@ def processar_planilha(file, quantidade_reabastecimento):
                         'QUANTIDADE RESTANTE': quantidade_restante
                     })
 
+                    enviar_notificacao_repositor(predio, andar, ilha, quantidade_reabastecida)
+
             if resultado_lista:
-                # Criar um DataFrame a partir da lista
                 resultado_df = pd.DataFrame(resultado_lista)
-
-                # Criar um arquivo Excel temporário para armazenar o relatório
                 relatorio_xlsx = f'tmp_relatorio_{datetime.now().strftime("%Y%m%d%H%M%S")}.xlsx'
-
-                # Salvar o DataFrame como um arquivo Excel
                 resultado_df.to_excel(relatorio_xlsx, index=False, sheet_name='Relatorio')
-
-                print("Relatório criado com sucesso.")
 
                 return relatorio_xlsx
             else:
-                print("Nenhum ilha precisa de reposição.")
                 return None
         else:
             return 'Erro: Arquivo inválido.'
@@ -595,20 +554,39 @@ def processar_planilha(file, quantidade_reabastecimento):
         return f'Erro ao processar planilha: {str(e)}'
 
 
+def enviar_notificacao_repositor(predio, andar, ilha, quantidade_reabastecimento):
+    try:
+        # Encontrar todos os usuários do tipo 'repositor' no mesmo prédio e andar
+        repositor_query = Usuario.query.filter_by(tipo_user='repositor', predio_user=predio, andar_user=andar).all()
+
+        if repositor_query:
+            for repositor in repositor_query:
+                # Enviar notificação para cada repositor encontrado
+                mensagem = f"Olá, {repositor.nome}. Você precisa reabastecer {quantidade_reabastecimento} resmas na ilha {ilha}, no andar {andar} do prédio {predio}."
+                # Aqui você pode implementar o envio de notificação, por exemplo, via e-mail
+                print(mensagem)  # apenas para exemplo
+            print("Notificação enviada com sucesso!")
+            return 'Notificação enviada com sucesso!'
+        else:
+            print("Nenhum repositor encontrado para enviar notificação.")
+            return 'Nenhum repositor encontrado para enviar notificação.'
+
+    except Exception as e:
+        print(f'Erro ao enviar notificação para o repositor: {str(e)}')
+        return f'Erro ao enviar notificação para o repositor: {str(e)}'
+
+
 @app.route('/quantidadeadm', methods=['POST', 'GET'])
 @login_required
 def quantidadeadm():
-    print('Acessando rota quantidade adm')
     try:
         if request.method == 'POST':
             file = request.files.get('excelFile')
-            print('Arquivo recebido!')
+
             if file:
-                # Processar a planilha
                 relatorio_xlsx = processar_planilha(file, 5)  # Adicionando o valor de quantidade_reabastecimento
 
                 if relatorio_xlsx:
-                    # Retornar o relatório Excel ao usuário para download
                     return send_file(relatorio_xlsx, download_name='relatorio_reposicao.xlsx', as_attachment=True, mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
                 else:
                     return 'Nenhum ilha precisa de reposição ou erro ao processar a planilha.'
@@ -621,6 +599,7 @@ def quantidadeadm():
         return 'Erro no servidor.'
 
     return render_template('quantidadeadm.html')
+
 
 
 def connect():

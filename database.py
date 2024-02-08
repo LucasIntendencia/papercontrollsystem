@@ -3,7 +3,10 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 db = SQLAlchemy()
 migrate = Migrate()
 
@@ -83,8 +86,15 @@ class Ajuda(db.Model):
         'usuarios.email'), nullable=False)
 
 
-def configure_database(app, database_uri):
-    app.config['SQLALCHEMY_DATABASE_URI'] = database_uri
+def configure_database(app):
+    # Pega a URI do banco de dados do arquivo .env
+    database_uri = os.getenv('SQLALCHEMY_DATABASE_URI')
+    
+    # Configura a URI do banco de dados e desativa o rastreamento de modificações
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:Celeste123@localhost/papercontrol'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    
+    # Inicia o aplicativo e migração
     db.init_app(app)
     migrate.init_app(app, db)
+    
