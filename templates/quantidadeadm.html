@@ -76,18 +76,13 @@
                     xhr.onload = function () {
                         if (xhr.status === 200) {
                             console.log(xhr.responseText);
+                            // Após processamento no servidor, gerar e baixar relatório
+                            generateAndDownloadReport(jsonData);
                         } else {
                             console.error('Erro ao enviar dados para o servidor.');
                         }
                     };
                     xhr.send(JSON.stringify(jsonData));
-                    xhr.onload = function () {
-                        if (xhr.status === 200) {
-                            console.log(xhr.responseText);
-                        } else {
-                            console.error('Erro ao enviar dados para o servidor.');
-                        }
-                    };                    
                 };
 
                 reader.readAsArrayBuffer(file);
@@ -95,6 +90,20 @@
                 alert("Por favor, escolha um arquivo Excel antes de enviar.");
             }
         }
+
+        function generateAndDownloadReport(data) {
+            // Aqui você gera o relatório com base nos dados recebidos do servidor
+            // Por simplicidade, vou apenas criar um novo arquivo Excel com os mesmos dados
+
+            const ws = XLSX.utils.json_to_sheet(data);
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, 'Relatorio');
+
+            const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
+
+            saveAs(new Blob([wbout], { type: 'application/octet-stream' }), 'relatorio.xlsx');
+        }
+
         document.addEventListener('DOMContentLoaded', function () {
             const exitButton = document.querySelector('.exitbutton');
             const exitPopup = document.getElementById('exitPopup');

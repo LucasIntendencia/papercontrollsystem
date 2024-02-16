@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: QrScanner
+Version: 1.0
+Summary: QrCode Scanner
+Home-page: UNKNOWN
+Author: Rahul Shah
+Author-email: rahul.shah102006@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Description-Content-Type: text/markdown
+Requires-Dist: pyzbar
+Requires-Dist: opencv-python
+
+# QrScanner
+This will decode the Qr code and tell what is in it
+
+<img alt="https://img.shields.io/badge/python-2.7%2C%203.4%2C%203.5%2C%203.6%2C%203.7-blue.svg" src="https://warehouse-camo.ingress.cmh1.psfhosted.org/f36fda0ca540ac0cefcb2dae2faef72a43f02f55/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f707974686f6e2d322e37253243253230332e34253243253230332e35253243253230332e36253243253230332e372d626c75652e737667">
+
+## Installation
+<code>pip install QrScanner</code>
+
+## How to use it?
+<code>
+    from QrScanner import Scan
+    scan = Scan()
+    print(scan)
+                                </code>
+
+
+
+## License
+
+Â© 2021 Rahul Shah
+This repository is licensed under the MIT license. See LICENSE for details.
+
+## For More Information
+For more information or send your query at rahul.shah102006@gmail.com
+

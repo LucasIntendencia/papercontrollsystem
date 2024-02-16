@@ -2,7 +2,7 @@ from dotenv import load_dotenv,dotenv_values
 from flask import Flask, render_template, request, redirect, url_for, jsonify, send_file, flash
 from flask_login import LoginManager, UserMixin, login_required, login_user, current_user
 from database import configure_database, db, Usuario, Reposicao, Reabastecimento, Ajuda
-from sqlalchemy import func
+from sqlalchemy import func, text
 from decimal import Decimal
 from datetime import datetime
 import secrets
@@ -14,6 +14,7 @@ from email.message import EmailMessage
 from werkzeug.exceptions import BadRequestKeyError
 import os
 from flask_socketio import SocketIO, send
+import mysql.connector
 
 # Criar aplicação Flask
 app = Flask(__name__)
@@ -221,7 +222,6 @@ def abastecimento():
 
     return render_template('abastecimento.html', quantidade_estoque=estoque, mensagem_erro=None, mensagem=mensagem)
 
-
 def enviar_email_ilhas_reabastecidas(numero_ilhas):
     try:
         # Configuração do e-mail
@@ -253,7 +253,6 @@ def enviar_email_ilhas_reabastecidas(numero_ilhas):
     except Exception as e:
         logging.error(f'Erro ao enviar e-mail: {str(e)}', exc_info=True)
         return f'Erro ao enviar e-mail: {str(e)}'
-
 
 @app.route('/reabastecimento', methods=['GET', 'POST'])
 @login_required
@@ -452,7 +451,6 @@ def ajudaOZe():
 
     return render_template('ajudaOZe.html')
 
-
 def enviar_email(tipo, descricao):
     try:
         # Obter a última ajuda inserida no banco de dados
@@ -513,6 +511,7 @@ def processar_planilha(file, quantidade_reabastecimento):
         if file and file.filename.endswith(('.xlsx', '.xls')):
             df = pd.read_excel(file)
             df.columns = df.columns.str.upper()
+            df['QUANTIDADE'] = df['QUANTIDADE'].fillna(0).astype(int)
 
             resultado_lista = []
 
@@ -520,24 +519,40 @@ def processar_planilha(file, quantidade_reabastecimento):
                 predio = row['PRÉDIO']
                 andar = row['ANDAR']
                 ilha = row['LOCALIZAÇÃO']
-                quantidade_impressa = int(row['QUANTIDADE'])
+                quantidade_impressa = row['QUANTIDADE']
+
+                # Verifica se a quantidade impressa é um número válido
+                if pd.notna(quantidade_impressa):
+                    quantidade_impressa = int(quantidade_impressa)
+                else:
+                    quantidade_impressa = 0  # Define como 0 se for NaN
+
+                # Consultar a reposição no banco de dados
+                resultado_consulta = db.session.execute(text("SELECT quantidade_reposicao FROM reposicao WHERE ilha = :ilha"), {'ilha': ilha}).fetchone()
+
+                if resultado_consulta is not None:
+                    reposicao_ilha = resultado_consulta[0]
+                else:
+                    # Tratar o caso em que não há resultado para a consulta
+                    reposicao_ilha = 0  # Ou qualquer outro valor padrão que faça sentido para o seu caso
 
                 # Calcular a quantidade reabastecida
-                quantidade_reabastecida = quantidade_reabastecimento * int(row['REPOSIÇÃO'])
+                quantidade_reabastecida = quantidade_reabastecimento * reposicao_ilha
 
-                # Calcular a quantidade restante
-                quantidade_restante = (quantidade_reabastecida * 500) - quantidade_impressa
+                # Calcular a quantidade total impressa (reabastecida)
+                quantidade_total_impressa = quantidade_reabastecida * 500
 
-                if quantidade_restante <= 0:
-                    resultado_lista.append({
-                        'PRÉDIO': predio,
-                        'ANDAR': andar,
-                        'ILHA': ilha,
-                        'QUANTIDADE IMPRESSA': quantidade_impressa,
-                        'QUANTIDADE RESTANTE': quantidade_restante
-                    })
+                # Calcular o saldo restante
+                saldo_restante = quantidade_total_impressa - quantidade_impressa
 
-                    enviar_notificacao_repositor(predio, andar, ilha, quantidade_reabastecida)
+                resultado_lista.append({
+                    'PRÉDIO': predio,
+                    'ANDAR': andar,
+                    'ILHA': ilha,
+                    'QUANTIDADE IMPRESSA': quantidade_impressa,
+                    'QUANTIDADE REABASTECIDA': quantidade_reabastecida,
+                    'SALDO RESTANTE': saldo_restante
+                })
 
             if resultado_lista:
                 resultado_df = pd.DataFrame(resultado_lista)
@@ -552,7 +567,6 @@ def processar_planilha(file, quantidade_reabastecimento):
 
     except Exception as e:
         return f'Erro ao processar planilha: {str(e)}'
-
 
 def enviar_notificacao_repositor(predio, andar, ilha, quantidade_reabastecimento):
     try:
@@ -584,7 +598,15 @@ def quantidadeadm():
             file = request.files.get('excelFile')
 
             if file:
-                relatorio_xlsx = processar_planilha(file, 5)  # Adicionando o valor de quantidade_reabastecimento
+                reposicao_file = request.files.get('reposicaoFile')
+                if reposicao_file:
+                    reposicao_dataframe = pd.read_excel(reposicao_file)  # Carregue o DataFrame de reposição
+                else:
+                    reposicao_dataframe = None
+
+                # Processar a planilha, passando db.session
+                relatorio_xlsx = processar_planilha(
+                    file, 5)
 
                 if relatorio_xlsx:
                     return send_file(relatorio_xlsx, download_name='relatorio_reposicao.xlsx', as_attachment=True, mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
@@ -599,7 +621,6 @@ def quantidadeadm():
         return 'Erro no servidor.'
 
     return render_template('quantidadeadm.html')
-
 
 
 def connect():
