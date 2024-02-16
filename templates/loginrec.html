@@ -7,6 +7,7 @@
     <title>Home Page - PaperControlSystem</title>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/loginrec.css') }}">
+    <link rel="icon" href="../static/images/zezinhobola.png">
 </head>
 
 <body>
@@ -70,6 +71,18 @@
                 naoButton.addEventListener('click', function () {
                     exitPopup.style.display = 'none';
                 });
+            });
+
+            document.addEventListener('DOMContentLoaded', function () {
+                var params = new URLSearchParams(window.location.search);
+                var exibirPopup = params.get('exibirPopup');
+    
+                if (exibirPopup === 'true') {
+                    // Exibe o pop-up específico
+                    var popupElement = document.createElement('div');
+                    popupElement.innerHTML = '<p>É necessário uma reposição.</p>';
+                    document.body.appendChild(popupElement);
+                }
             });
         </script>
     </form>

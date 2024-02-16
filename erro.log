@@ -2274,3 +2274,204 @@ INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 11:05:25] "[36mGET /static/styles/quan
 INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 11:05:25] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 11:05:25] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 11:05:27] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:57:55] "GET /verificar_conexao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:57:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:57:59] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:57:59] "GET /login?next=/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:57:59] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:57:59] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:57:59] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:58:05] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:58:05] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:58:05] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:58:05] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:58:05] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:58:07] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:58:07] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:58:07] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:58:07] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:58:08] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:58:08] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:58:08] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:58:09] "GET /relatoriosadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:58:09] "[36mGET /static/styles/relatoriosadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:58:09] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:58:10] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:58:11] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:58:11] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:58:11] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:59:15] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:59:15] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:59:15] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:59:15] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:59:15] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:59:18] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:59:18] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:59:18] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:59:18] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:59:32] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:59:32] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:59:32] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:59:43] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:59:43] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:59:43] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:59:43] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:59:43] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 12:59:43] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:05] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:39] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:39] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:39] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:39] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:39] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:41] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:41] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:41] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:41] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:41] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:41] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:41] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:41] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:42] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:42] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:42] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:42] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:42] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:42] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:42] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:42] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:42] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:42] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:42] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:42] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:42] "GET /abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:42] "GET /static/styles/abastecimento.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:42] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:42] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:52] "GET /loginrec HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:52] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:52] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:52] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:00:52] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:01:22] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:03:09] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:03:09] "GET /static/styles/loginadm.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:03:09] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:03:09] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:03:22] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:03:22] "GET /static/styles/loginadm.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:03:22] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:03:22] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:03:30] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:03:30] "GET /static/styles/loginadm.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:03:30] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:03:30] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:03:51] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:03:51] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:03:51] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:03:51] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:03:58] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:16:15] "[32mPOST /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:16:15] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:16:16] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:16:16] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:16:16] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:16:39] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:16:39] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:16:39] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:16:39] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:16:39] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:16:40] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:16:40] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:16:40] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:16:40] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:16:45] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:16:49] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:25:23] "[32mGET /quantidadeadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:25:23] "GET /login?next=/quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:25:23] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:25:23] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:25:23] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:26:09] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:26:09] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:26:09] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:26:09] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:26:09] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:26:18] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:26:18] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:26:18] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:26:18] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:26:21] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:26:46] "POST /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:27:42] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:35:09] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:35:09] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:35:09] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:35:09] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:35:09] "[33mGET /static/style/zezinhobola.png HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:35:09] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:35:09] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:35:09] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:35:10] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:35:10] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:35:10] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:35:10] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:35:10] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:35:10] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:35:10] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:35:10] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:35:10] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:35:10] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:35:10] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:35:10] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:35:47] "GET /quantidadeadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:35:47] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:35:47] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 13:35:47] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 128-076-020
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 15:25:34] "[32mGET /loginadm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 15:25:34] "GET /login?next=/loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 15:25:35] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 15:25:35] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 15:25:35] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 15:25:36] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 15:25:36] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 15:25:36] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 15:25:36] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 15:25:36] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 15:25:40] "GET /relatoriosadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 15:25:40] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 15:25:40] "[36mGET /static/styles/relatoriosadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 15:25:40] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 15:25:41] "GET /loginadm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 15:25:41] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Feb/2024 15:25:41] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
