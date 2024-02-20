@@ -2,7 +2,7 @@ from dotenv import load_dotenv,dotenv_values
 from flask import Flask, render_template, request, redirect, url_for, jsonify, send_file, flash
 from flask_login import LoginManager, UserMixin, login_required, login_user, current_user
 from database import configure_database, db, Usuario, Reposicao, Reabastecimento, Ajuda
-from sqlalchemy import func, text
+from sqlalchemy import Integer, func, text
 from decimal import Decimal
 from datetime import datetime
 import secrets
@@ -14,6 +14,7 @@ from email.message import EmailMessage
 from werkzeug.exceptions import BadRequestKeyError
 import os
 from flask_socketio import SocketIO, send
+import re
 
 # Criar aplicação Flask
 app = Flask(__name__)
@@ -45,7 +46,6 @@ app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
 app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
 app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_DEFAULT_SENDER')
 
-
 class User(UserMixin):
     def __init__(self, user_id, tipo_user=None, nome=None, email=None):
         self.id = user_id
@@ -57,14 +57,12 @@ class User(UserMixin):
     def load_user(user_id):
         return Usuario.query.get(int(user_id))
 
-
 @login_manager.user_loader
 def load_user(user_id):
     usuario = Usuario.query.get(int(user_id))
     if usuario:
         return User(usuario.id_user, usuario.tipo_user, usuario.nome, usuario.email)
     return None
-
 
 def decimal_default(obj):
     if isinstance(obj, Decimal):
@@ -75,12 +73,17 @@ def decimal_default(obj):
 @app.route('/')
 @login_required
 def index():
-    if current_user.tipo_user == 'repositor':
-        return redirect(url_for('loginrec'))
-    elif current_user.tipo_user == 'administrador':
-        return redirect(url_for('loginadm'))
-    else:
-        return render_template('login.html')
+    try:
+        if current_user.tipo_user == 'repositor':
+            return redirect(url_for('loginrec'))
+        elif current_user.tipo_user == 'administrador':
+            return redirect(url_for('loginadm'))
+        else:
+            return render_template('login.html')
+    except Exception as e:
+        logging.error(f"Erro ao acessar a página inicial: {str(e)}")
+        flash('Erro ao acessar a página inicial.', 'error')
+        return redirect(url_for('fazer_login'))
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -252,6 +255,7 @@ def enviar_email_ilhas_reabastecidas(numero_ilhas):
     except Exception as e:
         logging.error(f'Erro ao enviar e-mail: {str(e)}', exc_info=True)
         return f'Erro ao enviar e-mail: {str(e)}'
+
 
 @app.route('/reabastecimento', methods=['GET', 'POST'])
 @login_required
@@ -598,32 +602,25 @@ def quantidadeadm():
                         logging.warning(
                             f"Valor nulo ou inválido em 'quantidade'")
                         continue
-                    
-                    # Imprimir para debug
-                    print(
-                        f"Procurando reposição para: Prédio={predio}, Andar={andar_int}, Ilha={ilha}")
 
                     # Formatar 'andar' e 'ilha' para correspondência com o banco de dados
                     andar_ilha_concatenado = f"Andar {andar_int} Ilha {ilha}"
+                    ilha_numero = int(''.join(filter(str.isdigit, ilha)))
 
-                    # Buscar a reposição no banco de dados com base em predio, andar e ilha
                     reposicao = Reposicao.query.filter(
                         func.lower(Reposicao.predio) == func.lower(predio),
-                        func.lower(Reposicao.andar).like(
-                            f"Andar {andar_int}%"),
-                        func.lower(Reposicao.ilha) == func.lower(ilha)
+                        func.cast(Reposicao.andar, Integer) == andar_int,
+                        func.lower(func.regexp_replace(Reposicao.ilha, '[^0-9]', '')) == ilha_numero
                     ).first()
-
-                    # Imprimir para debug
-                    print(f"Reposição encontrada: {reposicao}")
+                    print(f"Consultando banco de dados para predio={predio}, andar={andar_int}, ilha={ilha_numero}")
 
                     # Verificar se há uma reposição e obter a quantidade de reposição
                     if reposicao:
                         quantidade_reabastecida = Reposicao.quantidade_reposicao
-                        print(
-                            f'Reposição encontrada: {quantidade_reabastecida}')
+                        print(f'Reposição encontrada: {quantidade_reabastecida}')
                     else:
                         quantidade_reabastecida = 0
+                        print("Nenhuma reposição encontrada.")
 
                     print(f'Quantidade encontrada: {quantidade_value}')
                     print(f'Reposição encontrada: {quantidade_reabastecida}')
@@ -667,7 +664,6 @@ def quantidadeadm():
 
     return render_template('quantidadeadm.html')
 
-
 @app.route('/verificar_conexao')
 def verificar_conexao():
     try:
@@ -679,11 +675,19 @@ def verificar_conexao():
             'tipo_user': user.tipo_user,
             'estoque': user.estoque,
             'nome': user.nome,
-            'preio': user.predio_user,
-            'andar': user.andar_user
         }for user in users]
+        
+        repor = Reposicao.query.all()
+        
+        repor_data = [{
+            'id_reposicao': repo.id_reposicao,
+            'predio': repo.predio,
+            'andar': repo.andar,
+            'ilha': repo.ilha,
+            'quantidade_reposicao': repo.quantidade_reposicao
+        }for repo in repor]
 
-        return jsonify(users_data)
+        return jsonify(users_data, repor_data)
     except Exception as e:
         return f'Erro ao verificar a conexão: {str(e)}'
 
