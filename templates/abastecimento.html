@@ -51,7 +51,7 @@
                     <select id="predio" name="predio">
                         <option value="" selected disabled hidden>Selecione o prédio</option>
                         <option value="MINAS">MINAS</option>
-                        <option value="GERAUS">GERAIS</option>
+                        <option value="GERAIS">GERAIS</option>
                         <option value="ALTEROSA">ALTEROSA</option>
                         <option value="TIRADENTES">TIRADENTES</option>
                     </select>
@@ -131,10 +131,10 @@
                 floorDropdown.innerHTML = '<option value="" selected disabled hidden>Selecione o andar</option>';
                 if (building !== "") {
                     const floorsData = {
-                        minas: ['Andar 1', 'Andar 2', 'Andar 3', 'Andar 4', 'Andar 5', 'Andar 6', 'Andar 7', 'Andar 8', 'Andar 9', 'Andar 10', 'Andar 11', 'Andar 12', 'Andar 13', 'Andar 14'],
-                        gerais: ['Andar 1', 'Andar 2', 'Andar 3', 'Andar 4', 'Andar 5', 'Andar 6', 'Andar 7', 'Andar 8', 'Andar 9', 'Andar 10', 'Andar 11', 'Andar 12', 'Andar 13', 'Andar 14'],
-                        alterosa: ['Andar 1'],
-                        tiradentes: ['Andar 1']
+                        MINAS: ['Andar 1', 'Andar 2', 'Andar 3', 'Andar 4', 'Andar 5', 'Andar 6', 'Andar 7', 'Andar 8', 'Andar 9', 'Andar 10', 'Andar 11', 'Andar 12', 'Andar 13', 'Andar 14'],
+                        GERAIS: ['Andar 1', 'Andar 2', 'Andar 3', 'Andar 4', 'Andar 5', 'Andar 6', 'Andar 7', 'Andar 8', 'Andar 9', 'Andar 10', 'Andar 11', 'Andar 12', 'Andar 13', 'Andar 14'],
+                        ALTEROSA: ['Andar 1'],
+                        TIRADENTES: ['Andar 1']
                     };
                     floorsData[building].forEach(floor => {
                         const option = document.createElement('option');
@@ -154,10 +154,10 @@
                 ilhaDropdown.innerHTML = '<option value="" selected disabled hidden>Selecione a ilha</option>';
                 if (building !== "" && floor !== "") {
                     const ilhasData = {
-                        minas: 8,
-                        gerais: 8,
-                        alterosa: 1,
-                        tiradentes: 1
+                        MINAS: 8,
+                        GERAIS: 8,
+                        ALTEROSA: 1,
+                        TIRADENTES: 1
                     };
                     for (let i = 1; i <= ilhasData[building]; i++) {
                         const option = document.createElement('option');
