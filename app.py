@@ -125,6 +125,8 @@ def loginrec():
     if usuario:
         # Acesse o estoque diretamente da tabela de usuários
         estoque = usuario.estoque
+        
+        # Passe um parâmetro na URL indicando se uma notificação deve ser exibida
         return render_template('loginrec.html', quantidade_estoque=estoque, mensagem_erro=None)
     else:
         print("Acesso não autorizado.")
@@ -564,6 +566,14 @@ def quantidadeadm():
                     predio = row['PRÉDIO']
                     ilha = str(row['LOCALIZAÇÃO'])
                     reposicao_value = row['REPOSIÇÃO']
+                    if reposicao_value:
+                        try:
+                            reposicao_necessaria = int(reposicao_value)
+                        except ValueError:
+                            logging.warning(
+                                f"Valor inválido em 'REPOSIÇÃO': {reposicao_value}"
+                            )
+                            continue
 
                     # Verificar e converter 'andar' para numérico
                     andar_value = row['ANDAR']
@@ -594,8 +604,6 @@ def quantidadeadm():
                             f"Valor nulo ou inválido em 'quantidade'")
                         continue
                     
-                    
-
                     # Formatar 'andar' e 'ilha' para correspondência com o banco de dados
                     andar_ilha_concatenado = f"Andar {andar_int} Ilha {ilha}"
                     ilha_numero = int(''.join(filter(str.isdigit, ilha)))
@@ -628,7 +636,6 @@ def quantidadeadm():
                         if abs(quantidade_restante) % 500 != 0:
                             reposicao_necessaria += 1
 
-                    # Adicionar os resultados à lista
                     resultado_lista.append({
                         'PRÉDIO': predio,
                         'ANDAR': andar_int,
@@ -639,23 +646,13 @@ def quantidadeadm():
                         'REPOSIÇÃO': reposicao_necessaria
                     })
                     
-                    # Imprimir para debug
-                    print(f"Resultado parcial: {resultado_lista[-1]}")
+                    enviar_notificacao_repositor(predio, andar_int, ilha, reposicao_necessaria)
 
-                # Criar um DataFrame a partir da lista
                 resultado_df = pd.DataFrame(resultado_lista)
-
-                # Criar um arquivo HTML temporário para armazenar o relatório
                 relatorio_xlsx = f'tmp_relatorio_{datetime.now().strftime("%Y%m%d%H%M%S")}.xlsx'
-
-                # Salvar o DataFrame como um arquivo Excel
                 resultado_df.to_excel(
                     relatorio_xlsx, index=False, sheet_name='Relatorio')
 
-                # Aqui você pode fazer o que quiser com o DataFrame resultado
-                logging.debug("Processamento concluído com sucesso.")
-
-                # Retornar o relatório Excel ao usuário para download
                 return send_file(relatorio_xlsx, download_name='RelatorioSemanalQuantitativo.xlsx', as_attachment=True, mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
 
         logging.debug("Processamento concluído com sucesso.")
