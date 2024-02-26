@@ -507,6 +507,23 @@ def enviar_email(tipo, descricao):
         logger.error(f'Erro ao enviar e-mail: {str(e)}', exc_info=True)
         return f'Erro ao enviar e-mail: {str(e)}'
 
+def obter_quantidade_reposicao(predio, andar, ilha):
+    try:
+        print(f'Buscando quantidade de reposição para: Predio={predio}, Andar={andar}, Ilha={ilha}')
+        
+        # Consulta todas as reposições correspondentes ao prédio, andar e ilha
+        reposicoes = Reposicao.query.filter_by(predio=predio, andar=andar, ilha=ilha).all()
+
+        quantidade_reposicao = sum(reposicao.quantidade_reposicao for reposicao in reposicoes)
+
+        print(f'Quantidade de reposição encontrada: {quantidade_reposicao}')
+        return quantidade_reposicao
+
+    except Exception as e:
+        # Adicione mensagens de log para depuração
+        print(f'Erro ao obter quantidade de reposição do banco de dados: {str(e)}')
+        return 0
+
 def enviar_notificacao_repositor(predio, andar, ilha, quantidade_reabastecimento):
     try:
         # Encontrar todos os usuários do tipo 'repositor' no mesmo prédio e andar
@@ -528,38 +545,14 @@ def enviar_notificacao_repositor(predio, andar, ilha, quantidade_reabastecimento
         print(f'Erro ao enviar notificação para o repositor: {str(e)}')
         return f'Erro ao enviar notificação para o repositor: {str(e)}'
 
-def obter_quantidade_reposicao(predio, andar, ilha):
-    try:
-        print(f'Buscando quantidade de reposição para: Predio={predio}, Andar={andar}, Ilha={ilha}')
-        
-        # Consulta todas as reposições correspondentes ao prédio, andar e ilha
-        reposicoes = Reposicao.query.filter_by(predio=predio, andar=andar, ilha=ilha).all()
-
-        quantidade_reposicao = sum(reposicao.quantidade_reposicao for reposicao in reposicoes)
-
-        print(f'Quantidade de reposição encontrada: {quantidade_reposicao}')
-        return quantidade_reposicao
-
-    except Exception as e:
-        # Adicione mensagens de log para depuração
-        print(f'Erro ao obter quantidade de reposição do banco de dados: {str(e)}')
-        return 0
-
 
 @app.route('/RelatorioSemanal', methods=['GET', 'POST'])
 @login_required
 def quantidadeadm():
     try:
-        logging.debug("Iniciando processamento...")
-
         if request.method == 'POST':
-            logging.debug("Recebendo requisição POST...")
-
             file = request.files.get('excelFile')
-            logging.debug(f"Arquivo recebido: {file}")
-
             if file and file.filename.endswith(('.xlsx', '.xls')):
-                # Ler o arquivo Excel
                 df = pd.read_excel(file)
                 df.columns = df.columns.str.upper()
 
@@ -600,6 +593,8 @@ def quantidadeadm():
                         logging.warning(
                             f"Valor nulo ou inválido em 'quantidade'")
                         continue
+                    
+                    
 
                     # Formatar 'andar' e 'ilha' para correspondência com o banco de dados
                     andar_ilha_concatenado = f"Andar {andar_int} Ilha {ilha}"
@@ -625,6 +620,13 @@ def quantidadeadm():
                     # Calcular a quantidade restante
                     quantidade_restante = (
                         quantidade_reabastecida * 500) - quantidade_impressa
+                    
+                    if quantidade_restante >= 0:
+                        reposicao_necessaria = 0
+                    else:
+                        reposicao_necessaria = abs(quantidade_restante) // 500
+                        if abs(quantidade_restante) % 500 != 0:
+                            reposicao_necessaria += 1
 
                     # Adicionar os resultados à lista
                     resultado_lista.append({
@@ -634,9 +636,9 @@ def quantidadeadm():
                         'IMPRESSA NA SEMANA': quantidade_impressa,
                         'REABASTECIMENTO': quantidade_reabastecida,
                         'RESTANTE': quantidade_restante,
-                        'REPOSIÇÃO': reposicao_value
+                        'REPOSIÇÃO': reposicao_necessaria
                     })
-
+                    
                     # Imprimir para debug
                     print(f"Resultado parcial: {resultado_lista[-1]}")
 
