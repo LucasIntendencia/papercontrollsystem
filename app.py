@@ -115,8 +115,6 @@ def fazer_login():
     return render_template('login.html', mensagem_erro=mensagem_erro)
 
 
-
-
 @app.route('/RepositorHome', methods=['GET', 'POST'])
 @login_required
 def loginrec():
@@ -607,16 +605,16 @@ def quantidadeadm():
                     andar_ilha_concatenado = f"Andar {andar_int} Ilha {ilha}"
                     ilha_numero = int(''.join(filter(str.isdigit, ilha)))
 
+                    ilha_numero = int(''.join(filter(str.isdigit, ilha)))
                     reposicao = Reposicao.query.filter(
                         func.lower(Reposicao.predio) == func.lower(predio),
                         func.cast(Reposicao.andar, Integer) == andar_int,
-                        func.lower(func.regexp_replace(Reposicao.ilha, '[^0-9]', '')) == ilha_numero
+                        func.cast(func.regexp_replace(Reposicao.ilha, '[^0-9]', ''), Integer) == ilha_numero
                     ).first()
-                    print(f"Consultando banco de dados para predio={predio}, andar={andar_int}, ilha={ilha_numero}")
 
                     # Verificar se há uma reposição e obter a quantidade de reposição
                     if reposicao:
-                        quantidade_reabastecida = Reposicao.quantidade_reposicao
+                        quantidade_reabastecida = reposicao.quantidade_reposicao
                         print(f'Reposição encontrada: {quantidade_reabastecida}')
                     else:
                         quantidade_reabastecida = 0
@@ -664,6 +662,7 @@ def quantidadeadm():
 
     return render_template('quantidadeadm.html')
 
+
 @app.route('/verificar_conexao')
 def verificar_conexao():
     try:
@@ -672,9 +671,10 @@ def verificar_conexao():
         users_data = [{
             'id_user': user.id_user,
             'email': user.email,
-            'tipo_user': user.tipo_user,
-            'estoque': user.estoque,
             'nome': user.nome,
+            'andar': user.andar_user,
+            'predio':user.predio_user,
+            'estoque': user.estoque
         }for user in users]
         
         repor = Reposicao.query.all()
@@ -690,7 +690,6 @@ def verificar_conexao():
         return jsonify(users_data, repor_data)
     except Exception as e:
         return f'Erro ao verificar a conexão: {str(e)}'
-
 
 if __name__ == '__main__':
     app.run(debug=True)
