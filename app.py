@@ -570,6 +570,7 @@ def quantidadeadm():
                 for _, row in df.iterrows():
                     predio = row['PRÉDIO']
                     ilha = str(row['LOCALIZAÇÃO'])
+                    reposicao_value = row['REPOSIÇÃO']
 
                     # Verificar e converter 'andar' para numérico
                     andar_value = row['ANDAR']
@@ -618,23 +619,13 @@ def quantidadeadm():
                     else:
                         quantidade_reabastecida = 0
                         print("Nenhuma reposição encontrada.")
-                        
-                    if not quantidade_reabastecida:
-                        quantidade_reabastecida = 0
-                        print(f'IFNOT: Nenhuma reposicao encontrada')
-                            
+
                     print(f'Quantidade encontrada: {quantidade_value}')
                     print(f'Reposição encontrada: {quantidade_reabastecida}')
                     # Calcular a quantidade restante
                     quantidade_restante = (
                         quantidade_reabastecida * 500) - quantidade_impressa
 
-                    if quantidade_restante >=0:
-                        reposicao_necessaria = 0
-                    else:
-                        reposicao_necessaria = abs(quantidade_restante) // 500
-                        if abs(quantidade_restante) % 500 != 0:
-                            reposicao_necessaria += 1
                     # Adicionar os resultados à lista
                     resultado_lista.append({
                         'PRÉDIO': predio,
@@ -643,7 +634,7 @@ def quantidadeadm():
                         'IMPRESSA NA SEMANA': quantidade_impressa,
                         'REABASTECIMENTO': quantidade_reabastecida,
                         'RESTANTE': quantidade_restante,
-                        'REPOSIÇÃO': reposicao_necessaria
+                        'REPOSIÇÃO': reposicao_value
                     })
 
                     # Imprimir para debug
@@ -682,7 +673,7 @@ def verificar_conexao():
             'email': user.email,
             'nome': user.nome,
             'andar': user.andar_user,
-            'predio':user.predio_user,  
+            'predio':user.predio_user,
             'estoque': user.estoque
         }for user in users]
         
