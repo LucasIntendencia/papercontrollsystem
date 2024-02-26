@@ -16,7 +16,7 @@
 
 <body>
     <div class="cabecalho">
-        <a href="{{ url_for('loginadm') }}" class="PaperCS">Paper Control System</a>
+        <a href="{{ url_for('loginadm') }}" class="PaperCS">Paper Controll System</a>
         <a href="{{ url_for('fazer_login') }}" class="exitbutton">
             <img src="../static/images/exitbutton.png" alt="Botão Pequeno" class="exitbutton">
         </a>
@@ -60,7 +60,14 @@
             const file = fileInput.files[0];
             if (file) {
                 const reader = new FileReader();
-
+                const fileName = file.name; // Obtendo o nome do arquivo
+                const fileExtension = fileName.split('.').pop().toLowerCase(); // Obtendo a extensão do arquivo a partir do nome
+        
+                if (fileExtension !== 'xlsx' && fileExtension !== 'xls') {
+                    alert("Por favor, selecione um arquivo no formato Excel (.xlsx ou .xls).");
+                    return;
+                }
+        
                 reader.onload = function (e) {
                     const data = new Uint8Array(e.target.result);
                     const workbook = XLSX.read(data, { type: 'array' });
@@ -88,9 +95,9 @@
 
                 reader.readAsArrayBuffer(file);
             } else {
-                alert("Por favor, escolha um arquivo Excel antes de enviar.");
-            }
+        alert("Por favor, escolha um arquivo Excel antes de enviar.");
         }
+    }
 
         function generateAndDownloadReport(data) {
             // Aqui você gera o relatório com base nos dados recebidos do servidor

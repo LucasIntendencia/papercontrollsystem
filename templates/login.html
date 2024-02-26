@@ -8,43 +8,89 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/loading.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/login.css') }}">
   <link rel="icon" href="../static/images/zezinhobola.png">
+  <style>
+    /* Estilos para o popup */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+    }
+    
+    .popup-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    /* Estilos para o botão de fechar */
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
   <div id="background-image"></div>
   <div class="login-form" id="login-container">
-    <form method="post" action="{{ url_for('fazer_login') }}">
+    <form method="post" action="{{ url_for('fazer_login') }}" onsubmit="return validarFormulario(event)">
       <label for="email" class="label">Login</label>
       <input type="email" id="email" name="email" placeholder="Digite seu email:" class="email">
       <label for="senha" class="label">Senha</label>
-      <input type="password" id="senha" name="senha" placeholder="Digite sua senha:" class="senha">
+      <input type="password" id="senha" name="senha" placeholder="Digite sua senha:" class="senha"
+        autocomplete="current-password">
       <button type="submit" class="botao-entrar">Entrar</button>
     </form>
-    <div id="mensagem-sucesso" class="mensagem-sucesso hidden">
-      Autenticação bem-sucedida! Você será redirecionado em breve.
-    </div>
-    <div id="mensagem-erro" class="mensagem-erro hidden">
-      Credenciais inválidas. Por favor, tente novamente.
+  </div>
+  <!-- Popup de campos vazios -->
+  <div id="empty-fields-popup" class="popup hidden" style="display: none;">
+    <div class="popup-content">
+      <span class="close-button" onclick="fecharPopup('empty-fields-popup')">X</span>
+      <p>Por favor, preencha todos os campos.</p>
     </div>
   </div>
 
   <script>
-    window.addEventListener('load', function () {
-      document.getElementById('background-image').style.display = 'none';
-      document.getElementById('login-container').classList.remove('hidden');
-  
-      // Recupera parâmetros da URL
-      const urlParams = new URLSearchParams(window.location.search);
-      const mensagemSucesso = urlParams.get('mensagem_sucesso');
-      const mensagemErro = urlParams.get('mensagem_erro');
-  
-      // Exibe ou oculta as mensagens com base nos parâmetros
-      if (mensagemSucesso) {
-        document.getElementById('mensagem-sucesso').classList.remove('hidden');
-      } else if (mensagemErro) {
-        document.getElementById('mensagem-erro').classList.remove('hidden');
+    window.onload = function () {
+      // Função para exibir o popup de campos vazios
+      function openEmptyFieldsPopup() {
+        var emptyFieldsPopup = document.getElementById("empty-fields-popup");
+        emptyFieldsPopup.style.display = "block";
+        setTimeout(function () {
+          fecharPopup('empty-fields-popup');
+        }, 3000); // Fecha o popup após 3 segundos
       }
-    });
+
+      // Função para fechar um popup pelo seu ID
+      function fecharPopup(popupId) {
+        var popup = document.getElementById(popupId);
+        popup.style.display = "none";
+      }
+
+      // Adiciona um event listener para o evento 'click' do botão de login
+      var entrarButton = document.querySelector('.botao-entrar');
+      entrarButton.addEventListener('click', function (event) {
+        var email = document.getElementById('email').value;
+        var senha = document.getElementById('senha').value;
+
+        // Verifica se todos os campos estão preenchidos
+        if (email.trim() === '' || senha.trim() === '') {
+          event.preventDefault(); // Evita o envio automático do formulário
+          openEmptyFieldsPopup();
+        }
+      });
+    };
   </script>
 </body>
 

@@ -16,7 +16,7 @@
 
 <body>
     <div class="cabecalho">
-        <a href="{{ url_for('loginadm') }}" class="PaperCS">Paper Control System</a>
+        <a href="{{ url_for('loginadm') }}" class="PaperCS">Paper Controll System</a>
         <a href="{{ url_for('fazer_login') }}" class="exitbutton">
             <img src="../static/images/exitbutton.png" alt="Botão Pequeno" class="exitbutton">
         </a>
@@ -75,6 +75,15 @@
                     placeholder="Selecione o Período:">
             </div>
         </div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flash-messages">
+            {% for category, message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
 
         <button class="Enviar" type="submit" style="display: none;">Gerar relatorio</button>
     </form>
@@ -176,6 +185,39 @@
 
             naoButton.addEventListener('click', function () {
                 exitPopup.style.display = 'none';
+            });
+        });
+        function isDateInFuture(dateString) {
+            const selectedDate = new Date(dateString);
+            const currentDate = new Date();
+            return selectedDate > currentDate;
+        }
+        
+        function verificarVisibilidadeData() {
+            const mostrarData = tipoRelatorioSelect.value === 'Por Data' || tipoReposicoesSelect.value === 'Por Data';
+            flatpickrContainer.style.display = mostrarData ? 'block' : 'none';
+            
+            // Adicione esta verificação para desabilitar o botão de envio se a data selecionada for futura
+            if (mostrarData) {
+                const selectedDate = flatpickrInstance.selectedDates[0];
+                if (selectedDate && isDateInFuture(selectedDate)) {
+                    botaoGerarRelatorio.disabled = true;
+                    alert("Você selecionou uma data futura. Por favor, selecione uma data válida.");
+                } else {
+                    botaoGerarRelatorio.disabled = false;
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdowns = document.querySelectorAll('.opcoes select');
+            dropdowns.forEach(function (dropdown) {
+                dropdown.addEventListener('change', function () {
+                    const flashMessage = document.querySelector('.flash-messages');
+                    if (flashMessage) {
+                        flashMessage.style.display = 'none';
+                    }
+                });
             });
         });
 

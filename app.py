@@ -18,6 +18,7 @@ import re
 
 # Criar aplicação Flask
 app = Flask(__name__)
+# Precisa retornar ao codigo antigo e puxar aquele url do banco de dados, só assim consigo linkar nele para que o popup de credenciais consiga verificar quais existem e quais não
 
 load_dotenv()
 env_variables = dotenv_values('credencial.env')
@@ -86,34 +87,37 @@ def index():
         return redirect(url_for('fazer_login'))
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/LoginPaper', methods=['GET', 'POST'])
 def fazer_login():
+    mensagem_erro = None
+
     if request.method == 'POST':
         email = request.form['email']
         senha = request.form['senha']
 
-        usuario = Usuario.query.filter_by(email=email, senha=senha).first()
-
-        if usuario:
-            user = User(usuario.id_user, usuario.tipo_user)
-            login_user(user)
-
-            if usuario.tipo_user == 'repositor':
-                print(f"usuario logado: {user}")
-                return redirect(url_for('loginrec'))
-            elif usuario.tipo_user == 'administrador':
-                print(f"usuario logado: {user}")
-                return redirect(url_for('loginadm'))
-
+        if not email or not senha:
+            mensagem_erro = "Por favor, preencha todos os campos."
         else:
-            # Se as credenciais do usuário não forem válidas, você pode retornar uma mensagem de erro.
-            return render_template('login.html', mensagem_erro="Credenciais inválidas. Tente novamente.")
+            # Consulta o banco de dados para encontrar o usuário com as credenciais fornecidas
+            usuario = Usuario.query.filter_by(email=email, senha=senha).first()
 
-    # Se o método não for POST, apenas renderize o template de login.
-    return render_template('login.html')
+            if usuario:
+                user = User(usuario.id_user, usuario.tipo_user)
+                login_user(user)
+
+                if usuario.tipo_user == 'repositor':
+                    return redirect(url_for('loginrec'))
+                elif usuario.tipo_user == 'administrador':
+                    return redirect(url_for('loginadm'))
+            else:
+                mensagem_erro = "Credenciais inválidas. Tente novamente."
+
+    return render_template('login.html', mensagem_erro=mensagem_erro)
 
 
-@app.route('/loginrec', methods=['GET', 'POST'])
+
+
+@app.route('/RepositorHome', methods=['GET', 'POST'])
 @login_required
 def loginrec():
     print("Rota loginrec acionada.")
@@ -129,26 +133,16 @@ def loginrec():
         return redirect(url_for('fazer_login'))
 
 
-@app.route('/loginadm', methods=['GET', 'POST'])
+@app.route('/AdmHome', methods=['GET', 'POST'])
 @login_required
 def loginadm():
-    dados_predios = db.session.query(
-        Reposicao.predio,
-        func.sum(Reposicao.quantidade_reposicao).label('total_reposicao')
-    ).group_by(Reposicao.predio).all()
-
-    dados_formulario = db.session.query(
-        Reposicao.predio,
-        func.count(Reposicao.id_user).label('reposicoes_pendentes')
-    ).group_by(Reposicao.predio).all()
-
-    dados_predios_json = json.dumps(
-        [{'predio': item.predio, 'total_reposicao': item.total_reposicao} for item in dados_predios], default=decimal_default)
-
-    return render_template('loginadm.html', dados_predios=dados_predios_json, dados_formulario=dados_formulario)
+    print("Rota loginrec acionada.")
+    usuario = Usuario.query.filter_by(
+        id_user=current_user.id, tipo_user="administrador").first()
+    return render_template('loginadm.html')
 
 
-@app.route('/abastecimento', methods=['GET', 'POST'])
+@app.route('/Abastecimento', methods=['GET', 'POST'])
 @login_required
 def abastecimento():
     print("Rota abs acionada.")
@@ -257,7 +251,7 @@ def enviar_email_ilhas_reabastecidas(numero_ilhas):
         return f'Erro ao enviar e-mail: {str(e)}'
 
 
-@app.route('/reabastecimento', methods=['GET', 'POST'])
+@app.route('/Reabastecimento', methods=['GET', 'POST'])
 @login_required
 def reabastecimento():
     try:
@@ -340,7 +334,7 @@ def enviar_email_ilhas_solicitante(andar, predio):
         return f'Erro ao enviar e-mail: {str(e)}'
 
 
-@app.route('/relatoriosadm', methods=['GET', 'POST'])
+@app.route('/RelatoriosAdm', methods=['GET', 'POST'])
 @login_required
 def relatoriosadm():
     if request.method == 'POST':
@@ -390,6 +384,12 @@ def relatoriosadm():
                 data_param = request.form.get('data_reposicao')
                 if ' to ' in data_param:
                     data_inicio, data_fim = data_param.split(' to ')
+                    
+                    # Verificação de datas futuras
+                    if datetime.strptime(data_inicio, '%Y-%m-%d') > datetime.now() or datetime.strptime(data_fim, '%Y-%m-%d') > datetime.now():
+                        flash('Você não pode selecionar uma data futura para o relatório.')
+                        return redirect(url_for('relatoriosadm'))
+                    
                     data = db.session.query(Reposicao, Usuario).join(Usuario).filter(
                         Reposicao.data_reposicao.between(data_inicio, data_fim)).all()
                     df = pd.DataFrame([{'ID da reposição': repo.Reposicao.id_reposicao, 'ID do usuário': user.Usuario.id_user, 'Data da reposição': repo.Reposicao.data_reposicao,
@@ -428,7 +428,7 @@ def relatoriosadm():
     return render_template('relatoriosadm.html')
 
 
-@app.route('/ajudaOZe', methods=['GET', 'POST'])
+@app.route('/AjudaSugestao', methods=['GET', 'POST'])
 @login_required
 def ajudaOZe():
     if request.method == 'POST':
@@ -548,7 +548,7 @@ def obter_quantidade_reposicao(predio, andar, ilha):
         return 0
 
 
-@app.route('/quantidadeadm', methods=['GET', 'POST'])
+@app.route('/RelatorioSemanal', methods=['GET', 'POST'])
 @login_required
 def quantidadeadm():
     try:

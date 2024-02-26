@@ -32,10 +32,10 @@ body {
     text-decoration: none;
 }
  
-button_container .exitbutton {
-    width: 30px;
+ .exitbutton {
+    width: 28px;
     text-decoration: none;
-    height: 30px;
+    height: 28px;
     cursor: pointer;
 }
  
@@ -204,6 +204,19 @@ button_container .exitbutton {
 .exit-popup .button-container button#naoButton {
     background-color: #e74c3c;
     color: white;
+}
+
+.flash-messages {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f8d7da;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 9999;
+    text-align: center;
+    list-style: none;
 }
  
 @media only screen and (min-width: 768px) {
