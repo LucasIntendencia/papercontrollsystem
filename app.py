@@ -115,6 +115,30 @@ def fazer_login():
     return render_template('login.html', mensagem_erro=mensagem_erro)
 
 
+@app.route('/RepositorHome', methods=['GET', 'POST'])
+@login_required
+def loginrec():
+    print("Rota loginrec acionada.")
+    usuario = Usuario.query.filter_by(
+        id_user=current_user.id, tipo_user="repositor").first()
+
+    if usuario:
+        # Verificar se o popup deve ser exibido
+        exibirPopup = request.args.get('exibirPopup')
+        ilhasNecessarias = request.args.get('ilhasNecessarias')
+        estoque = usuario.estoque
+
+        # Defina a variável quantidade_reabastecimento ou ajuste conforme necessário
+        quantidade_reabastecimento = 10  # Exemplo de valor, substitua conforme necessário
+
+        # Assumindo que "ilha" é a variável que você quer passar para o template
+        # Corrigindo para ilhasNecessarias em vez de ilha
+       return render_template('loginrec.html', exibirPopup=True, ilhasNecessarias=ilhasNecessarias, quantidadesNecessarias=quantidadesNecessarias)
+    else:
+        print("Acesso não autorizado.")
+        return redirect(url_for('fazer_login'))
+
+
 @app.route('/AdmHome', methods=['GET', 'POST'])
 @login_required
 def loginadm():
@@ -522,26 +546,29 @@ def enviar_notificacao_repositor(predio, andar, ilha, quantidade_reabastecimento
                 # Aqui você pode implementar o envio de notificação, por exemplo, via e-mail
                 print(mensagem)  # apenas para exemplo
             print("Notificação enviada com sucesso!")
+            return render_template('loginrec.html', exibirPopup='true', ilhasNecessarias=ilha, quantidades=quantidade_reabastecimento)
         else:
             print("Nenhum repositor encontrado para enviar notificação.")
+            return 'Nenhum repositor encontrado para enviar notificação.'
+
     except Exception as e:
         print(f'Erro ao enviar notificação para o repositor: {str(e)}')
-
+        return f'Erro ao enviar notificação para o repositor: {str(e)}'
+    
 
 @app.route('/RelatorioSemanal', methods=['GET', 'POST'])
 @login_required
 def quantidadeadm():
     try:
-        ilhas_quantidades = []  # Lista para armazenar os pares de ilha e quantidade_reabastecimento
         if request.method == 'POST':
             file = request.files.get('excelFile')
             if file and file.filename.endswith(('.xlsx', '.xls')):
                 df = pd.read_excel(file)
                 df.columns = df.columns.str.upper()
-
-                # Inicializar a lista resultado_lista
+ 
+                # Inicializar uma lista para armazenar os resultados
                 resultado_lista = []
-
+ 
                 # Iterar sobre cada linha do DataFrame do Excel
                 for _, row in df.iterrows():
                     predio = row['PRÉDIO']
@@ -555,7 +582,7 @@ def quantidadeadm():
                                 f"Valor inválido em 'REPOSIÇÃO': {reposicao_value}"
                             )
                             continue
-
+ 
                     # Verificar e converter 'andar' para numérico
                     andar_value = row['ANDAR']
                     if pd.notna(andar_value):
@@ -570,7 +597,7 @@ def quantidadeadm():
                         logging.warning(
                             f"Valor nulo em 'andar', definindo como 0")
                         andar_int = 0
-
+ 
                     # Verificar e converter 'QUANTIDADE' para numérico
                     quantidade_value = row['QUANTIDADE']
                     if pd.notna(quantidade_value) and quantidade_value != 'TOTAL':
@@ -584,7 +611,7 @@ def quantidadeadm():
                         logging.warning(
                             f"Valor nulo ou inválido em 'quantidade'")
                         continue
-
+ 
                     ilha_numero = int(''.join(filter(str.isdigit, ilha)))
 
                     # Calcular a data há 7 dias atrás
@@ -601,56 +628,44 @@ def quantidadeadm():
                     quantidade_reabastecida = Decimal(soma_reposicoes) if soma_reposicoes else Decimal(0)
 
                     print(f'Reposição encontrada: {quantidade_reabastecida}')
-
+ 
                     print(f'Quantidade encontrada: {quantidade_value}')
                     print(f'Reposição encontrada: {quantidade_reabastecida}')
                     # Calcular a quantidade restante
                     quantidade_restante = (
                         quantidade_reabastecida * Decimal(500)) - Decimal(quantidade_impressa)
-
+                   
                     if quantidade_restante >= Decimal(0):
                         reposicao_necessaria = 0
                     else:
                         reposicao_necessaria = abs(quantidade_restante) // Decimal(500)
                         if abs(quantidade_restante) % Decimal(500) != 0:
                             reposicao_necessaria += 1
-
-                    ilhas_quantidades.append((ilha, reposicao_necessaria))  # Adicionar ilha e quantidade_reabastecimento à lista
-
-                enviar_notificacao_repositor(predio, andar_int, ilhas_quantidades)  # Passar ilhas_quantidades para a função
-
+ 
+                    resultado_lista.append({
+                        'PRÉDIO': predio,
+                        'ANDAR': andar_int,
+                        'ILHA': ilha,
+                        'IMPRESSA NA SEMANA': quantidade_impressa,
+                        'REABASTECIMENTO': quantidade_reabastecida,
+                        'RESTANTE': quantidade_restante,
+                        'REPOSIÇÃO': reposicao_necessaria
+                    })
+                   
+                    enviar_notificacao_repositor(predio, andar_int, ilha, reposicao_necessaria)
+ 
                 resultado_df = pd.DataFrame(resultado_lista)
                 relatorio_xlsx = f'tmp_relatorio_{datetime.now().strftime("%Y%m%d%H%M%S")}.xlsx'
                 resultado_df.to_excel(
                     relatorio_xlsx, index=False, sheet_name='Relatorio')
-
+ 
                 return send_file(relatorio_xlsx, download_name='RelatorioSemanalQuantitativo.xlsx', as_attachment=True, mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-
+ 
         logging.debug("Processamento concluído com sucesso.")
     except Exception as e:
         logging.error(f"Erro no servidor: {e}", exc_info=True)
-
+ 
     return render_template('quantidadeadm.html')
-
-
-@app.route('/RepositorHome', methods=['GET', 'POST'])
-@login_required
-def loginrec():
-    print("Rota loginrec acionada.")
-    usuario = Usuario.query.filter_by(
-        id_user=current_user.id, tipo_user="repositor").first()
-
-    if usuario:
-        # Verificar se o popup deve ser exibido
-        exibirPopup = request.args.get('exibirPopup')
-        ilhasNecessarias = request.args.get('ilhasNecessarias')
-        quantidades = request.args.get('quantidades')  # Receber quantidades da query string
-
-        # Restante do código para renderizar a página normalmente
-        return render_template('loginrec.html', exibirPopup='true', ilhasNecessarias=ilhasNecessarias, quantidades=quantidades)
-    else:
-        print("Acesso não autorizado.")
-        return redirect(url_for('fazer_login'))
 
 
 @app.route('/verificar_conexao')
