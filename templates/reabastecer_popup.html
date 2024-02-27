@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup de Reabastecimento</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/reabastecer_popup.css') }}">
+</head>
+
+<body>
+    <div id="reabastecerPopup" class="reabastecer-popup">
+        <div class="popup-content">
+            <p>Alguns locais precisam ser reabastecidos. Por favor, verifique:</p>
+            <p id="locaisReabastecer"></p>
+            <span class="close-button">&times;</span>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const reabastecerPopup = document.getElementById('reabastecerPopup');
+            const closeButton = document.querySelector('.close-button');
+    
+            // Verificar se o popup já foi mostrado
+            if (!localStorage.getItem('popupShown')) {
+                reabastecerPopup.style.display = 'flex'; // Mostrar o popup
+                localStorage.setItem('popupShown', true); // Marcar que o popup foi mostrado
+            }
+    
+            closeButton.addEventListener('click', function () {
+                reabastecerPopup.style.display = 'none'; // Fechar o popup ao clicar no "X"
+            });
+    
+            const locaisReabastecer = "{{ ilhasNecessarias }}"; // Locais necessários, obtidos do backend
+            document.getElementById('locaisReabastecer').textContent = locaisReabastecer;
+        });
+    </script>
+</body>
+
+</html>

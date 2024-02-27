@@ -8,9 +8,38 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/loginrec.css') }}">
     <link rel="icon" href="../static/images/zezinhobola.png">
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 9999;
+        }
+
+        .popup-content {
+            text-align: center;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .blur-background {
+            filter: blur(5px);
+        }
+    </style>
 </head>
 
-<body>
+<body class="blur-background">
     <div id="exitPopup" class="exit-popup">
         <div class="popup-content">
             <p>Deseja mesmo sair?</p>
@@ -20,6 +49,15 @@
             </div>
         </div>
     </div>
+
+    <div id="reabastecerPopup" class="popup">
+        <div class="popup-content">
+            <p>Alguns locais precisam ser reabastecidos. Por favor, verifique:</p>
+            <p id="locaisReabastecer"></p>
+            <span class="close-button">&times;</span>
+        </div>
+    </div>
+
     <form method="post" action="{{ url_for('loginrec') }}">
         <div class="cabecalho">
             <a href="{{ url_for('loginrec') }}" class="PaperCS">Paper Controll System</a>
@@ -27,6 +65,7 @@
                 <img src="../static/images/exitbutton.png" alt="Botão Pequeno">
             </a>
         </div>
+
         <div class="content">
             <div class="button-container">
                 <a href="{{ url_for('abastecimento') }}" class="Semanal">Abastecimento</a>
@@ -51,41 +90,82 @@
         <a href="{{ url_for('ajudaOZe') }}" class="zezinhobola">
             <img src="../static/images/zezinhobola.png" alt="Zezinho">
         </a>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const exitButton = document.querySelector('.exitbutton');
-                const exitPopup = document.getElementById('exitPopup');
-                const simButton = document.getElementById('simButton');
-                const naoButton = document.getElementById('naoButton');
-
-                exitButton.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    exitPopup.style.display = 'flex';
-                });
-
-                simButton.addEventListener('click', function () {
-                    window.location.href = "{{ url_for('fazer_login') }}";
-                });
-
-                naoButton.addEventListener('click', function () {
-                    exitPopup.style.display = 'none';
-                });
-            });
-
-            document.addEventListener('DOMContentLoaded', function () {
-                var params = new URLSearchParams(window.location.search);
-                var exibirPopup = params.get('exibirPopup');
-    
-                if (exibirPopup === 'true') {
-                    // Exibe o pop-up específico
-                    var popupElement = document.createElement('div');
-                    popupElement.innerHTML = '<p>É necessário uma reposição.</p>';
-                    document.body.appendChild(popupElement);
-                }
-            });
-        </script>
     </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const exitButton = document.querySelector('.exitbutton');
+            const exitPopup = document.getElementById('exitPopup');
+            const simButton = document.getElementById('simButton');
+            const naoButton = document.getElementById('naoButton');
+            const reabastecerPopup = document.getElementById('reabastecerPopup');
+            const closeButton = document.querySelector('.close-button');
+
+            exitButton.addEventListener('click', function (event) {
+                event.preventDefault();
+                exitPopup.style.display = 'flex';
+            });
+
+            simButton.addEventListener('click', function () {
+                window.location.href = "{{ url_for('fazer_login') }}";
+            });
+
+            naoButton.addEventListener('click', function () {
+                exitPopup.style.display = 'none';
+            });
+
+            closeButton.addEventListener('click', function () {
+                reabastecerPopup.style.display = 'none';
+            });
+
+            // Verificar se a notificação deve ser exibida
+            var params = new URLSearchParams(window.location.search);
+            var exibirPopup = params.get('exibirPopup');
+
+            if (exibirPopup === 'true') {
+                // Exibe a notificação
+                if (Notification.permission === 'granted') {
+                    new Notification('É necessário uma reposição.');
+                } else if (Notification.permission !== 'denied') {
+                    Notification.requestPermission().then(function (permission) {
+                        if (permission === 'granted') {
+                            new Notification('É necessário uma reposição.');
+                        }
+                    });
+                }
+            }
+
+            // Exibe a notificação com as ilhas necessárias
+            var ilhasNecessarias = "{{ ilhasNecessarias }}";
+            var quantidades = "{{ quantidades }}";
+
+            if (ilhasNecessarias && quantidades) {
+                var ilhasArray = ilhasNecessarias.split(',');
+                var quantidadesArray = quantidades.split(',');
+
+                var bodyText = "É necessário reabastecer:\n";
+
+                for (var i = 0; i < ilhasArray.length; i++) {
+                    bodyText += "Ilha " + ilhasArray[i] + ": " + quantidadesArray[i] + " resmas\n";
+                }
+
+                if (Notification.permission === 'granted') {
+                    new Notification('É necessário reabastecer:', {
+                        body: bodyText
+                    });
+                } else if (Notification.permission !== 'denied') {
+                    Notification.requestPermission().then(function (permission) {
+                        if (permission === 'granted') {
+                            new Notification('É necessário reabastecer:', {
+                                body: bodyText
+                            });
+                        }
+                    });
+                }
+            }
+        });
+
+    </script>
 </body>
 
 </html>

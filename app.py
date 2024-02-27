@@ -4,7 +4,7 @@ from flask_login import LoginManager, UserMixin, login_required, login_user, cur
 from database import configure_database, db, Usuario, Reposicao, Reabastecimento, Ajuda
 from sqlalchemy import Integer, func, text
 from decimal import Decimal
-from datetime import datetime
+from datetime import datetime, timedelta
 import secrets
 import logging
 import pandas as pd
@@ -14,7 +14,7 @@ from email.message import EmailMessage
 from werkzeug.exceptions import BadRequestKeyError
 import os
 from flask_socketio import SocketIO, send
-import re
+from collections import defaultdict
 
 # Criar aplicação Flask
 app = Flask(__name__)
@@ -106,7 +106,7 @@ def fazer_login():
                 login_user(user)
 
                 if usuario.tipo_user == 'repositor':
-                    return redirect(url_for('loginrec'))
+                    return redirect(url_for('loginrec', exibirPopup='true'))
                 elif usuario.tipo_user == 'administrador':
                     return redirect(url_for('loginadm'))
             else:
@@ -115,28 +115,10 @@ def fazer_login():
     return render_template('login.html', mensagem_erro=mensagem_erro)
 
 
-@app.route('/RepositorHome', methods=['GET', 'POST'])
-@login_required
-def loginrec():
-    print("Rota loginrec acionada.")
-    usuario = Usuario.query.filter_by(
-        id_user=current_user.id, tipo_user="repositor").first()
-
-    if usuario:
-        # Acesse o estoque diretamente da tabela de usuários
-        estoque = usuario.estoque
-        
-        # Passe um parâmetro na URL indicando se uma notificação deve ser exibida
-        return render_template('loginrec.html', quantidade_estoque=estoque, mensagem_erro=None)
-    else:
-        print("Acesso não autorizado.")
-        return redirect(url_for('fazer_login'))
-
-
 @app.route('/AdmHome', methods=['GET', 'POST'])
 @login_required
 def loginadm():
-    print("Rota loginrec acionada.")
+    print("Rota Adm's acionada.")
     usuario = Usuario.query.filter_by(
         id_user=current_user.id, tipo_user="administrador").first()
     return render_template('loginadm.html')
@@ -145,12 +127,12 @@ def loginadm():
 @app.route('/Abastecimento', methods=['GET', 'POST'])
 @login_required
 def abastecimento():
-    print("Rota abs acionada.")
+    print(f"Rota Abastecimento acionada.")
     estoque = None
     mensagem = None
 
     if request.method == 'POST':
-        print("Formulário enviado!")
+        print(f"Formulário enviado!")
 
         predio = request.form['predio']
         andar = request.form['andar']
@@ -534,31 +516,30 @@ def enviar_notificacao_repositor(predio, andar, ilha, quantidade_reabastecimento
         if repositor_query:
             for repositor in repositor_query:
                 # Enviar notificação para cada repositor encontrado
-                mensagem = f"Olá, {repositor.nome}. Você precisa reabastecer {quantidade_reabastecimento} resmas na ilha {ilha}, no andar {andar} do prédio {predio}."
+                mensagem = f"Olá, {repositor.nome}. Você precisa reabastecer:"
+                for i in range(len(ilha)):
+                    mensagem += f"\nIlha {ilha[i]}: {quantidade_reabastecimento[i]} resmas"
                 # Aqui você pode implementar o envio de notificação, por exemplo, via e-mail
                 print(mensagem)  # apenas para exemplo
             print("Notificação enviada com sucesso!")
-            return 'Notificação enviada com sucesso!'
         else:
             print("Nenhum repositor encontrado para enviar notificação.")
-            return 'Nenhum repositor encontrado para enviar notificação.'
-
     except Exception as e:
         print(f'Erro ao enviar notificação para o repositor: {str(e)}')
-        return f'Erro ao enviar notificação para o repositor: {str(e)}'
 
 
 @app.route('/RelatorioSemanal', methods=['GET', 'POST'])
 @login_required
 def quantidadeadm():
     try:
+        ilhas_quantidades = []  # Lista para armazenar os pares de ilha e quantidade_reabastecimento
         if request.method == 'POST':
             file = request.files.get('excelFile')
             if file and file.filename.endswith(('.xlsx', '.xls')):
                 df = pd.read_excel(file)
                 df.columns = df.columns.str.upper()
 
-                # Inicializar uma lista para armazenar os resultados
+                # Inicializar a lista resultado_lista
                 resultado_lista = []
 
                 # Iterar sobre cada linha do DataFrame do Excel
@@ -603,50 +584,40 @@ def quantidadeadm():
                         logging.warning(
                             f"Valor nulo ou inválido em 'quantidade'")
                         continue
-                    
-                    # Formatar 'andar' e 'ilha' para correspondência com o banco de dados
-                    andar_ilha_concatenado = f"Andar {andar_int} Ilha {ilha}"
-                    ilha_numero = int(''.join(filter(str.isdigit, ilha)))
 
                     ilha_numero = int(''.join(filter(str.isdigit, ilha)))
-                    reposicao = Reposicao.query.filter(
+
+                    # Calcular a data há 7 dias atrás
+                    data_7_dias_atras = datetime.now() - timedelta(days=7)
+
+                    # Consultar as reposições dos últimos 7 dias e somar as quantidades
+                    soma_reposicoes = db.session.query(func.sum(Reposicao.quantidade_reposicao)).filter(
                         func.lower(Reposicao.predio) == func.lower(predio),
                         func.cast(Reposicao.andar, Integer) == andar_int,
-                        func.cast(func.regexp_replace(Reposicao.ilha, '[^0-9]', ''), Integer) == ilha_numero
-                    ).first()
+                        func.cast(func.regexp_replace(Reposicao.ilha, '[^0-9]', ''), Integer) == ilha_numero,
+                        Reposicao.data_reposicao >= data_7_dias_atras
+                    ).scalar()
 
-                    # Verificar se há uma reposição e obter a quantidade de reposição
-                    if reposicao:
-                        quantidade_reabastecida = reposicao.quantidade_reposicao
-                        print(f'Reposição encontrada: {quantidade_reabastecida}')
-                    else:
-                        quantidade_reabastecida = 0
-                        print("Nenhuma reposição encontrada.")
+                    quantidade_reabastecida = Decimal(soma_reposicoes) if soma_reposicoes else Decimal(0)
+
+                    print(f'Reposição encontrada: {quantidade_reabastecida}')
 
                     print(f'Quantidade encontrada: {quantidade_value}')
                     print(f'Reposição encontrada: {quantidade_reabastecida}')
                     # Calcular a quantidade restante
                     quantidade_restante = (
-                        quantidade_reabastecida * 500) - quantidade_impressa
-                    
-                    if quantidade_restante >= 0:
+                        quantidade_reabastecida * Decimal(500)) - Decimal(quantidade_impressa)
+
+                    if quantidade_restante >= Decimal(0):
                         reposicao_necessaria = 0
                     else:
-                        reposicao_necessaria = abs(quantidade_restante) // 500
-                        if abs(quantidade_restante) % 500 != 0:
+                        reposicao_necessaria = abs(quantidade_restante) // Decimal(500)
+                        if abs(quantidade_restante) % Decimal(500) != 0:
                             reposicao_necessaria += 1
 
-                    resultado_lista.append({
-                        'PRÉDIO': predio,
-                        'ANDAR': andar_int,
-                        'ILHA': ilha,
-                        'IMPRESSA NA SEMANA': quantidade_impressa,
-                        'REABASTECIMENTO': quantidade_reabastecida,
-                        'RESTANTE': quantidade_restante,
-                        'REPOSIÇÃO': reposicao_necessaria
-                    })
-                    
-                    enviar_notificacao_repositor(predio, andar_int, ilha, reposicao_necessaria)
+                    ilhas_quantidades.append((ilha, reposicao_necessaria))  # Adicionar ilha e quantidade_reabastecimento à lista
+
+                enviar_notificacao_repositor(predio, andar_int, ilhas_quantidades)  # Passar ilhas_quantidades para a função
 
                 resultado_df = pd.DataFrame(resultado_lista)
                 relatorio_xlsx = f'tmp_relatorio_{datetime.now().strftime("%Y%m%d%H%M%S")}.xlsx'
@@ -660,6 +631,26 @@ def quantidadeadm():
         logging.error(f"Erro no servidor: {e}", exc_info=True)
 
     return render_template('quantidadeadm.html')
+
+
+@app.route('/RepositorHome', methods=['GET', 'POST'])
+@login_required
+def loginrec():
+    print("Rota loginrec acionada.")
+    usuario = Usuario.query.filter_by(
+        id_user=current_user.id, tipo_user="repositor").first()
+
+    if usuario:
+        # Verificar se o popup deve ser exibido
+        exibirPopup = request.args.get('exibirPopup')
+        ilhasNecessarias = request.args.get('ilhasNecessarias')
+        quantidades = request.args.get('quantidades')  # Receber quantidades da query string
+
+        # Restante do código para renderizar a página normalmente
+        return render_template('loginrec.html', exibirPopup='true', ilhasNecessarias=ilhasNecessarias, quantidades=quantidades)
+    else:
+        print("Acesso não autorizado.")
+        return redirect(url_for('fazer_login'))
 
 
 @app.route('/verificar_conexao')

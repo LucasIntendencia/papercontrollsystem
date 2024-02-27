@@ -131,10 +131,10 @@
                 floorDropdown.innerHTML = '<option value="" selected disabled hidden>Selecione o andar</option>';
                 if (building !== "") {
                     const floorsData = {
-                        MINAS: ['Andar 1', 'Andar 2', 'Andar 3', 'Andar 4', 'Andar 5', 'Andar 6', 'Andar 7', 'Andar 8', 'Andar 9', 'Andar 10', 'Andar 11', 'Andar 12', 'Andar 13', 'Andar 14'],
-                        GERAIS: ['Andar 1', 'Andar 2', 'Andar 3', 'Andar 4', 'Andar 5', 'Andar 6', 'Andar 7', 'Andar 8', 'Andar 9', 'Andar 10', 'Andar 11', 'Andar 12', 'Andar 13', 'Andar 14'],
-                        ALTEROSA: ['Andar 1'],
-                        TIRADENTES: ['Andar 1']
+                        MINAS: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14'],
+                        GERAIS: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14'],
+                        ALTEROSA: ['1'],
+                        TIRADENTES: ['1']
                     };
                     floorsData[building].forEach(floor => {
                         const option = document.createElement('option');
@@ -161,8 +161,8 @@
                     };
                     for (let i = 1; i <= ilhasData[building]; i++) {
                         const option = document.createElement('option');
-                        option.value = `Ilha ${i}`;
-                        option.textContent = `Ilha ${i}`;
+                        option.value = `${i}`;
+                        option.textContent = `${i}`;
                         ilhaDropdown.appendChild(option);
                     }
                 }

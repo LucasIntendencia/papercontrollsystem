@@ -27,7 +27,7 @@
             </div>
         </div>
     </div>
-    <form id="reabastecimentoForm" method="post" action="/reabastecimento">
+    <form id="reabastecimentoForm" method="post" action="/Reabastecimento">
         <input type="hidden" name="id_user" value="quantidade_estoque.id_user">
 
         <div class="cabecalho">
@@ -45,7 +45,7 @@
                         <option value="minas">Minas</option>
                         <option value="gerais">Gerais</option>
                         <option value="alterosa">Alterosa</option>
-                        <option value="tiradentes">TiraDentes</option>
+                        <option value="tiradentes">Tiradentes</option>
                     </select>
                 </div>
 
@@ -177,13 +177,13 @@
             const form = document.getElementById('reabastecimentoForm');
             const formData = new FormData(form);
 
-            fetch('/reabastecimento', {
+            fetch('/Reabastecimento', {
                 method: 'POST',
                 body: formData
             })
                 .then(response => {
                     if (response.ok) {
-                        window.location.href = "/loginrec";
+                        window.location.href = "/RepositorHome";
                     } else {
                         // Trate aqui caso a submissão dos dados falhe
                         console.error("Erro ao salvar dados no banco");

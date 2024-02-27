@@ -10254,3 +10254,1925 @@ INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrol
 INFO:werkzeug: * Restarting with stat
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:32:57] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:32:58] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:32:58] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:32:58] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:32:58] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:32:59] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:32:59] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:32:59] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:32:59] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:32:59] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:33:01] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:33:01] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:33:02] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:33:02] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:33:15] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:33:42] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:33:42] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:33:42] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:33:42] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:33:42] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:33:50] "GET /verificar_conexao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:33:50] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:34:21] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:34:21] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:34:21] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:34:27] "POST /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:34:27] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:34:27] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:34:34] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:34:34] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:34:34] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:34:34] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:34:34] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:34:34] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:34:37] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:34:37] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:34:37] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:34:37] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:35:57] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:35:57] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:35:57] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:35:57] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:35:57] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:36:31] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:36:31] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:36:31] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:36:31] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:36:31] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:36:39] "POST /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:36:41] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:36:41] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:36:41] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:36:41] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:36:41] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:36:42] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:36:42] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:36:42] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:37:05] "POST /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:37:08] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:37:08] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:37:08] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:37:08] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:37:08] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:37:11] "GET /verificar_conexao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:37:35] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:37:35] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:37:35] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:37:40] "[35m[1mPOST /Abastecimento HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:37:52] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:37:52] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:37:52] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:37:52] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:38:27] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:38:27] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:38:27] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:38:28] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:38:28] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:38:28] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:38:28] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:38:28] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:38:30] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:38:30] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:38:30] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:38:30] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+ERROR:root:Erro no servidor: invalid literal for int() with base 10: ''
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 609, in quantidadeadm
+    ilha_numero = int(''.join(filter(str.isdigit, ilha)))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: ''
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:38:37] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:38:37] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:38:37] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+ERROR:root:Erro no servidor: invalid literal for int() with base 10: ''
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 609, in quantidadeadm
+    ilha_numero = int(''.join(filter(str.isdigit, ilha)))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: ''
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:39:02] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:39:02] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:39:02] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:39:22] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:39:22] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:39:22] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:40:15] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:40:15] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:40:15] "GET /static/styles/login.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:40:15] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:40:15] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:40:16] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:40:16] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:40:16] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:40:16] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:40:46] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:40:46] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:40:46] "GET /static/styles/login.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:40:46] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:40:46] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:46:48] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:46:48] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:46:48] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:46:48] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:46:48] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:46:49] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:46:49] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:46:49] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:46:49] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+ERROR:root:Erro no servidor: invalid literal for int() with base 10: ''
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 609, in quantidadeadm
+    ilha_numero = int(''.join(filter(str.isdigit, ilha)))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: ''
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:46:53] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:46:53] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:46:53] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:52:13] "[32mPOST /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:52:13] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:52:14] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:52:14] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:52:14] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:52:16] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:52:16] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:52:16] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:52:16] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:52:16] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:52:17] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:52:17] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:52:17] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+ERROR:root:Erro no servidor: invalid literal for int() with base 10: ''
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 608, in quantidadeadm
+    ilha_numero = int(''.join(filter(str.isdigit, ilha)))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: ''
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:52:21] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:52:21] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:52:21] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:55:14] "[32mPOST /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:55:14] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:55:14] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:55:14] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:55:14] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:55:15] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:55:15] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:55:15] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:55:15] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:55:15] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:55:16] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:55:16] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:55:16] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+ERROR:root:Erro no servidor: invalid literal for int() with base 10: ''
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 609, in quantidadeadm
+    ilha_numero = int(''.join(filter(str.isdigit, ilha)))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: ''
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:55:21] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:55:21] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 13:55:21] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+ERROR:root:Erro no servidor: invalid literal for int() with base 10: ''
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 609, in quantidadeadm
+    ilha_numero = int(''.join(filter(str.isdigit, ilha)))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: ''
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:03:36] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:03:36] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:03:36] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:04:17] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:04:17] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:04:18] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:04:18] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:04:18] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:04:18] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:04:18] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:04:18] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:04:19] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:04:21] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:04:21] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:04:21] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+ERROR:root:Erro no servidor: invalid literal for int() with base 10: ''
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 609, in quantidadeadm
+    ilha_numero = int(''.join(filter(str.isdigit, ilha)))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: ''
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:04:25] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:04:25] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:04:25] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:09:06] "[32mPOST /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:09:06] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:09:06] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:09:06] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:09:06] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:09:07] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:09:07] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:09:07] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:09:07] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:09:07] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:09:08] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:09:08] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:09:08] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+ERROR:root:Erro no servidor: invalid literal for int() with base 10: ''
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 609, in quantidadeadm
+    ilha_numero = int(''.join(filter(str.isdigit, ilha)))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: ''
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:09:13] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:09:13] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:09:13] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:18:07] "[32mGET /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:18:07] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:18:07] "GET /static/styles/login.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:18:08] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:18:08] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:18:08] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:18:09] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:18:09] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:18:09] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:18:09] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:18:09] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:18:10] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:18:10] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:18:10] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:18:10] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+ERROR:root:Erro no servidor: invalid literal for int() with base 10: ''
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 610, in quantidadeadm
+    ilha_numero = int(''.join(filter(str.isdigit, ilha)))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: ''
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:18:16] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:18:16] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:18:16] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:28:50] "[32mPOST /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:28:50] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:28:50] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:28:50] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:28:50] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:28:50] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:28:51] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:28:51] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:28:51] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:28:51] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:28:51] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:28:52] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:28:52] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:28:52] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:28:52] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+ERROR:root:Erro no servidor: send_file() got an unexpected keyword argument 'attachment_filename'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 661, in quantidadeadm
+    return send_file(excel_file, as_attachment=True, attachment_filename='RelatorioSemanalQuantitativo.xlsx', mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: send_file() got an unexpected keyword argument 'attachment_filename'
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:28:57] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:28:57] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:28:57] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:30:08] "[32mPOST /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:30:08] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:30:08] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:30:08] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:30:08] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:30:09] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:30:11] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:30:11] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:30:11] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:30:11] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:30:11] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:30:12] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:30:12] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:30:12] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+ERROR:root:Erro no servidor: send_file() got an unexpected keyword argument 'filename'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 661, in quantidadeadm
+    return send_file(excel_file, as_attachment=True, filename='RelatorioSemanalQuantitativo.xlsx', mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: send_file() got an unexpected keyword argument 'filename'
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:30:25] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:30:25] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:30:25] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: send_file() got an unexpected keyword argument 'filename'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 661, in quantidadeadm
+    return send_file(excel_file, as_attachment=True, filename='RelatorioSemanalQuantitativo.xlsx', mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: send_file() got an unexpected keyword argument 'filename'
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:30:49] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:30:49] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:30:49] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:31:28] "[32mPOST /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:31:28] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:31:29] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:31:29] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:31:29] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:31:29] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:31:29] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:31:29] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:31:30] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:31:30] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:31:30] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:31:32] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:31:32] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:31:32] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: send_file() got an unexpected keyword argument 'attachment_filename'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 661, in quantidadeadm
+    return send_file(excel_file, as_attachment=True, attachment_filename='RelatorioSemanalQuantitativo.xlsx', mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: send_file() got an unexpected keyword argument 'attachment_filename'
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:31:37] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:31:37] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:31:37] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:32:34] "[32mPOST /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:32:34] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:32:34] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:32:34] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:32:34] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:32:34] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:32:35] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:32:35] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:32:35] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:32:35] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:32:35] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:32:36] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:32:36] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:32:36] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:32:41] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:33:02] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:34:45] "[32mGET /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:34:45] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:34:45] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:34:45] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:34:45] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:34:45] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:34:46] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:34:46] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:34:46] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:34:46] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:34:46] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:34:47] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:34:47] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:34:47] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: 'DataFrame' object has no attribute 'close'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 661, in quantidadeadm
+    resultado_df.close()
+    ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\Desktop\PaperControlSystem\venv\Lib\site-packages\pandas\core\generic.py", line 6204, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'close'
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:35:01] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:35:01] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:35:01] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:35:16] "[32mPOST /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:35:16] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:35:16] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:35:16] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:35:16] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:35:16] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:35:17] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:35:17] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:35:17] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:35:17] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:35:17] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:35:18] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:35:18] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:35:18] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:35:18] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:35:21] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:36:12] "[32mGET /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:36:12] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:36:12] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:36:12] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:36:12] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:36:12] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:36:13] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:36:13] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:36:13] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:36:13] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:36:13] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:36:14] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:36:14] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:36:14] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:36:14] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:36:17] "POST /RelatorioSemanal HTTP/1.1" 200 -
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:37:25] "POST /RelatorioSemanal HTTP/1.1" 200 -
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:37:55] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:10] "[32mGET /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:10] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:10] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:10] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:10] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:12] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:12] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:12] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:12] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:12] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:12] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:12] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:12] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:12] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:12] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:12] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:12] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:12] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:12] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:12] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:13] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:13] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:13] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:13] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:13] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:13] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:14] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:14] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:14] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:15] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:20] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:30] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:30] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:30] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:34] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:34] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:34] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:34] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:34] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:53:34] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:54:14] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:54:14] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:54:14] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:54:14] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:54:15] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:54:15] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:54:15] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:54:16] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:54:16] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:54:16] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:54:16] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:54:16] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:54:17] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:54:17] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:54:17] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:54:17] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:56:25] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:56:25] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:56:25] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:56:25] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:56:25] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:56:34] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:56:34] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:56:34] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:56:34] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:56:34] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:56:38] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:56:38] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:56:38] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:56:38] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:56:44] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:56:44] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:56:45] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:56:45] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:56:45] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:56:45] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:56:53] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:58:29] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:58:29] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:58:29] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:58:29] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:58:29] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:58:29] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:58:33] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:58:33] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:58:33] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:58:33] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:58:33] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 14:58:36] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:15] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:15] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:15] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:16] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:16] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:17] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:17] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:17] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:17] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:17] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:17] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:37] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:40] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:40] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:40] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:40] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:40] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:41] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:41] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:41] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:41] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:41] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:41] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:41] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:41] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:41] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:41] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:41] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:41] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:41] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:41] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:41] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:41] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:41] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:41] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:41] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:00:41] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:16] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:16] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:16] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:17] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:17] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:17] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:17] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:17] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:17] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:17] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:17] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:17] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:17] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:17] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:17] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:17] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:17] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:17] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:17] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:17] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:17] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:17] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:17] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:17] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:18] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:18] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:18] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:18] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:18] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:18] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:18] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:18] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:18] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:18] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:18] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:18] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:18] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:18] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:18] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:18] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:18] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:18] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:18] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:18] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:18] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:18] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:21] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:21] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:21] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:21] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:21] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:21] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:21] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:21] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:25] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:29] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:29] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:29] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:29] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:29] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:31] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:31] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:31] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:31] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:41] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:41] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:41] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:41] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:04:41] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:17:06] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:17:06] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:17:06] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:17:06] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:17:06] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:17:07] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:17:07] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:17:07] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:17:07] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:17:07] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:17:07] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:20:46] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:20:46] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:20:46] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:20:46] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:20:46] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:20:47] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:20:47] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:20:47] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:20:47] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:20:47] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:20:47] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:20:52] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:20:55] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:20:56] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:20:56] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:20:56] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:20:56] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:20:59] "GET /AjudaSugestao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:20:59] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:20:59] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:20:59] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:21:01] "GET /AjudaSugestao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:21:02] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:21:02] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:21:03] "[36mGET /static/styles/ajudaOZe.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:21:06] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:21:06] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:21:06] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:21:06] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:20] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:20] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:20] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:20] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:20] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:21] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:21] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:21] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:21] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:21] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:21] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:21] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:21] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:21] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:21] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:21] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:34] "GET /verificar_conexao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:36] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:36] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:36] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:36] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:36] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:36] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:44] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:47] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:47] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:47] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:47] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:24:47] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:49] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:49] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:49] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:49] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:49] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:50] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:50] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:50] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:50] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:50] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:50] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:50] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:50] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:50] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:50] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:50] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:50] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:50] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:50] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:50] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:50] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:50] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:50] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:50] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:50] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:50] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+WARNING:root:Valor inválido em 'REPOSIÇÃO': nan
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:54] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:57] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:57] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:57] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:57] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [26/Feb/2024 15:31:57] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:15] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:15] "GET /LoginPaper?next=/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:15] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:15] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:15] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:23] "[32mGET /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:23] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:23] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:23] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:23] "GET /static/styles/login.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:23] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:23] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:25] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:25] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:25] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:25] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:26] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:36] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:36] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:36] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:36] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:42] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:50] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:50] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:50] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:50] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:50] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:53:50] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:54:18] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:54:18] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:54:18] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:54:19] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:55:49] "POST /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:55:49] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:55:49] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:55:50] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:55:50] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:55:50] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:55:50] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:55:50] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:55:53] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:55:53] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:55:53] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:56:03] "POST /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:56:03] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:56:03] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:56:15] "POST /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:56:15] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:56:15] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:56:20] "POST /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:56:20] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:56:20] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:56:20] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:56:25] "POST /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:56:25] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 07:56:25] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:00:36] "POST /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:00:36] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:00:36] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:00:39] "POST /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:00:39] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:00:39] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:00:46] "POST /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:00:46] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:00:46] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:02:11] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:02:11] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:02:11] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:02:11] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:02:11] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:02:21] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:03:05] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:03:10] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:03:10] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:03:10] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:03:10] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:03:10] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:03:14] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:03:14] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:03:14] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:03:14] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:03:15] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:03:15] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:03:15] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:03:15] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:03:15] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:04:39] "[32mGET /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:04:39] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:04:39] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:04:39] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:04:39] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:04:39] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:04:41] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:04:41] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:04:41] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:04:41] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:04:41] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:04:42] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:04:42] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:04:42] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:04:42] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:04:47] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:04:52] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:04:52] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:04:52] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:04:52] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:04:54] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:04:54] "GET /RepositorHome?exibirPopup=true HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:04:54] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:04:54] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:04:54] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:05:09] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:05:14] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:05:14] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:05:14] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:05:30] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:05:32] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:05:32] "GET /RepositorHome?exibirPopup=true HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:05:32] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:05:32] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:05:32] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:05:32] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:06:15] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:06:15] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:06:15] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:06:15] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:07:37] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:07:37] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:07:37] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:07:37] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:07:57] "POST /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:07:58] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:07:58] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:07:58] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:07:58] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:07:58] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:07:59] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:07:59] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:07:59] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:07:59] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:15] "POST /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:15] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:15] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:15] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:15] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:15] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:16] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:16] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:16] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:16] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:28] "POST /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:29] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:29] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:29] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:29] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:29] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:30] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:30] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:30] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:30] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:41] "POST /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:42] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:42] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:42] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:42] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:42] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:49] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:49] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:49] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:49] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:51] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:51] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:51] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:51] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:55] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:59] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:59] "GET /RepositorHome?exibirPopup=true HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:59] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:59] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:59] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:08:59] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:11:39] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:11:39] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:11:40] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:11:40] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:11:44] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:11:44] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:11:44] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:11:44] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:11:47] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:15:39] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:15:39] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:15:39] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:15:39] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:15:39] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:15:43] "GET /verificar_conexao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:15:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:19:17] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:19:17] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:19:17] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:19:17] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:19:38] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:19:38] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:19:38] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:19:38] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:19:38] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:root:Página de reabastecimento carregada com sucesso.
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:19:39] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:19:39] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:19:39] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:19:39] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:19:49] "[33mPOST /reabastecimento HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:19:51] "[33mPOST /reabastecimento HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:19:54] "[33mPOST /reabastecimento HTTP/1.1[0m" 404 -
+INFO:root:Página de reabastecimento carregada com sucesso.
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:20:19] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:20:19] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:20:19] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:20:19] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:20:19] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:20:21] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:20:21] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:20:21] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:20:21] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:20:21] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:root:Página de reabastecimento carregada com sucesso.
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:20:24] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:20:24] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:20:24] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:20:24] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:20:30] "[33mPOST /reabastecimento HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:20:32] "[33mPOST /reabastecimento HTTP/1.1[0m" 404 -
+INFO:root:Página de reabastecimento carregada com sucesso.
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:27] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:27] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:27] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:27] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:27] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:29] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:29] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:29] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:29] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:29] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:30] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:30] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:30] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:30] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:40] "POST /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:42] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:42] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:42] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:42] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:42] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:root:Página de reabastecimento carregada com sucesso.
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:43] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:43] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:43] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:43] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:45] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:45] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:45] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:45] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:23:45] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:38] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:38] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:38] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:38] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:39] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:39] "GET /RepositorHome?exibirPopup=true HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:39] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:39] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:39] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:39] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:root:Página de reabastecimento carregada com sucesso.
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:41] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:41] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:41] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:41] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:45] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:45] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:45] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:45] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:45] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:45] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:55] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:55] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:55] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:55] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:56] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:56] "GET /RepositorHome?exibirPopup=true HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:56] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:56] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:56] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:28:56] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:root:Página de reabastecimento carregada com sucesso.
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:29:02] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:29:02] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:29:02] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:29:02] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:29:11] "[33mPOST /reabastecimento HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:29:13] "[33mPOST /reabastecimento HTTP/1.1[0m" 404 -
+INFO:root:Página de reabastecimento carregada com sucesso.
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:31:06] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:31:06] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:31:06] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:31:06] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:31:06] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:31:16] "[33mPOST /reabastecimento HTTP/1.1[0m" 404 -
+INFO:root:Página de reabastecimento carregada com sucesso.
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:15] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:15] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:15] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:15] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:15] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro ao processar requisição: 'Reabastecimento' object has no attribute 'id'
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:23] "POST /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:23] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:23] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:23] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:23] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:23] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:root:Página de reabastecimento carregada com sucesso.
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:31] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:31] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:31] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:31] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:38] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:38] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:38] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:38] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:38] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:39] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:39] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:39] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:39] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:51] "POST /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:51] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:51] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:51] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:51] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:51] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:53] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:53] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:53] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:33:53] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:34:06] "POST /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:34:07] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:34:07] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:34:07] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:34:07] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:34:07] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:34:09] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:34:09] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:34:09] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:34:09] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:40:45] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:40:45] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:40:45] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:40:45] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:40:46] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:40:46] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:40:46] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:40:46] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:40:46] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:40:48] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:40:48] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:40:48] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:40:48] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:40:48] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:40:49] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:40:49] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:40:49] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:40:49] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:40:55] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:40:58] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:40:58] "GET /RepositorHome?exibirPopup=true HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:40:58] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:40:58] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:40:58] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:40:58] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:51:32] "[32mGET /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:51:32] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:51:32] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:51:32] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:51:32] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:51:32] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:51:33] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:51:33] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:51:33] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:51:33] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:51:33] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:51:43] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:51:43] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:51:43] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:51:43] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 08:51:47] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:00:29] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:00:29] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:00:29] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:00:29] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:00:29] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:00:32] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:00:32] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:00:32] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:00:32] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:00:32] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:00:40] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:00:40] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:00:40] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:00:40] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:00:43] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:06] "[32mGET /Abastecimento HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:06] "GET /LoginPaper?next=/Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:06] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:06] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:06] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:15] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:15] "GET /RepositorHome?exibirPopup=true HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:15] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:15] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:15] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:15] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:16] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:16] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:16] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:16] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:31] "POST /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:31] "POST /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:33] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:33] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:33] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:33] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:33] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:34] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:34] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:34] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:34] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:49] "POST /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:50] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:50] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:50] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:50] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:50] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:51] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:51] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:51] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:14:51] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:15:04] "POST /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:15:04] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:15:04] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:15:04] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:15:04] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:15:04] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:15:05] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:15:05] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:15:05] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:15:05] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:15:16] "POST /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:15:17] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:15:17] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:15:17] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:15:17] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:15:17] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:16:31] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:16:31] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:16:31] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:16:31] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:16:32] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:16:32] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:16:32] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:16:32] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:16:38] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:17:14] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:17:14] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:17:14] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:17:14] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:17:16] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:17:16] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:17:16] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:17:16] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:17:19] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:19:20] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:19:20] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:19:20] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:19:20] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:19:34] "[35m[1mPOST /Abastecimento HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:19:40] "POST /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:19:43] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:19:43] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:19:43] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:19:43] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:19:43] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:19:48] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:19:55] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:19:55] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:19:55] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:19:55] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:20:05] "POST /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:20:07] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:20:07] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:20:07] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:20:07] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:20:07] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:20:10] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:20:10] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:20:10] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:20:10] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:20:33] "POST /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:20:33] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:20:34] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:20:34] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:20:34] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:20:34] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:20:41] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:20:58] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:20:58] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:20:58] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:20:58] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:21:17] "POST /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:21:18] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:21:18] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:21:18] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:21:18] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:21:18] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:21:19] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:21:19] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:21:19] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:21:19] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:21:31] "POST /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:21:31] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:21:31] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:21:31] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:21:31] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:21:31] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:21:41] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:21:54] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:21:54] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:21:54] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:21:54] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:22:08] "POST /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:22:08] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:22:08] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:22:08] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:22:08] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:22:08] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:22:14] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:22:22] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:22:22] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:22:22] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:22:22] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:22:31] "POST /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:22:32] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:22:32] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:22:32] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:22:32] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:22:32] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:22:37] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:root:Página de reabastecimento carregada com sucesso.
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:22:55] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:22:55] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:22:55] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:22:55] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro ao processar requisição: 'Reabastecimento' object has no attribute 'id'
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:23:01] "POST /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:23:01] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:23:01] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:23:01] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:23:01] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:23:01] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:23:48] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:24:17] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:24:46] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:24:46] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:24:46] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:24:46] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:24:46] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:24:46] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:24:46] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:24:47] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:24:50] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:34:10] "[32mGET /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:34:10] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:34:11] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:34:11] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:34:11] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:34:11] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:34:12] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:34:12] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:34:12] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:34:12] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:34:12] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:34:13] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:34:13] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:34:13] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:34:13] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:34:23] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:39:12] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:39:12] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:39:13] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:39:13] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:39:13] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:39:14] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:39:14] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:39:14] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:39:14] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:39:14] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:39:19] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:39:19] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:39:19] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:39:19] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 629, in quantidadeadm
+    quantidade_restante = (
+                          ^
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:39:22] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:39:22] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:39:22] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:39:41] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 629, in quantidadeadm
+    quantidade_restante = (
+                          ^
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:39:47] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:39:47] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:39:47] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:39:48] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 629, in quantidadeadm
+    quantidade_restante = (
+                          ^
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:39:52] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:39:52] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:39:52] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:39:52] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:42:38] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:42:38] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:42:38] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:42:38] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:42:38] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:42:39] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:42:39] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:42:39] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:42:39] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:42:39] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:42:40] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:42:40] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:42:40] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:42:40] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrolsystem\app.py", line 629, in quantidadeadm
+    quantidade_restante = (
+                          ^
+TypeError: unsupported operand type(s) for -: 'decimal.Decimal' and 'float'
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:42:43] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:42:43] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:42:43] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:47:46] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:47:46] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:47:46] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:47:46] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:47:46] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:47:47] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:47:47] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:47:47] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:47:47] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:47:47] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:47:48] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:47:48] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:47:48] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:47:48] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:47:51] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:48:42] "[32mGET /RepositorHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:48:42] "GET /LoginPaper?next=/RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:48:42] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:48:42] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:48:42] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:49:08] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:49:08] "GET /RepositorHome?exibirPopup=true HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:49:08] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:49:08] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:49:08] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:49:08] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:49:09] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:49:09] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:49:09] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:49:09] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:49:23] "POST /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:49:26] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:49:26] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:49:26] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:49:26] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:49:26] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 09:49:29] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:12:39] "[32mGET /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:12:39] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:12:39] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:12:39] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:12:39] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:12:39] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:12:40] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:12:40] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:12:40] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:12:40] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:12:40] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:14:46] "GET /verificar_conexao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:14:54] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:14:54] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:14:54] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:14:54] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:14:58] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:15:05] "[32mGET /RepositorHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:15:05] "GET /LoginPaper?next=/RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:15:05] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:15:05] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:15:05] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:15:05] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:15:07] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:15:07] "[35m[1mGET /RepositorHome?exibirPopup=true HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:15:07] "GET /RepositorHome?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:15:07] "GET /RepositorHome?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:15:07] "GET /RepositorHome?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:15:07] "[36mGET /RepositorHome?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:15:45] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:15:45] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:15:47] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:15:47] "[35m[1mGET /RepositorHome?exibirPopup=true HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:15:47] "[36mGET /RepositorHome?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:15:47] "[36mGET /RepositorHome?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:15:47] "[36mGET /RepositorHome?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:20:47] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:20:47] "GET /RepositorHome?exibirPopup=true HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:20:47] "GET /static/styles/reabastecer_popup.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:20:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:24:36] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:24:36] "GET /RepositorHome?exibirPopup=true HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:24:36] "GET /static/styles/reabastecer_popup.css HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:40:07] "[32mGET /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:40:07] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:40:08] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:40:08] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:40:08] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:40:08] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:40:14] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:40:14] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:40:14] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:40:14] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:40:14] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:40:29] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:40:29] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:40:29] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:40:29] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:40:29] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:40:30] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:40:30] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:40:30] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:40:30] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:40:32] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:40:32] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:40:32] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:40:32] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:40:37] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:41:12] "[32mGET /RepositorHome?exibirPopup=true HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:41:12] "GET /LoginPaper?next=/RepositorHome?exibirPopup%3Dtrue HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:41:12] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:41:12] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:41:12] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:41:14] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:41:14] "GET /RepositorHome?exibirPopup=true HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:41:14] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:41:14] "GET /static/styles/loginrec.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:41:14] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:41:14] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 451-820-064
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:13] "[32mGET /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:13] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:13] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:13] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:13] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:13] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:18] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:18] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:18] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:18] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:18] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:19] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:19] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:19] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:19] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:24] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:33] "[32mGET /RepositorHome?exibirPopup=true HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:33] "GET /LoginPaper?next=/RepositorHome?exibirPopup%3Dtrue HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:33] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:33] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:33] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:33] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:34] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:34] "[35m[1mGET /RepositorHome?exibirPopup=true HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:34] "[36mGET /RepositorHome?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:34] "[36mGET /RepositorHome?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:34] "[36mGET /RepositorHome?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2024 10:44:34] "[36mGET /RepositorHome?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrolsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
