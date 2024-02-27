@@ -125,19 +125,21 @@ def loginrec():
     if usuario:
         # Verificar se o popup deve ser exibido
         exibirPopup = request.args.get('exibirPopup')
-        ilhasNecessarias = request.args.get('ilhasNecessarias')
-        estoque = usuario.estoque
-
-        # Defina a variável quantidade_reabastecimento ou ajuste conforme necessário
-        quantidade_reabastecimento = 10  # Exemplo de valor, substitua conforme necessário
-
-        # Assumindo que "ilha" é a variável que você quer passar para o template
-        # Corrigindo para ilhasNecessarias em vez de ilha
-       return render_template('loginrec.html', exibirPopup=True, ilhasNecessarias=ilhasNecessarias, quantidadesNecessarias=quantidadesNecessarias)
+        
+        # Passar os parâmetros 'ilhasNecessarias' e 'quantidadesNecessarias' para o template
+        ilhasNecessarias = request.args.getlist('ilhasNecessarias')
+        quantidadesNecessarias = request.args.getlist('quantidadesNecessarias')
+        
+        # Verificar se há ilhas e quantidades necessárias
+        if ilhasNecessarias and quantidadesNecessarias:
+            return render_template('loginrec.html', exibirPopup=True, ilhasNecessarias=ilhasNecessarias, quantidadesNecessarias=quantidadesNecessarias)
+        else:
+            print("Nenhuma ilha ou quantidade necessária encontrada.")
+            return render_template('loginrec.html', exibirPopup=True)  # Renderizar o template sem ilhas e quantidades necessárias
     else:
         print("Acesso não autorizado.")
         return redirect(url_for('fazer_login'))
-
+    
 
 @app.route('/AdmHome', methods=['GET', 'POST'])
 @login_required
@@ -533,6 +535,7 @@ def obter_quantidade_reposicao(predio, andar, ilha):
         return 0
 
 def enviar_notificacao_repositor(predio, andar, ilha, quantidade_reabastecimento):
+    ilhas_e_quantidades = {}  # Dicionário para armazenar ilhas e suas quantidades necessárias
     try:
         # Encontrar todos os usuários do tipo 'repositor' no mesmo prédio e andar
         repositor_query = Usuario.query.filter_by(tipo_user='repositor', predio_user=predio, andar_user=andar).all()
@@ -543,18 +546,19 @@ def enviar_notificacao_repositor(predio, andar, ilha, quantidade_reabastecimento
                 mensagem = f"Olá, {repositor.nome}. Você precisa reabastecer:"
                 for i in range(len(ilha)):
                     mensagem += f"\nIlha {ilha[i]}: {quantidade_reabastecimento[i]} resmas"
+                    ilhas_e_quantidades[ilha[i]] = quantidade_reabastecimento[i]  # Armazenar ilha e quantidade necessária
                 # Aqui você pode implementar o envio de notificação, por exemplo, via e-mail
                 print(mensagem)  # apenas para exemplo
             print("Notificação enviada com sucesso!")
-            return render_template('loginrec.html', exibirPopup='true', ilhasNecessarias=ilha, quantidades=quantidade_reabastecimento)
+            return ilhas_e_quantidades  # Retornar o dicionário com ilhas e quantidades necessárias
         else:
             print("Nenhum repositor encontrado para enviar notificação.")
-            return 'Nenhum repositor encontrado para enviar notificação.'
+            return None
 
     except Exception as e:
         print(f'Erro ao enviar notificação para o repositor: {str(e)}')
-        return f'Erro ao enviar notificação para o repositor: {str(e)}'
-    
+        return None
+
 
 @app.route('/RelatorioSemanal', methods=['GET', 'POST'])
 @login_required
@@ -652,8 +656,15 @@ def quantidadeadm():
                         'REPOSIÇÃO': reposicao_necessaria
                     })
                    
-                    enviar_notificacao_repositor(predio, andar_int, ilha, reposicao_necessaria)
- 
+                    # Capturar as ilhas e quantidades necessárias
+                    ilhas_quantidades = enviar_notificacao_repositor(predio, andar_int, ilha, reposicao_necessaria)
+                    if ilhas_quantidades:
+                        ilhas_necessarias = list(ilhas_quantidades.keys())
+                        quantidades_necessarias = list(ilhas_quantidades.values())
+                        return render_template('loginrec.html', exibirPopup=True, ilhasNecessarias=ilhas_necessarias, quantidadesNecessarias=quantidades_necessarias)
+                    else:
+                        print("Erro ao enviar notificação para os repositor(es).")
+
                 resultado_df = pd.DataFrame(resultado_lista)
                 relatorio_xlsx = f'tmp_relatorio_{datetime.now().strftime("%Y%m%d%H%M%S")}.xlsx'
                 resultado_df.to_excel(
@@ -679,6 +690,7 @@ def verificar_conexao():
             'nome': user.nome,
             'andar': user.andar_user,
             'predio':user.predio_user,
+
             'estoque': user.estoque
         }for user in users]
         
