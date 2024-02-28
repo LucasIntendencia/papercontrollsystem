@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/background-pc.png);
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+ 
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1A5A6B;
+    margin-top: 15px;
+}
+ 
+.exitbutton {
+    width: 28px;
+    height: 28px;
+}
+ 
+.PaperCS {
+    margin: 10px;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    background-color: #23A0BA;
+    color: white;
+    outline: none;
+    text-decoration: none;
+}
+
+.enviar-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: #23A0BA;
+    color: white;
+    cursor: pointer;
+    display: inline-block; 
+    max-width: 300px;
+    margin: auto;
+    margin-top: 230px;
+    margin-left: 600px;
+}
+
+
+.button-container {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    max-width: 300px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.button-container p {
+    font-size: 18px; 
+    margin-bottom: 20px; 
+}
+
+.button-container button {
+    margin: 0 10px; 
+    padding: 10px 25px; 
+    border: none; 
+    border-radius: 10px; 
+    cursor: pointer;
+    font-size: 16px; 
+    background-color: #23A0BA;
+    color: white;
+}
+
+.button-container button:hover {
+    background-color: #166f83; /* Cor de fundo ao passar o mouse */
+}
+
+.enviar-button:hover {
+    background-color: #166f83;
+}
+
+.exit-popup {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+ 
+.exit-popup .popup-content {
+    background-color: white;
+    /* Background branco */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+}
+ 
+.exit-popup .popup-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+ 
+.exit-popup .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+ 
+.exit-popup .button-container button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+ 
+.exit-popup .button-container button#simButton {
+    background-color: #3498db;
+    /* Botões azuis */
+    color: white;
+}
+ 
+.exit-popup .button-container button#naoButton {
+    background-color: #e74c3c;
+    color: white;
+}
+
+@media only screen and (min-width: 768px) {
+ 
+    body {
+        background-size: 100% 102%;
+        /* Exibe a imagem de fundo cobrindo todo o espaço */
+        background-attachment: fixed;
+        overflow: hidden;
+    }
+}

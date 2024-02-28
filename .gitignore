@@ -8,5 +8,5 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-# Ignorar o arquivo .env que contém variáveis de ambiente sensíveis
-.env
+# Ignorar o arquivo de credenciais
+credenciais.py

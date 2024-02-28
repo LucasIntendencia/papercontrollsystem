@@ -15,37 +15,27 @@ from werkzeug.exceptions import BadRequestKeyError
 import os
 from flask_socketio import SocketIO, send
 from collections import defaultdict
+import os
+from credencial import (
+    MAIL_SERVER,
+    MAIL_PORT,
+    MAIL_USERNAME,
+    MAIL_PASSWORD,
+    MAIL_DEFAULT_SENDER
+)
 
-# Criar aplicação Flask
 app = Flask(__name__)
-# Precisa retornar ao codigo antigo e puxar aquele url do banco de dados, só assim consigo linkar nele para que o popup de credenciais consiga verificar quais existem e quais não
-
-load_dotenv()
-env_variables = dotenv_values('credencial.env')
-print(env_variables)
-app.config.update(env_variables)
 
 
-# Cpmfigurar bando de dados com a URI e chave decreta para acesso
 app.secret_key = secrets.token_hex(32)
 database_uri = os.getenv('SQLALCHEMY_DATABASE_URI')
 configure_database(app)
 
-# Gerenciamento de Login
 login_manager = LoginManager(app)
 login_manager.login_view = 'fazer_login'
 
-# Registro de logs
 logging.basicConfig(filename='erro.log', level=logging.INFO)
 logging.basicConfig(level=logging.DEBUG)
-
-# Configuração do Flask-Mail
-app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER')
-app.config['MAIL_PORT'] = os.getenv('MAIL_PORT')
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
-app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
-app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_DEFAULT_SENDER')
 
 class User(UserMixin):
     def __init__(self, user_id, tipo_user=None, nome=None, email=None):
@@ -118,7 +108,7 @@ def fazer_login():
 @app.route('/RepositorHome', methods=['GET', 'POST'])
 @login_required
 def loginrec():
-    print("Rota loginrec acionada.")
+    print("Rota RepositorHome acionada.")
     usuario = Usuario.query.filter_by(
         id_user=current_user.id, tipo_user="repositor").first()
 
@@ -126,20 +116,25 @@ def loginrec():
         # Verificar se o popup deve ser exibido
         exibirPopup = request.args.get('exibirPopup')
         
-        # Passar os parâmetros 'ilhasNecessarias' e 'quantidadesNecessarias' para o template
-        ilhasNecessarias = request.args.getlist('ilhasNecessarias')
-        quantidadesNecessarias = request.args.getlist('quantidadesNecessarias')
-        
-        # Verificar se há ilhas e quantidades necessárias
-        if ilhasNecessarias and quantidadesNecessarias:
-            return render_template('loginrec.html', exibirPopup=True, ilhasNecessarias=ilhasNecessarias, quantidadesNecessarias=quantidadesNecessarias)
+        # Capturar as ilhas e quantidades necessárias
+        ilhas_quantidades = enviar_notificacao_repositor(
+            usuario.predio_user,  # predio
+            usuario.andar_user,   # andar
+            usuario.ilha,         # ilha
+            usuario.estoque       # quantidade_reabastecimento
+        )
+        if ilhas_quantidades:
+            ilhas_necessarias = list(ilhas_quantidades.keys())
+            quantidades_necessarias = list(ilhas_quantidades.values())
+            return render_template('loginrec.html', exibirPopup=True, ilhasNecessarias=ilhas_necessarias, quantidadesNecessarias=quantidades_necessarias)
         else:
-            print("Nenhuma ilha ou quantidade necessária encontrada.")
-            return render_template('loginrec.html', exibirPopup=True)  # Renderizar o template sem ilhas e quantidades necessárias
+            print("Erro ao enviar notificação para os repositor(es).")
+            # Renderizar o template mesmo em caso de erro
+            return render_template('loginrec.html', exibirPopup=True)
     else:
         print("Acesso não autorizado.")
         return redirect(url_for('fazer_login'))
-    
+   
 
 @app.route('/AdmHome', methods=['GET', 'POST'])
 @login_required
@@ -474,7 +469,7 @@ def enviar_email(tipo, descricao):
         if ajuda:
             # Configuração do e-mail
             msg = EmailMessage()
-            msg['From'] = 'papercontroll@planejamento.mg.gov.br'
+            msg['From'] = MAIL_DEFAULT_SENDER
             msg['To'] = 'lucas.nascimento@planejamento.mg.gov.br'
             msg['Subject'] = f'{tipo.capitalize()} - ID da Solicitação: {ajuda.id_ajuda}'
             content = f"""
@@ -490,10 +485,10 @@ def enviar_email(tipo, descricao):
             msg.set_content(content)
 
             # Configuração do servidor SMTP
-            smtp_server = os.getenv('MAIL_SERVER')
-            smtp_port = os.getenv('MAIL_PORT')
-            smtp_user = os.getenv('MAIL_USERNAME')
-            smtp_password = os.getenv('MAIL_PASSWORD')
+            smtp_server = MAIL_SERVER
+            smtp_port = MAIL_PORT
+            smtp_user = MAIL_USERNAME
+            smtp_password = MAIL_PASSWORD
 
             with smtplib.SMTP(smtp_server, smtp_port) as smtp:
                 smtp.starttls()
@@ -534,31 +529,6 @@ def obter_quantidade_reposicao(predio, andar, ilha):
         print(f'Erro ao obter quantidade de reposição do banco de dados: {str(e)}')
         return 0
 
-def enviar_notificacao_repositor(predio, andar, ilha, quantidade_reabastecimento):
-    ilhas_e_quantidades = {}  # Dicionário para armazenar ilhas e suas quantidades necessárias
-    try:
-        # Encontrar todos os usuários do tipo 'repositor' no mesmo prédio e andar
-        repositor_query = Usuario.query.filter_by(tipo_user='repositor', predio_user=predio, andar_user=andar).all()
-
-        if repositor_query:
-            for repositor in repositor_query:
-                # Enviar notificação para cada repositor encontrado
-                mensagem = f"Olá, {repositor.nome}. Você precisa reabastecer:"
-                for i in range(len(ilha)):
-                    mensagem += f"\nIlha {ilha[i]}: {quantidade_reabastecimento[i]} resmas"
-                    ilhas_e_quantidades[ilha[i]] = quantidade_reabastecimento[i]  # Armazenar ilha e quantidade necessária
-                # Aqui você pode implementar o envio de notificação, por exemplo, via e-mail
-                print(mensagem)  # apenas para exemplo
-            print("Notificação enviada com sucesso!")
-            return ilhas_e_quantidades  # Retornar o dicionário com ilhas e quantidades necessárias
-        else:
-            print("Nenhum repositor encontrado para enviar notificação.")
-            return None
-
-    except Exception as e:
-        print(f'Erro ao enviar notificação para o repositor: {str(e)}')
-        return None
-
 
 @app.route('/RelatorioSemanal', methods=['GET', 'POST'])
 @login_required
@@ -569,10 +539,10 @@ def quantidadeadm():
             if file and file.filename.endswith(('.xlsx', '.xls')):
                 df = pd.read_excel(file)
                 df.columns = df.columns.str.upper()
- 
+
                 # Inicializar uma lista para armazenar os resultados
                 resultado_lista = []
- 
+
                 # Iterar sobre cada linha do DataFrame do Excel
                 for _, row in df.iterrows():
                     predio = row['PRÉDIO']
@@ -586,7 +556,7 @@ def quantidadeadm():
                                 f"Valor inválido em 'REPOSIÇÃO': {reposicao_value}"
                             )
                             continue
- 
+
                     # Verificar e converter 'andar' para numérico
                     andar_value = row['ANDAR']
                     if pd.notna(andar_value):
@@ -601,7 +571,7 @@ def quantidadeadm():
                         logging.warning(
                             f"Valor nulo em 'andar', definindo como 0")
                         andar_int = 0
- 
+
                     # Verificar e converter 'QUANTIDADE' para numérico
                     quantidade_value = row['QUANTIDADE']
                     if pd.notna(quantidade_value) and quantidade_value != 'TOTAL':
@@ -615,37 +585,34 @@ def quantidadeadm():
                         logging.warning(
                             f"Valor nulo ou inválido em 'quantidade'")
                         continue
- 
+
                     ilha_numero = int(''.join(filter(str.isdigit, ilha)))
 
-                    # Calcular a data há 7 dias atrás
-                    data_7_dias_atras = datetime.now() - timedelta(days=7)
-
-                    # Consultar as reposições dos últimos 7 dias e somar as quantidades
+                    # Consultar todas as reposições e somar as quantidades
                     soma_reposicoes = db.session.query(func.sum(Reposicao.quantidade_reposicao)).filter(
                         func.lower(Reposicao.predio) == func.lower(predio),
                         func.cast(Reposicao.andar, Integer) == andar_int,
                         func.cast(func.regexp_replace(Reposicao.ilha, '[^0-9]', ''), Integer) == ilha_numero,
-                        Reposicao.data_reposicao >= data_7_dias_atras
                     ).scalar()
 
                     quantidade_reabastecida = Decimal(soma_reposicoes) if soma_reposicoes else Decimal(0)
 
                     print(f'Reposição encontrada: {quantidade_reabastecida}')
- 
+
                     print(f'Quantidade encontrada: {quantidade_value}')
                     print(f'Reposição encontrada: {quantidade_reabastecida}')
                     # Calcular a quantidade restante
                     quantidade_restante = (
                         quantidade_reabastecida * Decimal(500)) - Decimal(quantidade_impressa)
-                   
+
                     if quantidade_restante >= Decimal(0):
                         reposicao_necessaria = 0
                     else:
                         reposicao_necessaria = abs(quantidade_restante) // Decimal(500)
                         if abs(quantidade_restante) % Decimal(500) != 0:
                             reposicao_necessaria += 1
- 
+
+                    # Adicionar o valor 'pontual' como vazio
                     resultado_lista.append({
                         'PRÉDIO': predio,
                         'ANDAR': andar_int,
@@ -653,30 +620,105 @@ def quantidadeadm():
                         'IMPRESSA NA SEMANA': quantidade_impressa,
                         'REABASTECIMENTO': quantidade_reabastecida,
                         'RESTANTE': quantidade_restante,
-                        'REPOSIÇÃO': reposicao_necessaria
+                        'REPOSIÇÃO': reposicao_necessaria,
+                        'PONTUAL': ''  # Adicionando a coluna 'pontual' com valor vazio
                     })
-                   
-                    # Capturar as ilhas e quantidades necessárias
-                    ilhas_quantidades = enviar_notificacao_repositor(predio, andar_int, ilha, reposicao_necessaria)
-                    if ilhas_quantidades:
-                        ilhas_necessarias = list(ilhas_quantidades.keys())
-                        quantidades_necessarias = list(ilhas_quantidades.values())
-                        return render_template('loginrec.html', exibirPopup=True, ilhasNecessarias=ilhas_necessarias, quantidadesNecessarias=quantidades_necessarias)
-                    else:
-                        print("Erro ao enviar notificação para os repositor(es).")
 
                 resultado_df = pd.DataFrame(resultado_lista)
                 relatorio_xlsx = f'tmp_relatorio_{datetime.now().strftime("%Y%m%d%H%M%S")}.xlsx'
+
+                # Reordenando as colunas para incluir 'pontual' como a última
+                colunas = ['PRÉDIO', 'ANDAR', 'ILHA', 'IMPRESSA NA SEMANA', 'REABASTECIMENTO', 'RESTANTE', 'REPOSIÇÃO', 'PONTUAL']
+                resultado_df = resultado_df[colunas]
+
                 resultado_df.to_excel(
                     relatorio_xlsx, index=False, sheet_name='Relatorio')
- 
+
                 return send_file(relatorio_xlsx, download_name='RelatorioSemanalQuantitativo.xlsx', as_attachment=True, mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
- 
+
         logging.debug("Processamento concluído com sucesso.")
     except Exception as e:
         logging.error(f"Erro no servidor: {e}", exc_info=True)
- 
+
     return render_template('quantidadeadm.html')
+
+def enviar_notificacao_repositor(file, tipo_reposicao):
+    try:
+        # Carregar o arquivo Excel
+        df = pd.read_excel(file)
+        
+        ilhas_e_quantidades = {}  # Dicionário para armazenar ilhas e suas quantidades necessárias
+
+        if tipo_reposicao == "pontual":
+            # Filtrar as linhas onde a coluna "PONTUAL" contém um "X"
+            locais_pontuais = df[df['PONTUAL'] == 'X']
+            for _, row in locais_pontuais.iterrows():
+                # Enviar notificação para os repositores dos locais pontuais
+                mensagem = f"Olá, repositores. Vocês precisam reabastecer:"
+                mensagem += f"\nPrédio: {row['PRÉDIO']}, Andar: {row['ANDAR']}"
+                mensagem += f"\nIlha: {row['ILHA']}, Quantidade: {row['REABASTECIMENTO']} resmas"
+                ilhas_e_quantidades[row['ILHA']] = row['REABASTECIMENTO']  # Armazenar ilha e quantidade necessária
+                # Aqui você pode implementar o envio de notificação, por exemplo, via e-mail
+                print(mensagem)  # apenas para exemplo
+
+        elif tipo_reposicao == "semanal":
+            # Filtrar as linhas onde a coluna "REPOSIÇÃO" é diferente de zero
+            locais_semanais = df[df['REPOSIÇÃO'] != 0]
+            for _, row in locais_semanais.iterrows():
+                # Enviar notificação para os repositores dos locais semanais
+                mensagem = f"Olá, repositores. Vocês precisam reabastecer:"
+                mensagem += f"\nPrédio: {row['PRÉDIO']}, Andar: {row['ANDAR']}"
+                mensagem += f"\nIlha: {row['ILHA']}, Quantidade: {row['REABASTECIMENTO']} resmas"
+                ilhas_e_quantidades[row['ILHA']] = row['REABASTECIMENTO']  # Armazenar ilha e quantidade necessária
+                # Aqui você pode implementar o envio de notificação, por exemplo, via e-mail
+                print(mensagem)  # apenas para exemplo
+
+        print("Notificações enviadas com sucesso!")
+        return ilhas_e_quantidades  # Retornar o dicionário com ilhas e quantidades necessárias
+
+    except Exception as e:
+        print(f'Erro ao enviar notificações para os repositores: {str(e)}')
+        return None
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in {'xlsx', 'xls'}
+
+
+@app.route('/enviarPopup', methods=['GET', 'POST'])
+@login_required
+def enviarPopup():
+    if request.method == 'POST':
+        # Verificar se um arquivo foi enviado
+        if 'file' not in request.files:
+            flash('Nenhum arquivo enviado.', 'error')
+            return redirect(request.url)
+        
+        file = request.files['file']
+        tipo_reposicao = request.form['tipoReposicao']
+
+        if file.filename == '':
+            flash('Nenhum arquivo selecionado.', 'error')
+            return redirect(request.url)
+        
+        if file and allowed_file(file.filename):
+            # Processar o arquivo Excel e enviar notificações
+            ilhas_e_quantidades = enviar_notificacao_repositor(file, tipo_reposicao)
+            
+            if ilhas_e_quantidades:
+                # Renderizar a página com sucesso e exibir uma mensagem de confirmação
+                flash('Notificações enviadas com sucesso!', 'success')
+                return render_template('enviarNotificacao.html', ilhas_e_quantidades=ilhas_e_quantidades)
+            else:
+                # Renderizar a página com uma mensagem de erro
+                flash('Erro ao enviar notificações.', 'error')
+                return render_template('enviarNotificacao.html')
+        
+        else:
+            flash('Tipo de arquivo não permitido.', 'error')
+            return redirect(request.url)
+
+    return render_template('enviarNotificacao.html')
 
 
 @app.route('/verificar_conexao')

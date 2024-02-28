@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Notificação Repositores - ADM</title>
+    <link rel="stylesheet" href="../static/styles/enviarNotificacao.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="../static/images/zezinhobola.png">
+</head>
+
+<body>
+    <div class="cabecalho">
+        <a href="{{ url_for('loginadm') }}" class="PaperCS">Paper Controll System</a>
+        <a href="#" class="exitbutton">
+            <img src="../static/images/exitbutton.png" alt="Botão Pequeno" class="exitbutton">
+        </a>
+    </div>
+
+    <div id="selectButtons" class="button-container">
+        <p>Qual tipo de reposição você precisa?</p>
+        <button id="semanalButton">Semanal</button>
+        <button id="pontualButton">Pontual</button>
+    </div>
+
+    <form id="fileUploadForm" method="post" action="/processar-arquivo" enctype="multipart/form-data" style="display: none;">
+        <input type="file" name="file" id="file" style="display: none;">
+        <input type="text" name="tipoReposicao" id="tipoReposicao" style="display: none;">
+        <label for="file" class="enviar-button">Enviar Arquivo para Notificar</label>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const semanalButton = document.getElementById('semanalButton');
+            const pontualButton = document.getElementById('pontualButton');
+            const fileUploadForm = document.getElementById('fileUploadForm');
+            const selectButtons = document.getElementById('selectButtons');
+
+            semanalButton.addEventListener('click', function () {
+                document.getElementById('tipoReposicao').value = 'semanal';
+                fileUploadForm.style.display = 'block';
+                selectButtons.style.display = 'none';
+            });
+
+            pontualButton.addEventListener('click', function () {
+                document.getElementById('tipoReposicao').value = 'pontual';
+                fileUploadForm.style.display = 'block';
+                selectButtons.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -95,22 +95,19 @@
             });
 
         });
-        function showNotificationPopup(message, ilhas, quantidades) {
+        function showNotificationPopup(message, ilhasNecessarias, quantidadesNecessarias) {
             var notificationPopup = document.getElementById('notificationPopup');
             var notificationMessage = document.getElementById('notificationMessage');
             var reposicaoInfo = document.getElementById('reposicaoInfo');
         
             notificationMessage.textContent = message;
-            reposicaoInfo.textContent = "Reposição necessária em: " + reposicao;
-            quantidadeInfo.textContent = "Quantidade necessária: " + quantidade;
-            notificationPopup.style.display = 'flex';
-
+            
             var ilhasText = "Ilhas que precisam de reposição:\n";
-            for (var i = 0; i < ilhas.length; i++) {
-            ilhasText += "- " + ilhas[i] + " (Quantidade necessária: " + quantidades[i] + ")\n";
+            for (var i = 0; i < ilhasNecessarias.length; i++) {
+                ilhasText += "- " + ilhasNecessarias[i] + " (Quantidade necessária: " + quantidadesNecessarias[i] + ")\n";
             }
             reposicaoInfo.textContent = ilhasText;
-
+        
             notificationPopup.style.display = 'flex';
         }
     
