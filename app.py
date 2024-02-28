@@ -111,29 +111,7 @@ def loginrec():
     print("Rota RepositorHome acionada.")
     usuario = Usuario.query.filter_by(
         id_user=current_user.id, tipo_user="repositor").first()
-
-    if usuario:
-        # Verificar se o popup deve ser exibido
-        exibirPopup = request.args.get('exibirPopup')
-        
-        # Capturar as ilhas e quantidades necessárias
-        ilhas_quantidades = enviar_notificacao_repositor(
-            usuario.predio_user,  # predio
-            usuario.andar_user,   # andar
-            usuario.ilha,         # ilha
-            usuario.estoque       # quantidade_reabastecimento
-        )
-        if ilhas_quantidades:
-            ilhas_necessarias = list(ilhas_quantidades.keys())
-            quantidades_necessarias = list(ilhas_quantidades.values())
-            return render_template('loginrec.html', exibirPopup=True, ilhasNecessarias=ilhas_necessarias, quantidadesNecessarias=quantidades_necessarias)
-        else:
-            print("Erro ao enviar notificação para os repositor(es).")
-            # Renderizar o template mesmo em caso de erro
-            return render_template('loginrec.html', exibirPopup=True)
-    else:
-        print("Acesso não autorizado.")
-        return redirect(url_for('fazer_login'))
+    return render_template('loginrec.html')
    
 
 @app.route('/AdmHome', methods=['GET', 'POST'])
