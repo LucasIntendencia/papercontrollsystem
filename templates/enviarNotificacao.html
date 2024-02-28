@@ -27,31 +27,50 @@
         <button id="pontualButton">Pontual</button>
     </div>
 
-    <form id="fileUploadForm" method="post" action="/processar-arquivo" enctype="multipart/form-data" style="display: none;">
-        <input type="file" name="file" id="file" style="display: none;">
-        <input type="text" name="tipoReposicao" id="tipoReposicao" style="display: none;">
-        <label for="file" class="enviar-button">Enviar Arquivo para Notificar</label>
-    </form>
+    <div id="fileUploadContainer" style="display: none;">
+        <form id="fileUploadForm" method="post" action="/enviarPopup" enctype="multipart/form-data">
+            <div class="upload-container">
+                <label for="excelFile" class="upload-label">
+                    <span id="file-name-display">Escolha e selecione o seu arquivo aqui</span>
+                </label>
+                <input type="file" name="file" id="excelFile" accept=".xlsx, .xls" onchange="displayFileName()" />
+            </div>
+            <input type="text" name="tipoReposicao" id="tipoReposicao" style="display: none;">
+            <button type="submit" class="enviar-button">Enviar Arquivo para Notificar</button>
+        </form>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const semanalButton = document.getElementById('semanalButton');
             const pontualButton = document.getElementById('pontualButton');
-            const fileUploadForm = document.getElementById('fileUploadForm');
+            const fileUploadContainer = document.getElementById('fileUploadContainer');
             const selectButtons = document.getElementById('selectButtons');
 
             semanalButton.addEventListener('click', function () {
                 document.getElementById('tipoReposicao').value = 'semanal';
-                fileUploadForm.style.display = 'block';
+                fileUploadContainer.style.display = 'block';
                 selectButtons.style.display = 'none';
             });
 
             pontualButton.addEventListener('click', function () {
                 document.getElementById('tipoReposicao').value = 'pontual';
-                fileUploadForm.style.display = 'block';
+                fileUploadContainer.style.display = 'block';
                 selectButtons.style.display = 'none';
             });
         });
+
+        function displayFileName() {
+            const fileInput = document.getElementById('excelFile');
+            const fileNameDisplay = document.getElementById('file-name-display');
+
+            if (fileInput.files.length > 0) {
+                const fileName = fileInput.files[0].name;
+                fileNameDisplay.textContent = fileName;
+            } else {
+                fileNameDisplay.textContent = "Escolha e selecione o seu arquivo aqui";
+            }
+        }
     </script>
 </body>
 
