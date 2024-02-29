@@ -32,8 +32,16 @@ body {
     overflow: hidden;
 }
  
-/* Botões e informações de estoque */
- 
+.close-button {
+    background-color: #3498db; 
+    border-radius: 20px; 
+    color: white; 
+    padding: 10px 30px; 
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
 .button-container {
     display: flex;
     flex-direction: column;
@@ -51,6 +59,27 @@ body {
     overflow: hidden;
     margin-top: 30px;
     margin-left: 18px;
+}
+
+.estoque-container {
+    position: fixed;
+    width: 300px;
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    color: white;
+    padding: 40px; /* Aumentando o preenchimento para dar mais espaço */
+    border-radius: 10px;
+    max-width: 80%; /* Definindo uma largura máxima para evitar que fique muito largo */
+    text-align: center; /* Centralizando o conteúdo */
+}
+ 
+.numero-estoque {
+    font-size: 36px; /* Ajustando o tamanho do número */
+    display: block; /* Garantindo que o número fique centralizado */
+    margin-top: 20px; /* Ajuste de margem para espaçamento */
 }
  
 .numero-estoque {
@@ -189,19 +218,6 @@ body {
     text-align: center;
 }
 
-.close-button {
-    cursor: pointer;
-    background-color: #3498db; /* Cor azul */
-    color: white; /* Texto branco */
-    padding: 5px 15px; /* Reduzindo o tamanho do botão */
-    border-radius: 5px;
-    outline: none;
-    margin-top: 10px; /* Espaçamento acima do botão */
-}
-
- 
-/* Media Query para dispositivos menores */
- 
 @media only screen and (min-width: 600px) {
  
     .button-container {
@@ -241,14 +257,49 @@ body {
     }
 }
  
+@media only screen and (min-width: 900px) {
+ 
+    .button-container {
+        margin-top: 10px;
+        /* Ajuste a margem superior para dispositivos menores */
+    }
+ 
+    .Semanal,
+    .Reabastecimento {
+        width: 100%;
+        font-size: 24px;
+        padding: 16px;
+        margin: 12px auto;
+        border-radius: 15px;
+        border: none;
+        cursor: pointer;
+        background-color: #23A0BA;
+        color: white;
+        outline: none;
+        text-decoration: none;
+        text-align: center;
+        display: block;
+        margin-left: -22px;
+    }
+ 
+    .estoque-container {
+        top: 60%;
+        left: 49%;
+        height: auto;
+    }
+ 
+    .zezinhobola {
+        width: 100px;
+        height: 100px;
+        margin-left: 44%;
+        margin-top: 250px;
+    }
+}
+ 
 @media only screen and (max-width: 360px) {
  
     .Semanal {
         margin-top: -30px;
-    }
- 
-    .estoque-info {
-        width: 90%;
     }
  
     .zezinhobola {

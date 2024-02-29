@@ -20,7 +20,15 @@
             <img src="../static/images/exitbutton.png" alt="Botão Pequeno" class="exitbutton">
         </a>
     </div>
-
+    <div id="exitPopup" class="exit-popup">
+        <div class="popup-content">
+            <p>Deseja mesmo sair?</p>
+            <div class="button-container">
+                <button id="simButton">Sim</button>
+                <button id="naoButton">Não</button>
+            </div>
+        </div>
+    </div>
     <div id="selectButtons" class="button-container">
         <p>Qual tipo de reposição você precisa?</p>
         <button id="semanalButton">Semanal</button>
@@ -41,6 +49,26 @@
     </div>
 
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const exitButton = document.querySelector('.exitbutton');
+            const exitPopup = document.getElementById('exitPopup');
+            const simButton = document.getElementById('simButton');
+            const naoButton = document.getElementById('naoButton');
+
+            exitButton.addEventListener('click', function (event) {
+                event.preventDefault();
+                exitPopup.style.display = 'flex';
+            });
+
+            simButton.addEventListener('click', function () {
+                window.location.href = "{{ url_for('fazer_login') }}";
+            });
+
+            naoButton.addEventListener('click', function () {
+                exitPopup.style.display = 'none';
+            });
+        });
+
         document.addEventListener('DOMContentLoaded', function () {
             const semanalButton = document.getElementById('semanalButton');
             const pontualButton = document.getElementById('pontualButton');

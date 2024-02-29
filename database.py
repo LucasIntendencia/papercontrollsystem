@@ -6,7 +6,9 @@ from sqlalchemy.orm import relationship
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
+from credencial import(
+    SQLALCHEMY_DATABASE_URI
+)
 db = SQLAlchemy()
 migrate = Migrate()
 
@@ -91,7 +93,7 @@ def configure_database(app):
     database_uri = os.getenv('SQLALCHEMY_DATABASE_URI')
     
     # Configura a URI do banco de dados e desativa o rastreamento de modificações
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://estagiario:Celeste123@10.180.134.88:3306/papercontrol'
+    app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     
     # Inicia o aplicativo e migração

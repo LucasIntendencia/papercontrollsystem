@@ -11,32 +11,35 @@
 </head>
 
 <body>
-    <div id="exitPopup" class="exit-popup">
+    {% if ilhasNecessarias %}
+    <div class="reabastecer-popup">
         <div class="popup-content">
-            <p>Deseja mesmo sair?</p>
-            <div class="button-container">
-                <button id="simButton">Sim</button>
-                <button id="naoButton">Não</button>
-            </div>
+            <p>É necessário reabastecer as seguintes ilhas:</p>
+            <ul>
+                {% for predio, andares in ilhasNecessarias.items() %}
+                {% for andar, ilhas_quantidades in andares.items() %}
+                <li>Prédio: {{ predio }}, Andar: {{ andar }}
+                    <ul>
+                        {% for ilha, quantidade in ilhas_quantidades %}
+                        <li>Ilha: {{ ilha }}, Quantidade: {{ quantidade }} resmas</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                {% endfor %}
+                {% endfor %}
+            </ul>
+            <button class="close-button" onclick="fecharPopup()">Fechar</button>
         </div>
     </div>
-
-    <div id="notificationPopup" class="popup">
-        <div class="popup-content">
-            <p id="notificationMessage"></p>
-            <p id="reposicaoInfo"></p>
-            <span class="close-button" id="closeNotificationButton">Fechar</span>
-        </div>
-    </div>
-
+    {% endif %}
     <form method="post" action="{{ url_for('loginrec') }}">
         <div class="cabecalho">
-            <a href="{{ url_for('loginrec') }}" class="PaperCS">Paper Controll System</a>
+            <a href="{{ url_for('loginrec') }}" class="PaperCS">Paper
+                Controll System</a>
             <a href="{{ url_for('fazer_login') }}" class="exitbutton">
                 <img src="../static/images/exitbutton.png" alt="Botão Pequeno">
             </a>
         </div>
-
         <div class="content">
             <div class="button-container">
                 <a href="{{ url_for('abastecimento') }}" class="Semanal">Abastecimento</a>
@@ -44,77 +47,59 @@
             </div>
         </div>
 
-        <footer>
-            {% if quantidade_estoque is defined %}
-            <div class="estoque-info">
-                <p>Seu estoque atual:</p>
-                <p>
-                    <span class="numero-estoque">{{ quantidade_estoque }}</span>
-                </p>
-                <p> resma(s)</p>
-            </div>
-            {% else %}
-            <p>{{ mensagem_erro }}</p>
-            {% endif %}
-        </footer>
+        <div class="estoque-container">
+            <p>Seu estoque atual:</p>
+            <p>
+                <span class="numero-estoque" id="quantidade-estoque" data-quantidade-estoque="{{ quantidade_estoque }}">
+                    {{ quantidade_estoque }}
+                </span>        
+            </p>
+            <p> resma(s)</p>
+        </div>
 
         <a href="{{ url_for('ajudaOZe') }}" class="zezinhobola">
             <img src="../static/images/zezinhobola.png" alt="Zezinho">
         </a>
+
     </form>
 
+    {% block scripts %}
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const exitButton = document.querySelector('.exitbutton');
-            const exitPopup = document.getElementById('exitPopup');
-            const simButton = document.getElementById('simButton');
-            const naoButton = document.getElementById('naoButton');
-            const reabastecerPopup = document.getElementById('reabastecerPopup');
-            const closeButton = document.querySelector('.close-button');
-            const closeNotificationButton = document.getElementById('closeNotificationButton');
-
-            closeNotificationButton.addEventListener('click', function () {
-                notificationPopup.style.display = 'none';
-            });
-
-            exitButton.addEventListener('click', function (event) {
-                event.preventDefault();
-                exitPopup.style.display = 'flex';
-            });
-
-            simButton.addEventListener('click', function () {
-                window.location.href = "{{ url_for('fazer_login') }}";
-            });
-
-            naoButton.addEventListener('click', function () {
-                exitPopup.style.display = 'none';
-            });
-
-            closeButton.addEventListener('click', function () {
-                reabastecerPopup.style.display = 'none';
-            });
-
-        });
-        function showNotificationPopup(message, ilhasNecessarias, quantidadesNecessarias) {
-            var notificationPopup = document.getElementById('notificationPopup');
-            var notificationMessage = document.getElementById('notificationMessage');
-            var reposicaoInfo = document.getElementById('reposicaoInfo');
-        
-            notificationMessage.textContent = message;
-            
-            var ilhasText = "Ilhas que precisam de reposição:\n";
-            for (var i = 0; i < ilhasNecessarias.length; i++) {
-                ilhasText += "- " + ilhasNecessarias[i] + " (Quantidade necessária: " + quantidadesNecessarias[i] + ")\n";
-            }
-            reposicaoInfo.textContent = ilhasText;
-        
-            notificationPopup.style.display = 'flex';
-        }
+            const reabastecerPopup = document.querySelector('.reabastecer-popup');
+            const closeButton = reabastecerPopup ? reabastecerPopup.querySelector('.close-button') : null;
     
-        // Chamada da função para exibir a notificação
-        showNotificationPopup('É necessário uma reposição.');
+            if (reabastecerPopup) {
+                reabastecerPopup.style.display = 'block';
+            }
+    
+            if (closeButton) {
+                closeButton.addEventListener('click', function () {
+                    if (reabastecerPopup) {
+                        reabastecerPopup.style.display = 'none';
+                    }
+                });
+            }
+        });
 
+        document.addEventListener('DOMContentLoaded', function () {
+            // Seleciona o elemento onde a quantidade de estoque será exibida
+            const quantidadeEstoqueElement = document.getElementById('quantidade-estoque');
+           
+            // Pega a quantidade de estoque do elemento HTML gerado pelo Flask
+            const quantidadeEstoque = parseInt(quantidadeEstoqueElement.dataset.quantidadeEstoque);
+   
+            // Verifica se a quantidade de estoque é um número válido
+            if (!isNaN(quantidadeEstoque)) {
+                // Se for válido, exibe a quantidade de estoque no elemento HTML
+                quantidadeEstoqueElement.textContent = quantidadeEstoque;
+            } else {
+                // Se não for válido, exibe uma mensagem de erro
+                quantidadeEstoqueElement.textContent = 'Quantidade de estoque não disponível';
+            }
+        });
     </script>
+    {% endblock %}
 </body>
 
 </html>

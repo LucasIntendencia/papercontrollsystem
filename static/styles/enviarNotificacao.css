@@ -23,6 +23,62 @@ body {
     width: 28px;
     height: 28px;
 }
+
+.exit-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+ 
+.exit-popup .popup-content {
+    background-color: white;
+    /* Background branco */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+}
+ 
+.exit-popup .popup-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+ 
+.exit-popup .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-direction: row;
+    align-items: center;
+}
+ 
+.exit-popup .button-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 10px;
+    /* Espaçamento entre os botões */
+}
+ 
+.exit-popup .button-container button#simButton {
+    background-color: #3498db;
+    /* Botões azuis */
+    color: white;
+}
+ 
+.exit-popup .button-container button#naoButton {
+    background-color: #e74c3c;
+    color: white;
+}
  
 .PaperCS {
     margin: 10px;
