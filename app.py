@@ -113,16 +113,17 @@ def loginrec():
     if current_user.tipo_user != 'repositor':
         flash('Acesso não autorizado.', 'error')
         return redirect(url_for('fazer_login'))
-    print("Rota RepositorHome acionada.")
-    usuario = Usuario.query.filter_by(id_user=current_user.id, tipo_user="repositor").first()
-    ilhas_necessarias = session.pop('ilhas_necessarias', None)
-    quantidade_estoque = usuario.estoque if usuario else None
+    
+    ilhas_e_quantidades = request.args.get('ilhas_e_quantidades')
+    mensagem_notificacao = request.args.get('mensagem_notificacao')
 
-    if ilhas_necessarias:
-        ilhas_dict = json.loads(ilhas_necessarias)
-        return render_template('loginrec.html', ilhasNecessarias=ilhas_dict, quantidade_estoque = quantidade_estoque)
+    if ilhas_e_quantidades is not None and mensagem_notificacao is not None:
+        ilhas_e_quantidades = json.loads(ilhas_e_quantidades)
+        quantidade_estoque = Usuario.query.filter_by(id_user=current_user.id, tipo_user="repositor").first().estoque
+        return render_template('loginrec.html', ilhas_e_quantidades=ilhas_e_quantidades, mensagem_notificacao=mensagem_notificacao, quantidade_estoque=quantidade_estoque)
     else:
-        return render_template('loginrec.html', ilhasNecessarias={}, quantidade_estoque = quantidade_estoque)
+        flash('Dados ausentes.', 'error')
+        return redirect(url_for('fazer_login'))
 
 
 @app.route('/AdmHome', methods=['GET', 'POST'])
@@ -149,6 +150,7 @@ def abastecimento():
         ilha = request.form['ilha']
         quantidade_reposicao = int(request.form['quantidade_reposicao'])
         tipo_reposicao = request.form['tipo_reposicao']
+        Nome = request.form['Nome']
 
         print(
             f"Dados do formulário: Predio={predio}, Andar={andar}, Ilha={ilha}, Quantidade={quantidade_reposicao}")
@@ -172,6 +174,7 @@ def abastecimento():
                         andar=andar,
                         ilha=ilha,
                         predio=predio,
+                        Nome=Nome
                     )
 
                     # Reduz o estoque apenas se a reposição for pendente
@@ -251,7 +254,8 @@ def reabastecimento():
             andar = request.form.get('andar')
             predio = request.form.get('predio')
             quantidade_reabastecimento = int(request.form.get(
-                'quantidade_reposicao', 0))  # Converte para inteiro
+                'quantidade_reposicao', 0))
+            Nome = request.form.get('Nome')
 
             # Obter o usuário logado usando a variável current_user do Flask-Login
             usuario = Usuario.query.filter_by(id_user=current_user.id).first()
@@ -265,14 +269,15 @@ def reabastecimento():
                     id_user=usuario.id_user,
                     quantidade_reabastecimento=quantidade_reabastecimento,
                     andar=andar,
-                    predio=predio
+                    predio=predio,
+                    Nome=Nome
                 )
 
                 db.session.add(nova_reposicao)
                 db.session.commit()
 
                 if nova_reposicao.id is not None:  # Verifica se a adição ao banco de dados foi bem-sucedida
-                    enviar_email_ilhas_solicitante(andar, predio)
+                    enviar_email_ilhas_solicitante(andar, predio, Nome)
                     logging.info('Reabastecimento solicitado com sucesso.')
 
             return redirect(url_for('reabastecimento'))
@@ -293,7 +298,7 @@ def reabastecimento():
 
     return render_template('reabastecimento.html', dados_reabastecimento=[], quantidade_estoque=0, error_message="Erro ao buscar dados de reabastecimento")
 
-def enviar_email_ilhas_solicitante(andar, predio):
+def enviar_email_ilhas_solicitante(andar, predio, Nome):
     try:
         # Configuração do e-mail
         msg = EmailMessage()
@@ -301,7 +306,7 @@ def enviar_email_ilhas_solicitante(andar, predio):
         msg['To'] = MAIL_SENDER
         msg['Subject'] = 'Limite de Ilhas Reabastecidas Atingido'
         content = f"""
-        Olá,
+        Olá, sou {Nome}
         Solicito reabastecimento no seguinte local:
         {andar} e {predio}
         Atenciosamente,
@@ -336,7 +341,7 @@ def relatoriosadm():
                                   'Tipo de usuário': user.tipo_user, 'Estoque': user.estoque} for user in Usuario.query.all()]
                 reposicoes_data = [{'ID da reposição': repo.id_reposicao, 'Data da reposição': repo.data_reposicao,
                                     'Tipo de reposição': repo.tipo_reposicao, 'Quantidade de reposição': repo.quantidade_reposicao,
-                                    'Andar': repo.andar, 'Ilha': repo.ilha, 'Prédio': repo.predio} for repo in Reposicao.query.all()]
+                                    'Andar': repo.andar, 'Ilha': repo.ilha, 'Prédio': repo.predio, 'Nome do repositor': repo.Nome} for repo in Reposicao.query.all()]
                 usuarios_df = pd.DataFrame(usuarios_data)
                 reposicoes_df = pd.DataFrame(reposicoes_data)
                 filename = 'relatorio_completo.xlsx'
@@ -353,7 +358,7 @@ def relatoriosadm():
                 data = db.session.query(Reposicao, Usuario)
                 df = pd.DataFrame([{'ID da reposição': repo.id_reposicao, 'ID do usuário': user.id_user, 'Data da reposição': repo.data_reposicao,
                             'Tipo de reposição': repo.tipo_reposicao, 'Quantidade de reposição': repo.quantidade_reposicao,
-                            'Andar': repo.andar, 'Ilha': repo.ilha, 'Prédio': repo.predio} for repo, user in data])
+                            'Andar': repo.andar, 'Ilha': repo.ilha, 'Prédio': repo.predio, 'Nome do repositor': repo.Nome} for repo, user in data])
                 filename = 'relatorio_reposicoes_completo.xlsx'
                 df.to_excel(filename, index=False)
                 return send_file(filename, as_attachment=True)
@@ -364,7 +369,7 @@ def relatoriosadm():
                     Usuario).filter(Reposicao.predio == predio).all()
                 df = pd.DataFrame([{'ID da reposição': repo.id_reposicao, 'ID do usuário': user.id_user, 'Data da reposição': repo.data_reposicao,
                             'Tipo de reposição': repo.tipo_reposicao, 'Quantidade de reposição': repo.quantidade_reposicao,
-                            'Andar': repo.andar, 'Ilha': repo.ilha, 'Prédio': repo.predio} for repo, user in reposicoes_data])
+                            'Andar': repo.andar, 'Ilha': repo.ilha, 'Prédio': repo.predio, 'Nome do repositor': repo.Nome} for repo, user in reposicoes_data])
                 filename = f'relatorio_por_predio_{predio.lower()}.xlsx'
                 df.to_excel(filename, index=False)
                 return send_file(filename, as_attachment=True)
@@ -383,14 +388,14 @@ def relatoriosadm():
                         Reposicao.data_reposicao.between(data_inicio, data_fim)).all()
                     df = pd.DataFrame([{'ID da reposição': repo.Reposicao.id_reposicao, 'ID do usuário': user.Usuario.id_user, 'Data da reposição': repo.Reposicao.data_reposicao,
                             'Tipo de reposição': repo.Reposicao.tipo_reposicao, 'Quantidade de reposição': repo.Reposicao.quantidade_reposicao,
-                            'Andar': repo.Reposicao.andar, 'Ilha': repo.Reposicao.ilha, 'Prédio': repo.Reposicao.predio} for repo, user in data])
+                            'Andar': repo.Reposicao.andar, 'Ilha': repo.Reposicao.ilha, 'Prédio': repo.Reposicao.predio, 'Nome do repositor': repo.Nome} for repo, user in data])
                     filename = f'relatorio_reposicoes_por_data_{data_inicio}_{data_fim}.xlsx'
                 else:
                     data = db.session.query(Reposicao, Usuario).join(Usuario).filter(
                         Reposicao.data_reposicao == data_param).all()
                     df = pd.DataFrame([{'ID da reposição': repo.Reposicao.id_reposicao, 'ID do usuário': user.Usuario.id_user, 'Data da reposição': repo.Reposicao.data_reposicao,
                             'Tipo de reposição': repo.Reposicao.tipo_reposicao, 'Quantidade de reposição': repo.Reposicao.quantidade_reposicao,
-                            'Andar': repo.Reposicao.andar, 'Ilha': repo.Reposicao.ilha, 'Prédio': repo.Reposicao.predio} for repo, user in data])
+                            'Andar': repo.Reposicao.andar, 'Ilha': repo.Reposicao.ilha, 'Prédio': repo.Reposicao.predio, 'Nome do repositor': repo.Nome} for repo, user in data])
                     filename = f'relatorio_reposicoes_por_data_{data_param}.xlsx'
                 df.to_excel(filename, index=False)
                 return send_file(filename, as_attachment=True)
@@ -401,7 +406,7 @@ def relatoriosadm():
                     Usuario).filter(Reposicao.tipo_reposicao == tipo).all()
                 df = pd.DataFrame([{'ID da reposição': repo.Reposicao.id_reposicao, 'ID do usuário': user.Usuario.id_user, 'Data da reposição': repo.Reposicao.data_reposicao,
                         'Tipo de reposição': repo.Reposicao.tipo_reposicao, 'Quantidade de reposição': repo.Reposicao.quantidade_reposicao,
-                        'Andar': repo.Reposicao.andar, 'Ilha': repo.Reposicao.ilha, 'Prédio': repo.Reposicao.predio} for repo, user in reposicoes_data])
+                        'Andar': repo.Reposicao.andar, 'Ilha': repo.Reposicao.ilha, 'Prédio': repo.Reposicao.predio, 'Nome do repositor': repo.Nome} for repo, user in reposicoes_data])
                 filename = f'relatorio_reposicoes_por_tipo_{tipo.lower()}.xlsx'
                 df.to_excel(filename, index=False)
                 return send_file(filename, as_attachment=True)
@@ -532,6 +537,20 @@ def quantidadeadm():
                     predio = row['PRÉDIO']
                     ilha = str(row['LOCALIZAÇÃO'])
                     reposicao_value = row['REPOSIÇÃO']
+                    if pd.notna(ilha):
+                        try:
+                        # Verificar se 'LOCALIZAÇÃO' não está vazio e contém caracteres numéricos
+                            if any(char.isdigit() for char in ilha):
+                                ilha_numero = int(''.join(filter(str.isdigit, ilha)))
+                            else:
+                                logging.warning("Valor inválido ou vazio em 'LOCALIZAÇÃO'")
+                                continue
+                        except ValueError:
+                            logging.warning(f"Valor inválido em 'LOCALIZAÇÃO': {ilha}")
+                            continue
+                    else:
+                        logging.warning("Valor nulo em 'LOCALIZAÇÃO'")
+                        continue
                     if reposicao_value:
                         try:
                             reposicao_necessaria = int(reposicao_value)
@@ -629,6 +648,8 @@ def quantidadeadm():
 def enviar_notificacao_repositor(df):
     try:
         ilhas_e_quantidades = {}
+        mensagem_notificacao = ""
+
         locais_necessarios = df[df['REPOSIÇÃO'] > 0]
         for _, row in locais_necessarios.iterrows():
             predio = row['PRÉDIO']
@@ -637,15 +658,14 @@ def enviar_notificacao_repositor(df):
             quantidade = row['REPOSIÇÃO']
 
             # Criar a mensagem única para o prédio e andar do repositor
-            mensagem = f"Olá, repositor do Prédio {predio}, Andar {andar}. Vocês precisam reabastecer:"
-            mensagem += "\n"
-            mensagem += f"Ilha: {ilha}, Quantidade: {quantidade} resmas"
+            mensagem_notificacao += f"Olá, repositor do Prédio {predio}, Andar {andar}. Vocês precisam reabastecer:\n"
+            mensagem_notificacao += f"Ilha: {ilha}, Quantidade: {quantidade} resmas\n"
 
             # Adicionar a ilha e quantidade ao dicionário
             ilhas_e_quantidades.setdefault(predio, {}).setdefault(andar, []).append((ilha, quantidade))
 
         print("Notificações enviadas com sucesso!")
-        return ilhas_e_quantidades, mensagem
+        return ilhas_e_quantidades, mensagem_notificacao
 
     except Exception as e:
         print(f'Erro ao enviar notificações para os repositores: {str(e)}')
@@ -676,12 +696,11 @@ def enviarPopup():
         
         if file and allowed_file(file.filename):
             df = pd.read_excel(file)
-            ilhas_necessarias = enviar_notificacao_repositor(df)
+            ilhas_necessarias, mensagem_notificacao = enviar_notificacao_repositor(df)
             
             if ilhas_necessarias:
-                session['ilhas_necessarias'] = ilhas_necessarias
-                print(ilhas_necessarias)
-                return redirect(url_for('loginadm'))
+                # Passa as ilhas e quantidades e a mensagem para a rota /RepositorHome
+                return redirect(url_for('loginadm', ilhas_e_quantidades=json.dumps(ilhas_necessarias), mensagem_notificacao=mensagem_notificacao))
             else:
                 flash('Não há ilhas para reabastecer.', 'error')
                 return redirect(request.url)
@@ -693,7 +712,8 @@ def enviarPopup():
     return render_template('enviarNotificacao.html')
 
 
-@app.route('/verificar_conexao')
+
+@app.route('/LUCASTRINASCIMENTO')
 def verificar_conexao():
     try:
         users = Usuario.query.all()

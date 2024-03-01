@@ -59,6 +59,7 @@ class Reposicao(db.Model):
     andar = db.Column(db.String(50), nullable=False)
     ilha = db.Column(db.String(50), nullable=False)
     predio = db.Column(db.String(50), nullable=False)
+    Nome = db.Column(db.String(100), nullable=False)
 
 
 class Reabastecimento(db.Model):
@@ -71,6 +72,7 @@ class Reabastecimento(db.Model):
     usuario = relationship("Usuario", backref="reabastecimentos")
     andar = db.Column(db.String(50), nullable=False)
     predio = db.Column(db.String(50), nullable=False)
+    Nome = db.Column(db.String(100), nullable=False)
 
     def __repr__(self):
         return f"<Reabastecimento {self.id_reabastecimento}>"

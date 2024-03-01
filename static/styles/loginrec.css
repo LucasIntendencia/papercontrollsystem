@@ -8,6 +8,7 @@ body {
     display: grid;
     grid-template-rows: auto 1fr;
     height: 100vh;
+    overflow: auto;
 }
  
 .cabecalho {
@@ -25,66 +26,18 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    /* Ajuste de margem para evitar estender a tela */
     margin-right: auto;
     margin-left: auto;
     max-width: 100%;
     overflow: hidden;
 }
- 
-.close-button {
-    background-color: #3498db; 
-    border-radius: 20px; 
-    color: white; 
-    padding: 10px 30px; 
-    border: none;
-    cursor: pointer;
-    border-radius: 15px;
-}
-
+  
 .button-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 30px;
-}
- 
-.estoque-info {
-    text-align: center;
-    background-color: white;
-    border-radius: 15px;
-    color: white;
-    width: 380px;
-    overflow: hidden;
-    margin-top: 30px;
-    margin-left: 18px;
-}
-
-.estoque-container {
-    position: fixed;
-    width: 300px;
-    height: 150px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: black;
-    color: white;
-    padding: 40px; /* Aumentando o preenchimento para dar mais espaço */
-    border-radius: 10px;
-    max-width: 80%; /* Definindo uma largura máxima para evitar que fique muito largo */
-    text-align: center; /* Centralizando o conteúdo */
-}
- 
-.numero-estoque {
-    font-size: 36px; /* Ajustando o tamanho do número */
-    display: block; /* Garantindo que o número fique centralizado */
-    margin-top: 20px; /* Ajuste de margem para espaçamento */
-}
- 
-.numero-estoque {
-    font-size: 50px;
-    /* Ajuste o tamanho conforme necessário */
 }
  
 /* Botões específicos */
@@ -125,11 +78,33 @@ body {
     cursor: pointer;
 }
  
+.estoque-container {
+    position: fixed;
+    width: 300px;
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    color: white;
+    padding: 40px; 
+    border-radius: 10px;
+    max-width: 80%; 
+    text-align: center; 
+}
+ 
+.numero-estoque {
+    font-size: 36px; 
+    display: block; 
+    margin-top: 20px; 
+}
+ 
+ 
 .zezinhobola {
     width: 100px;
     height: 100px;
     display: inline-block;
-    margin-top: 40px;
+    margin-top: 300px;
     margin-left: 170px;
 }
  
@@ -181,18 +156,59 @@ body {
     cursor: pointer;
     font-size: 16px;
     margin: 0 10px;
-    /* Espaçamento entre os botões */
 }
  
 .exit-popup .button-container button#simButton {
     background-color: #3498db;
-    /* Botões azuis */
     color: white;
 }
  
 .exit-popup .button-container button#naoButton {
     background-color: #e74c3c;
     color: white;
+}
+ 
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px); 
+    z-index: 9999;
+}
+ 
+.popup-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 10000; 
+    text-align: center;
+}
+ 
+.close-button {
+    cursor: pointer;
+    background-color: #3498db; 
+    color: white;
+    padding: 5px 15px; 
+    border-radius: 5px;
+    outline: none;
+    margin-top: 10px;
+}
+ 
+.close-button {
+    background-color: #3498db; 
+    border-radius: 20px; 
+    color: white; 
+    padding: 10px 30px; 
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
 }
 
 .popup {
@@ -202,7 +218,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(5px); /* Aplicando o efeito de desfoque */
+    backdrop-filter: blur(5px); 
     z-index: 9999;
 }
 
@@ -214,47 +230,8 @@ body {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    z-index: 10000; /* Ajustando z-index para aparecer acima do fundo embaçado */
+    z-index: 10000; 
     text-align: center;
-}
-
-@media only screen and (min-width: 600px) {
- 
-    .button-container {
-        margin-top: 10px;
-        /* Ajuste a margem superior para dispositivos menores */
-    }
- 
-    .Semanal,
-    .Reabastecimento {
-        width: 100%;
-        font-size: 24px;
-        padding: 16px;
-        margin: 12px auto;
-        border-radius: 15px;
-        border: none;
-        cursor: pointer;
-        background-color: #23A0BA;
-        color: white;
-        outline: none;
-        text-decoration: none;
-        text-align: center;
-        display: block;
-        margin-left: -22px;
-    }
- 
-    .estoque-info {
-        width: 70%;
-        padding: 10px 10%;
-        margin-left: 60px;
-    }
- 
-    .zezinhobola {
-        width: 100px;
-        height: 100px;
-        margin-left: 45%;
-        margin-top: 20px;
-    }
 }
  
 @media only screen and (min-width: 900px) {

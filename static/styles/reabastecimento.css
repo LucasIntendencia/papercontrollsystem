@@ -68,6 +68,7 @@ body {
     text-align: center;
 }
 
+.name_input,
 .quantity-input {
     flex: 1;
     padding: 10px;

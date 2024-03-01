@@ -68,6 +68,20 @@
         fecharPopup('empty-fields-popup');
       }, 3000); // Fecha o popup após 3 segundos
     }
+
+    function validarFormulario(event) {
+      // Aqui você pode adicionar a lógica para validar o formulário, por exemplo:
+      var email = document.getElementById('email').value;
+      var senha = document.getElementById('senha').value;
+  
+      // Verifica se os campos estão vazios
+      if (email.trim() === '' || senha.trim() === '') {
+        // Se algum campo estiver vazio, evita o envio do formulário
+        event.preventDefault();
+        // Exibe o popup de campos vazios
+        openEmptyFieldsPopup();
+      }
+    }
   </script>
 </body>
 </html>

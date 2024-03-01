@@ -28,7 +28,6 @@
                 {% endfor %}
                 {% endfor %}
             </ul>
-            <button class="close-button" onclick="fecharPopup()">Fechar</button>
         </div>
     </div>
     {% endif %}
@@ -66,19 +65,37 @@
     {% block scripts %}
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const reabastecerPopup = document.querySelector('.reabastecer-popup');
-            const closeButton = reabastecerPopup ? reabastecerPopup.querySelector('.close-button') : null;
+            const ilhasNecessarias = JSON.parse('{{ ilhas_e_quantidades | tojson | safe }}');
+            const mensagemNotificacao = '{{ mensagem_notificacao | tojson | safe }}';
     
-            if (reabastecerPopup) {
-                reabastecerPopup.style.display = 'block';
-            }
+            if (Object.keys(ilhasNecessarias).length > 0) {
+                const popupContent = document.createElement('div');
+                popupContent.classList.add('popup-content');
     
-            if (closeButton) {
-                closeButton.addEventListener('click', function () {
-                    if (reabastecerPopup) {
-                        reabastecerPopup.style.display = 'none';
+                const popupMessage = document.createElement('p');
+                popupMessage.textContent = mensagemNotificacao;
+                popupContent.appendChild(popupMessage);
+    
+                const ul = document.createElement('ul');
+                for (const [predio, andares] of Object.entries(ilhasNecessarias)) {
+                    for (const [andar, ilhas_quantidades] of Object.entries(andares)) {
+                        const li = document.createElement('li');
+                        li.textContent = `Prédio: ${predio}, Andar: ${andar}`;
+                        const subUl = document.createElement('ul');
+                        for (const [ilha, quantidade] of ilhas_quantidades) {
+                            const subLi = document.createElement('li');
+                            subLi.textContent = `Ilha: ${ilha}, Quantidade: ${quantidade} resmas`;
+                            subUl.appendChild(subLi);
+                        }
+                        li.appendChild(subUl);
+                        ul.appendChild(li);
                     }
-                });
+                }
+                popupContent.appendChild(ul);
+    
+                popupContent.appendChild(closeButton);
+                popup.appendChild(popupContent);
+                popup.style.display = 'block';
             }
         });
 
@@ -97,6 +114,25 @@
                 // Se não for válido, exibe uma mensagem de erro
                 quantidadeEstoqueElement.textContent = 'Quantidade de estoque não disponível';
             }
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            const exitButton = document.querySelector('.exitbutton');
+            const exitPopup = document.getElementById('exitPopup');
+            const simButton = document.getElementById('simButton');
+            const naoButton = document.getElementById('naoButton');
+
+            exitButton.addEventListener('click', function (event) {
+                event.preventDefault();
+                exitPopup.style.display = 'flex';
+            });
+
+            simButton.addEventListener('click', function () {
+                window.location.href = "{{ url_for('fazer_login') }}";
+            });
+
+            naoButton.addEventListener('click', function () {
+                exitPopup.style.display = 'none';
+            });
         });
     </script>
     {% endblock %}
