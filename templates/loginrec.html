@@ -11,34 +11,14 @@
 </head>
 
 <body>
-    {% if ilhasNecessarias %}
-    <div class="reabastecer-popup">
-        <div class="popup-content">
-            <p>É necessário reabastecer as seguintes ilhas:</p>
-            <ul>
-                {% for predio, andares in ilhasNecessarias.items() %}
-                {% for andar, ilhas_quantidades in andares.items() %}
-                <li>Prédio: {{ predio }}, Andar: {{ andar }}
-                    <ul>
-                        {% for ilha, quantidade in ilhas_quantidades %}
-                        <li>Ilha: {{ ilha }}, Quantidade: {{ quantidade }} resmas</li>
-                        {% endfor %}
-                    </ul>
-                </li>
-                {% endfor %}
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
-    {% endif %}
+
     <form method="post" action="{{ url_for('loginrec') }}">
         <div class="cabecalho">
-            <a href="{{ url_for('loginrec') }}" class="PaperCS">Paper
-                Controll System</a>
-            <a href="{{ url_for('fazer_login') }}" class="exitbutton">
-                <img src="../static/images/exitbutton.png" alt="Botão Pequeno">
-            </a>
-        </div>
+        <a href="{{ url_for('loginrec') }}" class="PaperCS">Paper Controll System</a>
+        <a href="{{ url_for('fazer_login') }}" class="exitbutton">
+            <img src="../static/images/exitbutton.png" alt="Botão Pequeno" class="exitbutton">
+        </a>
+    </div>
         <div class="content">
             <div class="button-container">
                 <a href="{{ url_for('abastecimento') }}" class="Semanal">Abastecimento</a>
@@ -62,42 +42,7 @@
 
     </form>
 
-    {% block scripts %}
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const ilhasNecessarias = JSON.parse('{{ ilhas_e_quantidades | tojson | safe }}');
-            const mensagemNotificacao = '{{ mensagem_notificacao | tojson | safe }}';
-    
-            if (Object.keys(ilhasNecessarias).length > 0) {
-                const popupContent = document.createElement('div');
-                popupContent.classList.add('popup-content');
-    
-                const popupMessage = document.createElement('p');
-                popupMessage.textContent = mensagemNotificacao;
-                popupContent.appendChild(popupMessage);
-    
-                const ul = document.createElement('ul');
-                for (const [predio, andares] of Object.entries(ilhasNecessarias)) {
-                    for (const [andar, ilhas_quantidades] of Object.entries(andares)) {
-                        const li = document.createElement('li');
-                        li.textContent = `Prédio: ${predio}, Andar: ${andar}`;
-                        const subUl = document.createElement('ul');
-                        for (const [ilha, quantidade] of ilhas_quantidades) {
-                            const subLi = document.createElement('li');
-                            subLi.textContent = `Ilha: ${ilha}, Quantidade: ${quantidade} resmas`;
-                            subUl.appendChild(subLi);
-                        }
-                        li.appendChild(subUl);
-                        ul.appendChild(li);
-                    }
-                }
-                popupContent.appendChild(ul);
-    
-                popupContent.appendChild(closeButton);
-                popup.appendChild(popupContent);
-                popup.style.display = 'block';
-            }
-        });
 
         document.addEventListener('DOMContentLoaded', function () {
             // Seleciona o elemento onde a quantidade de estoque será exibida
@@ -135,7 +80,6 @@
             });
         });
     </script>
-    {% endblock %}
 </body>
 
 </html>
