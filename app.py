@@ -351,33 +351,38 @@ def relatoriosadm():
             if tipo_reposicoes == 'Completo':
                 data = db.session.query(Reposicao, Usuario)
                 df = pd.DataFrame([{'ID da reposição': repo.id_reposicao, 'ID do usuário': user.id_user, 'Data da reposição': repo.data_reposicao,
-                            'Tipo de reposição': repo.tipo_reposicao, 'Quantidade de reposição': repo.quantidade_reposicao,
-                            'Andar': repo.andar, 'Ilha': repo.ilha, 'Prédio': repo.predio, 'Nome do repositor': repo.Nome} for repo, user in data])
+                    'Tipo de reposição': repo.tipo_reposicao, 'Quantidade de reposição': repo.quantidade_reposicao,
+                    'Andar': repo.andar, 'Ilha': repo.ilha, 'Prédio': repo.predio, 'Nome do repositor': repo.Nome} for repo, user in data])
                 filename = 'relatorio_reposicoes_completo.xlsx'
                 df.to_excel(filename, index=False)
                 return send_file(filename, as_attachment=True)
 
             elif tipo_reposicoes == 'Por Prédio':
                 predio = request.form.get('selectPredio')
+                if not predio:
+                    flash('Por favor, selecione um prédio.', 'error')
+                    return redirect(url_for('relatoriosadm'))
                 reposicoes_data = db.session.query(Reposicao, Usuario).join(
                     Usuario).filter(Reposicao.predio == predio).all()
                 df = pd.DataFrame([{'ID da reposição': repo.id_reposicao, 'ID do usuário': user.id_user, 'Data da reposição': repo.data_reposicao,
-                            'Tipo de reposição': repo.tipo_reposicao, 'Quantidade de reposição': repo.quantidade_reposicao,
-                            'Andar': repo.andar, 'Ilha': repo.ilha, 'Prédio': repo.predio, 'Nome do repositor': repo.Nome} for repo, user in reposicoes_data])
+                    'Tipo de reposição': repo.tipo_reposicao, 'Quantidade de reposição': repo.quantidade_reposicao,
+                    'Andar': repo.andar, 'Ilha': repo.ilha, 'Prédio': repo.predio, 'Nome do repositor': repo.Nome} for repo, user in reposicoes_data])
                 filename = f'relatorio_por_predio_{predio.lower()}.xlsx'
                 df.to_excel(filename, index=False)
                 return send_file(filename, as_attachment=True)
 
             elif tipo_reposicoes == 'Por Data':
                 data_param = request.form.get('data_reposicao')
+                if not data_param:
+                    flash('Por favor, selecione uma data.', 'error')
+                    return redirect(url_for('relatoriosadm'))
+
                 if ' to ' in data_param:
                     data_inicio, data_fim = data_param.split(' to ')
-                    
-                    # Verificação de datas futuras
                     if datetime.strptime(data_inicio, '%Y-%m-%d') > datetime.now() or datetime.strptime(data_fim, '%Y-%m-%d') > datetime.now():
-                        flash('Você não pode selecionar uma data futura para o relatório.')
+                        flash('Você não pode selecionar uma data futura para o relatório.', 'error')
                         return redirect(url_for('relatoriosadm'))
-                    
+            
                     data = db.session.query(Reposicao, Usuario).join(Usuario).filter(
                         Reposicao.data_reposicao.between(data_inicio, data_fim)).all()
                     df = pd.DataFrame([{'ID da reposição': repo.id_reposicao, 'ID do usuário': user.id_user, 'Data da reposição': repo.data_reposicao,
@@ -393,7 +398,7 @@ def relatoriosadm():
                     filename = f'relatorio_reposicoes_por_data_{data_param}.xlsx'
                 df.to_excel(filename, index=False)
                 return send_file(filename, as_attachment=True)
-            
+
             elif tipo_reposicoes == 'Por Tipo':
                 tipo = request.form.get('selectTipo')
                 reposicoes_data = db.session.query(Reposicao, Usuario).join(

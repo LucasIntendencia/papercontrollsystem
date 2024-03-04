@@ -190,3 +190,46 @@ button[type="submit"] {
     width: 30%;
     margin-left: 120px;
 }
+ 
+@media only screen and (min-width: 900px) {
+ 
+    button[type="submit"] {
+        margin-left: 400px;
+    }
+}
+ 
+@media only screen and (max-width: 360px) {
+ 
+    .formulario {
+        margin-top: 20px;
+        height: 470px;
+    }
+ 
+    button[type="submit"] {
+        margin-left: 100px;
+ 
+    }
+ 
+    #problema {
+        height: 140px;
+    }
+ 
+}
+ 
+@media only screen and (max-width: 390px) {
+ 
+    .formulario {
+        margin-top: 20px;
+        height: 470px;
+    }
+ 
+    button[type="submit"] {
+        margin-left: 100px;
+ 
+    }
+ 
+    #problema {
+        height: 140px;
+    }
+ 
+}

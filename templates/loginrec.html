@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +9,18 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/loginrec.css') }}">
     <link rel="icon" href="../static/images/zezinhobola.png">
 </head>
-
+ 
 <body>
-
+ 
+    <div id="exitPopup" class="exit-popup">
+        <div class="popup-content">
+            <p>Deseja mesmo sair?</p>
+            <div class="button-container">
+                <button id="simButton">Sim</button>
+                <button id="naoButton">Não</button>
+            </div>
+        </div>
+    </div>
     <form method="post" action="{{ url_for('loginrec') }}">
         <div class="cabecalho">
         <a href="{{ url_for('loginrec') }}" class="PaperCS">Paper Controll System</a>
@@ -25,7 +34,7 @@
                 <a href="{{ url_for('reabastecimento') }}" class="Reabastecimento">Solicitar Reabastecimento</a>
             </div>
         </div>
-
+ 
         <div class="estoque-container">
             <p>Seu estoque atual:</p>
             <p>
@@ -35,15 +44,16 @@
             </p>
             <p> resma(s)</p>
         </div>
-
-        <a href="{{ url_for('ajudaOZe') }}" class="zezinhobola">
-            <img src="../static/images/zezinhobola.png" alt="Zezinho">
-        </a>
-
+ 
+ 
     </form>
-
+ 
+    <a href="{{ url_for('ajudaOZe') }}" class="zezinhobola">
+        <img src="../static/images/zezinhobola.png" alt="Zezinho">
+    </a>
+ 
     <script>
-
+ 
         document.addEventListener('DOMContentLoaded', function () {
             // Seleciona o elemento onde a quantidade de estoque será exibida
             const quantidadeEstoqueElement = document.getElementById('quantidade-estoque');
@@ -65,21 +75,21 @@
             const exitPopup = document.getElementById('exitPopup');
             const simButton = document.getElementById('simButton');
             const naoButton = document.getElementById('naoButton');
-
+ 
             exitButton.addEventListener('click', function (event) {
                 event.preventDefault();
                 exitPopup.style.display = 'flex';
             });
-
+ 
             simButton.addEventListener('click', function () {
                 window.location.href = "{{ url_for('fazer_login') }}";
             });
-
+ 
             naoButton.addEventListener('click', function () {
                 exitPopup.style.display = 'none';
             });
         });
     </script>
 </body>
-
+ 
 </html>

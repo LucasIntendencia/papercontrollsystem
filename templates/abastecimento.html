@@ -84,6 +84,7 @@
             const ilhaDropdown = document.getElementById('ilha');
             const quantityInput = document.getElementById('quantidade_reposicao');
             const tipoReposicaoDropdown = document.getElementById('tipo_reposicao');
+            const nameInput = document.getElementById('nome_reposicao')
             quantityInput.disabled = true;
             function enableQuantityInput() {
                 const buildingSelected = buildingDropdown.value !== "";
@@ -101,8 +102,9 @@
                 const ilhaSelected = ilhaDropdown.value !== "";
                 const quantityFilled = quantityInput.value.trim() !== "";
                 const typeRepositor = tipoReposicaoDropdown.value !== "";
+                const name = nameInput.value !== "";
 
-                const dropdowns = [buildingDropdown, floorDropdown, ilhaDropdown, tipoReposicaoDropdown];
+                const dropdowns = [buildingDropdown, floorDropdown, ilhaDropdown, tipoReposicaoDropdown, name];
 
                 dropdowns.forEach(dropdown => {
                     if (dropdown.value === "") {
@@ -116,8 +118,13 @@
                 } else {
                     quantityInput.classList.remove('campo-faltando');
                 }
+                if (!name) {
+                    nameInput.classList.add('campo-faltando');
+                } else {
+                    nameInput.classList.remove('campo-faltando');
+                }
 
-                if (!buildingSelected || !floorSelected || !ilhaSelected || !quantityFilled || !tipoReposicaoDropdown) {
+                if (!buildingSelected || !floorSelected || !ilhaSelected || !quantityFilled || !tipoReposicaoDropdown || !name) {
                     event.preventDefault();
                     alert("Por favor, preencha todos os campos destacados em vermelho.");
                 }
@@ -203,11 +210,13 @@
                 const floorDropdown = document.getElementById('andar');
                 const ilhaDropdown = document.getElementById('ilha');
                 const quantityInput = document.getElementById('quantidade_reposicao');
+                const nameInput = document.getElementById('nome_reposicao');
 
                 const buildingSelected = buildingDropdown.value !== "";
                 const floorSelected = floorDropdown.value !== "";
                 const ilhaSelected = ilhaDropdown.value !== "";
                 const quantityFilled = quantityInput.value.trim() !== "";
+                const nomeInput = nameInput.value !== "";
 
                 if (buildingSelected && floorSelected && ilhaSelected && quantityFilled) {
                     fetch("{{ url_for('abastecimento') }}", {
