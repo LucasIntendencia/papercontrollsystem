@@ -4,7 +4,7 @@ from flask_migrate import Migrate
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
 from dotenv import load_dotenv
-import os
+from datetime import datetime
 
 from credencial import(
     SQLALCHEMY_DATABASE_URI
@@ -88,11 +88,21 @@ class Ajuda(db.Model):
         'usuarios.id_user'), nullable=False)
     email = db.Column(db.String(255), db.ForeignKey(
         'usuarios.email'), nullable=False)
+    
+class ConfirmacaoReabastecimento(db.Model):
+    __tablename__ = 'confirmacao_reabastecimento'
+    id_confirmacao = db.Column(db.Integer, primary_key=True)
+    id_reabastecimento = db.Column(db.Integer, db.ForeignKey('reabastecimento.id_reabastecimento'), nullable=False)
+    quantidade_confirmada = db.Column(db.Integer, nullable=False)
+    data_confirmacao = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+
+    def __repr__(self):
+        return f"<ConfirmacaoReabastecimento {self.id_confirmacao}>"
 
 
 def configure_database(app):
     # Pega a URI do banco de dados do arquivo .env
-    database_uri = os.getenv('SQLALCHEMY_DATABASE_URI')
+    database_uri = SQLALCHEMY_DATABASE_URI
     
     # Configura a URI do banco de dados e desativa o rastreamento de modificações
     app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI

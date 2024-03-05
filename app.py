@@ -1,7 +1,7 @@
 from dotenv import load_dotenv,dotenv_values
 from flask import Flask, render_template, request, redirect, session, url_for, jsonify, send_file, flash
 from flask_login import LoginManager, UserMixin, login_required, login_user, current_user
-from database import configure_database, db, Usuario, Reposicao, Reabastecimento, Ajuda
+from database import ConfirmacaoReabastecimento, configure_database, db, Usuario, Reposicao, Reabastecimento, Ajuda
 from sqlalchemy import Integer, func, text
 from decimal import Decimal
 from datetime import datetime, timedelta
@@ -166,7 +166,7 @@ def abastecimento():
 
                     # Reduz o estoque apenas se a reposição for pendente
                     novo_estoque = estoque - quantidade_reposicao
-                    if novo_estoque >= 0:  # Verifica se o estoque não ficará negativo
+                    if novo_estoque >= 0:
                         repositorio.estoque = novo_estoque
                     else:
                         mensagem = "Erro: Não é possível realizar a reposição, estoque insuficiente."
@@ -235,91 +235,111 @@ def enviar_email_ilhas_reabastecidas(numero_ilhas):
 @app.route('/Reabastecimento', methods=['GET', 'POST'])
 @login_required
 def reabastecimento():
-    try:
-        if request.method == 'POST':
-            # Capturar os dados do formulário
-            andar = request.form.get('andar')
-            predio = request.form.get('predio')
-            quantidade_reabastecimento = int(request.form.get(
-                'quantidade_reposicao', 0))
-            Nome = request.form.get('Nome')
+    if request.method == 'POST':
+        andar = request.form.get('andar')
+        predio = request.form.get('predio')
+        quantidade_reabastecimento = int(request.form.get('quantidade_reposicao', 0))
+        Nome = request.form.get('Nome')
 
-            # Obter o usuário logado usando a variável current_user do Flask-Login
-            usuario = Usuario.query.filter_by(id_user=current_user.id).first()
+        usuario = Usuario.query.filter_by(id_user=current_user.id).first()
 
-            if usuario and quantidade_reabastecimento > 0:
-                # Aumenta o estoque com a quantidade fornecida
-                usuario.estoque += quantidade_reabastecimento
-                db.session.commit()  # Salva a atualização do estoque
+        if usuario and quantidade_reabastecimento > 0:
 
-                nova_reposicao = Reabastecimento(
-                    id_user=usuario.id_user,
-                    quantidade_reabastecimento=quantidade_reabastecimento,
-                    andar=andar,
-                    predio=predio,
-                    Nome=Nome
-                )
+            nova_reposicao = Reabastecimento(
+                id_user=usuario.id_user,
+                quantidade_reabastecimento=quantidade_reabastecimento,
+                andar=andar,
+                predio=predio,
+                Nome=Nome
+            )
+            print("entendi o que voce quer")
+            db.session.add(nova_reposicao)
+            db.session.commit()
+            print("foi pro banco de dados")
 
-                db.session.add(nova_reposicao)
-                db.session.commit()
-
-                enviar_email_ilhas_solicitante(andar, predio, Nome, nova_reposicao.id_reabastecimento)
-                print('Reabastecimento solicitado com sucesso.')
+            mensagem = f'Olá, sou {Nome}\nSolicito reabastecimento no seguinte local:\n{andar} e {predio}\nAtenciosamente,{Nome}'
+            print(mensagem)
+            enviado = enviar_email_reposicao(mensagem, nova_reposicao.id_reabastecimento)
+            if enviado:
+                flash('Reabastecimento solicitado com sucesso. E-mail enviado aos administradores.', 'success')
+            else:
+                flash('Erro ao enviar e-mail aos administradores.', 'error')
 
             return redirect(url_for('reabastecimento'))
 
-        # Restante da função (GET request)
-        if current_user.is_authenticated:
-            usuario = Usuario.query.filter_by(id_user=current_user.id).first()
-            quantidade_estoque = usuario.estoque if usuario else 0
-
-            dados_reabastecimento = Reabastecimento.query.all()
-
-            logging.info('Página de reabastecimento carregada com sucesso.')
-
-            return render_template('reabastecimento.html', dados_reabastecimento=dados_reabastecimento, quantidade_estoque=quantidade_estoque)
-
-    except Exception as e:
-        logging.error(f"Erro ao processar requisição: {str(e)}")
-
     return render_template('reabastecimento.html', dados_reabastecimento=[], quantidade_estoque=0, error_message="Erro ao buscar dados de reabastecimento")
 
-def enviar_email_ilhas_solicitante(andar, predio, Nome, id_reabastecimento):
+def enviar_email_reposicao(mensagem, id_reabastecimento):
     try:
+        reabastecimento = Reabastecimento.query.order_by(Reabastecimento.id_reabastecimento.desc()).first()
+        logger = logging.getLogger(__name__)
+
         # Configuração do e-mail
-        msg = EmailMessage()
-        msg['From'] = MAIL_DEFAULT_SENDER
-        msg['To'] = MAIL_SENDER
-        msg['Subject'] = 'Reposicao de resmas nas recepções'
-        content = f"""
-        Olá, sou {Nome}
-        Solicito reabastecimento no seguinte local:
-        {andar} e {predio}
-        ID de reabastecimento para controle: {id_reabastecimento}
-        Atenciosamente,
-        {Nome}
-        """
-        smtp_server = MAIL_SERVER
-        smtp_port = MAIL_PORT
-        smtp_user = MAIL_USERNAME
-        smtp_password = MAIL_PASSWORD
+        from_addr = MAIL_DEFAULT_SENDER
+        to_addr = MAIL_ME
+        subject = 'Reabastecimento de Recepções'
 
-        with smtplib.SMTP(smtp_server, smtp_port) as smtp:
-            smtp.starttls()
-            smtp.login(smtp_user, smtp_password)
+        link_aprovacao = f'127.0.0.1:5000/ConfirmarReabastecimento/{id_reabastecimento}'
+        mensagem += f'\n\nPara aprovar ou rejeitar esta solicitação, acesse: {link_aprovacao}'
+        body = mensagem
 
-            print(f'E-mail para {msg["To"]} enviado com sucesso!')
-            return 'E-mail enviado com sucesso!'
+        # Formato do e-mail
+        email_text = """\
+From: %s
+To: %s
+Subject: %s
 
-    except smtplib.SMTPException as e:
-        print(f'Erro SMTP ao enviar e-mail: {str(e)}')
-        logging.error(f'Erro SMTP ao enviar e-mail: {str(e)}', exc_info=True)
-        return f'Erro SMTP ao enviar e-mail: {str(e)}'
+%s
+""" % (from_addr, to_addr, subject, body)
+
+        # Conexão SMTP e envio de e-mail
+        server = smtplib.SMTP(MAIL_SERVER, MAIL_PORT)
+        server.starttls()
+        server.login(MAIL_USERNAME, MAIL_PASSWORD)
+        server.sendmail(from_addr, to_addr, email_text)
+        server.quit()
+
+        logger.info(
+            f'E-mail para {to_addr} enviado com sucesso sobre o Reabastecimento de ID {reabastecimento.id_reabastecimento}')
+
+        return 'Email enviado com sucesso'
 
     except Exception as e:
-        print(f'Erro ao enviar e-mail: {str(e)}')
-        logging.error(f'Erro ao enviar e-mail: {str(e)}', exc_info=True)
-        return f'Erro ao enviar e-mail: {str(e)}'
+        print(f"Erro ao enviar e-mail: {str(e)}")
+        return False
+
+
+@app.route('/ConfirmarReabastecimento/<int:id_reabastecimento>', methods=['POST'])
+@login_required
+def confirmar_reabastecimento(id_reabastecimento):
+    try:
+        if not current_user.is_admin:
+            return redirect(url_for('index'))  # Redirecionar para a página inicial se não for um administrador
+
+        # Verifique se o formulário foi enviado
+        if request.method == 'POST':
+            # Marque a confirmação como concluída
+            confirmacao = ConfirmacaoReabastecimento(
+                id_reabastecimento=id_reabastecimento,
+                id_administrador=current_user.id,
+                quantidade_reabastecimento=request.form['quantidade']
+            )
+            db.session.add(confirmacao)
+            db.session.commit()
+
+            # Atualize o estoque do repositor
+            repositor = Usuario.query.get(confirmacao.id_reabastecimento)
+            repositor.estoque += confirmacao.quantidade_reabastecimento
+            db.session.commit()
+
+            flash('Confirmação de reabastecimento concluída com sucesso.', 'success')
+            return redirect(url_for('admin_dashboard'))  # Redirecionar para o painel do administrador
+
+    except Exception as e:
+        logging.error(f"Erro ao processar a confirmação de reabastecimento: {str(e)}")
+        flash('Ocorreu um erro ao processar a confirmação de reabastecimento.', 'error')
+
+    return redirect(url_for('admin_dashboard'))
 
 
 @app.route('/RelatoriosAdm', methods=['GET', 'POST'])
