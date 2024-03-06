@@ -1,66 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
- 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page - PaperControlSystem</title>
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/loginrec.css') }}">
-    <link rel="icon" href="../static/images/zezinhobola.png">
-</head>
- 
-<body>
- 
-    <div id="exitPopup" class="exit-popup">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home Page - PaperControlSystem</title>
+        <link href='https://fonts.googleapis.com/css?family=Poppins'
+            rel='stylesheet'>
+        <link rel="stylesheet"
+            href="{{ url_for('static', filename='styles/loginrec.css') }}">
+        <link rel="icon" href="../static/images/zezinhobola.png">
+    </head>
+
+    <body>
+        {% if ilhas_reposicao %}
         <div class="popup-content">
-            <p>Deseja mesmo sair?</p>
-            <div class="button-container">
-                <button id="simButton">Sim</button>
-                <button id="naoButton">Não</button>
-            </div>
+            <p>As seguintes ilhas precisam de reposição:</p>
+            <ul>
+                {% for ilha in ilhas_reposicao %}
+                <li>{{ ilha['ilha'] }}: {{ ilha['quantidade'] }} resmas</li>
+                {% endfor %}
+            </ul>
         </div>
-    </div>
-    <form method="post" action="{{ url_for('loginrec') }}">
+        {% endif %}
+
         <div class="cabecalho">
-        <a href="{{ url_for('loginrec') }}" class="PaperCS">Paper Controll System</a>
-        <a href="{{ url_for('fazer_login') }}" class="exitbutton">
-            <img src="../static/images/exitbutton.png" alt="Botão Pequeno" class="exitbutton">
-        </a>
-    </div>
-        <div class="content">
-            <div class="button-container">
-                <a href="{{ url_for('abastecimento') }}" class="Semanal">Abastecimento</a>
-                <a href="{{ url_for('reabastecimento') }}" class="Reabastecimento">Solicitar Reabastecimento</a>
+            <a href="{{ url_for('loginrec') }}" class="PaperCS">Paper Controll
+                System</a>
+            <a href="{{ url_for('fazer_login') }}" class="exitbutton">
+                <img src="../static/images/exitbutton.png" alt="Botão Pequeno"
+                    class="exitbutton">
+            </a>
+        </div>
+
+        <div id="exitPopup" class="exit-popup">
+            <div class="popup-content">
+                <p>Deseja mesmo sair?</p>
+                <div class="button-container">
+                    <button id="simButton">Sim</button>
+                    <button id="naoButton">Não</button>
+                </div>
             </div>
         </div>
- 
-        <div class="estoque-container">
-            <p>Seu estoque atual:</p>
-            <p>
-                <span class="numero-estoque" id="quantidade-estoque" data-quantidade-estoque="{{ quantidade_estoque }}">
-                    {{ quantidade_estoque }}
-                </span>        
-            </p>
-            <p> resma(s)</p>
-        </div>
- 
- 
-    </form>
- 
-    <a href="{{ url_for('ajudaOZe') }}" class="zezinhobola">
-        <img src="../static/images/zezinhobola.png" alt="Zezinho">
-    </a>
- 
-    <script>
- 
+
+        <form method="post" action="{{ url_for('loginrec') }}">
+            <div class="content">
+                <div class="button-container">
+                    <a href="{{ url_for('abastecimento') }}"
+                        class="Semanal">Abastecimento</a>
+                    <a href="{{ url_for('reabastecimento') }}"
+                        class="Reabastecimento">Solicitar Reabastecimento</a>
+                </div>
+            </div>
+
+            <div class="estoque-container">
+                <p>Seu estoque atual:</p>
+                <p>
+                    <span class="numero-estoque" id="quantidade-estoque"
+                        data-quantidade-estoque="{{ quantidade_estoque }}">
+                        {{ quantidade_estoque }}
+                    </span>
+                </p>
+                <p> resma(s)</p>
+            </div>
+        </form>
+
+        <a href="{{ url_for('ajudaOZe') }}" class="zezinhobola">
+            <img src="../static/images/zezinhobola.png" alt="Zezinho">
+        </a>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const exitPopup = document.getElementById('exitPopup');
+            const simButton = document.getElementById('simButton');
+            const naoButton = document.getElementById('naoButton');
+
+            simButton.addEventListener('click', function () {
+                window.location.href = "{{ url_for('fazer_login') }}";
+            });
+
+            naoButton.addEventListener('click', function () {
+                exitPopup.style.display = 'none';
+            });
+        });
+    </script>
+
+        <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Seleciona o elemento onde a quantidade de estoque será exibida
             const quantidadeEstoqueElement = document.getElementById('quantidade-estoque');
-           
+
             // Pega a quantidade de estoque do elemento HTML gerado pelo Flask
             const quantidadeEstoque = parseInt(quantidadeEstoqueElement.dataset.quantidadeEstoque);
-   
+
             // Verifica se a quantidade de estoque é um número válido
             if (!isNaN(quantidadeEstoque)) {
                 // Se for válido, exibe a quantidade de estoque no elemento HTML
@@ -70,26 +102,7 @@
                 quantidadeEstoqueElement.textContent = 'Quantidade de estoque não disponível';
             }
         });
-        document.addEventListener('DOMContentLoaded', function () {
-            const exitButton = document.querySelector('.exitbutton');
-            const exitPopup = document.getElementById('exitPopup');
-            const simButton = document.getElementById('simButton');
-            const naoButton = document.getElementById('naoButton');
- 
-            exitButton.addEventListener('click', function (event) {
-                event.preventDefault();
-                exitPopup.style.display = 'flex';
-            });
- 
-            simButton.addEventListener('click', function () {
-                window.location.href = "{{ url_for('fazer_login') }}";
-            });
- 
-            naoButton.addEventListener('click', function () {
-                exitPopup.style.display = 'none';
-            });
-        });
     </script>
-</body>
- 
+    </body>
+
 </html>

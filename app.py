@@ -1,7 +1,7 @@
 from dotenv import load_dotenv,dotenv_values
-from flask import Flask, render_template, request, redirect, session, url_for, jsonify, send_file, flash
+from flask import Flask, make_response, render_template, request, redirect, session, url_for, jsonify, send_file, flash
 from flask_login import LoginManager, UserMixin, login_required, login_user, current_user
-from database import ConfirmacaoReabastecimento, configure_database, db, Usuario, Reposicao, Reabastecimento, Ajuda
+from database import ConfirmacaoReabastecimento, ReposicaoEstoque, configure_database, db, Usuario, Reposicao, Reabastecimento, Ajuda
 from sqlalchemy import Integer, func, text
 from decimal import Decimal
 from datetime import datetime, timedelta
@@ -109,8 +109,33 @@ def loginrec():
         flash('Acesso não autorizado.', 'error')
         return redirect(url_for('fazer_login'))
 
+    # Verificar se o cookie indicando a exibição do popup está presente
+    show_popup = request.cookies.get('showPopup', 'false') == 'true'
     quantidade_estoque = Usuario.query.filter_by(id_user=current_user.id, tipo_user="repositor").first().estoque
-    return render_template('loginrec.html', quantidade_estoque=quantidade_estoque)
+
+    if show_popup:
+        # Limpar o cookie para que o popup não apareça novamente
+        response = make_response(render_template('loginrec.html', showPopup=show_popup, quantidade_estoque=quantidade_estoque))
+        response.set_cookie('showPopup', 'false', expires=0)
+        return response
+
+    # Lógica para determinar se o popup deve ser exibido
+    usuario = Usuario.query.get(current_user.id)
+    reposicoes = ReposicaoEstoque.query.filter_by(predio=usuario.predio_user, andar=usuario.andar_user).all()
+    ilhas_reposicao = []
+    for reposicao in reposicoes:
+        if reposicao.reposicao_semanal is not None and reposicao.reposicao_semanal > 0:
+            ilhas_reposicao.append({
+                'ilha': reposicao.ilha,
+                'quantidade': reposicao.reposicao_semanal
+            })
+        elif reposicao.reposicao_pontual is not None and reposicao.reposicao_pontual > 0:
+            ilhas_reposicao.append({
+                'ilha': reposicao.ilha,
+                'quantidade': reposicao.reposicao_pontual
+            })
+    # Renderizar a página sem o popup e exibir as informações relevantes de reposição
+    return render_template('loginrec.html', showPopup=show_popup, quantidade_estoque=quantidade_estoque, ilhas_reposicao=ilhas_reposicao)
 
 
 @app.route('/AdmHome', methods=['GET', 'POST'])
@@ -119,6 +144,7 @@ def loginadm():
     print("Rota Adm's acionada.")
     usuario = Usuario.query.filter_by(
         id_user=current_user.id, tipo_user="administrador").first()
+
     return render_template('loginadm.html')
 
 
@@ -275,32 +301,28 @@ def enviar_email_reposicao(mensagem, id_reabastecimento):
         logger = logging.getLogger(__name__)
 
         # Configuração do e-mail
-        from_addr = MAIL_DEFAULT_SENDER
-        to_addr = MAIL_ME
-        subject = 'Reabastecimento de Recepções'
+        msg = EmailMessage()
+        msg['From'] = MAIL_DEFAULT_SENDER
+        msg['To'] = MAIL_ME
+        msg['Subject'] = 'Reabastecimento de Recepções'
+        msg.set_content(mensagem)
 
         link_aprovacao = f'127.0.0.1:5000/ConfirmarReabastecimento/{id_reabastecimento}'
         mensagem += f'\n\nPara aprovar ou rejeitar esta solicitação, acesse: {link_aprovacao}'
-        body = mensagem
 
-        # Formato do e-mail
-        email_text = """\
-From: %s
-To: %s
-Subject: %s
+        smtp_server = MAIL_SERVER
+        smtp_port = MAIL_PORT
+        smtp_user = MAIL_USERNAME
+        smtp_password = MAIL_PASSWORD
 
-%s
-""" % (from_addr, to_addr, subject, body)
+        with smtplib.SMTP(smtp_server, smtp_port) as smtp:
+            smtp.starttls()
+            smtp.login(smtp_user, smtp_password)
+            logger.info(
+                f'Enviando e-mail para {msg["To"]} sobre o Reabastecimento de ID {reabastecimento.id_reabasteciemnto}')
 
-        # Conexão SMTP e envio de e-mail
-        server = smtplib.SMTP(MAIL_SERVER, MAIL_PORT)
-        server.starttls()
-        server.login(MAIL_USERNAME, MAIL_PASSWORD)
-        server.sendmail(from_addr, to_addr, email_text)
-        server.quit()
-
-        logger.info(
-            f'E-mail para {to_addr} enviado com sucesso sobre o Reabastecimento de ID {reabastecimento.id_reabastecimento}')
+            smtp.send_message(msg)
+            logger.info(f'E-mail para {msg["To"]} enviado com sucesso!')
 
         return 'Email enviado com sucesso'
 
@@ -318,11 +340,18 @@ def confirmar_reabastecimento(id_reabastecimento):
 
         # Verifique se o formulário foi enviado
         if request.method == 'POST':
+            # Obtenha o usuário administrador atual
+            administrador = Usuario.query.filter_by(id_user=current_user.id).first()
+
+            # Obtenha a quantidade de resmas especificada pelo administrador
+            quantidade = int(request.form['quantidade'])
+
             # Marque a confirmação como concluída
             confirmacao = ConfirmacaoReabastecimento(
                 id_reabastecimento=id_reabastecimento,
-                id_administrador=current_user.id,
-                quantidade_reabastecimento=request.form['quantidade']
+                id_administrador=administrador.id,
+                quantidade_reabastecimento=quantidade,
+                data_confirmação=datetime.now()
             )
             db.session.add(confirmacao)
             db.session.commit()
@@ -332,14 +361,19 @@ def confirmar_reabastecimento(id_reabastecimento):
             repositor.estoque += confirmacao.quantidade_reabastecimento
             db.session.commit()
 
+            # Remova a quantidade de reabastecimento solicitada
+            reposicao = Reabastecimento.query.get(id_reabastecimento)
+            reposicao.quantidade_reabastecimento = 0
+            db.session.commit()
+
             flash('Confirmação de reabastecimento concluída com sucesso.', 'success')
-            return redirect(url_for('admin_dashboard'))  # Redirecionar para o painel do administrador
+            return redirect(url_for('confirmar_reabastecimento'))  # Redirecionar para o painel do administrador
 
     except Exception as e:
         logging.error(f"Erro ao processar a confirmação de reabastecimento: {str(e)}")
         flash('Ocorreu um erro ao processar a confirmação de reabastecimento.', 'error')
 
-    return redirect(url_for('admin_dashboard'))
+    return redirect(url_for('confirmar_reabastecimento'))
 
 
 @app.route('/RelatoriosAdm', methods=['GET', 'POST'])
@@ -674,71 +708,48 @@ def enviarPopup():
         
         if file and allowed_file(file.filename):
             df = pd.read_excel(file)
-            ilhas_por_andar = defaultdict(dict)
-            
-            # Percorra as linhas do DataFrame para agrupar as ilhas por andar
-            for index, row in df.iterrows():
-                predio = row['PRÉDIO']
-                andar = row['ANDAR']
-                ilha = row['ILHA']
-                reposicao = row['REPOSIÇÃO'] 
-                pontual = row['PONTUAL']
-                
-                # Agrupe as ilhas por andar e predio
-                if andar in ilhas_por_andar[predio]:
-                    ilhas_por_andar[predio][andar].append({ilha: reposicao, 'PONTUAL': pontual})
-                else:
-                    ilhas_por_andar[predio][andar] = [{ilha: reposicao, 'PONTUAL': pontual}]
-            
-            # Envie e-mails para todos os andares contendo as ilhas e a quantidade de reposição necessária
-            if tipo_reposicao == 'semanal':
-                for predio, andares in ilhas_por_andar.items():
-                    for andar, ilhas_reposicao in andares.items():
-                        mensagem = f'Você precisa fazer o reabastecimento semanal! Prédio: {predio}, andar {andar}\n\n'
-                        for ilha_reposicao in ilhas_reposicao:
-                            for ilha, reposicao in ilha_reposicao.items():
-                                if ilha != 'PONTUAL':
-                                    mensagem += f"Ilha: {ilha}, Quantidade de resma(as): {reposicao}\n"
-                        
-                        # Consulte os usuários com base no predio e andar
-                        usuarios = Usuario.query.filter_by(predio_user=predio, andar_user=andar).all()
-                        if usuarios:
-                            # Envie o email apenas se houver usuários no andar e predio
-                            enviado = enviar_email_reposicao(usuarios, mensagem)
-                            if enviado:
-                                print(f'E-mail enviado para o andar {andar} do prédio {predio}')
-                            else:
-                                print(f'Falha ao enviar e-mail para o andar {andar} do prédio {predio}')
-                
-                # Passa as ilhas e quantidades para a rota /RepositorHome
-                mensagem_notificacao = 'E-mails de reposição enviados com sucesso.'
-                return redirect(url_for('loginadm', mensagem_notificacao=mensagem_notificacao))
-            
-            elif tipo_reposicao == 'pontual':
-                for predio, andares in ilhas_por_andar.items():
-                    for andar, ilhas_reposicao in andares.items():
-                        # Verificar se há reposição pontual para este andar
-                        if any(ilha['PONTUAL'] for ilha in ilhas_reposicao):
-                            # Construa a mensagem de e-mail
-                            mensagem = f'Você precisa reabastecer algumas ilhas pontualmente. Prédio: {predio}, andar {andar} :\n\n'
-                            for ilha_reposicao in ilhas_reposicao:
-                                for ilha, reposicao in ilha_reposicao.items():
-                                    if ilha != 'PONTUAL':  # Ignorar a ilha 'PONTUAL' na construção da mensagem
-                                        mensagem += f"Ilha: {ilha}, Quantidade de resma(as): {ilha_reposicao['PONTUAL']}\n"
-                
-                            # Consulte os usuários com base no predio e andar
-                            usuarios = Usuario.query.filter_by(predio_user=predio, andar_user=andar).all()
-                            if usuarios:
-                                # Envie o email apenas se houver usuários no andar e predio
-                                enviado = enviar_email_reposicao(usuarios, mensagem)
-                                if enviado:
-                                    print(f'E-mail enviado para o andar {andar} do prédio {predio}')
-                                else:
-                                    print(f'Falha ao enviar e-mail para o andar {andar} do prédio {predio}')
+            data_for_popup = []
 
+            if tipo_reposicao == 'semanal':
+                for index, row in df.iterrows():
+                    predio = row['PRÉDIO']
+                    andar = row['ANDAR']
+                    ilha = row['ILHA']
+                    reposicao = row['REPOSIÇÃO']
+                    
+                    data_for_popup.append({'predio': predio, 'andar': andar, 'ilha': ilha, 'quantidade': reposicao})
+            elif tipo_reposicao == 'pontual':
+                for index, row in df.iterrows():
+                    predio = row['PRÉDIO']
+                    andar = row['ANDAR']
+                    ilha = row['ILHA']
+                    pontual = row['PONTUAL']
+                    
+                    data_for_popup.append({'predio': predio, 'andar': andar, 'ilha': ilha, 'quantidade': pontual})
             else:
-                flash('Envio de e-mail não necessário para a reposição pontual.', 'info')
-                return redirect(url_for('loginadm'))
+                flash('Tipo de reposição inválido.', 'error')
+                return redirect(request.url)
+            
+            # Salvando os dados no banco de dados (se necessário)
+            for data in data_for_popup:
+                if tipo_reposicao == 'semanal':
+                    quantidade = data['quantidade']
+                    reposicao_entry = ReposicaoEstoque(predio=data['predio'], andar=data['andar'], ilha=data['ilha'], reposicao_semanal=quantidade)
+                elif tipo_reposicao == 'pontual':
+                    quantidade = data['quantidade']
+                    reposicao_entry = ReposicaoEstoque(predio=data['predio'], andar=data['andar'], ilha=data['ilha'], reposicao_pontual=quantidade)
+                else:
+                    flash('Tipo de reposição inválido.', 'error')
+                    return redirect(request.url)
+                db.session.add(reposicao_entry)
+            db.session.commit()
+
+            # Definir um cookie indicando que o popup deve ser exibido novamente
+            response = make_response(redirect(url_for('enviarPopup')))
+            response.set_cookie('showPopup', 'true')
+            
+            flash('Planilha processada e dados salvos com sucesso.', 'success')
+            return response
         
         else:
             flash('Tipo de arquivo não permitido.', 'error')
@@ -746,31 +757,6 @@ def enviarPopup():
 
     return render_template('enviarNotificacao.html')
 
-
-def enviar_email_reposicao(usuarios, mensagem):
-    try:
-        # Configuração do e-mail
-        msg = EmailMessage()
-        msg['From'] = MAIL_DEFAULT_SENDER
-        msg['To'] = ", ".join([usuario.email for usuario in usuarios])
-        msg['Subject'] = 'Reposição em Ilhas'
-        msg.set_content(mensagem)
-
-        smtp_server = MAIL_SERVER
-        smtp_port = MAIL_PORT
-        smtp_user = MAIL_USERNAME
-        smtp_password = MAIL_PASSWORD
-
-        with smtplib.SMTP(smtp_server, smtp_port) as smtp:
-            smtp.starttls()
-            smtp.login(smtp_user, smtp_password)
-            smtp.send_message(msg)
-
-        return True
-
-    except Exception as e:
-        print(f"Erro ao enviar e-mail: {str(e)}")
-        return False
 
 @app.route('/LUCASTRINASCIMENTO')
 def verificar_conexao():

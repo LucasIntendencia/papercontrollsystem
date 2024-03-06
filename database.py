@@ -3,8 +3,9 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
-from dotenv import load_dotenv
 from datetime import datetime
+from sqlalchemy.ext.declarative import declarative_base
+
 
 from credencial import(
     SQLALCHEMY_DATABASE_URI
@@ -47,7 +48,6 @@ class Usuario(db.Model, UserMixin):
     def is_anonymous(self):
         return False
 
-
 class Reposicao(db.Model):
     __tablename__ = 'reposicao'
     id_reposicao = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -60,7 +60,6 @@ class Reposicao(db.Model):
     ilha = db.Column(db.String(50), nullable=False)
     predio = db.Column(db.String(50), nullable=False)
     Nome = db.Column(db.String(100), nullable=False)
-
 
 class Reabastecimento(db.Model):
     __tablename__ = 'reabastecimento'
@@ -76,7 +75,6 @@ class Reabastecimento(db.Model):
 
     def __repr__(self):
         return f"<Reabastecimento {self.id_reabastecimento}>"
-
 
 class Ajuda(db.Model):
     __tablename__ = 'ajuda'
@@ -99,6 +97,15 @@ class ConfirmacaoReabastecimento(db.Model):
     def __repr__(self):
         return f"<ConfirmacaoReabastecimento {self.id_confirmacao}>"
 
+class ReposicaoEstoque(db.Model):
+    __tablename__ = 'reposicaoestoque'
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    predio = db.Column(db.String(100))
+    andar = db.Column(db.Integer)
+    ilha = db.Column(db.String(100))
+    reposicao_semanal = db.Column(db.Integer)
+    reposicao_pontual = db.Column(db.Integer)
 
 def configure_database(app):
     # Pega a URI do banco de dados do arquivo .env
