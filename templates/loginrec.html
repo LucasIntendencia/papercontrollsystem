@@ -21,6 +21,7 @@
                 <li>{{ ilha['ilha'] }}: {{ ilha['quantidade'] }} resmas</li>
                 {% endfor %}
             </ul>
+            <button id="fecharPopup">Fechar</button>
         </div>
         {% endif %}
 
@@ -102,6 +103,21 @@
                 quantidadeEstoqueElement.textContent = 'Quantidade de estoque não disponível';
             }
         });
+        document.addEventListener('DOMContentLoaded', function () {
+    const fecharPopupBtn = document.getElementById('fecharPopup');
+    const popupContent = document.querySelector('.popup-content'); // Corrigido aqui
+
+    // Verifica se o botão fechar está presente antes de adicionar o evento de clique
+    if (fecharPopupBtn) {
+        fecharPopupBtn.addEventListener('click', function () {
+            // Esconde o popup
+            popupContent.style.display = 'none';
+            // Define um cookie para rastrear que o popup foi fechado
+            document.cookie = 'showPopup=false; expires=Fri, 31 Dec 9999 23:59:59 GMT';
+        });
+    }
+});
+
     </script>
     </body>
 

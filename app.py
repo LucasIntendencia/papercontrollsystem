@@ -1,7 +1,7 @@
 from dotenv import load_dotenv,dotenv_values
 from flask import Flask, make_response, render_template, request, redirect, session, url_for, jsonify, send_file, flash
 from flask_login import LoginManager, UserMixin, login_required, login_user, current_user
-from database import ConfirmacaoReabastecimento, ReposicaoEstoque, configure_database, db, Usuario, Reposicao, Reabastecimento, Ajuda
+from database import Variavel, ConfirmacaoReabastecimento, ReposicaoEstoque, configure_database, db, Usuario, Reposicao, Reabastecimento, Ajuda
 from sqlalchemy import Integer, func, text
 from decimal import Decimal
 from datetime import datetime, timedelta
@@ -568,14 +568,17 @@ def quantidadeadm():
                 # Inicializar uma lista para armazenar os resultados
                 resultado_lista = []
 
+                total_value = None
+
                 # Iterar sobre cada linha do DataFrame do Excel
-                for _, row in df.iterrows():
+                for index, row in df.iterrows():
                     predio = row['PRÉDIO']
                     ilha = str(row['LOCALIZAÇÃO'])
                     reposicao_value = row['REPOSIÇÃO']
+                    
                     if pd.notna(ilha):
                         try:
-                        # Verificar se 'LOCALIZAÇÃO' não está vazio e contém caracteres numéricos
+                            # Verificar se 'LOCALIZAÇÃO' não está vazio e contém caracteres numéricos
                             if any(char.isdigit() for char in ilha):
                                 ilha_numero = int(''.join(filter(str.isdigit, ilha)))
                             else:
@@ -587,6 +590,7 @@ def quantidadeadm():
                     else:
                         logging.warning("Valor nulo em 'LOCALIZAÇÃO'")
                         continue
+                    
                     if reposicao_value:
                         try:
                             reposicao_necessaria = int(reposicao_value)
@@ -620,9 +624,18 @@ def quantidadeadm():
                             logging.warning(
                                 f"Valor inválido em 'quantidade': {quantidade_value}")
                             continue
-                    else:
-                        logging.warning(
-                            f"Valor nulo ou inválido em 'quantidade'")
+                    elif quantidade_value == 'TOTAL':
+                        # Se for a linha do valor "TOTAL", pegue o valor ao lado
+                        try:
+                            total_index = df.columns.get_loc('QUANTIDADE') + 1
+                            total_value = row.iloc[total_index]
+                            if pd.notna(total_value):
+                                total_value = int(total_value)
+                                print("Total value found adjacent to 'TOTAL':", total_value)
+                        except Exception as e:
+                            logging.warning(
+                                f"Erro ao encontrar o valor ao lado de 'TOTAL': {e}"
+                            )
                         continue
 
                     ilha_numero = int(''.join(filter(str.isdigit, ilha)))
@@ -636,10 +649,6 @@ def quantidadeadm():
 
                     quantidade_reabastecida = Decimal(soma_reposicoes) if soma_reposicoes else Decimal(0)
 
-                    print(f'Reposição encontrada: {quantidade_reabastecida}')
-
-                    print(f'Quantidade encontrada: {quantidade_value}')
-                    print(f'Reposição encontrada: {quantidade_reabastecida}')
                     # Calcular a quantidade restante
                     quantidade_restante = (
                         quantidade_reabastecida * Decimal(500)) - Decimal(quantidade_impressa)
@@ -651,7 +660,6 @@ def quantidadeadm():
                         if abs(quantidade_restante) % Decimal(500) != 0:
                             reposicao_necessaria += 1
 
-                    # Adicionar o valor 'pontual' como vazio
                     resultado_lista.append({
                         'PRÉDIO': predio,
                         'ANDAR': andar_int,
@@ -660,13 +668,19 @@ def quantidadeadm():
                         'REABASTECIMENTO': quantidade_reabastecida,
                         'RESTANTE': quantidade_restante,
                         'REPOSIÇÃO': reposicao_necessaria,
-                        'PONTUAL': ''  # Adicionando a coluna 'pontual' com valor vazio
+                        'PONTUAL': ''
                     })
+
+                # Se o valor total foi encontrado, salve-o no banco de dados
+                if total_value is not None:
+                    nova_variavel = Variavel(total=total_value)
+                    db.session.add(nova_variavel)
+                    db.session.commit()
+                    print("Variavel saved successfully.")
 
                 resultado_df = pd.DataFrame(resultado_lista)
                 relatorio_xlsx = f'tmp_relatorio_{datetime.now().strftime("%Y%m%d%H%M%S")}.xlsx'
 
-                # Reordenando as colunas para incluir 'pontual' como a última
                 colunas = ['PRÉDIO', 'ANDAR', 'ILHA', 'IMPRESSA NA SEMANA', 'REABASTECIMENTO', 'RESTANTE', 'REPOSIÇÃO', 'PONTUAL']
                 resultado_df = resultado_df[colunas]
 
@@ -680,6 +694,7 @@ def quantidadeadm():
         logging.error(f"Erro no servidor: {e}", exc_info=True)
 
     return render_template('quantidadeadm.html')
+
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in {'xlsx', 'xls'}

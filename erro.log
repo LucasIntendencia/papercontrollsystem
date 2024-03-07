@@ -5016,3 +5016,1202 @@ INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:27:57] "[36mGET /AdmHome?__debugger
 INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:27:57] "[36mGET /AdmHome?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
 INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
 INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:28:07] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:28:07] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:28:07] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:28:07] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:28:07] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:28:09] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:28:09] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:28:09] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:28:09] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:28:09] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:28:20] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:28:20] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:28:20] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:28:20] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:32:54] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:32:55] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:32:55] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:32:55] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:32:56] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:32:56] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:32:56] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:32:56] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:32:56] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:32:56] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:33:19] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:33:20] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:33:20] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:33:20] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:34:03] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:34:03] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:34:03] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:34:03] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:34:03] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:54:42] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:54:42] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:54:42] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:54:43] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:54:43] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:54:44] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:54:44] "[36mGET /static/styles/enviarNotificacao.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:54:44] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:54:44] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:55:32] "[32mPOST /enviarPopup HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:55:32] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:55:32] "[36mGET /static/styles/enviarNotificacao.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:55:32] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:55:32] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:55:43] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:55:43] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:55:43] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:55:43] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:55:43] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 10:55:43] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:03:15] "[32mPOST /enviarPopup HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:03:15] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:03:15] "[36mGET /static/styles/enviarNotificacao.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:03:15] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:03:15] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:12:50] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:12:50] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:12:50] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:12:50] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:12:50] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:12:50] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:27:50] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:27:50] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:27:50] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:27:50] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:33:21] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:33:21] "[36mGET /static/styles/enviarNotificacao.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:33:21] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:33:21] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:33:25] "[32mPOST /enviarPopup HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:33:25] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:33:25] "[36mGET /static/styles/enviarNotificacao.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:33:25] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:33:28] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:33:28] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:33:28] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:33:28] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:33:28] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:33:28] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:59:31] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:59:31] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:59:31] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:59:31] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:59:31] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:59:31] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:59:50] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:59:50] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:59:50] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:59:50] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:59:50] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:59:50] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:59:55] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:59:55] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:59:55] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:59:55] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:59:55] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 11:59:55] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 12:00:24] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 12:00:24] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 12:00:24] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 12:00:24] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 12:00:34] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 12:00:34] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 12:00:34] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 12:00:34] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 12:00:34] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 12:00:34] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 12:04:04] "[32mGET /RepositorHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 12:04:04] "GET /LoginPaper?next=/RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 12:04:04] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 12:04:04] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 12:04:04] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 12:04:04] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 12:04:06] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 12:04:06] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 12:04:06] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 12:04:06] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 12:04:06] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 12:04:06] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:36:48] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:36:48] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:36:48] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:36:48] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:36:56] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:36:57] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:36:57] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:36:57] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:36:57] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:36:57] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:37:09] "[35m[1mGET /LoginPaper HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:38:16] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:38:16] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:38:16] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:38:16] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:38:16] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:38:17] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:38:18] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:38:18] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:38:18] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:38:18] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:43:31] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:43:31] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:43:31] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:43:31] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:43:45] "POST /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:43:46] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:43:46] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:43:46] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:43:46] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 13:43:46] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:04] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:04] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:04] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:04] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:04] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:04] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:08] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:08] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:08] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:08] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:08] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:08] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:09] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:09] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:09] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:09] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:10] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:10] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:10] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:10] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:10] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:10] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:11] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:11] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:12] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:12] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:12] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:12] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:12] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:07:12] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:18] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:18] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:18] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:18] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:18] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:18] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:20] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:20] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:20] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:20] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:21] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:21] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:21] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:21] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:21] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:21] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:23] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:23] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:23] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:23] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:25] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:26] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:26] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:26] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:26] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:26] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:37] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:37] "[36mGET /static/styles/enviarNotificacao.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:37] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:37] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:42] "[32mPOST /enviarPopup HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:42] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:42] "[36mGET /static/styles/enviarNotificacao.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:42] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:48] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:48] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:48] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:48] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:48] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:09:48] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:10:37] "[32mPOST /enviarPopup HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:10:37] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:10:37] "[36mGET /static/styles/enviarNotificacao.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:10:37] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:10:48] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:10:48] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:10:48] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:10:48] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:10:48] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:10:48] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:49] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:49] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:49] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:49] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:49] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:49] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:51] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:52] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:52] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:52] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:52] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:52] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:52] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:52] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:52] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:52] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:52] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:52] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:52] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:52] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:52] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:52] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:52] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:52] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:52] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:52] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:52] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:52] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:52] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:52] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:52] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:52] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:52] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:53] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:53] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:53] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:53] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:53] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:53] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:53] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:53] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:53] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:53] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:53] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:12:53] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\database.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:25:39] "[32mGET /RepositorHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:25:39] "GET /LoginPaper?next=/RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:25:40] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:25:40] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:25:40] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:25:40] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:25:43] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:25:44] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:25:44] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:25:44] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:25:44] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:25:44] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:27:43] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:27:43] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:27:43] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:27:43] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:27:43] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 14:27:43] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:26:36] "[35m[1mGET /RepositorHome HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:26:36] "[36mGET /RepositorHome?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:26:36] "[36mGET /RepositorHome?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:26:36] "[36mGET /RepositorHome?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:26:36] "[36mGET /RepositorHome?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:26:54] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:26:54] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:26:54] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:26:54] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:26:54] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:26:54] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:27:09] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:30:48] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:30:48] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:30:48] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:30:48] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:30:48] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:30:48] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:31:23] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:31:23] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:31:23] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:31:23] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:31:23] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:31:23] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:57:18] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:57:18] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:57:18] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:57:18] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:57:18] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Mar/2024 15:57:18] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:44:42] "[32mGET /enviarPopup HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:44:42] "GET /LoginPaper?next=/enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:44:42] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:44:42] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:44:42] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:44:42] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:44:45] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:44:45] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:44:45] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:44:45] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:44:45] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:44:46] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:44:46] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:44:46] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:44:46] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:44:52] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:49:13] "[32mGET /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:49:13] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:49:13] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:49:13] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:49:13] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:49:13] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:49:14] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:49:14] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:49:14] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:49:14] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:49:14] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:49:16] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:49:16] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:49:16] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:49:16] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 07:49:20] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:06:26] "[32mGET /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:06:26] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:06:26] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:06:26] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:06:26] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:06:26] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:06:30] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:06:30] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:06:30] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:06:30] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:06:30] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:06:32] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:06:32] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:06:32] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:06:32] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+ERROR:root:Erro no servidor: cannot access local variable 'total_value' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrollsystem\app.py", line 669, in quantidadeadm
+    if total_value is not None:
+       ^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'total_value' where it is not associated with a value
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:06:35] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:06:35] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:06:35] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+ERROR:root:Erro no servidor: cannot access local variable 'total_value' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrollsystem\app.py", line 669, in quantidadeadm
+    if total_value is not None:
+       ^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'total_value' where it is not associated with a value
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:06:44] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:06:44] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:06:44] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:26:31] "[32mPOST /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:26:31] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:26:31] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:26:31] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:26:31] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:26:31] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:26:32] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:26:32] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:26:32] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:26:32] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:26:32] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:26:34] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:26:34] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:26:34] "[36mGET /static/styles/enviarNotificacao.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:26:34] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:26:36] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:26:36] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:26:36] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:26:37] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:26:37] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:26:37] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:26:37] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+ERROR:root:Erro no servidor: cannot access local variable 'total_value' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrollsystem\app.py", line 669, in quantidadeadm
+    if total_value is not None:
+       ^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'total_value' where it is not associated with a value
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:26:40] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:26:40] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:26:40] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:11] "[32mPOST /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:11] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:12] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:12] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:12] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:12] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:13] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:13] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:13] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:13] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:13] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:14] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:14] "[36mGET /static/styles/enviarNotificacao.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:14] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:14] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:16] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:16] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:16] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:17] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:17] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:17] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:18] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:18] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:18] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:19] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:19] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:19] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+ERROR:root:Erro no servidor: "['PONTUAL'] not in index"
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrollsystem\app.py", line 682, in quantidadeadm
+    resultado_df = resultado_df[colunas]
+                   ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\pandas\core\frame.py", line 4096, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\pandas\core\indexes\base.py", line 6199, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\pandas\core\indexes\base.py", line 6251, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['PONTUAL'] not in index"
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:22] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:22] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:27:22] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:29:45] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:29:45] "GET /LoginPaper?next=/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:29:45] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:29:45] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:29:45] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:29:45] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:29:48] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:29:48] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:29:48] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:29:48] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:29:48] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:29:49] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:29:49] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:29:49] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:29:49] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:29:51] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:39:25] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:39:25] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:39:25] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:39:25] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:48:33] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:48:33] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:48:33] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:48:33] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:48:33] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:48:33] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:48:34] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:48:34] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:48:35] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:48:35] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:48:35] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:48:35] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:48:35] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:48:35] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:48:36] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:48:38] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:49:52] "[32mGET /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:49:52] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:49:52] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:49:52] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:49:52] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:49:52] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:49:53] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:49:53] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:49:53] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:49:53] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:49:53] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:49:54] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:49:54] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:49:54] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:49:54] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:49:56] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:50:32] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:50:32] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:50:32] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:50:33] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:55:55] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:55:55] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:55:55] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:55:55] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:55:55] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:55:55] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:55:56] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:55:56] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:55:56] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:55:56] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:55:56] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:55:57] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:55:57] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:55:57] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:55:57] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:55:59] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:56:27] "[32mGET /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:56:27] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:56:27] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:56:27] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:56:27] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:56:27] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:56:28] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:56:28] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:56:28] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:56:28] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:56:28] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:56:29] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:56:29] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:56:29] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:56:29] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 08:56:31] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:11:51] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:11:51] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:11:51] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:11:51] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:13:31] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:13:31] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:13:31] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:13:31] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:13:31] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:13:31] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:13:32] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:13:32] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:13:32] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:13:32] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:13:32] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:13:33] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:13:33] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:13:33] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:13:33] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:13:37] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:01] "[32mGET /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:01] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:01] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:01] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:01] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:01] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:03] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:03] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:03] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:03] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:03] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:03] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:03] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:03] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:03] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: Unalignable boolean Series provided as indexer (index of the boolean Series and of the indexed object do not match).
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrollsystem\app.py", line 624, in quantidadeadm
+    total1 = row[df['QUANTIDADE'] == 'TOTAL'].index
+             ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\pandas\core\series.py", line 1139, in __getitem__
+    key = check_bool_indexer(self.index, key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\pandas\core\indexing.py", line 2655, in check_bool_indexer
+    raise IndexingError(
+pandas.errors.IndexingError: Unalignable boolean Series provided as indexer (index of the boolean Series and of the indexed object do not match).
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:06] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:06] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:06] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:22] "[32mPOST /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:22] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:22] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:22] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:22] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:24] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:24] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:24] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:24] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:26] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:26] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:26] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+ERROR:root:Erro no servidor: Unalignable boolean Series provided as indexer (index of the boolean Series and of the indexed object do not match).
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrollsystem\app.py", line 624, in quantidadeadm
+    total1 = row[df['QUANTIDADE'] == 'TOTAL'].index
+             ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\pandas\core\series.py", line 1139, in __getitem__
+    key = check_bool_indexer(self.index, key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\pandas\core\indexing.py", line 2655, in check_bool_indexer
+    raise IndexingError(
+pandas.errors.IndexingError: Unalignable boolean Series provided as indexer (index of the boolean Series and of the indexed object do not match).
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:28] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:28] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:28:28] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:36:04] "[32mPOST /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:36:04] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:36:04] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:36:04] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:36:04] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:36:04] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:36:17] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:36:17] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:36:17] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:36:17] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:36:17] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:36:19] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:36:19] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:36:19] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:36:19] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:36:22] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:37:23] "[32mGET /RelatorioSemanal HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:37:23] "GET /LoginPaper?next=/RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:37:23] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:37:23] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:37:23] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:37:23] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:37:24] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:37:24] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:37:24] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:37:24] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:37:24] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:37:26] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:37:26] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:37:26] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:37:26] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+ERROR:root:Erro no servidor: (mysql.connector.errors.ProgrammingError) 1146 (42S02): Table 'papercontrol.varivael' doesn't exist
+[SQL: INSERT INTO varivael (total) VALUES (%(total)s)]
+[parameters: {'total': 0}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sqlalchemy\engine\base.py", line 1960, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\mysql\connector\cursor.py", line 748, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 74, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\mysql\connector\connection.py", line 855, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\mysql\connector\connection.py", line 631, in _handle_result
+    raise get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'papercontrol.varivael' doesn't exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\x17859816\Desktop\papercontrollsystem\app.py", line 678, in quantidadeadm
+    db.session.commit()
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sqlalchemy\orm\scoping.py", line 597, in commit
+    return self._proxied.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sqlalchemy\orm\session.py", line 1972, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sqlalchemy\orm\session.py", line 1257, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sqlalchemy\orm\session.py", line 1232, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sqlalchemy\orm\session.py", line 4296, in flush
+    self._flush(objects)
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sqlalchemy\orm\session.py", line 4431, in _flush
+    with util.safe_reraise():
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sqlalchemy\orm\session.py", line 4392, in _flush
+    flush_context.execute()
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sqlalchemy\engine\base.py", line 1408, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sqlalchemy\sql\elements.py", line 513, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sqlalchemy\engine\base.py", line 1630, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sqlalchemy\engine\base.py", line 1839, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sqlalchemy\engine\base.py", line 1979, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sqlalchemy\engine\base.py", line 2335, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sqlalchemy\engine\base.py", line 1960, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\mysql\connector\cursor.py", line 748, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 74, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\mysql\connector\connection.py", line 855, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x17859816\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\mysql\connector\connection.py", line 631, in _handle_result
+    raise get_exception(packet)
+sqlalchemy.exc.ProgrammingError: (mysql.connector.errors.ProgrammingError) 1146 (42S02): Table 'papercontrol.varivael' doesn't exist
+[SQL: INSERT INTO varivael (total) VALUES (%(total)s)]
+[parameters: {'total': 0}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:37:30] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:37:30] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:37:30] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\database.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:48:14] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:48:14] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:48:14] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:48:14] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:48:14] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:48:15] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:48:15] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:48:15] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:48:15] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:48:15] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:48:16] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:48:16] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:48:16] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:48:16] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:48:19] "POST /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\database.py', reloading
+INFO:werkzeug: * Restarting with stat

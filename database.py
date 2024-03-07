@@ -107,6 +107,11 @@ class ReposicaoEstoque(db.Model):
     reposicao_semanal = db.Column(db.Integer)
     reposicao_pontual = db.Column(db.Integer)
 
+class Variavel(db.Model):
+    __tablename__ = 'variavel'
+    id_varivavel = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    total = db.Column(db.Integer, nullable=False)
+
 def configure_database(app):
     # Pega a URI do banco de dados do arquivo .env
     database_uri = SQLALCHEMY_DATABASE_URI
