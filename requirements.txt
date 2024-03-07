@@ -1,0 +1,8 @@
+flask
+flask-login
+flask-socketio
+sqlalchemy
+flask_sqlalchemy
+flask-migrate
+pandas
+werkzeug

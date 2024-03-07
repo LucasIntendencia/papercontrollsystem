@@ -105,7 +105,8 @@ body {
     height: 100px;
     display: inline-block;
     margin-top: 300px;
-    margin-left: 170px;
+    margin-left: 160px;
+    align-items: center;
 }
  
 .zezinhobola img {
@@ -268,8 +269,9 @@ body {
     .zezinhobola {
         width: 100px;
         height: 100px;
-        margin-left: 44%;
-        margin-top: 250px;
+        margin-left: 46%;
+        margin-top: 260px;
+        align-items: center;
     }
 }
  
@@ -321,5 +323,4 @@ body {
         margin-left: 150px;
     }
 }
- 
  

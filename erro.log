@@ -6215,3 +6215,39 @@ WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
 INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:48:19] "POST /RelatorioSemanal HTTP/1.1" 200 -
 INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\database.py', reloading
 INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:49:00] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:49:00] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:49:00] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:49:00] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:49:00] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:49:02] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:49:02] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:49:02] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:49:02] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:49:02] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:49:03] "GET /RelatorioSemanal HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:49:03] "[36mGET /static/styles/quantidadeadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:49:03] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:49:03] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+WARNING:root:Valor inválido ou vazio em 'LOCALIZAÇÃO'
+INFO:werkzeug:127.0.0.1 - - [07/Mar/2024 09:49:05] "POST /RelatorioSemanal HTTP/1.1" 200 -
