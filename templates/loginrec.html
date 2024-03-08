@@ -86,38 +86,58 @@
         </script>
 
         <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Seleciona o elemento onde a quantidade de estoque será exibida
-            const quantidadeEstoqueElement = document.getElementById('quantidade-estoque');
+            document.addEventListener('DOMContentLoaded', function () {
+                // Seleciona o elemento do popup
+                const popupContent = document.querySelector('.popup-content');
+                // Verifica se o cookie indicando o fechamento do popup está presente
+                const showPopup = document.cookie.replace(/(?:(?:^|.*;\s*)showPopup\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+                // Se o cookie não estiver presente, exibe o popup
+                if (showPopup !== "false") {
+                    popupContent.style.display = 'block';
+                }
+                
+                // Event listener para o botão fechar o popup
+                const fecharPopupBtn = document.getElementById('fecharPopup');
+                if (fecharPopupBtn) {
+                    fecharPopupBtn.addEventListener('click', function () {
+                        // Esconde o popup
+                        popupContent.style.display = 'none';
+                        // Define um cookie para rastrear que o popup foi fechado
+                        document.cookie = 'showPopup=false; expires=Fri, 31 Dec 9999 23:59:59 GMT';
+                    });
+                }
+            });
+            document.addEventListener('DOMContentLoaded', function () {
+                // Seleciona o elemento onde a quantidade de estoque será exibida
+                const quantidadeEstoqueElement = document.getElementById('quantidade-estoque');
 
-            // Pega a quantidade de estoque do elemento HTML gerado pelo Flask
-            const quantidadeEstoque = parseInt(quantidadeEstoqueElement.dataset.quantidadeEstoque);
+                // Pega a quantidade de estoque do elemento HTML gerado pelo Flask
+                const quantidadeEstoque = parseInt(quantidadeEstoqueElement.dataset.quantidadeEstoque);
 
-            // Verifica se a quantidade de estoque é um número válido
-            if (!isNaN(quantidadeEstoque)) {
-                // Se for válido, exibe a quantidade de estoque no elemento HTML
-                quantidadeEstoqueElement.textContent = quantidadeEstoque;
-            } else {
-                // Se não for válido, exibe uma mensagem de erro
-                quantidadeEstoqueElement.textContent = 'Quantidade de estoque não disponível';
-            }
-        });
-        document.addEventListener('DOMContentLoaded', function () {
-    const fecharPopupBtn = document.getElementById('fecharPopup');
-    const popupContent = document.querySelector('.popup-content'); // Corrigido aqui
+                // Verifica se a quantidade de estoque é um número válido
+                if (!isNaN(quantidadeEstoque)) {
+                    // Se for válido, exibe a quantidade de estoque no elemento HTML
+                    quantidadeEstoqueElement.textContent = quantidadeEstoque;
+                } else {
+                    // Se não for válido, exibe uma mensagem de erro
+                    quantidadeEstoqueElement.textContent = 'Quantidade de estoque não disponível';
+                }
+            });
+            document.addEventListener('DOMContentLoaded', function () {
+        const fecharPopupBtn = document.getElementById('fecharPopup');
+        const popupContent = document.querySelector('.popup-content'); // Corrigido aqui
 
-    // Verifica se o botão fechar está presente antes de adicionar o evento de clique
-    if (fecharPopupBtn) {
-        fecharPopupBtn.addEventListener('click', function () {
-            // Esconde o popup
-            popupContent.style.display = 'none';
-            // Define um cookie para rastrear que o popup foi fechado
-            document.cookie = 'showPopup=false; expires=Fri, 31 Dec 9999 23:59:59 GMT';
-        });
-    }
-});
-
-    </script>
+        // Verifica se o botão fechar está presente antes de adicionar o evento de clique
+        if (fecharPopupBtn) {
+            fecharPopupBtn.addEventListener('click', function () {
+                // Esconde o popup
+                popupContent.style.display = 'none';
+                // Define um cookie para rastrear que o popup foi fechado
+                document.cookie = 'showPopup=false; expires=Fri, 31 Dec 9999 23:59:59 GMT';
+            });
+        }
+    });
+        </script>
     </body>
 
 </html>

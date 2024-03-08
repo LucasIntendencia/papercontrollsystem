@@ -42,16 +42,16 @@
                 <div class="predios">
                     <select id="predio" name="predio">
                         <option value="" selected disabled hidden>Selecione o prédio</option>
-                        <option value="minas">Minas</option>
-                        <option value="gerais">Gerais</option>
-                        <option value="alterosa">Alterosa</option>
-                        <option value="tiradentes">Tiradentes</option>
+                        {% for predio in options_predio %}
+                            <option value="{{ predio }}">{{ predio }}</option>
+                        {% endfor %}
                     </select>
-                </div>
+                </div>                
 
                 <div class="andar">
                     <select id="andar" name="andar">
                         <option value="" selected disabled hidden>Selecione o andar</option>
+                        <option value="{{ andar_usuario }}">{{ andar_usuario }}</option>
                     </select>
                 </div>
                 <input id="nome_reposicao" type="text" class="name_input" name="Nome" placeholder="Nome">
@@ -86,25 +86,6 @@
                 floorDropdown.selectedIndex = 0;
                 quantityInput.value = '';
                 quantityInput.disabled = true;
-
-                const building = buildingDropdown.value;
-                floorDropdown.innerHTML = '<option value="" selected disabled hidden>Selecione o andar</option>';
-
-                if (building !== "") {
-                    const floorsData = {
-                        minas: ['Andar 1', 'Andar 2', 'Andar 3', 'Andar 4', 'Andar 5', 'Andar 6', 'Andar 7', 'Andar 8', 'Andar 9', 'Andar 10', 'Andar 11', 'Andar 12', 'Andar 13', 'Andar 14'],
-                        gerais: ['Andar 1', 'Andar 2', 'Andar 3', 'Andar 4', 'Andar 5', 'Andar 6', 'Andar 7', 'Andar 8', 'Andar 9', 'Andar 10', 'Andar 11', 'Andar 12', 'Andar 13', 'Andar 14'],
-                        alterosa: ['Andar 1'],
-                        tiradentes: ['Andar 1']
-                    };
-
-                    floorsData[building].forEach(floor => {
-                        const option = document.createElement('option');
-                        option.value = floor;
-                        option.textContent = floor;
-                        floorDropdown.appendChild(option);
-                    });
-                }
             });
 
             floorDropdown.addEventListener('change', function () {

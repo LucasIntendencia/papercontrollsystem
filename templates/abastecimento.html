@@ -1,88 +1,97 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Abastecimento</title>
-    <link rel="stylesheet" href="../static/styles/abastecimento.css">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="icon" href="../static/images/zezinhobola.png">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Página de Abastecimento</title>
+        <link rel="stylesheet" href="../static/styles/abastecimento.css">
+        <link href='https://fonts.googleapis.com/css?family=Poppins'
+            rel='stylesheet'>
+        <link rel="icon" href="../static/images/zezinhobola.png">
+    </head>
 
-<body>
-    <div class="popup" id="successPopup">
-        <div class="popup-content">
-            <span class="close" onclick="closePopup()">&times;</span>
-            <p>Abastecimento feito com sucesso!</p>
-            <button onclick="returnToLogin()">OK</button>
-        </div>
-    </div>
-    <div id="exitPopup" class="exit-popup">
-        <div class="popup-content">
-            <p>Deseja mesmo sair?</p>
-            <div class="button-container">
-                <button id="simButton">Sim</button>
-                <button id="naoButton">Não</button>
+    <body>
+        <div class="popup" id="successPopup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup()">&times;</span>
+                <p>Abastecimento feito com sucesso!</p>
+                <button onclick="returnToLogin()">OK</button>
             </div>
         </div>
-    </div>
-    <form method="post" action="{{ url_for('abastecimento') }}">
-        <input type="hidden" name="repositor_id" value="{{ quantidade_estoque.id_usuario }}">
-        <div class="cabecalho">
-            <a href="{{ url_for('loginrec') }}" class="PaperCS">Paper Controll System</a>
-            <a href="{{ url_for('fazer_login') }}" class="exitbutton">
-                <img src="../static/images/exitbutton.png" alt="Botão Pequeno" class="exitbutton">
-            </a>
-        </div>
-
-        <div class="container">
-            <div class="button-container">
-                <div class="select-container">
-                    <label for="tipo_reposicao"></label>
-                    <select id="tipo_reposicao" name="tipo_reposicao">
-                        <option value="" selected disabled hidden>Selecione a reposição</option>
-                        <option value="Semanal">Semanal</option>
-                        <option value="Pontual">Pontual</option>
-                    </select>
-                </div>
-                <div class="select-container">
-                    <label for="predio"></label>
-                    <select id="predio" name="predio">
-                        <option value="" selected disabled hidden>Selecione o prédio</option>
-                        <option value="MINAS">MINAS</option>
-                        <option value="GERAIS">GERAIS</option>
-                        <option value="ALTEROSA">ALTEROSA</option>
-                        <option value="TIRADENTES">TIRADENTES</option>
-                    </select>
-                </div>
-
-                <div class="select-container">
-                    <label for="andar"></label>
-                    <select id="andar" name="andar">
-                        <option value="" selected disabled hidden>Selecione o andar</option>
-                    </select>
-                </div>
-
-                <div class="select-container">
-                    <label for="ilha"></label>
-                    <select id="ilha" name="ilha">
-                        <option value="" selected disabled hidden>Selecione a ilha</option>
-                    </select>
+        <div id="exitPopup" class="exit-popup">
+            <div class="popup-content">
+                <p>Deseja mesmo sair?</p>
+                <div class="button-container">
+                    <button id="simButton">Sim</button>
+                    <button id="naoButton">Não</button>
                 </div>
             </div>
-            <input id="nome_reposicao" type="text" class="quantity-input" name="Nome" placeholder="Nome">
-            <input id="quantidade_reposicao" type="number" class="quantity-input" name="quantidade_reposicao"
-                placeholder="Quantidade">
         </div>
-        <button class="Enviar" type="submit">Reabastecer</button>
-    </form>
-    {% if mensagem_erro %}
-    <div class="error-message">
-    <p>{{ mensagem_erro }}</p>
-    </div>
-    {% endif %}
-    <script>
+        <form method="post" action="{{ url_for('abastecimento') }}">
+            <input type="hidden" name="repositor_id"
+                value="{{ quantidade_estoque.id_usuario }}">
+            <div class="cabecalho">
+                <a href="{{ url_for('loginrec') }}" class="PaperCS">Paper
+                    Controll System</a>
+                <a href="{{ url_for('fazer_login') }}" class="exitbutton">
+                    <img src="../static/images/exitbutton.png"
+                        alt="Botão Pequeno" class="exitbutton">
+                </a>
+            </div>
+
+            <div class="container">
+                <div class="button-container">
+                    <div class="select-container">
+                        <label for="tipo_reposicao"></label>
+                        <select id="tipo_reposicao" name="tipo_reposicao">
+                            <option value selected disabled hidden>Selecione a
+                                reposição</option>
+                            <option value="Semanal">Semanal</option>
+                            <option value="Pontual">Pontual</option>
+                        </select>
+                    </div>
+                    <div class="select-container">
+                        <label for="predio"></label>
+                        <select id="predio" name="predio">
+                            <option value selected disabled hidden>Selecione o
+                                prédio</option>
+                            {% for predio in options_predio %}
+                            <option value="{{ predio }}">{{ predio }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="select-container">
+                        <label for="andar"></label>
+                        <select id="andar" name="andar">
+                            <option value="" selected disabled hidden>Selecione o andar</option>
+                            <option value="{{ andar_usuario }}">{{ andar_usuario }}</option>
+                        </select>
+                    </div>                    
+
+                    <div class="select-container">
+                        <label for="ilha"></label>
+                        <select id="ilha" name="ilha">
+                            <option value selected disabled hidden>Selecione a
+                                ilha</option>
+                        </select>
+                    </div>
+                </div>
+                <input id="nome_reposicao" type="text" class="quantity-input"
+                    name="Nome" placeholder="Nome">
+                <input id="quantidade_reposicao" type="number"
+                    class="quantity-input" name="quantidade_reposicao"
+                    placeholder="Quantidade">
+            </div>
+            <button class="Enviar" type="submit">Reabastecer</button>
+        </form>
+        {% if mensagem_erro %}
+        <div class="error-message">
+            <p>{{ mensagem_erro }}</p>
+        </div>
+        {% endif %}
+        <script>
         document.addEventListener('DOMContentLoaded', function () {
             const buildingDropdown = document.getElementById('predio');
             const floorDropdown = document.getElementById('andar');
@@ -134,29 +143,67 @@
                     alert("Por favor, preencha todos os campos destacados em vermelho.");
                 }
             });
-            buildingDropdown.addEventListener('change', function () {
-                enableQuantityInput();
-                floorDropdown.selectedIndex = 0;
-                ilhaDropdown.selectedIndex = 0;
-                quantityInput.value = '';
+            document.addEventListener('DOMContentLoaded', function () {
+                const buildingDropdown = document.getElementById('predio');
+                const floorDropdown = document.getElementById('andar');
+                const ilhaDropdown = document.getElementById('ilha');
+                const quantityInput = document.getElementById('quantidade_reposicao');
+                const tipoReposicaoDropdown = document.getElementById('tipo_reposicao');
+                const nameInput = document.getElementById('nome_reposicao')
                 quantityInput.disabled = true;
-                const building = buildingDropdown.value;
-                floorDropdown.innerHTML = '<option value="" selected disabled hidden>Selecione o andar</option>';
-                if (building !== "") {
-                    const floorsData = {
-                        MINAS: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14'],
-                        GERAIS: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14'],
-                        ALTEROSA: ['1'],
-                        TIRADENTES: ['1']
-                    };
-                    floorsData[building].forEach(floor => {
-                        const option = document.createElement('option');
-                        option.value = floor;
-                        option.textContent = floor;
-                        floorDropdown.appendChild(option);
-                    });
+            
+                function enableQuantityInput() {
+                    const buildingSelected = buildingDropdown.value !== "";
+                    const floorSelected = floorDropdown.value !== "";
+                    const ilhaSelected = ilhaDropdown.value !== "";
+                    if (buildingSelected && floorSelected && ilhaSelected) {
+                        quantityInput.disabled = false;
+                    } else {
+                        quantityInput.disabled = true;
+                    }
                 }
+            
+                buildingDropdown.addEventListener('change', function () {
+                    const building = buildingDropdown.value;
+                    floorDropdown.innerHTML = '<option value="" selected disabled hidden>Selecione o andar</option>';
+            
+                    // Aqui você deve verificar se o usuário logado tem um andar associado
+                    // e adicionar apenas esse andar ao dropdown.
+                    const userAndar = "{{ current_user.andar_user }}";
+            
+                    // Verifica se o prédio selecionado é o mesmo cadastrado para o usuário
+                    if (building === "{{ predio_usuario }}") {
+                        const option = document.createElement('option');
+                        option.value = userAndar;
+                        option.textContent = userAndar;
+                        floorDropdown.appendChild(option);
+                        enableQuantityInput(); // Habilita o input de quantidade quando o andar é adicionado dinamicamente
+                    }
+                });
+            
+                floorDropdown.addEventListener('change', function () {
+                    enableQuantityInput();
+                });
+            
+                ilhaDropdown.addEventListener('change', function () {
+                    enableQuantityInput();
+                });
+            
+                tipoReposicaoDropdown.addEventListener('change', function () {
+                    const tipoSelecionado = tipoReposicaoDropdown.value;
+                    if (tipoSelecionado === 'Semanal') {
+                        console.log('Selecionou Semanal');
+                    } else if (tipoSelecionado === 'Pontual') {
+                        console.log('Selecionou Pontual');
+                    }
+                });
+            
+                quantityInput.addEventListener('input', function () {
+                    this.value = this.value.replace(/[^0-9]/g, '');
+                });
             });
+            
+            
             floorDropdown.addEventListener('change', function () {
                 enableQuantityInput();
                 ilhaDropdown.selectedIndex = 0;
@@ -268,6 +315,6 @@
             });
         });
     </script>
-</body>
+    </body>
 
 </html>

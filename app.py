@@ -155,9 +155,16 @@ def abastecimento():
     estoque = None
     mensagem = None
 
+    usuario_atual = Usuario.query.get(current_user.id)
+    predio_usuario = usuario_atual.predio_user
+    andar_usuario = usuario_atual.andar_user
+
+    options_predio = [predio_usuario]
+    options_andar = [andar_usuario]
+    print(f"Andar do Usuário: {andar_usuario}")
+
     if request.method == 'POST':
         print(f"Formulário enviado!")
-
         predio = request.form['predio']
         andar = request.form['andar']
         ilha = request.form['ilha']
@@ -224,7 +231,7 @@ def abastecimento():
             mensagem = f"Erro ao registrar reabastecimento no banco de dados: {str(e)}"
             print(mensagem)
 
-    return render_template('abastecimento.html', quantidade_estoque=estoque, mensagem_erro=None, mensagem=mensagem)
+    return render_template('abastecimento.html', options_predio=options_predio, andar_usuario=andar_usuario, quantidade_estoque=estoque, mensagem_erro=None, mensagem=mensagem)
 
 def enviar_email_ilhas_reabastecidas(numero_ilhas):
     try:
@@ -261,11 +268,20 @@ def enviar_email_ilhas_reabastecidas(numero_ilhas):
 @app.route('/Reabastecimento', methods=['GET', 'POST'])
 @login_required
 def reabastecimento():
+    usuario_atual = Usuario.query.get(current_user.id)
+    predio_usuario = usuario_atual.predio_user
+    andar_usuario = usuario_atual.andar_user
+    
+    predios = [usuario_atual.predio_user]
+
+    options_predio = predios
+    options_andar = [andar_usuario]
     if request.method == 'POST':
         andar = request.form.get('andar')
         predio = request.form.get('predio')
         quantidade_reabastecimento = int(request.form.get('quantidade_reposicao', 0))
         Nome = request.form.get('Nome')
+
 
         usuario = Usuario.query.filter_by(id_user=current_user.id).first()
 
@@ -293,7 +309,7 @@ def reabastecimento():
 
             return redirect(url_for('reabastecimento'))
 
-    return render_template('reabastecimento.html', dados_reabastecimento=[], quantidade_estoque=0, error_message="Erro ao buscar dados de reabastecimento")
+    return render_template('reabastecimento.html', dados_reabastecimento=[], options_predio=options_predio, andar_usuario=andar_usuario, quantidade_estoque=0, error_message="Erro ao buscar dados de reabastecimento")
 
 def enviar_email_reposicao(mensagem, id_reabastecimento):
     try:
