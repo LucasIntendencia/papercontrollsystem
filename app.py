@@ -1,4 +1,3 @@
-from dotenv import load_dotenv,dotenv_values
 from flask import Flask, make_response, render_template, request, redirect, session, url_for, jsonify, send_file, flash
 from flask_login import LoginManager, UserMixin, login_required, login_user, current_user
 from database import Variavel, ConfirmacaoReabastecimento, ReposicaoEstoque, configure_database, db, Usuario, Reposicao, Reabastecimento, Ajuda
@@ -136,7 +135,6 @@ def loginrec():
             })
     # Renderizar a página sem o popup e exibir as informações relevantes de reposição
     return render_template('loginrec.html', showPopup=show_popup, quantidade_estoque=quantidade_estoque, ilhas_reposicao=ilhas_reposicao)
-
 
 @app.route('/AdmHome', methods=['GET', 'POST'])
 @login_required
@@ -819,4 +817,4 @@ def verificar_conexao():
         return f'Erro ao verificar a conexão: {str(e)}'
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000, debug=True)
+    app.run(debug=True)

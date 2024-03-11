@@ -1,143 +1,132 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home Page - PaperControlSystem</title>
-        <link href='https://fonts.googleapis.com/css?family=Poppins'
-            rel='stylesheet'>
-        <link rel="stylesheet"
-            href="{{ url_for('static', filename='styles/loginrec.css') }}">
-        <link rel="icon" href="../static/images/zezinhobola.png">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page - PaperControlSystem</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/loginrec.css') }}">
+    <link rel="icon" href="../static/images/zezinhobola.png">
+</head>
 
-    <body>
-        {% if ilhas_reposicao %}
-        <div class="popup-content">
-            <p>As seguintes ilhas precisam de reposição:</p>
-            <ul>
+<body>
+    <div class="cabecalho">
+        <a href="{{ url_for('loginrec') }}" class="PaperCS">Paper Controll
+            System</a>
+        <a href="{{ url_for('fazer_login') }}" class="exitbutton">
+            <img src="../static/images/exitbutton.png" alt="Botão Pequeno"
+                class="exitbutton">
+        </a>
+        <a href="#" class="notificacaoButton" id="notificacaoButton">
+            <img src="../static/images/notificacao.png" alt="Notificação"
+                class="notificacao-button">
+        </a>
+        <div id="notificacaoSection" class="notificacao-section"
+            style="display: none;">
+            <p>Reposição:</p>
+            <ul id="ilhasReabastecimento">
                 {% for ilha in ilhas_reposicao %}
                 <li>{{ ilha['ilha'] }}: {{ ilha['quantidade'] }} resmas</li>
                 {% endfor %}
             </ul>
-            <button id="fecharPopup">Fechar</button>
         </div>
-        {% endif %}
-
-        <div class="cabecalho">
-            <a href="{{ url_for('loginrec') }}" class="PaperCS">Paper Controll
-                System</a>
-            <a href="{{ url_for('fazer_login') }}" class="exitbutton">
-                <img src="../static/images/exitbutton.png" alt="Botão Pequeno"
-                    class="exitbutton">
-            </a>
+    </div>
+    <div id="exitPopup" class="exit-popup">
+        <div class="popup-content">
+            <p>Deseja mesmo sair?</p>
+            <div class="button-container">
+                <button id="simButton">Sim</button>
+                <button id="naoButton">Não</button>
+            </div>
         </div>
+    </div>
 
-        <div id="exitPopup" class="exit-popup">
-            <div class="popup-content">
-                <p>Deseja mesmo sair?</p>
-                <div class="button-container">
-                    <button id="simButton">Sim</button>
-                    <button id="naoButton">Não</button>
-                </div>
+    <form method="post" action="{{ url_for('loginrec') }}">
+        <div class="content">
+            <div class="button-container">
+                <a href="{{ url_for('abastecimento') }}"
+                    class="Semanal">Abastecimento</a>
+                <a href="{{ url_for('reabastecimento') }}"
+                    class="Reabastecimento">Solicitar Reabastecimento</a>
             </div>
         </div>
 
-        <form method="post" action="{{ url_for('loginrec') }}">
-            <div class="content">
-                <div class="button-container">
-                    <a href="{{ url_for('abastecimento') }}"
-                        class="Semanal">Abastecimento</a>
-                    <a href="{{ url_for('reabastecimento') }}"
-                        class="Reabastecimento">Solicitar Reabastecimento</a>
-                </div>
-            </div>
+        <div class="estoque-container">
+            <p>Seu estoque atual:</p>
+            <p>
+                <span class="numero-estoque" id="quantidade-estoque"
+                    data-quantidade-estoque="{{ quantidade_estoque }}">
+                    {{ quantidade_estoque }}
+                </span>
+            </p>
+            <p> resma(s)</p>
+        </div>
+        <a href="{{ url_for('ajudaOZe') }}" class="zezinhobola">
+            <img src="../static/images/zezinhobola.png" alt="Zezinho">
+        </a>
+    </form>
 
-            <div class="estoque-container">
-                <p>Seu estoque atual:</p>
-                <p>
-                    <span class="numero-estoque" id="quantidade-estoque"
-                        data-quantidade-estoque="{{ quantidade_estoque }}">
-                        {{ quantidade_estoque }}
-                    </span>
-                </p>
-                <p> resma(s)</p>
-            </div>
-            <a href="{{ url_for('ajudaOZe') }}" class="zezinhobola">
-                <img src="../static/images/zezinhobola.png" alt="Zezinho">
-            </a>
-        </form>
-
-        <script>
+    <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Seleciona o botão de notificação
+            const notificacaoButton = document.getElementById('notificacaoButton');
+            // Seleciona a seção de notificação
+            const notificacaoSection = document.getElementById('notificacaoSection');
+
+            // Adiciona evento de clique ao botão de notificação
+            notificacaoButton.addEventListener('click', function () {
+                // Alterna a visibilidade da seção de notificação
+                if (notificacaoSection.style.display === 'none') {
+                    notificacaoSection.style.display = 'block';
+                } else {
+                    notificacaoSection.style.display = 'none';
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const quantidadeEstoqueElement = document.getElementById('quantidade-estoque');
+            const quantidadeEstoque = parseInt(quantidadeEstoqueElement.dataset.quantidadeEstoque);
+
+            if (!isNaN(quantidadeEstoque)) {
+                quantidadeEstoqueElement.textContent = quantidadeEstoque;
+            } else {
+                quantidadeEstoqueElement.textContent = 'Quantidade de estoque não disponível';
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const exibirExitPopupBtn = document.getElementById('exibirExitPopup');
             const exitPopup = document.getElementById('exitPopup');
             const simButton = document.getElementById('simButton');
             const naoButton = document.getElementById('naoButton');
-
+            const fecharPopupBtn = document.getElementById('fecharPopup');
+ 
+            exibirExitPopupBtn.addEventListener('click', function (event) {
+                event.preventDefault();
+                exitPopup.style.display = 'block';
+            });
+ 
             simButton.addEventListener('click', function () {
                 window.location.href = "{{ url_for('fazer_login') }}";
             });
-
+ 
             naoButton.addEventListener('click', function () {
                 exitPopup.style.display = 'none';
             });
+ 
+            if (fecharPopupBtn) {
+                fecharPopupBtn.addEventListener('click', function () {
+                    document.querySelector('.popup-content').style.display = 'none';
+                });
+            }
         });
-        </script>
+    </script>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                // Seleciona o elemento do popup
-                const popupContent = document.querySelector('.popup-content');
-                // Verifica se o cookie indicando o fechamento do popup está presente
-                const showPopup = document.cookie.replace(/(?:(?:^|.*;\s*)showPopup\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-                // Se o cookie não estiver presente, exibe o popup
-                if (showPopup !== "false") {
-                    popupContent.style.display = 'block';
-                }
-                
-                // Event listener para o botão fechar o popup
-                const fecharPopupBtn = document.getElementById('fecharPopup');
-                if (fecharPopupBtn) {
-                    fecharPopupBtn.addEventListener('click', function () {
-                        // Esconde o popup
-                        popupContent.style.display = 'none';
-                        // Define um cookie para rastrear que o popup foi fechado
-                        document.cookie = 'showPopup=false; expires=Fri, 31 Dec 9999 23:59:59 GMT';
-                    });
-                }
-            });
-            document.addEventListener('DOMContentLoaded', function () {
-                // Seleciona o elemento onde a quantidade de estoque será exibida
-                const quantidadeEstoqueElement = document.getElementById('quantidade-estoque');
-
-                // Pega a quantidade de estoque do elemento HTML gerado pelo Flask
-                const quantidadeEstoque = parseInt(quantidadeEstoqueElement.dataset.quantidadeEstoque);
-
-                // Verifica se a quantidade de estoque é um número válido
-                if (!isNaN(quantidadeEstoque)) {
-                    // Se for válido, exibe a quantidade de estoque no elemento HTML
-                    quantidadeEstoqueElement.textContent = quantidadeEstoque;
-                } else {
-                    // Se não for válido, exibe uma mensagem de erro
-                    quantidadeEstoqueElement.textContent = 'Quantidade de estoque não disponível';
-                }
-            });
-            document.addEventListener('DOMContentLoaded', function () {
-        const fecharPopupBtn = document.getElementById('fecharPopup');
-        const popupContent = document.querySelector('.popup-content'); // Corrigido aqui
-
-        // Verifica se o botão fechar está presente antes de adicionar o evento de clique
-        if (fecharPopupBtn) {
-            fecharPopupBtn.addEventListener('click', function () {
-                // Esconde o popup
-                popupContent.style.display = 'none';
-                // Define um cookie para rastrear que o popup foi fechado
-                document.cookie = 'showPopup=false; expires=Fri, 31 Dec 9999 23:59:59 GMT';
-            });
-        }
-    });
-        </script>
-    </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 
 </html>
