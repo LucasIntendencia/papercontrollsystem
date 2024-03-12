@@ -1,0 +1,187 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaperControllSystem ADM</title>
+    <link rel="stylesheet" href="../static/styles/reabastecerRepositor.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins'
+        rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" href="../static/images/zezinhobola.png">
+</head>
+<body>
+    <div class="popup" id="successPopup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p>Reabastecimento solicitado com sucesso!</p>
+            <button onclick="returnToLogin()">OK</button>
+        </div>
+    </div>
+    <div id="exitPopup" class="exit-popup">
+        <div class="popup-content">
+            <p>Deseja mesmo sair?</p>
+            <div class="button-container">
+                <button id="simButton">Sim</button>
+                <button id="naoButton">Não</button>
+            </div>
+        </div>
+    </div>
+    <div class="cabecalho">
+        <a href="{{ url_for('loginadm') }}" class="PaperCS">Paper Controll
+            System</a>
+        <a href="{{ url_for('fazer_login') }}" class="exitbutton">
+            <img src="../static/images/exitbutton.png" alt="Botão Pequeno"
+                class="exitbutton">
+        </a>
+    </div>
+    <form action="{{ url_for('reabastecer_repositor') }}" method="POST">
+        <div class="container">
+            <div class="button-container">
+                <div class="predios">
+                    <select id="predio" name="predio">
+                        <option value selected disabled hidden>Selecione o
+                            prédio</option>
+                        <option value="minas">Minas</option>
+                        <option value="gerais">Gerais</option>
+                        <option value="alterosas">Alterosas</option>
+                        <option value="tiradentes">Tiradentes</option>
+                    </select>
+                </div>
+
+                <div class="andar">
+                    <select id="andar" name="andar">
+                        <option value selected disabled hidden>Selecione o
+                            andar</option>
+                    </select>
+                </div>
+                <input id="quantidade_reposicao" type="number"
+                    class="quantity-input" name="quantidade_reposicao"
+                    placeholder="Quantidade">
+            </div>
+        </div>
+        <button class="Enviar" type="submit">Reabastecer</button>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const exitButton = document.querySelector('.exitbutton');
+            const exitPopup = document.getElementById('exitPopup');
+            const simButton = document.getElementById('simButton');
+            const naoButton = document.getElementById('naoButton');
+
+            exitButton.addEventListener('click', function (event) {
+                event.preventDefault();
+                exitPopup.style.display = 'flex';
+            });
+
+            simButton.addEventListener('click', function () {
+                window.location.href = "{{ url_for('fazer_login') }}";
+            });
+
+            naoButton.addEventListener('click', function () {
+                exitPopup.style.display = 'none';
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            const predioSelect = document.getElementById('predio');
+            const andarSelect = document.getElementById('andar');
+            
+            predioSelect.addEventListener('change', function () {
+                andarSelect.innerHTML = ''; // Limpa as opções de andar
+                const predioSelecionado = predioSelect.value;
+                
+                if (predioSelecionado === 'minas' || predioSelecionado === 'gerais') {
+                    for (let i = 1; i <= 14; i++) {
+                        if (i !== 9) { // Exclui o andar 9
+                            const option = document.createElement('option');
+                            option.value = i;
+                            option.textContent = i;
+                            andarSelect.appendChild(option);
+                        }
+                    }
+                } else if (predioSelecionado === 'alterosas' || predioSelecionado === 'tiradentes') {
+                    const option = document.createElement('option');
+                    option.value = 1;
+                    option.textContent = 1;
+                    andarSelect.appendChild(option);
+                }
+            });
+        });  
+        document.addEventListener('DOMContentLoaded', function () {
+            // Função para validar e exibir o pop-up
+            const form = document.getElementById('reabastecimentoForm');
+            form.addEventListener('submit', function (event) {
+                const dropdowns = form.querySelectorAll('select');
+                const quantityInput = form.querySelector('.quantity-input');
+
+                let hasEmptyFields = false;
+
+                dropdowns.forEach(dropdown => {
+                    if (dropdown.value === "") {
+                        dropdown.classList.add('campo-faltando');
+                        hasEmptyFields = true;
+                    } else {
+                        dropdown.classList.remove('campo-faltando');
+                    }
+                });
+
+                if (quantityInput.value.trim() === "") {
+                    quantityInput.classList.add('campo-faltando');
+                    hasEmptyFields = true;
+                } else {
+                    quantityInput.classList.remove('campo-faltando');
+                }
+
+                if (hasEmptyFields) {
+                    event.preventDefault();
+                    alert("Por favor, preencha todos os campos destacados em vermelho.");
+                } else {
+                    event.preventDefault(); // Evitar o envio padrão do formulário
+                    showPopup(); // Mostrar o pop-up após validação
+                }
+            });
+        });
+
+        // Função para mostrar o pop-up e redirecionar após 3 segundos
+        function showPopup() {
+            const successPopup = document.getElementById('successPopup');
+            successPopup.style.display = 'block';
+
+            setTimeout(function () {
+                returnToLogin(); // Redirecionamento para a página loginrec
+            }, 3000);
+        }
+
+        // Função para redirecionar para a página loginrec
+        function returnToLogin() {
+            // Substitua a URL pela rota correta em sua aplicação
+            window.location.href = "/loginrec";
+        }
+
+        // Função para fechar o pop-up
+        function closePopup() {
+            const successPopup = document.getElementById('successPopup');
+            successPopup.style.display = 'none';
+        }
+
+        function returnToLogin() {
+            const form = document.getElementById('reabastecimentoForm');
+            const formData = new FormData(form);
+
+            fetch('/Reabastecimento', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (response.ok) {
+                        window.location.href = "/RepositorHome";
+                    } else {
+                        // Trate aqui caso a submissão dos dados falhe
+                        console.error("Erro ao salvar dados no banco");
+                    }
+                })
+                .catch(error => {
+                    console.error("Erro ao conectar com o servidor:", error);
+                });
+        }
+    </script>
+</body>

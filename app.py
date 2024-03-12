@@ -136,14 +136,17 @@ def loginrec():
     # Renderizar a página sem o popup e exibir as informações relevantes de reposição
     return render_template('loginrec.html', showPopup=show_popup, quantidade_estoque=quantidade_estoque, ilhas_reposicao=ilhas_reposicao)
 
+
 @app.route('/AdmHome', methods=['GET', 'POST'])
 @login_required
 def loginadm():
     print("Rota Adm's acionada.")
     usuario = Usuario.query.filter_by(
         id_user=current_user.id, tipo_user="administrador").first()
+    
+    estoque = usuario.estoque if usuario else 0  # Se o usuário não existir, define o estoque como 0
 
-    return render_template('loginadm.html')
+    return render_template('loginadm.html', estoque=estoque)
 
 
 @app.route('/Abastecimento', methods=['GET', 'POST'])
@@ -489,6 +492,27 @@ def relatoriosadm():
     return render_template('relatoriosadm.html')
 
 
+@app.route('/ReabastecerRecepcao', methods=['GET', 'POST'])
+@login_required
+def reabastecer_repositor():
+    if request.method == 'POST':
+        predio = request.form['predio']
+        andar = request.form['andar']
+        quantidade_reposicao = int(request.form['quantidade_reposicao'])
+
+        # Encontre o usuário correspondente ao andar e prédio selecionados
+        usuario = Usuario.query.filter_by(predio_user=predio, andar_user=andar).first()
+        if usuario:
+            # Atualize o estoque do usuário
+            usuario.estoque += quantidade_reposicao
+            db.session.commit()
+            flash('Estoque atualizado com sucesso!', 'success')
+        else:
+            flash('Usuário não encontrado para o prédio e andar selecionados', 'error')
+
+    return render_template('reabastecerRepositor.html')
+
+
 @app.route('/AjudaSugestao', methods=['GET', 'POST'])
 @login_required
 def ajudaOZe():
@@ -651,6 +675,12 @@ def quantidadeadm():
                                 f"Erro ao encontrar o valor ao lado de 'TOTAL': {e}"
                             )
                         continue
+                    
+                    if total_value is not None:
+                        nova_variavel = Variavel(total=total_value)
+                        db.session.add(nova_variavel)
+                        db.session.commit()
+                        print("Variável salva com sucesso.")
 
                     ilha_numero = int(''.join(filter(str.isdigit, ilha)))
 
@@ -685,13 +715,6 @@ def quantidadeadm():
                         'PONTUAL': ''
                     })
 
-                # Se o valor total foi encontrado, salve-o no banco de dados
-                if total_value is not None:
-                    nova_variavel = Variavel(total=total_value)
-                    db.session.add(nova_variavel)
-                    db.session.commit()
-                    print("Variavel saved successfully.")
-
                 resultado_df = pd.DataFrame(resultado_lista)
                 relatorio_xlsx = f'tmp_relatorio_{datetime.now().strftime("%Y%m%d%H%M%S")}.xlsx'
 
@@ -708,7 +731,6 @@ def quantidadeadm():
         logging.error(f"Erro no servidor: {e}", exc_info=True)
 
     return render_template('quantidadeadm.html')
-
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in {'xlsx', 'xls'}

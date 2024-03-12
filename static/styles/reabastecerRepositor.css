@@ -1,0 +1,196 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/background-pc.png);
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1A5A6B;
+    margin-top: 15px;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    /* Centraliza todo o conteúdo do container */
+    margin-top: 150px;
+    /* Espaçamento superior para deslocar os botões para baixo */
+}
+
+/* Estilos para os dropdowns */
+.predios,
+.andar {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.predios select,
+.andar select {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    outline: none;
+    text-align: center;
+}
+
+.name_input,
+.quantity-input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    outline: none;
+    margin-top: 50px;
+    /* Ajuste a margem superior conforme necessário */
+    width: 93%;
+    text-align: center;
+    /* Centraliza o texto dentro do input */
+}
+
+/* Estilos para o botão de Reabastecer */
+.Enviar {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+    margin: 0 auto;
+    display: block;
+    max-width: 200px;
+    margin-top: 100px;
+    width: 80%;
+}
+
+.exitbutton {
+    width: 28px;
+}
+
+.exit-popup {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.exit-popup .popup-content {
+    background-color: white;
+    /* Background branco */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+}
+
+.exit-popup .popup-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.exit-popup .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.exit-popup .button-container button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.exit-popup .button-container button#simButton {
+    background-color: #3498db;
+    /* Botões azuis */
+    color: white;
+}
+
+.exit-popup .button-container button#naoButton {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fundo escuro com transparência */
+    z-index: 1000;
+}
+
+.popup-content {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #23A0BA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    margin-top: 20px;
+}
+
+.popup-content button:hover {
+    background-color: #1A7687;
+}
+
+/* Remova o estilo do botão para fechar */
+.popup-content span.close {
+    display: none;
+
+    /* Estilos para dispositivos maiores (desktop) */
+    @media only screen and (min-width: 768px) {
+        .grafico-container {
+            width: 300px;
+            max-width: 600px;
+        }
+
+        body {
+            background-size: 100% 102%;
+            /* Exibe a imagem de fundo cobrindo todo o espaço */
+            background-attachment: fixed;
+        }
+    }
+}
