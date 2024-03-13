@@ -1,9 +1,10 @@
 from flask import Flask, make_response, render_template, request, redirect, session, url_for, jsonify, send_file, flash
 from flask_login import LoginManager, UserMixin, login_required, login_user, current_user
-from database import Variavel, ConfirmacaoReabastecimento, ReposicaoEstoque, configure_database, db, Usuario, Reposicao, Reabastecimento, Ajuda
+from database import Variavel, ReposicaoEstoque, configure_database, db, Usuario, Reposicao, Reabastecimento, Ajuda
 from sqlalchemy import Integer, func, text
 from decimal import Decimal
 from datetime import datetime, timedelta
+from flask_socketio import SocketIO, send, emit
 import secrets
 import logging
 import pandas as pd
@@ -14,7 +15,6 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from werkzeug.exceptions import BadRequestKeyError
 import os
-from flask_socketio import SocketIO, send
 from collections import defaultdict
 import os
 from credencial import (
@@ -33,6 +33,7 @@ app = Flask(__name__)
 app.secret_key = secrets.token_hex(32)
 database_uri = os.getenv('SQLALCHEMY_DATABASE_URI')
 configure_database(app)
+socketio = SocketIO(app)
 
 login_manager = LoginManager(app)
 login_manager.login_view = 'fazer_login'
@@ -101,23 +102,39 @@ def fazer_login():
     return render_template('login.html', mensagem_erro=mensagem_erro)
 
 
+@app.route('/verificar_notificacoes', methods=['GET'])
+def verificar_notificacoes():
+    has_new_notification = True
+    notification_message = "Você tem uma nova notificação!"
+ 
+    if has_new_notification:
+        return jsonify({
+            'hasNewNotification': has_new_notification,
+            'notificationMessage': notification_message
+        })
+    else:
+        return jsonify({
+            'hasNewNotification': False
+        })
+ 
+ 
 @app.route('/RepositorHome', methods=['GET', 'POST'])
 @login_required
 def loginrec():
     if current_user.tipo_user != 'repositor':
         flash('Acesso não autorizado.', 'error')
         return redirect(url_for('fazer_login'))
-
+ 
     # Verificar se o cookie indicando a exibição do popup está presente
     show_popup = request.cookies.get('showPopup', 'false') == 'true'
     quantidade_estoque = Usuario.query.filter_by(id_user=current_user.id, tipo_user="repositor").first().estoque
-
+ 
     if show_popup:
         # Limpar o cookie para que o popup não apareça novamente
         response = make_response(render_template('loginrec.html', showPopup=show_popup, quantidade_estoque=quantidade_estoque))
         response.set_cookie('showPopup', 'false', expires=0)
         return response
-
+ 
     # Lógica para determinar se o popup deve ser exibido
     usuario = Usuario.query.get(current_user.id)
     reposicoes = ReposicaoEstoque.query.filter_by(predio=usuario.predio_user, andar=usuario.andar_user).all()
@@ -135,6 +152,26 @@ def loginrec():
             })
     # Renderizar a página sem o popup e exibir as informações relevantes de reposição
     return render_template('loginrec.html', showPopup=show_popup, quantidade_estoque=quantidade_estoque, ilhas_reposicao=ilhas_reposicao)
+
+
+@app.route('/excluir_popup', methods=['POST'])
+@login_required
+def excluir_popup():
+    if current_user.tipo_user != 'repositor':
+        return 'Acesso não autorizado', 403
+
+    ilhas_reposicao = request.json.get('ilhas_reposicao') 
+
+    if ilhas_reposicao:
+        for ilha in ilhas_reposicao:
+            # Remove os registros da tabela ReposicaoEstoque com base nas ilhas
+            ReposicaoEstoque.query.filter_by(ilha=ilha).delete()
+
+        db.session.commit()
+        return 'Dados do popup excluídos com sucesso'
+
+    else:
+        return 'Nenhuma informação sobre ilhas de reposição recebida do popup'
 
 
 @app.route('/AdmHome', methods=['GET', 'POST'])
@@ -295,37 +332,35 @@ def reabastecimento():
                 predio=predio,
                 Nome=Nome
             )
-            print("entendi o que voce quer")
             db.session.add(nova_reposicao)
             db.session.commit()
             print("foi pro banco de dados")
-
-            mensagem = f'Olá, sou {Nome}\nSolicito reabastecimento no seguinte local:\n{andar} e {predio}\nAtenciosamente,{Nome}'
-            print(mensagem)
-            enviado = enviar_email_reposicao(mensagem, nova_reposicao.id_reabastecimento)
-            if enviado:
-                flash('Reabastecimento solicitado com sucesso. E-mail enviado aos administradores.', 'success')
-            else:
-                flash('Erro ao enviar e-mail aos administradores.', 'error')
+            
+            send_email(predio, andar, quantidade_reabastecimento, Nome)
 
             return redirect(url_for('reabastecimento'))
 
     return render_template('reabastecimento.html', dados_reabastecimento=[], options_predio=options_predio, andar_usuario=andar_usuario, quantidade_estoque=0, error_message="Erro ao buscar dados de reabastecimento")
 
-def enviar_email_reposicao(mensagem, id_reabastecimento):
+def send_email(predio, andar, quantidade_reabastecimento, Nome):
     try:
-        reabastecimento = Reabastecimento.query.order_by(Reabastecimento.id_reabastecimento.desc()).first()
+        # Configuração do log
         logger = logging.getLogger(__name__)
 
         # Configuração do e-mail
         msg = EmailMessage()
         msg['From'] = MAIL_DEFAULT_SENDER
-        msg['To'] = MAIL_ME
-        msg['Subject'] = 'Reabastecimento de Recepções'
-        msg.set_content(mensagem)
-
-        link_aprovacao = f'127.0.0.1:5000/ConfirmarReabastecimento/{id_reabastecimento}'
-        mensagem += f'\n\nPara aprovar ou rejeitar esta solicitação, acesse: {link_aprovacao}'
+        msg['To'] = MAIL_SENDER
+        msg['Subject'] = 'Pedido de Reabastecimento'
+        content = f"""
+        Um pedido de reabastecimento foi feito por {Nome}.
+        
+        Detalhes do pedido:
+        - Predio: {predio}
+        - Andar: {andar}
+        - Quantidade Pedida: {quantidade_reabastecimento}
+        """
+        msg.set_content(content)
 
         smtp_server = MAIL_SERVER
         smtp_port = MAIL_PORT
@@ -335,62 +370,21 @@ def enviar_email_reposicao(mensagem, id_reabastecimento):
         with smtplib.SMTP(smtp_server, smtp_port) as smtp:
             smtp.starttls()
             smtp.login(smtp_user, smtp_password)
-            logger.info(
-                f'Enviando e-mail para {msg["To"]} sobre o Reabastecimento de ID {reabastecimento.id_reabasteciemnto}')
 
+            # Log antes de enviar o e-mail
+            logger.info(f'Enviando e-mail para {msg["To"]} sobre o Pedido de Reabastecimento')
+
+            # Envia o e-mail
             smtp.send_message(msg)
+
+            # Log após enviar o e-mail
             logger.info(f'E-mail para {msg["To"]} enviado com sucesso!')
 
-        return 'Email enviado com sucesso'
-
+        return 'E-mail enviado com sucesso!'
     except Exception as e:
-        print(f"Erro ao enviar e-mail: {str(e)}")
-        return False
-
-
-@app.route('/ConfirmarReabastecimento/<int:id_reabastecimento>', methods=['POST'])
-@login_required
-def confirmar_reabastecimento(id_reabastecimento):
-    try:
-        if not current_user.is_admin:
-            return redirect(url_for('index'))  # Redirecionar para a página inicial se não for um administrador
-
-        # Verifique se o formulário foi enviado
-        if request.method == 'POST':
-            # Obtenha o usuário administrador atual
-            administrador = Usuario.query.filter_by(id_user=current_user.id).first()
-
-            # Obtenha a quantidade de resmas especificada pelo administrador
-            quantidade = int(request.form['quantidade'])
-
-            # Marque a confirmação como concluída
-            confirmacao = ConfirmacaoReabastecimento(
-                id_reabastecimento=id_reabastecimento,
-                id_administrador=administrador.id,
-                quantidade_reabastecimento=quantidade,
-                data_confirmação=datetime.now()
-            )
-            db.session.add(confirmacao)
-            db.session.commit()
-
-            # Atualize o estoque do repositor
-            repositor = Usuario.query.get(confirmacao.id_reabastecimento)
-            repositor.estoque += confirmacao.quantidade_reabastecimento
-            db.session.commit()
-
-            # Remova a quantidade de reabastecimento solicitada
-            reposicao = Reabastecimento.query.get(id_reabastecimento)
-            reposicao.quantidade_reabastecimento = 0
-            db.session.commit()
-
-            flash('Confirmação de reabastecimento concluída com sucesso.', 'success')
-            return redirect(url_for('confirmar_reabastecimento'))  # Redirecionar para o painel do administrador
-
-    except Exception as e:
-        logging.error(f"Erro ao processar a confirmação de reabastecimento: {str(e)}")
-        flash('Ocorreu um erro ao processar a confirmação de reabastecimento.', 'error')
-
-    return redirect(url_for('confirmar_reabastecimento'))
+        # Log em caso de erro
+        logger.error(f'Erro ao enviar e-mail de reabastecimento: {str(e)}', exc_info=True)
+        return f'Erro ao enviar e-mail de reabastecimento: {str(e)}'
 
 
 @app.route('/RelatoriosAdm', methods=['GET', 'POST'])
@@ -499,14 +493,26 @@ def reabastecer_repositor():
         predio = request.form['predio']
         andar = request.form['andar']
         quantidade_reposicao = int(request.form['quantidade_reposicao'])
+        nome = request.form['Nome']
 
         # Encontre o usuário correspondente ao andar e prédio selecionados
         usuario = Usuario.query.filter_by(predio_user=predio, andar_user=andar).first()
         if usuario:
             # Atualize o estoque do usuário
             usuario.estoque += quantidade_reposicao
+
+            # Crie um novo objeto Reabastecimento e salve no banco de dados
+            novo_reabastecimento = Reabastecimento(
+                quantidade_reabastecimento=quantidade_reposicao,
+                usuario=usuario,
+                andar=andar,
+                predio=predio,
+                Nome=nome
+            )
+            db.session.add(novo_reabastecimento)
             db.session.commit()
-            flash('Estoque atualizado com sucesso!', 'success')
+
+            flash('Estoque atualizado e registro de reabastecimento adicionado com sucesso!', 'success')
         else:
             flash('Usuário não encontrado para o prédio e andar selecionados', 'error')
 
@@ -735,6 +741,11 @@ def quantidadeadm():
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in {'xlsx', 'xls'}
 
+# Manipulador de eventos para receber conexões WebSocket
+@socketio.on('connect')
+def handle_connect():
+    print('Cliente conectado')
+
 
 @app.route('/enviarPopup', methods=['GET', 'POST'])
 @login_required
@@ -798,6 +809,7 @@ def enviarPopup():
             # Definir um cookie indicando que o popup deve ser exibido novamente
             response = make_response(redirect(url_for('enviarPopup')))
             response.set_cookie('showPopup', 'true')
+            socketio.emit('atualizar_popup', {'mensagem': 'Dados atualizados'})
             
             flash('Planilha processada e dados salvos com sucesso.', 'success')
             return response

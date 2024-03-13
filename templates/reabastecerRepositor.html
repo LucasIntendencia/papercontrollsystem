@@ -1,21 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PaperControllSystem ADM</title>
     <link rel="stylesheet" href="../static/styles/reabastecerRepositor.css">
-    <link href='https://fonts.googleapis.com/css?family=Poppins'
-        rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="icon" href="../static/images/zezinhobola.png">
 </head>
+
 <body>
-    <div class="popup" id="successPopup">
+    <div class="popup" id="successPopup" style="display: none;">
         <div class="popup-content">
             <span class="close" onclick="closePopup()">&times;</span>
-            <p>Reabastecimento solicitado com sucesso!</p>
+            <p>Reabastecimento efetuado com sucesso!</p>
             <button onclick="returnToLogin()">OK</button>
         </div>
     </div>
+
     <div id="exitPopup" class="exit-popup">
         <div class="popup-content">
             <p>Deseja mesmo sair?</p>
@@ -53,6 +57,7 @@
                             andar</option>
                     </select>
                 </div>
+                <input id="nome_reposicao" type="text" class="name_input" name="Nome" placeholder="Nome">
                 <input id="quantidade_reposicao" type="number"
                     class="quantity-input" name="quantidade_reposicao"
                     placeholder="Quantidade">
@@ -63,32 +68,13 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const exitButton = document.querySelector('.exitbutton');
-            const exitPopup = document.getElementById('exitPopup');
-            const simButton = document.getElementById('simButton');
-            const naoButton = document.getElementById('naoButton');
-
-            exitButton.addEventListener('click', function (event) {
-                event.preventDefault();
-                exitPopup.style.display = 'flex';
-            });
-
-            simButton.addEventListener('click', function () {
-                window.location.href = "{{ url_for('fazer_login') }}";
-            });
-
-            naoButton.addEventListener('click', function () {
-                exitPopup.style.display = 'none';
-            });
-        });
-        document.addEventListener('DOMContentLoaded', function () {
             const predioSelect = document.getElementById('predio');
             const andarSelect = document.getElementById('andar');
-            
+
             predioSelect.addEventListener('change', function () {
                 andarSelect.innerHTML = ''; // Limpa as opções de andar
                 const predioSelecionado = predioSelect.value;
-                
+
                 if (predioSelecionado === 'minas' || predioSelecionado === 'gerais') {
                     for (let i = 1; i <= 14; i++) {
                         if (i !== 9) { // Exclui o andar 9
@@ -105,7 +91,8 @@
                     andarSelect.appendChild(option);
                 }
             });
-        });  
+        });
+
         document.addEventListener('DOMContentLoaded', function () {
             // Função para validar e exibir o pop-up
             const form = document.getElementById('reabastecimentoForm');
@@ -145,16 +132,14 @@
         function showPopup() {
             const successPopup = document.getElementById('successPopup');
             successPopup.style.display = 'block';
-
-            setTimeout(function () {
-                returnToLogin(); // Redirecionamento para a página loginrec
-            }, 3000);
         }
 
-        // Função para redirecionar para a página loginrec
+        // Função para fechar o pop-up e redirecionar para a página de login do administrador
         function returnToLogin() {
             // Substitua a URL pela rota correta em sua aplicação
-            window.location.href = "/loginrec";
+            window.location.href = "{{ url_for('loginadm') }}";
+            const successPopup = document.getElementById('successPopup');
+            successPopup.style.display = 'none';
         }
 
         // Função para fechar o pop-up
@@ -163,25 +148,26 @@
             successPopup.style.display = 'none';
         }
 
-        function returnToLogin() {
-            const form = document.getElementById('reabastecimentoForm');
-            const formData = new FormData(form);
+        document.addEventListener('DOMContentLoaded', function () {
+            const exitButton = document.querySelector('.exitbutton');
+            const exitPopup = document.getElementById('exitPopup');
+            const simButton = document.getElementById('simButton');
+            const naoButton = document.getElementById('naoButton');
 
-            fetch('/Reabastecimento', {
-                method: 'POST',
-                body: formData
-            })
-                .then(response => {
-                    if (response.ok) {
-                        window.location.href = "/RepositorHome";
-                    } else {
-                        // Trate aqui caso a submissão dos dados falhe
-                        console.error("Erro ao salvar dados no banco");
-                    }
-                })
-                .catch(error => {
-                    console.error("Erro ao conectar com o servidor:", error);
-                });
-        }
+            exitButton.addEventListener('click', function (event) {
+                event.preventDefault();
+                exitPopup.style.display = 'flex';
+            });
+
+            simButton.addEventListener('click', function () {
+                window.location.href = "{{ url_for('fazer_login') }}";
+            });
+
+            naoButton.addEventListener('click', function () {
+                exitPopup.style.display = 'none';
+            });
+        });
     </script>
 </body>
+
+</html>

@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
- 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page - PaperControlSystem</title>
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/loginrec.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=Poppins'
+        rel='stylesheet'>
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='styles/loginrec.css') }}">
     <link rel="icon" href="../static/images/zezinhobola.png">
 </head>
- 
+
 <body>
+    {% if ilhas_reposicao %}
+    <div class="popup-content" style="display: block;"> <!-- Adicionei style="display: block;" -->
+        <p>As seguintes ilhas precisam de reposição:</p>
+        <ul>
+            {% for ilha in ilhas_reposicao %}
+            <li>{{ ilha['ilha'] }}: {{ ilha['quantidade'] }} resmas</li>
+            {% endfor %}
+        </ul>
+        <button id="fecharPopup">Fechar</button>
+    </div>
+    {% endif %}
+
     <div class="cabecalho">
-        <a href="{{ url_for('loginrec') }}" class="PaperCS">Paper Controll System</a>
-        <a href="#" class="notificacaoButton" id="notificacaoButton">
-            <img src="../static/images/notificacao.png" alt="Notificação" class="notificacao-button">
-        </a>
-        <div class="notificacao-section" id="notificacaoSection">
-            <div class="notificacao-content">
-                <div class="arrow-up"></div>
-                <button class="fecharNotificacaoButton">Fechar</button>
-                <p>Reposição:</p>
-                <ul id="ilhasReabastecimento">
-                    {% for ilha in ilhas_reposicao %}
-                    <li>{{ ilha['ilha'] }}: {{ ilha['quantidade'] }} resmas</li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
+        <a href="{{ url_for('loginrec') }}" class="PaperCS">Paper Controll
+            System</a>
         <a href="{{ url_for('fazer_login') }}" class="exitbutton">
-            <img src="../static/images/exitbutton.png" alt="Botão Pequeno" class="exitbutton">
+            <img src="../static/images/exitbutton.png" alt="Botão Pequeno"
+                class="exitbutton">
         </a>
     </div>
+
     <div id="exitPopup" class="exit-popup">
         <div class="popup-content">
             <p>Deseja mesmo sair?</p>
@@ -41,19 +43,22 @@
             </div>
         </div>
     </div>
- 
+
     <form method="post" action="{{ url_for('loginrec') }}">
         <div class="content">
             <div class="button-container">
-                <a href="{{ url_for('abastecimento') }}" class="Semanal">Abastecimento</a>
-                <a href="{{ url_for('reabastecimento') }}" class="Reabastecimento">Solicitar Reabastecimento</a>
+                <a href="{{ url_for('abastecimento') }}"
+                    class="Semanal">Abastecimento</a>
+                <a href="{{ url_for('reabastecimento') }}"
+                    class="Reabastecimento">Solicitar Reabastecimento</a>
             </div>
         </div>
- 
+
         <div class="estoque-container">
             <p>Seu estoque atual:</p>
             <p>
-                <span class="numero-estoque" id="quantidade-estoque" data-quantidade-estoque="{{ quantidade_estoque }}">
+                <span class="numero-estoque" id="quantidade-estoque"
+                    data-quantidade-estoque="{{ quantidade_estoque }}">
                     {{ quantidade_estoque }}
                 </span>
             </p>
@@ -63,88 +68,66 @@
             <img src="../static/images/zezinhobola.png" alt="Zezinho">
         </a>
     </form>
- 
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const notificacaoButton = document.getElementById('notificacaoButton');
-            const notificacaoSection = document.getElementById('notificacaoSection');
-            const fecharNotificacaoButton = document.querySelector('.fecharNotificacaoButton');
-       
-            // Verifica se a notificação já foi fechada anteriormente
-            const notificacaoFechada = localStorage.getItem('notificacaoFechada');
-       
-            if (!notificacaoFechada) {
-                // Exibe a notificação se não estiver fechada
-                notificacaoSection.style.display = 'none';
-            }
-       
-            notificacaoButton.addEventListener('click', function (event) {
-                event.preventDefault();
-                toggleNotificacaoSection();
-            });
-       
-            fecharNotificacaoButton.addEventListener('click', function () {
-                exibirConfirmacaoFechamento();
-            });
-       
-            function toggleNotificacaoSection() {
-                if (notificacaoSection.style.display === 'none' || notificacaoSection.style.display === '') {
-                    notificacaoSection.style.display = 'block';
-                    positionNotificacaoSection();
-                } else {
-                    notificacaoSection.style.display = 'none';
-                }
-            }
-       
-            function positionNotificacaoSection() {
-                const buttonRect = notificacaoButton.getBoundingClientRect();
-                notificacaoSection.style.top = (buttonRect.top + buttonRect.height + 5) + 'px'; // Ajusta a posição verticalmente
-                notificacaoSection.style.left = (buttonRect.left + (buttonRect.width / 2) - (notificacaoSection.offsetWidth / 2)) + 'px'; // Centraliza horizontalmente
-            }
-       
-            function exibirConfirmacaoFechamento() {
-                if (confirm("Deseja fechar a notificação?")) {
-                    // Se confirmado, oculta a notificação e salva o estado
-                    notificacaoSection.style.display = 'none';
-                    localStorage.setItem('notificacaoFechada', 'true');
-                }
-            }
-        });
-   
-        document.addEventListener('DOMContentLoaded', function () {
-            const quantidadeEstoqueElement = document.getElementById('quantidade-estoque');
-            const quantidadeEstoque = parseInt(quantidadeEstoqueElement.dataset.quantidadeEstoque);
-   
-            if (!isNaN(quantidadeEstoque)) {
-                quantidadeEstoqueElement.textContent = quantidadeEstoque;
-            } else {
-                quantidadeEstoqueElement.textContent = 'Quantidade de estoque não disponível';
-            }
-        });
-   
-        document.addEventListener('DOMContentLoaded', function () {
-            const exibirExitPopupBtn = document.querySelector('.exitbutton');
             const exitPopup = document.getElementById('exitPopup');
             const simButton = document.getElementById('simButton');
             const naoButton = document.getElementById('naoButton');
-   
-            exibirExitPopupBtn.addEventListener('click', function (event) {
-                event.preventDefault();
-                exitPopup.style.display = 'block';
-            });
-   
-            simButton.addEventListener('click', function () {
-                window.location.href = "{{ url_for('fazer_login') }}";
-            });
-   
-            naoButton.addEventListener('click', function () {
-                exitPopup.style.display = 'none';
-            });
+            const fecharPopupBtn = document.getElementById('fecharPopup');
+            const popupContent = document.querySelector('.popup-content');
+        
+            if (simButton && naoButton) {
+                simButton.addEventListener('click', function () {
+                    window.location.href = "{{ url_for('fazer_login') }}";
+                });
+        
+                naoButton.addEventListener('click', function () {
+                    exitPopup.style.display = 'none';
+                });
+            }
+        
+            if (fecharPopupBtn) {
+                fecharPopupBtn.addEventListener('click', function () {
+                    popupContent.style.display = 'none';
+                    document.cookie = 'showPopup=false; expires=Fri, 31 Dec 9999 23:59:59 GMT';
+        
+                    // Obtém as informações sobre as ilhas de reposição do popup
+                    const ilhas_reposicao = [];
+                    document.querySelectorAll('.popup-content ul li').forEach(function (item) {
+                        ilhas_reposicao.push(item.textContent.split(': ')[0]);
+                    });
+        
+                    // Envia uma solicitação para excluir os dados do popup e da tabela ReposicaoEstoque
+                    fetch('/excluir_popup', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ ilhas_reposicao: ilhas_reposicao }) // Envie as ilhas de reposição para o servidor
+                    }).then(response => {
+                        if (!response.ok) {
+                            throw new Error('Erro ao excluir os dados do popup');
+                        }
+                    }).catch(error => {
+                        console.error('Erro ao excluir os dados do popup:', error);
+                    });
+                });
+            }
+        
+            if (popupContent) {
+                popupContent.style.display = 'block';
+            }
         });
+        const socket = io.connect('http://' + document.domain + ':' + location.port);
+
+        // Manipular eventos WebSocket para atualizar o popup
+        socket.on('atualizar_popup', function(data) {
+            document.getElementById('popup').innerText = data.mensagem;
+        });     
     </script>
- 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
- 
+
 </html>

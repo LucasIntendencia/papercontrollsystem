@@ -609,3 +609,1622 @@ INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:31:20] "GET /ReabastecerRecepcao HTT
 INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:31:20] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:31:20] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:31:20] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:35:10] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:35:10] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:35:10] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:35:10] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:35:14] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:35:14] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:35:14] "GET /static/styles/loginrec.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:35:14] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:35:14] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:35:14] "[36mGET /static/images/notificacao.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:35:14] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:35:26] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:36:40] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:36:40] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:36:40] "[36mGET /static/images/notificacao.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:36:40] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:36:40] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:36:40] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:36:40] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:36:58] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:36:58] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:36:58] "[36mGET /static/images/notificacao.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:36:58] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:36:58] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:36:58] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:49:26] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:49:26] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:49:26] "[36mGET /static/images/notificacao.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:49:26] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:49:26] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:49:26] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:49:26] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 101-197-873
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:56:59] "[32mGET /RepositorHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:56:59] "GET /LoginPaper?next=/RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:57:00] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:57:00] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:57:00] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:57:00] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:57:01] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:57:01] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:57:01] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:57:01] "[36mGET /static/images/notificacao.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:57:01] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:57:01] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 13:57:01] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:25:14] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:25:14] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:25:14] "[36mGET /static/images/notificacao.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:25:14] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:25:14] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:25:14] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:25:15] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:25:15] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:25:15] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:25:15] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:25:18] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:25:18] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:25:19] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:25:19] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:25:19] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:25:22] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:25:22] "[36mGET /static/styles/enviarNotificacao.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:25:22] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:25:22] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:25:35] "[32mPOST /enviarPopup HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:25:35] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:25:35] "[36mGET /static/styles/enviarNotificacao.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:25:35] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:26:51] "[32mPOST /enviarPopup HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:26:51] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:26:51] "[36mGET /static/styles/enviarNotificacao.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:26:51] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:28:39] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:28:39] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:28:39] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:28:39] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:28:40] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:28:40] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:28:40] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:28:40] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:28:42] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:28:42] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:28:42] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:31:20] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:31:20] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:31:20] "GET /static/styles/loginadm.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:31:20] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:31:20] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:31:22] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:31:22] "GET /static/styles/reabastecerRepositor.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:31:22] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:31:22] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:31:32] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:31:32] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:31:32] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:31:49] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:31:49] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:31:49] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:31:58] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:31:58] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:31:58] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:31:58] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:32:25] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:32:25] "[36mGET /static/styles/enviarNotificacao.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:32:25] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:32:25] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:32:28] "[32mPOST /enviarPopup HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:32:28] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:32:28] "[36mGET /static/styles/enviarNotificacao.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:32:28] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:35:10] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:35:10] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:35:10] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:35:10] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 101-197-873
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:36:28] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:36:28] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:36:29] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:36:29] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:36:29] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:43:29] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:43:29] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:43:29] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:43:29] "[36mGET /static/images/notificacao.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:43:29] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:43:29] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:43:29] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 101-197-873
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:44:13] "[32mGET /RepositorHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:44:13] "GET /LoginPaper?next=/RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:44:13] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:44:13] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:44:13] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:44:13] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:44:14] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:44:14] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:44:14] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:44:14] "[36mGET /static/images/notificacao.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:44:14] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:44:14] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:44:14] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:44:15] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:44:15] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:44:15] "GET /static/styles/reabastecimento.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:44:15] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:44:57] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:44:58] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:44:58] "[36mGET /static/images/notificacao.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:44:58] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:44:58] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:44:58] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:01] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:01] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:01] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:01] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:05] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:05] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:05] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:05] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:05] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:07] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:07] "[36mGET /static/styles/enviarNotificacao.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:07] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:07] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:12] "[32mPOST /enviarPopup HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:12] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:12] "[36mGET /static/styles/enviarNotificacao.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:12] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:15] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:15] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:15] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:19] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:19] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:19] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:30] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:30] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:30] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:30] "[36mGET /static/images/notificacao.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:30] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:30] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:45:30] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 101-197-873
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:52:59] "[32mGET /RepositorHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:52:59] "GET /LoginPaper?next=/RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:53:00] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:53:00] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:53:00] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:53:00] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:53:02] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:53:02] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:53:02] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:53:02] "[36mGET /static/images/notificacao.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:53:02] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:53:02] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:53:02] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:53:06] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:53:09] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:53:09] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:53:09] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:53:09] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 101-197-873
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:55:39] "[32mGET /Reabastecimento HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:55:39] "GET /LoginPaper?next=/Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:55:40] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:55:40] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:55:40] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:55:40] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:55:41] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:55:41] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:55:41] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:55:41] "[36mGET /static/images/notificacao.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:55:41] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:55:41] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:55:41] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:55:42] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:55:42] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:55:42] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:55:42] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:55:50] "[35m[1mPOST /Reabastecimento HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:55:51] "[35m[1mPOST /Reabastecimento HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 14:55:53] "[35m[1mPOST /Reabastecimento HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:19] "[35m[1mPOST /Reabastecimento HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:21] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:21] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:22] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:22] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:22] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:24] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:24] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:24] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:24] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:32] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:32] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:32] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:32] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:32] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:38] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:38] "[36mGET /static/styles/enviarNotificacao.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:38] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:38] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:42] "[32mPOST /enviarPopup HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:42] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:42] "[36mGET /static/styles/enviarNotificacao.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:42] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:55] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:55] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:55] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:58] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:58] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:58] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:58] "[36mGET /static/images/notificacao.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:58] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:58] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:01:58] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:02:06] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:02:06] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:02:06] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:02:06] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:02:15] "[35m[1mPOST /Reabastecimento HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:02:16] "[35m[1mPOST /Reabastecimento HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:02:16] "[35m[1mPOST /Reabastecimento HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:02:16] "[35m[1mPOST /Reabastecimento HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:02:16] "[35m[1mPOST /Reabastecimento HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:02:16] "[35m[1mPOST /Reabastecimento HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:02:17] "[35m[1mPOST /Reabastecimento HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:12:30] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:12:30] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:12:30] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:12:30] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:12:30] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:17:14] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:17:14] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:17:15] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:17:15] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:17:15] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:17:16] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:17:16] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:17:16] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:17:16] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:17:22] "[35m[1mPOST /Reabastecimento HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:18:21] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:18:21] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:18:21] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:18:21] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:18:28] "[35m[1mPOST /Reabastecimento HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 101-197-873
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:28:24] "[32mGET /Reabastecimento HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:28:24] "GET /LoginPaper?next=/Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:28:24] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:28:24] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:28:24] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:28:24] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:28:30] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:28:30] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:28:30] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:28:30] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:28:30] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:28:30] "[36mGET /static/images/notificacao.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:28:30] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:28:32] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:28:32] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:28:32] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:28:32] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 101-197-873
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:29:12] "[32mGET /Reabastecimento HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:29:12] "GET /LoginPaper?next=/Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:29:13] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:29:13] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:29:13] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:29:13] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:29:14] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:29:14] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:29:14] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:29:14] "[36mGET /static/images/notificacao.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:29:14] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:29:14] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:29:14] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:29:15] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:29:15] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:29:15] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:29:15] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:__main__:Enviando e-mail para lucas.nascimento@planejamento.mg.gov.br sobre o Pedido de Reabastecimento
+INFO:__main__:E-mail para lucas.nascimento@planejamento.mg.gov.br enviado com sucesso!
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:29:21] "[32mPOST /Reabastecimento HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:29:21] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:29:21] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:29:21] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:29:21] "[36mGET /static/images/notificacao.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:29:21] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:29:21] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 101-197-873
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:35:02] "[32mGET /RepositorHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:35:02] "GET /LoginPaper?next=/RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:35:03] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:35:03] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:35:03] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:35:03] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:35:04] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:35:04] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:35:04] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:35:04] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:35:04] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:35:04] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:36:53] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:36:53] "GET /static/styles/loginrec.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:36:53] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:36:53] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:36:53] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:36:53] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:36:56] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:36:56] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:36:56] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:36:56] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:36:56] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:46:04] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:46:04] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:46:04] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:46:04] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:46:04] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:46:04] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\database.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 101-197-873
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:35] "[32mGET /RepositorHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:35] "GET /LoginPaper?next=/RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:35] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:35] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:35] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:35] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:38] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:38] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:38] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:38] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:38] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:38] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:42] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:42] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:42] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:45] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:45] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:45] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:45] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:45] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:46] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:46] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:46] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:51] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:51] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:51] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:51] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:51] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:55] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:55] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:55] "[36mGET /static/styles/enviarNotificacao.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:51:55] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:01] "[32mPOST /enviarPopup HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:01] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:01] "[36mGET /static/styles/enviarNotificacao.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:01] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:02] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:02] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:02] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:04] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:04] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:04] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:07] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:07] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:07] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:07] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:07] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:10] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:10] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:10] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:10] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:10] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:14] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:14] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:14] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:14] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:14] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:14] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:15] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:15] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:15] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:15] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:15] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:15] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:15] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:15] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:52:15] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:54:48] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:54:48] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:54:48] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:54:48] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:__main__:Enviando e-mail para lucas.nascimento@planejamento.mg.gov.br sobre o Pedido de Reabastecimento
+INFO:__main__:E-mail para lucas.nascimento@planejamento.mg.gov.br enviado com sucesso!
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:55:30] "[32mPOST /Reabastecimento HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:55:30] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:55:30] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:55:30] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:55:30] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:55:30] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:55:43] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:55:43] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:55:43] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:55:46] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:55:46] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:55:46] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:55:46] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:55:46] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:55:49] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:55:49] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:55:49] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:55:49] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:55:56] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:55:56] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:55:56] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:55:56] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:04] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:04] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:04] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:04] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:12] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:12] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:12] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:15] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:15] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:15] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:18] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:18] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:18] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:18] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:18] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:22] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:22] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:22] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:22] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:22] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:37] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:37] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:37] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:40] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:40] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:40] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:40] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:40] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:42] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:42] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:42] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:42] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:53] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:53] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2024 15:56:53] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:24:40] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:24:40] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:24:40] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:24:40] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:24:40] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:24:40] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:26:22] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:26:23] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:26:23] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:26:23] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:26:23] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:26:24] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:26:24] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:26:24] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:26:24] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:26:35] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:26:35] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:26:35] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:26:44] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:26:44] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:26:44] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:26:52] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:26:52] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:26:52] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:31:57] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:31:57] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:31:57] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:31:57] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:31:57] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:31:57] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:31:58] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:31:58] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:31:59] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:31:59] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:31:59] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:32:00] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:32:00] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:32:00] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:32:00] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:32:08] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:32:08] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:32:08] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:32:55] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:32:55] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:32:55] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:32:55] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:32:55] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:32:55] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:32:56] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:32:56] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:32:56] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:32:56] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:32:57] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:32:57] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:32:57] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:33:03] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:33:03] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:33:03] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:35:31] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:35:31] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:35:31] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:35:31] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:35:31] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:35:31] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:35:32] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:35:32] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:35:32] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:35:32] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:35:44] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:35:44] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:35:44] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:35:51] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:35:51] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:35:51] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:36:54] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:36:54] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:36:54] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:36:54] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:36:54] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:36:54] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:36:55] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:36:55] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:36:55] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:36:55] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:36:56] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:36:56] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:36:56] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:37:03] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:37:04] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:37:04] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:43:25] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:43:25] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:43:25] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:45:10] "[32mGET /ReabastecerRecepcao HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:45:10] "GET /LoginPaper?next=/ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:45:10] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:45:10] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:45:10] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:45:10] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:47:43] "GET /LoginPaper?next=/ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:47:43] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:47:43] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:47:43] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:47:44] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:47:45] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:47:45] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:47:45] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:47:45] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:47:45] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:47:58] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:47:58] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:47:58] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:47:58] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:48:16] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:48:16] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:48:16] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:51:35] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:51:35] "GET /LoginPaper?next=/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:51:35] "GET /static/styles/login.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:51:35] "GET /static/styles/loading.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:51:35] "GET /static/images/zezinho.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:51:36] "GET /static/images/zezinhobola.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:51:38] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:51:38] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:51:39] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:51:39] "GET /static/images/exitbutton.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:51:39] "GET /static/styles/loginrec.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:51:39] "GET /static/images/background-zezinho.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:51:41] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:51:41] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:51:41] "GET /static/styles/reabastecimento.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:51:41] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:__main__:Enviando e-mail para lucas.nascimento@planejamento.mg.gov.br sobre o Pedido de Reabastecimento
+INFO:__main__:E-mail para lucas.nascimento@planejamento.mg.gov.br enviado com sucesso!
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:51:52] "[32mPOST /Reabastecimento HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:51:52] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:51:52] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:51:52] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:51:52] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:51:52] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:51:52] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:52:05] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:52:05] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:52:05] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:52:05] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:52:16] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:52:16] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:52:16] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:55:23] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:55:23] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:55:23] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 07:55:23] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:03:53] "[32mGET /ReabastecerRecepcao HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:03:53] "GET /LoginPaper?next=/ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:03:54] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:03:54] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:03:54] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:03:54] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:04:02] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:04:02] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:04:02] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:04:02] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:04:02] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:04:02] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:04:02] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:04:02] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:04:02] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:04:11] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:04:11] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:04:11] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:05:24] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:05:24] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:05:24] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:05:24] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:05:24] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:05:24] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:05:25] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:05:25] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:05:25] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:05:25] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:05:26] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:05:26] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:05:26] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:05:26] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:05:33] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:05:33] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:05:33] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:20:43] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:20:43] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:20:44] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:20:44] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:20:44] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:20:44] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:20:45] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:20:45] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:20:45] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:20:45] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:20:45] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:20:45] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:20:45] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:20:45] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:20:45] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:20:55] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:20:55] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:20:55] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:26:38] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:26:38] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:26:38] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:26:38] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:26:41] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:26:41] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:26:41] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:26:41] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:26:41] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:26:41] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:26:42] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:26:42] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:26:42] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:26:42] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:26:43] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:26:43] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:26:43] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:26:43] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:26:51] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:26:51] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:26:51] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:39:40] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:39:40] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:39:41] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:39:41] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:39:41] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:39:41] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:39:42] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:39:42] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:39:42] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:39:42] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:39:42] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:39:44] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:39:44] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:39:44] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:39:44] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:39:51] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:39:51] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:39:51] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:42:53] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:42:53] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:42:53] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:42:53] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:42:53] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:42:53] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:43:00] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:43:00] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:43:00] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:43:00] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:43:00] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:43:00] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:43:00] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:43:00] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:43:01] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:43:01] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:43:01] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:43:01] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:43:09] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:43:09] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:43:09] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:43:39] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:43:39] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:43:39] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:43:39] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:43:39] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:44:03] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:44:03] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:44:03] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:44:03] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:44:04] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:44:04] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:44:04] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:44:04] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:44:12] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:44:12] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:44:12] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:45:42] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:45:42] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:45:43] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:45:43] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:45:43] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:45:44] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:45:44] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:45:44] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:45:44] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:45:45] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:45:45] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:45:45] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:45:45] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:45:52] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:45:52] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:45:52] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:52:50] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:52:50] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:52:51] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:52:51] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:52:51] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:52:51] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:52:52] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:52:52] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:52:52] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:52:52] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:52:52] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:52:53] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:52:53] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:52:53] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:52:53] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:53:00] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:53:00] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:53:00] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:54:33] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:54:33] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:54:33] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:54:33] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:54:33] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:54:34] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:54:34] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:54:34] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:54:34] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:54:34] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:54:34] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:54:34] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:54:34] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:54:51] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:54:51] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:54:51] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:55:32] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:55:32] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:55:32] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:55:32] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:55:34] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:55:34] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:55:34] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:55:34] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:55:42] "POST /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:55:42] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:55:42] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:56:01] "POST /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:56:01] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 08:56:01] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:03:52] "POST /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:03:52] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:03:52] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:03:52] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:03:59] "POST /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:03:59] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:03:59] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:04:34] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:04:34] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:04:34] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:04:35] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:04:35] "GET /static/styles/reabastecerRepositor.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:04:35] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:04:35] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:04:40] "POST /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:04:40] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:04:40] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:05:43] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:05:43] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:05:43] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:06:22] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:06:22] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:06:22] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:12:06] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:12:06] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:12:06] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:12:06] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:12:06] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:18:09] "POST /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:18:09] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:18:09] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:18:09] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:19:03] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:19:03] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:19:03] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:19:03] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:19:05] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:19:05] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:19:05] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:19:05] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:21:24] "[32mGET /ReabastecerRecepcao HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:21:24] "GET /LoginPaper?next=/ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:21:24] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:21:24] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:21:24] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:21:24] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:21:25] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:21:25] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:21:25] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:21:25] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:21:25] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:21:26] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:21:26] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:21:26] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:21:26] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:21:32] "POST /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:21:32] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:21:32] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:22:01] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:22:01] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:22:01] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:22:01] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:22:28] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:22:28] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:22:28] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:22:28] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:22:32] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:22:32] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:22:32] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:22:32] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:22:32] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:22:32] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:24] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:24] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:24] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:25] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:28] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:28] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:28] "GET /static/styles/loginadm.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:28] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:28] "GET /static/images/background-pc.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:29] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:29] "GET /static/styles/reabastecerRepositor.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:29] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:29] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:30] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:30] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:30] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:30] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:32] "GET /ReabastecerRecepcao HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:32] "[36mGET /static/styles/reabastecerRepositor.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:32] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:32] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:37] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:37] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:37] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:37] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:43] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:43] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:43] "GET /static/styles/enviarNotificacao.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:26:43] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:27:00] "[32mPOST /enviarPopup HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:27:00] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:27:00] "[36mGET /static/styles/enviarNotificacao.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:27:00] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:27:01] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:27:03] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:27:03] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:27:03] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:27:03] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:27:03] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:29:56] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:29:56] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:29:56] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:29:56] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:29:56] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:29:56] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:29:57] "[35m[1mPOST /excluir_popup HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:29:57] "[35m[1mPOST /excluir_popup HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:29:59] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:29:59] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:29:59] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:29:59] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:30:01] "[35m[1mPOST /excluir_popup HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:30:01] "[35m[1mPOST /excluir_popup HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:33:17] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:33:17] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:33:17] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:33:17] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:33:17] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:33:17] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:33:19] "[35m[1mPOST /excluir_popup HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:33:20] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:33:20] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:33:20] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:33:20] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:33:22] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:33:22] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:33:22] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:33:22] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:33:22] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:33:28] "[35m[1mPOST /excluir_popup HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:35:13] "[32mGET /RepositorHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:35:13] "GET /LoginPaper?next=/RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:35:14] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:35:14] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:35:14] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:35:14] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:35:15] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:35:15] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:35:15] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:35:15] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:35:15] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:35:15] "[35m[1mPOST /excluir_popup HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:35:19] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:35:19] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:35:19] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:35:19] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:35:19] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:36:52] "[32mGET /RepositorHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:36:52] "GET /LoginPaper?next=/RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:36:53] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:36:53] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:36:53] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:36:53] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:36:54] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:36:54] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:36:54] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:36:54] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:36:54] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:36:55] "POST /excluir_popup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:37:00] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:37:00] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:37:00] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:37:00] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:37:00] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:37:03] "POST /excluir_popup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:37:22] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:37:22] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:37:22] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:37:22] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:37:25] "POST /excluir_popup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:37:28] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:37:29] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:37:29] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:37:29] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:37:29] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:37:33] "POST /excluir_popup HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:47:40] "[32mGET /RepositorHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:47:40] "GET /LoginPaper?next=/RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:47:40] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:47:40] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:47:40] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:47:40] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:47:41] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:47:41] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:47:41] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:47:41] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:47:41] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:47:41] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:47:43] "POST /excluir_popup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:47:45] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:47:45] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:47:45] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:47:45] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:47:46] "POST /excluir_popup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:55:24] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:55:24] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:55:24] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:55:24] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:55:24] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:55:24] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:55:26] "POST /excluir_popup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:55:36] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:55:36] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:55:36] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:55:36] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:55:36] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:55:37] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:55:37] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:55:37] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:55:37] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:55:37] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:56:57] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:56:57] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:56:57] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:56:57] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:57:04] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:57:04] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:57:04] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:57:04] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:57:06] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:57:06] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:57:06] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:57:06] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:57:06] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:57:08] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:57:08] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:57:08] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:58:36] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:58:36] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:58:36] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:58:36] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:58:36] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:58:39] "POST /excluir_popup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:58:40] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:58:40] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:58:40] "GET /static/styles/abastecimento.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:58:40] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:58:42] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:58:42] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:58:42] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 09:58:42] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:01:18] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:01:18] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:01:18] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:01:18] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:01:18] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:03:12] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:03:12] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:03:12] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:03:15] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:03:15] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:03:15] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:03:15] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:03:15] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:03:57] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:03:57] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:03:57] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:03:57] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:03:57] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:00] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:00] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:00] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:03] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:03] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:03] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:03] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:03] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:05] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:05] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:05] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:06] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:06] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:06] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:06] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:06] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:50] "[32mGET /AdmHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:50] "GET /LoginPaper?next=/AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:50] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:50] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:50] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:51] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:51] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:51] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:51] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:51] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:56] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:56] "[36mGET /static/styles/enviarNotificacao.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:56] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:04:56] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:05:01] "[32mPOST /enviarPopup HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:05:01] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:05:01] "[36mGET /static/styles/enviarNotificacao.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:05:01] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:05:01] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:05:05] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:05:05] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:05:05] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:05:05] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:05:05] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:06:32] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:06:32] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:06:32] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:06:32] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:06:32] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:06:34] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:06:34] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:06:34] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:06:34] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:06:34] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:06:55] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:06:55] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:06:55] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:06:55] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:06:55] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:06:57] "POST /excluir_popup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:07:05] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:07:05] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:07:05] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:07:05] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:07:05] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:07:06] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:07:06] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:07:06] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:07:06] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:07:06] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:07:08] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:07:08] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:07:08] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\credencial.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:22:17] "GET /LoginPaper HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:22:17] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:22:17] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:22:17] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:22:17] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:22:18] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:22:18] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:22:18] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:22:18] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:22:18] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:22:18] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:22:19] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:22:20] "[36mGET /static/styles/reabastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:22:20] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:22:20] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:__main__:Enviando e-mail para espaco@planejamento.mg.gov.br sobre o Pedido de Reabastecimento
+INFO:__main__:E-mail para espaco@planejamento.mg.gov.br enviado com sucesso!
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:22:32] "[32mPOST /Reabastecimento HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:22:32] "GET /Reabastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:22:32] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:22:32] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:22:32] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:22:32] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:28:37] "[32mGET /RepositorHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:28:37] "GET /LoginPaper?next=/RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:28:37] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:28:37] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:28:37] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:28:37] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:28:40] "[32mGET /enviarPopup HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:28:40] "GET /LoginPaper?next=/enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:28:40] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:28:40] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:28:40] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:28:40] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: caching_sha2_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+INFO:mysql.connector:package: mysql.connector.plugins
+INFO:mysql.connector:plugin_name: mysql_native_password
+INFO:mysql.connector:AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:28:42] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:28:42] "GET /AdmHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:28:42] "[36mGET /static/styles/loginadm.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:28:42] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:28:42] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:28:55] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:28:55] "[36mGET /static/styles/enviarNotificacao.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:28:55] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:28:55] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:29:01] "[32mPOST /LoginPaper HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:29:01] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:29:01] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:29:01] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:29:01] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:29:03] "[32mPOST /enviarPopup HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:29:03] "GET /enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:29:03] "[36mGET /static/styles/enviarNotificacao.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:29:03] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:29:03] "[36mGET /static/images/background-pc.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:29:07] "GET /Abastecimento HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:29:07] "[36mGET /static/styles/abastecimento.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:29:07] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:29:07] "[36mGET /static/images/background-zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:29:08] "GET /RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:29:08] "[36mGET /static/styles/loginrec.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:29:08] "[36mGET /static/images/exitbutton.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:29:08] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:29:10] "POST /excluir_popup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:38:07] "[35m[1mGET /RepositorHome HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:38:07] "GET /RepositorHome?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:38:07] "GET /RepositorHome?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:38:07] "GET /RepositorHome?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:38:07] "[36mGET /RepositorHome?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:40:01] "[35m[1mGET /RepositorHome HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:40:01] "[36mGET /RepositorHome?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:40:01] "[36mGET /RepositorHome?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:40:01] "[36mGET /RepositorHome?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:40:01] "[36mGET /RepositorHome?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:41:36] "[35m[1mGET /RepositorHome HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:41:36] "[36mGET /RepositorHome?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:41:36] "[36mGET /RepositorHome?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:41:36] "[36mGET /RepositorHome?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:41:36] "[36mGET /RepositorHome?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:42:32] "[35m[1mGET /RepositorHome HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:42:32] "[36mGET /RepositorHome?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:42:32] "[36mGET /RepositorHome?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:42:32] "[36mGET /RepositorHome?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:42:32] "[36mGET /RepositorHome?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\credencial.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:43:38] "[32mGET /RepositorHome HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:43:38] "GET /LoginPaper?next=/RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:43:39] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:43:39] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:43:39] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\credencial.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-892-687
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:43:45] "GET /LoginPaper?next=/RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:43:45] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:43:45] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:43:45] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:43:47] "GET /LoginPaper?next=/RepositorHome HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:43:47] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:43:47] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:43:47] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:43:59] "[32mGET /enviarPopup HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:43:59] "GET /LoginPaper?next=/enviarPopup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:43:59] "[36mGET /static/styles/loading.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:43:59] "[36mGET /static/styles/login.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:43:59] "[36mGET /static/images/zezinho.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:43:59] "[36mGET /static/images/zezinhobola.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:44:09] "[35m[1mPOST /LoginPaper HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:44:11] "[35m[1mPOST /LoginPaper HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:44:12] "[35m[1mPOST /LoginPaper HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:44:12] "[36mGET /LoginPaper?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:44:12] "[36mGET /LoginPaper?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:44:12] "[36mGET /LoginPaper?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [13/Mar/2024 10:44:12] "[36mGET /LoginPaper?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\x17859816\\Desktop\\papercontrollsystem\\credencial.py', reloading
+INFO:werkzeug: * Restarting with stat

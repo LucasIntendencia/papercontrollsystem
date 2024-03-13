@@ -86,16 +86,6 @@ class Ajuda(db.Model):
         'usuarios.id_user'), nullable=False)
     email = db.Column(db.String(255), db.ForeignKey(
         'usuarios.email'), nullable=False)
-    
-class ConfirmacaoReabastecimento(db.Model):
-    __tablename__ = 'confirmacao_reabastecimento'
-    id_confirmacao = db.Column(db.Integer, primary_key=True)
-    id_reabastecimento = db.Column(db.Integer, db.ForeignKey('reabastecimento.id_reabastecimento'), nullable=False)
-    quantidade_confirmada = db.Column(db.Integer, nullable=False)
-    data_confirmacao = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-
-    def __repr__(self):
-        return f"<ConfirmacaoReabastecimento {self.id_confirmacao}>"
 
 class ReposicaoEstoque(db.Model):
     __tablename__ = 'reposicaoestoque'
