@@ -1,7 +1,7 @@
 from flask_login import UserMixin
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from sqlalchemy import ForeignKey
+from sqlalchemy import ForeignKey, Sequence
 from sqlalchemy.orm import relationship
 from datetime import datetime
 from sqlalchemy.ext.declarative import declarative_base
@@ -99,8 +99,9 @@ class ReposicaoEstoque(db.Model):
 
 class Variavel(db.Model):
     __tablename__ = 'variavel'
-    id_varivavel = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    id_variavel = db.Column(db.Integer, primary_key=True, autoincrement=True)
     total = db.Column(db.Integer, nullable=False)
+
 
 def configure_database(app):
     # Pega a URI do banco de dados do arquivo .env

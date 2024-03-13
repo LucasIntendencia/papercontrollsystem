@@ -181,7 +181,7 @@ def loginadm():
     usuario = Usuario.query.filter_by(
         id_user=current_user.id, tipo_user="administrador").first()
     
-    estoque = usuario.estoque if usuario else 0  # Se o usuário não existir, define o estoque como 0
+    estoque = usuario.estoque if usuario else 0
 
     return render_template('loginadm.html', estoque=estoque)
 
@@ -612,29 +612,16 @@ def quantidadeadm():
                 # Inicializar uma lista para armazenar os resultados
                 resultado_lista = []
 
-                total_value = None
-
                 # Iterar sobre cada linha do DataFrame do Excel
                 for index, row in df.iterrows():
                     predio = row['PRÉDIO']
                     ilha = str(row['LOCALIZAÇÃO'])
                     reposicao_value = row['REPOSIÇÃO']
                     
-                    if pd.notna(ilha):
-                        try:
-                            # Verificar se 'LOCALIZAÇÃO' não está vazio e contém caracteres numéricos
-                            if any(char.isdigit() for char in ilha):
-                                ilha_numero = int(''.join(filter(str.isdigit, ilha)))
-                            else:
-                                logging.warning("Valor inválido ou vazio em 'LOCALIZAÇÃO'")
-                                continue
-                        except ValueError:
-                            logging.warning(f"Valor inválido em 'LOCALIZAÇÃO': {ilha}")
-                            continue
-                    else:
-                        logging.warning("Valor nulo em 'LOCALIZAÇÃO'")
+                    if pd.isna(ilha) or ilha.strip() == "":
+                        logging.warning("Valor inválido ou vazio em 'LOCALIZAÇÃO'")
                         continue
-                    
+
                     if reposicao_value:
                         try:
                             reposicao_necessaria = int(reposicao_value)
@@ -675,19 +662,26 @@ def quantidadeadm():
                             total_value = row.iloc[total_index]
                             if pd.notna(total_value):
                                 total_value = int(total_value)
-                                print("Total value found adjacent to 'TOTAL':", total_value)
+                                print("Total:", total_value)
+
+                                # Se o valor total for maior que zero, insira na tabela Variavel
+                                if total_value > 0:
+                                    adm = Usuario.query.filter_by(id_user=current_user.id, tipo_user='administrador').first()
+                                    if adm:
+                                        estoque_restante = adm.estoque - total_value
+                                        if estoque_restante >= 0:
+                                            adm.estoque = estoque_restante
+                                            db.session.commit()
+                                            variavel = Variavel(total=total_value)
+                                            db.session.add(variavel)
+                                            db.session.commit()
+                                            logging.info("Valor total inserido na tabela Variavel com sucesso.")
                         except Exception as e:
                             logging.warning(
-                                f"Erro ao encontrar o valor ao lado de 'TOTAL': {e}"
+                                f"Erro: {e}"
                             )
                         continue
                     
-                    if total_value is not None:
-                        nova_variavel = Variavel(total=total_value)
-                        db.session.add(nova_variavel)
-                        db.session.commit()
-                        print("Variável salva com sucesso.")
-
                     ilha_numero = int(''.join(filter(str.isdigit, ilha)))
 
                     # Consultar todas as reposições e somar as quantidades
@@ -720,7 +714,7 @@ def quantidadeadm():
                         'REPOSIÇÃO': reposicao_necessaria,
                         'PONTUAL': ''
                     })
-
+                
                 resultado_df = pd.DataFrame(resultado_lista)
                 relatorio_xlsx = f'tmp_relatorio_{datetime.now().strftime("%Y%m%d%H%M%S")}.xlsx'
 

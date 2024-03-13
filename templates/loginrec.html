@@ -73,60 +73,62 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const exitPopup = document.getElementById('exitPopup');
             const simButton = document.getElementById('simButton');
             const naoButton = document.getElementById('naoButton');
-            const fecharPopupBtn = document.getElementById('fecharPopup');
-            const popupContent = document.querySelector('.popup-content');
-        
-            if (simButton && naoButton) {
+            const exitPopup = document.getElementById('exitPopup');
+            const exitButton = document.querySelector('.exitbutton');
+    
+            if (simButton && naoButton && exitPopup && exitButton) {
+                const fecharPopupBtn = document.getElementById('fecharPopup');
+                const popupContent = document.querySelector('.popup-content');
+    
                 simButton.addEventListener('click', function () {
                     window.location.href = "{{ url_for('fazer_login') }}";
                 });
-        
+    
                 naoButton.addEventListener('click', function () {
                     exitPopup.style.display = 'none';
                 });
-            }
-        
-            if (fecharPopupBtn) {
-                fecharPopupBtn.addEventListener('click', function () {
-                    popupContent.style.display = 'none';
-                    document.cookie = 'showPopup=false; expires=Fri, 31 Dec 9999 23:59:59 GMT';
-        
-                    // Obtém as informações sobre as ilhas de reposição do popup
-                    const ilhas_reposicao = [];
-                    document.querySelectorAll('.popup-content ul li').forEach(function (item) {
-                        ilhas_reposicao.push(item.textContent.split(': ')[0]);
+    
+                if (fecharPopupBtn) {
+                    fecharPopupBtn.addEventListener('click', function () {
+                        popupContent.style.display = 'none';
+                        document.cookie = 'showPopup=false; expires=Fri, 31 Dec 9999 23:59:59 GMT';
+    
+                        const ilhas_reposicao = [];
+                        document.querySelectorAll('.popup-content ul li').forEach(function (item) {
+                            ilhas_reposicao.push(item.textContent.split(': ')[0]);
+                        });
+    
+                        fetch('/excluir_popup', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ ilhas_reposicao: ilhas_reposicao })
+                        }).then(response => {
+                            if (!response.ok) {
+                                throw new Error('Erro ao excluir os dados do popup');
+                            }
+                        }).catch(error => {
+                            console.error('Erro ao excluir os dados do popup:', error);
+                        });
                     });
-        
-                    // Envia uma solicitação para excluir os dados do popup e da tabela ReposicaoEstoque
-                    fetch('/excluir_popup', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ ilhas_reposicao: ilhas_reposicao }) // Envie as ilhas de reposição para o servidor
-                    }).then(response => {
-                        if (!response.ok) {
-                            throw new Error('Erro ao excluir os dados do popup');
-                        }
-                    }).catch(error => {
-                        console.error('Erro ao excluir os dados do popup:', error);
-                    });
+                }
+    
+                // Adicionando um ouvinte de evento para o botão de saída
+                exitButton.addEventListener('click', function(event) {
+                    event.preventDefault(); // Evita o comportamento padrão do link
+                    exitPopup.style.display = 'block';
                 });
             }
-        
-            if (popupContent) {
-                popupContent.style.display = 'block';
-            }
         });
+    
         const socket = io.connect('http://' + document.domain + ':' + location.port);
-
-        // Manipular eventos WebSocket para atualizar o popup
+    
         socket.on('atualizar_popup', function(data) {
             document.getElementById('popup').innerText = data.mensagem;
-        });     
+        });
     </script>
 </body>
 
