@@ -26,7 +26,6 @@ class Usuario(db.Model, UserMixin):
     id_user = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(255), nullable=False)
     email = db.Column(db.String(255), unique=True, nullable=False)
-    cpf = db.Column(db.String(11), nullable=False)
     senha = db.Column(db.String(255), nullable=False)
     tipo_user = db.Column(db.String(50), nullable=False)
     estoque = db.Column(db.Integer, nullable=False, default=0)
